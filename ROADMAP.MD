@@ -18,3 +18,4 @@
 - [x] Upgrade enquiry form to use a date-range picker with blocked dates disabled
 - [x] Extend Playwright system tests for blog + blocked-date behavior
 - [ ] Configure Tina Cloud credentials for production editing (requires clientId/token)
+- [x] Add `/admin` entry route that shows a friendly “not configured” page unless Tina Cloud env vars are present

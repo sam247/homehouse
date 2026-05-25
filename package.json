@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS=\"--max-old-space-size=4096\" tinacms dev --local --skip-indexing --skip-cloud-checks --noTelemetry -c \"next dev\"",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=4096\" tinacms build --local --skip-indexing --skip-cloud-checks --noTelemetry && next build",
-    "start": "NODE_OPTIONS=\"--max-old-space-size=4096\" tinacms build --local --skip-indexing --skip-cloud-checks --noTelemetry && next start",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=4096\" node scripts/tina-build.mjs && next build",
+    "start": "NODE_OPTIONS=\"--max-old-space-size=4096\" node scripts/tina-build.mjs && next start",
     "lint": "eslint",
     "test:system": "playwright test"
   },
