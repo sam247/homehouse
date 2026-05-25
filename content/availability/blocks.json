@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    {
+      "start": "2026-05-28",
+      "end": "2026-05-29",
+      "label": "Unavailable"
+    },
+    {
+      "start": "2026-06-01",
+      "end": "2026-06-05",
+      "label": "Booked"
+    }
+  ]
+}

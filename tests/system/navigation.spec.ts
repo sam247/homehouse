@@ -31,3 +31,25 @@ test("enquiry drawer opens", async ({ page }) => {
     page.getByRole("dialog", { name: "Make an enquiry" }).locator('input[type="email"]'),
   ).toBeVisible();
 });
+
+test("blog list and post page render", async ({ page }) => {
+  await page.goto("/blog");
+  await expect(page.getByRole("heading", { name: "Notes from the homestead." })).toBeVisible();
+  await page.getByRole("link", { name: "Hello world" }).click();
+  await expect(page).toHaveURL(/\/blog\/hello-world$/);
+  await expect(page.getByRole("heading", { name: "Hello world" })).toBeVisible();
+});
+
+test("blocked dates are disabled", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Enquire about a stay" }).click();
+  await page.getByRole("button", { name: "Select dates" }).click();
+  const day = page.getByRole("button", { name: /May 28/ });
+  await expect(day).toBeDisabled();
+});
+
+test("admin page responds", async ({ page }) => {
+  const res = await page.goto("/admin/index.html");
+  expect(res?.ok()).toBeTruthy();
+  await expect(page.locator("body")).toBeVisible();
+});

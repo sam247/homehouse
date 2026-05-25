@@ -80,7 +80,12 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-foreground/60">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
-          <p>Crafted with care in Norfolk.</p>
+          <div className="flex items-center gap-3">
+            <p>Crafted with care in Norfolk.</p>
+            <Link href="/admin/index.html" className="hover:text-foreground transition-colors">
+              Login
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

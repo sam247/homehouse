@@ -10,3 +10,11 @@
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval
 
+## Content & Availability (No DB)
+
+- [x] Add TinaCMS configuration and local admin UI (`/admin/index.html`)
+- [x] Add blog content files and public routes: `/blog`, `/blog/[slug]`
+- [x] Add availability blocks file + public API endpoint: `/api/availability`
+- [x] Upgrade enquiry form to use a date-range picker with blocked dates disabled
+- [x] Extend Playwright system tests for blog + blocked-date behavior
+- [ ] Configure Tina Cloud credentials for production editing (requires clientId/token)

@@ -1,0 +1,18 @@
+fragment PostParts on Post {
+  __typename
+  title
+  publishedAt
+  excerpt
+  coverImage
+  body
+}
+
+fragment AvailabilityParts on Availability {
+  __typename
+  blocks {
+    __typename
+    start
+    end
+    label
+  }
+}

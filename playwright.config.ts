@@ -17,10 +17,10 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev -- -p 3000",
+    command:
+      'NODE_OPTIONS="--max-old-space-size=4096" tinacms dev --local --skip-indexing --skip-cloud-checks --noTelemetry -c "next dev -p 3000"',
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },
 });
-
