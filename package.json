@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS=\"--max-old-space-size=4096\" tinacms dev --local --skip-indexing --skip-cloud-checks --noTelemetry -c \"next dev\"",
+    "dev": "NODE_OPTIONS=\"--max-old-space-size=4096\" tinacms dev --noTelemetry -c \"next dev\"",
     "build": "NODE_OPTIONS=\"--max-old-space-size=4096\" node scripts/tina-build.mjs && next build",
     "start": "NODE_OPTIONS=\"--max-old-space-size=4096\" node scripts/tina-build.mjs && next start",
     "lint": "eslint",
