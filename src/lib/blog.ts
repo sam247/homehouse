@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
+import { getDb } from "@/lib/db";
 
 export type BlogPost = {
   slug: string;
@@ -18,6 +19,25 @@ function isMarkdownFile(name: string) {
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
+  const db = getDb();
+  if (db) {
+    const rows = await db`
+      SELECT slug, title, excerpt, cover_image_url, body_html, published_at
+      FROM posts
+      WHERE published = true
+      ORDER BY published_at DESC NULLS LAST, updated_at DESC
+    `;
+
+    return (rows as any[]).map((r) => ({
+      slug: r.slug,
+      title: r.title,
+      excerpt: r.excerpt ?? undefined,
+      coverImage: r.cover_image_url ?? undefined,
+      publishedAt: r.published_at ? new Date(r.published_at).toISOString() : undefined,
+      body: r.body_html ?? "",
+    }));
+  }
+
   const files = (await fs.readdir(BLOG_DIR)).filter(isMarkdownFile);
   const posts = await Promise.all(
     files.map(async (file) => {
@@ -34,6 +54,27 @@ export async function getAllPosts(): Promise<BlogPost[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
+  const db = getDb();
+  if (db) {
+    const rows = await db`
+      SELECT slug, title, excerpt, cover_image_url, body_html, published_at
+      FROM posts
+      WHERE slug = ${slug} AND published = true
+      LIMIT 1
+    `;
+    const r = (rows as any[])[0];
+    if (!r) throw new Error(`Post not found: ${slug}`);
+
+    return {
+      slug: r.slug,
+      title: r.title,
+      excerpt: r.excerpt ?? undefined,
+      coverImage: r.cover_image_url ?? undefined,
+      publishedAt: r.published_at ? new Date(r.published_at).toISOString() : undefined,
+      body: r.body_html ?? "",
+    };
+  }
+
   const candidates = [path.join(BLOG_DIR, `${slug}.mdx`), path.join(BLOG_DIR, `${slug}.md`)];
   let filePath: string | undefined;
 

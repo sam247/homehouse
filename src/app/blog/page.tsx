@@ -3,6 +3,8 @@ import Link from "next/link";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
 import { getAllPosts } from "@/lib/blog";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Blog — Home House Homestead",
   description: "Notes from the homestead: stays, retreats, seasonal living, and quiet reflections.",
@@ -49,4 +51,3 @@ export default async function BlogIndexPage() {
     </PageShell>
   );
 }
-

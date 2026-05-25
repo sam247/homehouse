@@ -4,6 +4,8 @@ import ReactMarkdown from "react-markdown";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
 import { getPostBySlug } from "@/lib/blog";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {
@@ -44,26 +46,38 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const isHtml = post.body.trim().startsWith("<");
+
   return (
     <PageShell>
       <PageHero eyebrow="Blog" title={post.title} intro={post.excerpt} image={post.coverImage} />
       <Section className="max-w-3xl">
         <div className="text-foreground/80 font-light leading-relaxed space-y-6">
-          <ReactMarkdown
-            components={{
-              h1: (props) => <h1 className="font-serif text-4xl text-foreground" {...props} />,
-              h2: (props) => <h2 className="font-serif text-3xl text-foreground" {...props} />,
-              h3: (props) => <h3 className="font-serif text-2xl text-foreground" {...props} />,
-              a: (props) => <a className="text-accent hover:underline" {...props} />,
-              ul: (props) => <ul className="list-disc pl-6 space-y-2" {...props} />,
-              ol: (props) => <ol className="list-decimal pl-6 space-y-2" {...props} />,
-              blockquote: (props) => (
-                <blockquote className="border-l border-border pl-4 italic text-foreground/75" {...props} />
-              ),
-            }}
-          >
-            {post.body}
-          </ReactMarkdown>
+          {isHtml ? (
+            <div
+              className="space-y-6 [&_h1]:font-serif [&_h1]:text-4xl [&_h2]:font-serif [&_h2]:text-3xl [&_h3]:font-serif [&_h3]:text-2xl [&_a]:text-accent [&_a]:hover:underline [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_blockquote]:border-l [&_blockquote]:border-border [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-foreground/75"
+              dangerouslySetInnerHTML={{ __html: post.body }}
+            />
+          ) : (
+            <ReactMarkdown
+              components={{
+                h1: (props) => <h1 className="font-serif text-4xl text-foreground" {...props} />,
+                h2: (props) => <h2 className="font-serif text-3xl text-foreground" {...props} />,
+                h3: (props) => <h3 className="font-serif text-2xl text-foreground" {...props} />,
+                a: (props) => <a className="text-accent hover:underline" {...props} />,
+                ul: (props) => <ul className="list-disc pl-6 space-y-2" {...props} />,
+                ol: (props) => <ol className="list-decimal pl-6 space-y-2" {...props} />,
+                blockquote: (props) => (
+                  <blockquote
+                    className="border-l border-border pl-4 italic text-foreground/75"
+                    {...props}
+                  />
+                ),
+              }}
+            >
+              {post.body}
+            </ReactMarkdown>
+          )}
         </div>
       </Section>
     </PageShell>

@@ -49,7 +49,7 @@ test("blocked dates are disabled", async ({ page }) => {
 });
 
 test("admin page responds", async ({ page }) => {
-  const res = await page.goto("/admin/index.html");
+  const res = await page.goto("/admin");
   expect(res?.ok()).toBeTruthy();
   await expect(page.locator("body")).toBeVisible();
 });
