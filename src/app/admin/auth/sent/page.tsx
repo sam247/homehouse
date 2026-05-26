@@ -20,6 +20,21 @@ export default async function SentPage({
             DATABASE_URL isn’t configured yet for this deployment.
           </p>
         )}
+        {error === "db-connect" && (
+          <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+            The app can’t connect to the database. Double-check DATABASE_URL (no quotes/backticks) and redeploy.
+          </p>
+        )}
+        {error === "db-migrate" && (
+          <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+            The database is reachable, but tables haven’t been created yet. Run <span className="text-foreground">npm run db:migrate</span> against your Neon DATABASE_URL.
+          </p>
+        )}
+        {error === "db-write" && (
+          <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+            Database write failed. Check Vercel function logs for the exact error, then try again.
+          </p>
+        )}
         {!error && (
           <p className="mt-4 text-foreground/75 font-light leading-relaxed">
             If it doesn’t arrive within a minute, request a fresh link.
@@ -50,4 +65,3 @@ export default async function SentPage({
     </main>
   );
 }
-

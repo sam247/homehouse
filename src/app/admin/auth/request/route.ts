@@ -23,6 +23,14 @@ export async function POST(req: Request) {
     return NextResponse.redirect(new URL("/admin/auth/sent?error=db", req.url));
   }
 
+  try {
+    await db`SELECT 1`;
+  } catch (err) {
+    console.error("[admin-auth] DB connection failed");
+    console.error(err);
+    return NextResponse.redirect(new URL("/admin/auth/sent?error=db-connect", req.url));
+  }
+
   const token = randomToken();
   const tokenHash = hashToken(token);
   const expiresAt = new Date(Date.now() + 1000 * 60 * 15).toISOString();
@@ -32,8 +40,14 @@ export async function POST(req: Request) {
       INSERT INTO magic_link_tokens (email, token_hash, expires_at)
       VALUES (${email}, ${tokenHash}, ${expiresAt})
     `;
-  } catch {
-    return NextResponse.redirect(new URL("/admin/auth/sent?error=db", req.url));
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : "";
+    console.error("[admin-auth] Token insert failed");
+    console.error(err);
+    if (msg.includes("magic_link_tokens") && msg.includes("does not exist")) {
+      return NextResponse.redirect(new URL("/admin/auth/sent?error=db-migrate", req.url));
+    }
+    return NextResponse.redirect(new URL("/admin/auth/sent?error=db-write", req.url));
   }
 
   const callbackUrl = `${getSiteUrl()}/admin/auth/callback?token=${encodeURIComponent(token)}`;
