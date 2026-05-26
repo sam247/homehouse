@@ -22,5 +22,6 @@
 - [x] Remove ADMIN_SESSION_SECRET requirement (DB-backed sessions)
 - [x] Refine blog studio UI (left-sidebar writing dashboard)
 - [x] Add image uploads for blog (Vercel Blob)
+- [x] Blog archive card layout (cover image, title, excerpt, read button)
 - [ ] Migrate existing markdown posts/blocks into Neon
 - [x] Remove TinaCMS + TinaCloud build tooling
