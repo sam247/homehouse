@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
-import { getSiteUrl } from "@/lib/siteUrl";
 import { hashToken, isEmailAllowed, randomToken } from "@/lib/adminAuth";
 import { Resend } from "resend";
 
@@ -28,29 +27,34 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error("[admin-auth] DB connection failed");
     console.error(err);
-    return NextResponse.redirect(new URL("/admin/auth/sent?error=db-connect", req.url));
+    return NextResponse.redirect(new URL("/admin?error=db-connect", req.url));
   }
 
-  const token = randomToken();
-  const tokenHash = hashToken(token);
+  const otp = String(Number.parseInt(randomToken().slice(0, 12), 16) % 1_000_000).padStart(6, "0");
+  const tokenHash = hashToken(otp);
   const expiresAt = new Date(Date.now() + 1000 * 60 * 15).toISOString();
+  let id: string | null = null;
 
   try {
-    await db`
+    const rows = (await db`
       INSERT INTO magic_link_tokens (email, token_hash, expires_at)
       VALUES (${email}, ${tokenHash}, ${expiresAt})
-    `;
+      RETURNING id
+    `) as any[];
+    id = rows?.[0]?.id ?? null;
   } catch (err) {
     const msg = err instanceof Error ? err.message : "";
     console.error("[admin-auth] Token insert failed");
     console.error(err);
     if (msg.includes("magic_link_tokens") && msg.includes("does not exist")) {
-      return NextResponse.redirect(new URL("/admin/auth/sent?error=db-migrate", req.url));
+      return NextResponse.redirect(new URL("/admin?error=db-migrate", req.url));
     }
-    return NextResponse.redirect(new URL("/admin/auth/sent?error=db-write", req.url));
+    return NextResponse.redirect(new URL("/admin?error=db-write", req.url));
   }
 
-  const callbackUrl = `${getSiteUrl()}/admin/auth/callback?token=${encodeURIComponent(token)}`;
+  if (!id) {
+    return NextResponse.redirect(new URL("/admin?error=db-write", req.url));
+  }
 
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
@@ -60,19 +64,29 @@ export async function POST(req: Request) {
       await resend.emails.send({
         from,
         to: email,
-        subject: "Your sign-in link",
-        text: `Sign in: ${callbackUrl}\n\nThis link expires in 15 minutes.`,
+        subject: "Your sign-in code",
+        text: `Your code: ${otp}\n\nThis code expires in 15 minutes.`,
       });
 
-      return NextResponse.redirect(new URL("/admin/auth/sent", req.url));
-    } catch {
       return NextResponse.redirect(
-        new URL(`/admin/auth/sent?token=${encodeURIComponent(token)}`, req.url),
+        new URL(`/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}`, req.url),
+      );
+    } catch (err) {
+      console.error("[admin-auth] Resend send failed");
+      console.error(err);
+      return NextResponse.redirect(
+        new URL(
+          `/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&code=${encodeURIComponent(otp)}`,
+          req.url,
+        ),
       );
     }
   }
 
   return NextResponse.redirect(
-    new URL(`/admin/auth/sent?token=${encodeURIComponent(token)}`, req.url),
+    new URL(
+      `/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&code=${encodeURIComponent(otp)}`,
+      req.url,
+    ),
   );
 }

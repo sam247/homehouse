@@ -24,7 +24,15 @@ export function isEmailAllowed(email: string) {
 }
 
 function getSessionSecret() {
-  const secret = process.env.ADMIN_SESSION_SECRET;
+  const raw = process.env.ADMIN_SESSION_SECRET;
+  const trimmed = raw?.trim();
+  const secret =
+    trimmed &&
+    (((trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+      (trimmed.startsWith("'") && trimmed.endsWith("'")))
+      ? trimmed.slice(1, -1)
+      : trimmed);
+
   if (secret && secret.length >= 16) return secret;
   if (process.env.NODE_ENV !== "production") return "dev-session-secret-dev-session-secret";
   return null;

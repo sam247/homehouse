@@ -19,6 +19,12 @@ function ErrorNote({ error }: { error: string }) {
       ? "That email isn’t allowed for this studio."
       : error === "db"
         ? "The database isn’t configured yet for this deployment."
+        : error === "db-connect"
+          ? "The app can’t connect to the database. Double-check DATABASE_URL and redeploy."
+          : error === "db-migrate"
+            ? "The database is reachable, but tables haven’t been created yet. Run npm run db:migrate."
+            : error === "db-write"
+              ? "Database write failed. Check Vercel function logs."
         : error === "invalid"
           ? "That link isn’t valid. Please request a new one."
           : error === "used"
@@ -72,7 +78,7 @@ export default async function AdminPage({
       <Shell>
         <h1 className="font-serif text-4xl leading-tight">Welcome back.</h1>
         <p className="mt-4 text-foreground/75 font-light leading-relaxed">
-          Enter your email and we’ll send a calm, single-use sign-in link.
+          Enter your email and we’ll send a 6-digit code.
         </p>
         {error && <ErrorNote error={error} />}
         <form method="post" action="/admin/auth/request" className="mt-10 space-y-4">
@@ -92,7 +98,7 @@ export default async function AdminPage({
             type="submit"
             className="w-full border border-border bg-foreground text-background px-4 py-3 text-xs uppercase tracking-[0.25em] hover:bg-foreground/90 transition-colors"
           >
-            Send sign-in link
+            Send code
           </button>
         </form>
       </Shell>

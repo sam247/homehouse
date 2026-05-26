@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { getSiteUrl } from "@/lib/siteUrl";
 
 export const dynamic = "force-dynamic";
 
@@ -8,8 +7,7 @@ export default async function SentPage({
 }: {
   searchParams: Promise<{ token?: string; error?: string }>;
 }) {
-  const { token, error } = await searchParams;
-  const link = token ? `${getSiteUrl()}/admin/auth/callback?token=${encodeURIComponent(token)}` : null;
+  const { error } = await searchParams;
 
   return (
     <main className="min-h-screen bg-background text-foreground flex items-center justify-center px-6 py-20">
@@ -37,17 +35,8 @@ export default async function SentPage({
         )}
         {!error && (
           <p className="mt-4 text-foreground/75 font-light leading-relaxed">
-            If it doesn’t arrive within a minute, request a fresh link.
+            If it doesn’t arrive within a minute, request a fresh code.
           </p>
-        )}
-
-        {link && (
-          <div className="mt-8 space-y-3 text-sm text-foreground/75 font-light">
-            <p>Dev mode link:</p>
-            <a className="text-accent hover:underline break-all" href={link}>
-              {link}
-            </a>
-          </div>
         )}
 
         <div className="mt-10 flex items-center justify-between text-xs uppercase tracking-[0.25em]">
