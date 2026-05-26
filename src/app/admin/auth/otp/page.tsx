@@ -6,7 +6,6 @@ function messageForError(error: string) {
   if (error === "invalid") return "That code isn’t valid. Please request a new one.";
   if (error === "used") return "That code has already been used. Please request a new one.";
   if (error === "expired") return "That code has expired. Please request a new one.";
-  if (error === "session") return "Session configuration is missing. Set ADMIN_SESSION_SECRET.";
   return "Something went wrong. Please request a new code.";
 }
 
@@ -81,4 +80,3 @@ export default async function OtpPage({
     </main>
   );
 }
-

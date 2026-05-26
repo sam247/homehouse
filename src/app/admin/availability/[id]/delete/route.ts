@@ -1,17 +1,11 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
-import {
-  getCookieFromHeader,
-  getSessionCookieName,
-  verifySession,
-} from "@/lib/adminAuth";
+import { requireAdmin } from "@/lib/requireAdmin";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {
-  const cookieHeader = req.headers.get("cookie");
-  const sessionToken = getCookieFromHeader(cookieHeader, getSessionCookieName());
-  const session = verifySession(sessionToken);
+  const session = await requireAdmin(req);
   if (!session) return NextResponse.redirect(new URL("/admin", req.url));
 
   const { id } = await ctx.params;
@@ -23,4 +17,3 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
 
   return NextResponse.redirect(new URL("/admin/availability", req.url));
 }
-

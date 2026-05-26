@@ -1,10 +1,6 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
-import {
-  getCookieFromHeader,
-  getSessionCookieName,
-  verifySession,
-} from "@/lib/adminAuth";
+import { requireAdmin } from "@/lib/requireAdmin";
 
 export const dynamic = "force-dynamic";
 
@@ -13,9 +9,7 @@ function isDateString(value: string) {
 }
 
 export async function POST(req: Request) {
-  const cookieHeader = req.headers.get("cookie");
-  const sessionToken = getCookieFromHeader(cookieHeader, getSessionCookieName());
-  const session = verifySession(sessionToken);
+  const session = await requireAdmin(req);
   if (!session) return NextResponse.redirect(new URL("/admin", req.url));
 
   const db = getDb();
@@ -37,4 +31,3 @@ export async function POST(req: Request) {
 
   return NextResponse.redirect(new URL("/admin/availability", req.url));
 }
-

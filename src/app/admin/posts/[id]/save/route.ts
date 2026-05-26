@@ -1,10 +1,6 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
-import {
-  getCookieFromHeader,
-  getSessionCookieName,
-  verifySession,
-} from "@/lib/adminAuth";
+import { requireAdmin } from "@/lib/requireAdmin";
 import { sanitizePostHtml } from "@/lib/sanitize";
 import { slugify } from "@/lib/slug";
 
@@ -21,9 +17,7 @@ async function ensureUniqueSlug(db: any, desired: string, id: string) {
 }
 
 export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {
-  const cookieHeader = req.headers.get("cookie");
-  const sessionToken = getCookieFromHeader(cookieHeader, getSessionCookieName());
-  const session = verifySession(sessionToken);
+  const session = await requireAdmin(req);
   if (!session) return NextResponse.redirect(new URL("/admin", req.url));
 
   const { id } = await ctx.params;

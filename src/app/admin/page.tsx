@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { cookies } from "next/headers";
 import type { ReactNode } from "react";
-import { getAllowlistedEmail, getSessionCookieName, verifySession } from "@/lib/adminAuth";
+import { getAllowlistedEmail } from "@/lib/adminAuth";
+import { getAdminSession } from "@/lib/adminServer";
 
 export const dynamic = "force-dynamic";
 
@@ -49,9 +49,7 @@ export default async function AdminPage({
 }) {
   const { error } = await searchParams;
   const allowlistedEmail = getAllowlistedEmail();
-  const jar = await cookies();
-  const sessionCookie = jar.get(getSessionCookieName())?.value ?? null;
-  const session = verifySession(sessionCookie);
+  const session = await getAdminSession();
 
   if (!allowlistedEmail) {
     return (

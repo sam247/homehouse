@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import {
-  createSession,
   getSessionCookieName,
   hashToken,
   isEmailAllowed,
+  randomSessionId,
 } from "@/lib/adminAuth";
 
 export const dynamic = "force-dynamic";
@@ -75,15 +75,16 @@ export async function POST(req: Request) {
     WHERE id = ${row.id} AND used_at IS NULL
   `;
 
-  const session = createSession(row.email);
-  if (!session) {
-    return NextResponse.redirect(
-      new URL(`/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=session`, req.url),
-    );
-  }
+  const sessionId = randomSessionId();
+  const expiresAt = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7).toISOString();
+
+  await db`
+    INSERT INTO admin_sessions (id, email, expires_at)
+    VALUES (${sessionId}, ${row.email}, ${expiresAt})
+  `;
 
   const res = NextResponse.redirect(new URL("/admin", req.url));
-  res.cookies.set(getSessionCookieName(), session, {
+  res.cookies.set(getSessionCookieName(), sessionId, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
@@ -92,4 +93,3 @@ export async function POST(req: Request) {
   });
   return res;
 }
-
