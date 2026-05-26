@@ -12,6 +12,46 @@ export type BlogPost = {
   body: string;
 };
 
+export async function getPostsPage({
+  page,
+  pageSize,
+}: {
+  page: number;
+  pageSize: number;
+}): Promise<{ posts: BlogPost[]; hasMore: boolean }> {
+  const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
+  const safePageSize = Number.isFinite(pageSize) && pageSize > 0 ? Math.floor(pageSize) : 15;
+  const offset = (safePage - 1) * safePageSize;
+
+  const db = getDb();
+  if (db) {
+    const rows = (await db`
+      SELECT slug, title, excerpt, cover_image_url, body_html, published_at, COUNT(*) OVER() as total_count
+      FROM posts
+      WHERE published = true
+      ORDER BY published_at DESC NULLS LAST, updated_at DESC
+      LIMIT ${safePageSize}
+      OFFSET ${offset}
+    `) as any[];
+
+    const total = rows[0]?.total_count ? Number(rows[0]?.total_count) : 0;
+    const posts = rows.map((r) => ({
+      slug: r.slug,
+      title: r.title,
+      excerpt: r.excerpt ?? undefined,
+      coverImage: r.cover_image_url ?? undefined,
+      publishedAt: r.published_at ? new Date(r.published_at).toISOString() : undefined,
+      body: r.body_html ?? "",
+    }));
+
+    return { posts, hasMore: offset + posts.length < total };
+  }
+
+  const all = await getAllPosts();
+  const posts = all.slice(offset, offset + safePageSize);
+  return { posts, hasMore: offset + posts.length < all.length };
+}
+
 const BLOG_DIR = path.resolve("content", "blog");
 
 function isMarkdownFile(name: string) {

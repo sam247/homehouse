@@ -32,6 +32,30 @@ test("enquiry drawer opens", async ({ page }) => {
   ).toBeVisible();
 });
 
+test("enquiry submits via api", async ({ page }) => {
+  await page.route("**/api/enquiry", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ ok: true, id: "test" }),
+    });
+  });
+
+  await page.goto("/");
+  await page.getByRole("button", { name: "Enquire about a stay" }).click();
+
+  const dialog = page.getByRole("dialog", { name: "Make an enquiry" });
+  const form = dialog.locator("form");
+  await form.locator("input").nth(0).fill("Test User");
+  await form.locator('input[type="email"]').fill("test@example.com");
+
+  await form.getByRole("button", { name: "Send enquiry" }).click();
+
+  await expect(dialog.getByText("Enquiry sent")).toBeVisible();
+  await dialog.getByRole("button", { name: "Close" }).nth(1).click();
+  await expect(dialog).toBeHidden();
+});
+
 test("blog list and post page render", async ({ page }) => {
   await page.goto("/blog");
   await expect(page.getByRole("heading", { name: "Notes from the homestead." })).toBeVisible();
@@ -57,4 +81,9 @@ test("admin page responds", async ({ page }) => {
 test("admin media upload is protected", async ({ request }) => {
   const res = await request.post("/admin/media/upload");
   expect(res.status()).toBe(401);
+});
+
+test("admin booking update is protected", async ({ request }) => {
+  const res = await request.post("/admin/bookings/00000000-0000-0000-0000-000000000000/update");
+  expect(res.url()).toMatch(/\/admin$/);
 });

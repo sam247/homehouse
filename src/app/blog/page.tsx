@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AuthorStrip } from "@/components/AuthorStrip";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
-import { getAllPosts } from "@/lib/blog";
+import { getPostsPage } from "@/lib/blog";
 
 export const dynamic = "force-dynamic";
 
@@ -13,8 +14,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function BlogIndexPage() {
-  const posts = await getAllPosts();
+export default async function BlogIndexPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ page?: string }>;
+}) {
+  const sp = (await searchParams) ?? {};
+  const page = Number(sp.page ?? "1");
+  const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
+  const pageSize = 15;
+  const { posts, hasMore } = await getPostsPage({ page: safePage, pageSize });
 
   return (
     <PageShell>
@@ -24,7 +33,10 @@ export default async function BlogIndexPage() {
         intro="Occasional reflections, seasonal notes, and updates."
       />
       <Section>
-        <div className="grid gap-8 md:gap-10">
+        <div className="mb-10">
+          <AuthorStrip />
+        </div>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <article key={p.slug} className="reveal border border-border overflow-hidden">
               {p.coverImage && (
@@ -33,7 +45,7 @@ export default async function BlogIndexPage() {
                 </div>
               )}
               <div className="p-8 md:p-10">
-                <h2 className="font-serif text-3xl md:text-4xl leading-tight">
+                <h2 className="font-serif text-2xl md:text-3xl leading-tight">
                   <Link href={`/blog/${p.slug}`} className="hover:text-accent transition-colors">
                     {p.title}
                   </Link>
@@ -54,6 +66,17 @@ export default async function BlogIndexPage() {
             <p className="text-foreground/70 font-light">No posts yet.</p>
           )}
         </div>
+
+        {hasMore && (
+          <div className="mt-14 flex justify-center">
+            <Link
+              href={`/blog?page=${safePage + 1}`}
+              className="border border-border bg-background px-6 py-4 text-xs uppercase tracking-[0.25em] text-foreground/80 hover:border-accent hover:text-foreground transition-colors"
+            >
+              Read more
+            </Link>
+          </div>
+        )}
       </Section>
     </PageShell>
   );

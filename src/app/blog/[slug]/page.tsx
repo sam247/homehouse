@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import { AuthorStrip } from "@/components/AuthorStrip";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
 import { getPostBySlug } from "@/lib/blog";
 
@@ -78,6 +79,9 @@ export default async function BlogPostPage({
               {post.body}
             </ReactMarkdown>
           )}
+        </div>
+        <div className="mt-12">
+          <AuthorStrip full />
         </div>
       </Section>
     </PageShell>

@@ -23,5 +23,13 @@
 - [x] Refine blog studio UI (left-sidebar writing dashboard)
 - [x] Add image uploads for blog (Vercel Blob)
 - [x] Blog archive card layout (cover image, title, excerpt, read button)
+- [x] Blog archive grid + pagination (3 columns, 15 posts/page)
+- [x] Author strip (Hawa) on archive and post pages
+- [x] Add booking_requests table (pending/confirmed/cancelled) for enquiries
+- [x] Add `/api/enquiry` to store enquiries and send Resend notifications/receipts
+- [x] Replace enquiry mailto flow with `/api/enquiry` submit + success/error UI (phone optional)
+- [x] Treat pending/confirmed booking requests as blocked ranges in `/api/availability`
+- [x] Add admin reservation desk (view enquiries, confirm/cancel, internal notes)
+- [x] Extend Playwright system tests for enquiry submit + booking admin protection
 - [ ] Migrate existing markdown posts/blocks into Neon
 - [x] Remove TinaCMS + TinaCloud build tooling

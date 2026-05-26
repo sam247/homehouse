@@ -54,12 +54,15 @@ export function EnquiryForm({
   const [form, setForm] = useState({
     name: "",
     email: "",
+    phone: "",
     dates: "",
     guests: "",
     message: "",
   });
   const [range, setRange] = useState<DateRange | undefined>(undefined);
   const [blocks, setBlocks] = useState<AvailabilityBlock[]>([]);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState<string>("");
 
   const update = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -99,23 +102,111 @@ export function EnquiryForm({
     setForm((f) => ({ ...f, dates: datesLabel }));
   }, [datesLabel]);
 
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Enquiry from ${form.name || "the website"}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nDates: ${form.dates}\nGuests: ${form.guests}\n\n${form.message}`,
-    );
-    window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
-    onSent?.();
+  const reset = () => {
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      dates: "",
+      guests: "",
+      message: "",
+    });
+    setRange(undefined);
   };
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    setError("");
+
+    const startDate =
+      range?.from ? format(range.from, "yyyy-MM-dd") : "";
+    const endDate =
+      range?.from ? format(range.to ?? range.from, "yyyy-MM-dd") : "";
+
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          guests: form.guests,
+          message: form.message,
+          startDate,
+          endDate,
+          sourceUrl: window.location.href,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        reset();
+        return;
+      }
+
+      if (res.status === 409) {
+        setStatus("error");
+        setError("Those dates are unavailable. Please choose different dates or leave them blank.");
+        return;
+      }
+
+      if (res.status === 503) {
+        const subject = encodeURIComponent(`Enquiry from ${form.name || "the website"}`);
+        const body = encodeURIComponent(
+          `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nDates: ${form.dates}\nGuests: ${form.guests}\n\n${form.message}`,
+        );
+        window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
+        setStatus("sent");
+        reset();
+        return;
+      }
+
+      setStatus("error");
+      setError("Something went wrong. Please try again.");
+    } catch {
+      setStatus("error");
+      setError("Something went wrong. Please try again.");
+    }
+  };
+
+  if (status === "sent") {
+    return (
+      <div className={`grid gap-4 ${compact ? "" : "mt-6"}`}>
+        <div className="border border-border p-6">
+          <div className="text-xs uppercase tracking-[0.18em] text-foreground/70">Enquiry sent</div>
+          <h3 className="mt-3 font-serif text-2xl font-normal text-foreground">Thank you.</h3>
+          <p className="mt-3 text-sm text-foreground/75 font-light">
+            We’ve received your enquiry and will reply personally, usually within a day.
+          </p>
+        </div>
+        <Button
+          type="button"
+          onClick={onSent}
+          className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 font-light tracking-wider"
+        >
+          Close
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={submit} className={`grid gap-4 ${compact ? "" : "mt-6"}`}>
+      {status === "error" ? (
+        <div className="border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
+          {error}
+        </div>
+      ) : null}
       <Field label="Your name">
         <Input required value={form.name} onChange={update("name")} className="bg-transparent border-foreground/30 rounded-none" />
       </Field>
       <Field label="Email">
         <Input required type="email" value={form.email} onChange={update("email")} className="bg-transparent border-foreground/30 rounded-none" />
+      </Field>
+      <Field label="Phone (optional)">
+        <Input value={form.phone} onChange={update("phone")} className="bg-transparent border-foreground/30 rounded-none" />
       </Field>
       <div className="grid grid-cols-2 gap-4">
         <Field label="Dates (optional)">
@@ -158,13 +249,12 @@ export function EnquiryForm({
       </Field>
       <Button
         type="submit"
+        disabled={status === "sending"}
         className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 font-light tracking-wider"
       >
-        Send enquiry
+        {status === "sending" ? "Sending…" : "Send enquiry"}
       </Button>
-      <p className="text-xs text-foreground/60">
-        This opens your email app with the message pre-filled.
-      </p>
+      <p className="text-xs text-foreground/60">We’ll reply personally, usually within a day.</p>
     </form>
   );
 }
