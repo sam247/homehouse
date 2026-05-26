@@ -7,7 +7,7 @@ export default defineConfig({
     timeout: 10_000,
   },
   use: {
-    baseURL: "http://localhost:3000",
+    baseURL: "http://localhost:3100",
     trace: "retain-on-failure",
   },
   projects: [
@@ -17,9 +17,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'NODE_OPTIONS="--max-old-space-size=4096" next dev -p 3000',
-    url: "http://localhost:3000",
-    reuseExistingServer: !process.env.CI,
+    command: 'NODE_OPTIONS="--max-old-space-size=4096" next dev -p 3100',
+    url: "http://localhost:3100",
+    reuseExistingServer: false,
     timeout: 120_000,
   },
 });
