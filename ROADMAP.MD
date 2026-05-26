@@ -20,5 +20,6 @@
 - [x] Build calm `/admin` studio (magic-link login + rich-text posts + availability editor)
 - [x] Make auth endpoints resilient (redirect GETs, graceful email/db failures)
 - [x] Remove ADMIN_SESSION_SECRET requirement (DB-backed sessions)
+- [x] Refine blog studio UI (left-sidebar writing dashboard)
 - [ ] Migrate existing markdown posts/blocks into Neon
 - [x] Remove TinaCMS + TinaCloud build tooling
