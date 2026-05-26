@@ -33,9 +33,6 @@ export default async function BlogIndexPage({
         intro="Occasional reflections, seasonal notes, and updates."
       />
       <Section>
-        <div className="mb-10">
-          <AuthorStrip />
-        </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <article key={p.slug} className="reveal border border-border overflow-hidden">
@@ -77,6 +74,10 @@ export default async function BlogIndexPage({
             </Link>
           </div>
         )}
+
+        <div className="mt-12">
+          <AuthorStrip />
+        </div>
       </Section>
     </PageShell>
   );
