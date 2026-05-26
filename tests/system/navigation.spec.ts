@@ -53,3 +53,8 @@ test("admin page responds", async ({ page }) => {
   expect(res?.ok()).toBeTruthy();
   await expect(page.locator("body")).toBeVisible();
 });
+
+test("admin media upload is protected", async ({ request }) => {
+  const res = await request.post("/admin/media/upload");
+  expect(res.status()).toBe(401);
+});

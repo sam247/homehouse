@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
@@ -43,6 +43,23 @@ function ToolbarButton({
 
 export function PostEditor({ action, initial }: Props) {
   const [bodyHtml, setBodyHtml] = useState(initial?.bodyHtml ?? "");
+  const [coverImageUrl, setCoverImageUrl] = useState(initial?.coverImageUrl ?? "");
+  const [uploadingCover, setUploadingCover] = useState(false);
+  const [uploadingInline, setUploadingInline] = useState(false);
+  const coverFileRef = useRef<HTMLInputElement | null>(null);
+  const inlineFileRef = useRef<HTMLInputElement | null>(null);
+
+  async function upload(file: File) {
+    const form = new FormData();
+    form.set("file", file);
+
+    const res = await fetch("/admin/media/upload", { method: "POST", body: form });
+    if (!res.ok) throw new Error(`Upload failed: ${res.status}`);
+    const json = (await res.json()) as { url?: string };
+    if (!json.url) throw new Error("Upload failed");
+    return json.url;
+  }
+
   const extensions = useMemo(
     () => [
       StarterKit,
@@ -112,10 +129,56 @@ export function PostEditor({ action, initial }: Props) {
           <input
             name="coverImageUrl"
             type="url"
-            defaultValue={initial?.coverImageUrl ?? ""}
+            value={coverImageUrl}
+            onChange={(e) => setCoverImageUrl(e.target.value)}
             className="mt-2 w-full border border-border bg-background px-4 py-3 font-light outline-none focus:border-accent"
           />
         </label>
+
+        <div className="grid gap-2">
+          <div className="text-xs uppercase tracking-[0.25em] text-foreground/70">Cover image upload</div>
+          <div className="flex flex-col gap-3 md:flex-row md:items-center">
+            <input
+              ref={coverFileRef}
+              type="file"
+              accept="image/*"
+              className="w-full border border-border bg-background px-4 py-3 text-sm font-light file:mr-4 file:border-0 file:bg-transparent file:text-foreground/70"
+              onChange={async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                setUploadingCover(true);
+                try {
+                  const url = await upload(file);
+                  setCoverImageUrl(url);
+                } finally {
+                  setUploadingCover(false);
+                  e.target.value = "";
+                }
+              }}
+            />
+            <button
+              type="button"
+              disabled={uploadingCover}
+              className={[
+                "border border-border px-4 py-3 text-xs uppercase tracking-[0.25em] transition-colors",
+                uploadingCover ? "text-foreground/40" : "hover:border-accent",
+              ].join(" ")}
+              onClick={() => coverFileRef.current?.click()}
+            >
+              {uploadingCover ? "Uploading…" : "Choose file"}
+            </button>
+          </div>
+          {coverImageUrl && (
+            <a
+              href={coverImageUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-accent hover:underline break-all font-light"
+            >
+              {coverImageUrl}
+            </a>
+          )}
+        </div>
 
         <label className="flex items-center justify-between border border-border px-4 py-3">
           <span className="text-xs uppercase tracking-[0.25em] text-foreground/70">Published</span>
@@ -173,7 +236,34 @@ export function PostEditor({ action, initial }: Props) {
           >
             Image
           </ToolbarButton>
+          <ToolbarButton
+            onClick={() => {
+              inlineFileRef.current?.click();
+            }}
+            active={uploadingInline}
+          >
+            Upload
+          </ToolbarButton>
         </div>
+
+        <input
+          ref={inlineFileRef}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={async (e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
+            setUploadingInline(true);
+            try {
+              const url = await upload(file);
+              editor?.chain().focus().setImage({ src: url }).run();
+            } finally {
+              setUploadingInline(false);
+              e.target.value = "";
+            }
+          }}
+        />
 
         <div className="mt-6">
           <EditorContent editor={editor} />
@@ -191,4 +281,3 @@ export function PostEditor({ action, initial }: Props) {
     </form>
   );
 }
-
