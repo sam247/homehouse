@@ -6,6 +6,10 @@ import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 
+export async function GET(req: Request) {
+  return NextResponse.redirect(new URL("/admin", req.url));
+}
+
 export async function POST(req: Request) {
   const form = await req.formData();
   const email = String(form.get("email") ?? "").trim().toLowerCase();
@@ -23,10 +27,14 @@ export async function POST(req: Request) {
   const tokenHash = hashToken(token);
   const expiresAt = new Date(Date.now() + 1000 * 60 * 15).toISOString();
 
-  await db`
-    INSERT INTO magic_link_tokens (email, token_hash, expires_at)
-    VALUES (${email}, ${tokenHash}, ${expiresAt})
-  `;
+  try {
+    await db`
+      INSERT INTO magic_link_tokens (email, token_hash, expires_at)
+      VALUES (${email}, ${tokenHash}, ${expiresAt})
+    `;
+  } catch {
+    return NextResponse.redirect(new URL("/admin/auth/sent?error=db", req.url));
+  }
 
   const callbackUrl = `${getSiteUrl()}/admin/auth/callback?token=${encodeURIComponent(token)}`;
 
@@ -34,14 +42,20 @@ export async function POST(req: Request) {
   if (resendKey) {
     const resend = new Resend(resendKey);
     const from = process.env.RESEND_FROM || "Home House <onboarding@resend.dev>";
-    await resend.emails.send({
-      from,
-      to: email,
-      subject: "Your sign-in link",
-      text: `Sign in: ${callbackUrl}\n\nThis link expires in 15 minutes.`,
-    });
+    try {
+      await resend.emails.send({
+        from,
+        to: email,
+        subject: "Your sign-in link",
+        text: `Sign in: ${callbackUrl}\n\nThis link expires in 15 minutes.`,
+      });
 
-    return NextResponse.redirect(new URL("/admin/auth/sent", req.url));
+      return NextResponse.redirect(new URL("/admin/auth/sent", req.url));
+    } catch {
+      return NextResponse.redirect(
+        new URL(`/admin/auth/sent?token=${encodeURIComponent(token)}`, req.url),
+      );
+    }
   }
 
   return NextResponse.redirect(

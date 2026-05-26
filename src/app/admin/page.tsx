@@ -13,7 +13,35 @@ function Shell({ children }: { children: ReactNode }) {
   );
 }
 
-export default async function AdminPage() {
+function ErrorNote({ error }: { error: string }) {
+  const message =
+    error === "not-allowed"
+      ? "That email isn’t allowed for this studio."
+      : error === "db"
+        ? "The database isn’t configured yet for this deployment."
+        : error === "invalid"
+          ? "That link isn’t valid. Please request a new one."
+          : error === "used"
+            ? "That link has already been used. Please request a new one."
+            : error === "expired"
+              ? "That link has expired. Please request a new one."
+              : error === "session"
+                ? "Session configuration is missing. Set ADMIN_SESSION_SECRET."
+                : "Something went wrong. Please request a new link.";
+
+  return (
+    <div className="mt-6 border border-border p-4 text-sm text-foreground/75 font-light">
+      {message}
+    </div>
+  );
+}
+
+export default async function AdminPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
+  const { error } = await searchParams;
   const allowlistedEmail = getAllowlistedEmail();
   const jar = await cookies();
   const sessionCookie = jar.get(getSessionCookieName())?.value ?? null;
@@ -46,6 +74,7 @@ export default async function AdminPage() {
         <p className="mt-4 text-foreground/75 font-light leading-relaxed">
           Enter your email and we’ll send a calm, single-use sign-in link.
         </p>
+        {error && <ErrorNote error={error} />}
         <form method="post" action="/admin/auth/request" className="mt-10 space-y-4">
           <div className="space-y-2">
             <label className="text-xs uppercase tracking-[0.25em] text-foreground/70">

@@ -18,5 +18,6 @@
 - [x] Extend Playwright system tests for blog + blocked-date behavior
 - [x] Create Neon schema for posts + availability + magic-link auth
 - [x] Build calm `/admin` studio (magic-link login + rich-text posts + availability editor)
+- [x] Make auth endpoints resilient (redirect GETs, graceful email/db failures)
 - [ ] Migrate existing markdown posts/blocks into Neon
 - [x] Remove TinaCMS + TinaCloud build tooling
