@@ -15,7 +15,7 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
   const { id } = await ctx.params;
 
   const db = getDb();
-  if (!db) return NextResponse.redirect(new URL("/admin/availability?error=db", req.url));
+  if (!db) return NextResponse.redirect(new URL("/admin/bookings?error=db", req.url));
 
   const form = await req.formData();
   const statusRaw = String(form.get("status") ?? "").trim();
@@ -25,11 +25,11 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
   const hasNotes = form.has("internalNotes");
 
   if (!hasStatus && !hasNotes) {
-    return NextResponse.redirect(new URL("/admin/availability", req.url));
+    return NextResponse.redirect(new URL(`/admin/bookings/${id}`, req.url));
   }
 
   if (hasStatus && !isStatus(statusRaw)) {
-    return NextResponse.redirect(new URL("/admin/availability?error=status", req.url));
+    return NextResponse.redirect(new URL(`/admin/bookings/${id}?error=status`, req.url));
   }
 
   if (hasStatus && hasNotes) {
@@ -40,7 +40,7 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
           updated_at = now()
       WHERE id = ${id}
     `;
-    return NextResponse.redirect(new URL("/admin/availability", req.url));
+    return NextResponse.redirect(new URL(`/admin/bookings/${id}`, req.url));
   }
 
   if (hasStatus) {
@@ -50,7 +50,7 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
           updated_at = now()
       WHERE id = ${id}
     `;
-    return NextResponse.redirect(new URL("/admin/availability", req.url));
+    return NextResponse.redirect(new URL(`/admin/bookings/${id}`, req.url));
   }
 
   await db`
@@ -60,6 +60,5 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
     WHERE id = ${id}
   `;
 
-  return NextResponse.redirect(new URL("/admin/availability", req.url));
+  return NextResponse.redirect(new URL(`/admin/bookings/${id}`, req.url));
 }
-

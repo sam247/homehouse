@@ -3,7 +3,6 @@ import { redirect } from "next/navigation";
 import { getDb } from "@/lib/db";
 import { getAdminSession } from "@/lib/adminServer";
 import { AvailabilityEditor } from "@/components/admin/AvailabilityEditor";
-import { BookingRequestsPanel } from "@/components/admin/BookingRequestsPanel";
 
 export const dynamic = "force-dynamic";
 
@@ -44,34 +43,6 @@ export default async function AvailabilityPage() {
     rows = [];
   }
 
-  let bookingRequests: any[] = [];
-  try {
-    bookingRequests = (await db`
-      SELECT
-        id,
-        status,
-        name,
-        email,
-        phone,
-        guests,
-        message,
-        internal_notes,
-        start_date::text as start,
-        end_date::text as "end",
-        created_at::text as created_at
-      FROM booking_requests
-      ORDER BY
-        CASE
-          WHEN status = 'pending' THEN 0
-          WHEN status = 'confirmed' THEN 1
-          ELSE 2
-        END ASC,
-        created_at DESC
-    `) as any[];
-  } catch {
-    bookingRequests = [];
-  }
-
   return (
     <main className="min-h-screen bg-background text-foreground px-6 py-16">
       <div className="mx-auto w-full max-w-5xl">
@@ -80,16 +51,23 @@ export default async function AvailabilityPage() {
             <div className="text-xs uppercase tracking-[0.25em] text-foreground/70">Studio</div>
             <h1 className="mt-3 font-serif text-4xl leading-tight">Availability</h1>
           </div>
-          <Link
-            href="/admin"
-            className="text-xs uppercase tracking-[0.25em] text-foreground/70 hover:text-foreground transition-colors"
-          >
-            Back
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/admin/bookings"
+              className="text-xs uppercase tracking-[0.25em] text-foreground/70 hover:text-foreground transition-colors"
+            >
+              Bookings
+            </Link>
+            <Link
+              href="/admin"
+              className="text-xs uppercase tracking-[0.25em] text-foreground/70 hover:text-foreground transition-colors"
+            >
+              Back
+            </Link>
+          </div>
         </div>
 
         <AvailabilityEditor blocks={rows as any} />
-        <BookingRequestsPanel requests={bookingRequests as any} />
       </div>
     </main>
   );

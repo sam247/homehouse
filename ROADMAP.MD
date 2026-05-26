@@ -31,6 +31,7 @@
 - [x] Replace enquiry mailto flow with `/api/enquiry` submit + success/error UI (phone optional)
 - [x] Treat pending/confirmed booking requests as blocked ranges in `/api/availability`
 - [x] Add admin reservation desk (view enquiries, confirm/cancel, internal notes)
+- [x] Use left-sidebar studio layout for bookings (continuity with blog)
 - [x] Extend Playwright system tests for enquiry submit + booking admin protection
 - [ ] Migrate existing markdown posts/blocks into Neon
 - [x] Remove TinaCMS + TinaCloud build tooling
