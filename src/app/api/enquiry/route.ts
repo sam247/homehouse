@@ -119,7 +119,7 @@ export async function POST(req: Request) {
           `Message:`,
           message || "(not provided)",
           ``,
-          `Admin: ${process.env.SITE_URL || ""}/admin/availability`,
+          `Admin: ${process.env.SITE_URL || ""}/admin/bookings`,
           `ID: ${id}`,
           sourceUrl ? `Source: ${sourceUrl}` : "",
         ]
@@ -150,4 +150,3 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ ok: true, id });
 }
-

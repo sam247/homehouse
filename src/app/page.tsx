@@ -5,6 +5,7 @@ import { HeroVideo } from "@/components/HeroVideo";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Testimonials } from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
+import { getPostsPage } from "@/lib/blog";
 
 const IMG = {
   house: "https://images.squarespace-cdn.com/content/v1/65b8fafefbcaa00609260091/06fd4543-bca8-49c6-a18c-477e7be6d903/BFF79E36-7628-446B-93E5-C9F4337EE353.jpg",
@@ -37,7 +38,9 @@ const offers = [
   "A welcoming space for solo guests, couples, families and small groups",
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { posts } = await getPostsPage({ page: 1, pageSize: 3 });
+
   return (
     <PageShell>
       <HeroVideo />
@@ -117,6 +120,71 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </Section>
+      </div>
+      <div className="bg-[var(--cream)] text-[var(--deep)] border-y border-border">
+        <Section>
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--clay)] mb-4">Journal</p>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+                Notes from the homestead.
+              </h2>
+              <p className="mt-5 text-[var(--deep)]/80 font-light max-w-xl">
+                Occasional reflections, seasonal notes, and quiet updates.
+              </p>
+            </div>
+            <Button
+              asChild
+              className="rounded-none bg-[var(--deep)] text-[var(--cream)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
+            >
+              <Link href="/blog">Visit the blog</Link>
+            </Button>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {posts.slice(0, 3).map((p) => (
+              <article key={p.slug} className="reveal border border-border overflow-hidden bg-background text-foreground">
+                {p.coverImage && (
+                  <div className="aspect-[16/9] border-b border-border bg-foreground/5">
+                    <img src={p.coverImage} alt="" loading="lazy" className="h-full w-full object-cover" />
+                  </div>
+                )}
+                <div className="p-8">
+                  <h3 className="font-serif text-2xl leading-tight">
+                    <Link href={`/blog/${p.slug}`} className="hover:text-accent transition-colors">
+                      {p.title}
+                    </Link>
+                  </h3>
+                  {p.excerpt && <p className="mt-4 text-foreground/75 font-light">{p.excerpt}</p>}
+                  <div className="mt-8">
+                    <Link
+                      href={`/blog/${p.slug}`}
+                      className="inline-flex items-center justify-center border border-border bg-foreground text-background px-5 py-3 text-xs uppercase tracking-[0.25em] hover:bg-foreground/90 transition-colors"
+                    >
+                      Read
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+            {posts.length === 0 && (
+              <div className="reveal border border-border bg-background text-foreground p-8 md:col-span-3">
+                <div className="font-serif text-2xl leading-tight">Coming soon.</div>
+                <p className="mt-4 text-foreground/75 font-light">
+                  The first notes from the homestead will appear here once published.
+                </p>
+                <div className="mt-8">
+                  <Link
+                    href="/blog"
+                    className="inline-flex items-center justify-center border border-border bg-foreground text-background px-5 py-3 text-xs uppercase tracking-[0.25em] hover:bg-foreground/90 transition-colors"
+                  >
+                    Visit the blog
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
         </Section>
       </div>

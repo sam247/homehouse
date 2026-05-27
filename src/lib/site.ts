@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Home House Homestead",
   tagline: "A peaceful, warm and welcoming guest house and homestead.",
-  email: "hello@homehouse.org.uk",
+  email: "info@homehouse.org.uk",
   location: "Norfolk, United Kingdom",
   // Client-supplied hero video
   heroVideo: "/hero.mp4",
@@ -17,7 +17,6 @@ export const PHOTOS = {
 };
 
 export const NAV = [
-  { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/stays", label: "Stays" },
   { to: "/events", label: "Retreats & Events" },

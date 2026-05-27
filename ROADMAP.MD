@@ -26,6 +26,7 @@
 - [x] Blog archive grid + pagination (3 columns, 15 posts/page)
 - [x] Author strip (Hawa) on archive and post pages
 - [x] Blog archive author strip positioned below the post grid
+- [x] Home page “Notes from the homestead” section (shows latest 3 blog posts)
 - [x] Add booking_requests table (pending/confirmed/cancelled) for enquiries
 - [x] Add `/api/enquiry` to store enquiries and send Resend notifications/receipts
 - [x] Replace enquiry mailto flow with `/api/enquiry` submit + success/error UI (phone optional)
