@@ -70,6 +70,28 @@ test("blog list and post page render", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Hello world" })).toBeVisible();
 });
 
+test("robots.txt and sitemap.xml render", async ({ request }) => {
+  const robots = await request.get("/robots.txt");
+  expect(robots.ok()).toBeTruthy();
+  const robotsText = await robots.text();
+  expect(robotsText).toContain("Sitemap:");
+  expect(robotsText).toContain("Disallow: /admin");
+  expect(robotsText).toContain("Disallow: /amanda");
+
+  const sitemap = await request.get("/sitemap.xml");
+  expect(sitemap.ok()).toBeTruthy();
+  const sitemapText = await sitemap.text();
+  expect(sitemapText).toContain("<loc>http://localhost:3000/</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/blog</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/blog/hello-world</loc>");
+});
+
+test("canonical link is absolute", async ({ page }) => {
+  await page.goto("/");
+  const canonical = page.locator('link[rel="canonical"]');
+  await expect(canonical).toHaveAttribute("href", /http:\/\/localhost:3000\/?$/);
+});
+
 test("blocked dates are disabled", async ({ page }) => {
   await page.goto("/");
   await page.locator("header").getByRole("button", { name: "Book now" }).click();

@@ -19,14 +19,14 @@ export function HeroVideo() {
     return () => v.removeEventListener("ended", onEnded);
   }, []);
   return (
-    <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-[var(--deep)]">
+    <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
       <video
         ref={ref}
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        poster={SITE.heroPoster}
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src={SITE.heroVideo} type="video/mp4" />
@@ -50,7 +50,6 @@ export function HeroVideo() {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 reveal">
           <EnquiryDrawer
-            source="hero"
             trigger={
               <Button className="h-12 px-8 rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground font-light tracking-[0.18em] uppercase text-xs">
                 Book now

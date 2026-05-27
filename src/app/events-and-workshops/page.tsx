@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Button } from "@/components/ui/button";
@@ -132,12 +133,13 @@ export default function EventsAndWorkshopsPage() {
 
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="reveal">
-                <div className="aspect-[4/5] overflow-hidden rounded-sm">
-                  <img
+                <div className="aspect-[4/5] overflow-hidden rounded-sm relative">
+                  <Image
                     src={IMG.garden}
                     alt="Garden at Home House"
-                    loading="lazy"
-                    className="h-full w-full object-cover kenburns"
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover kenburns"
                   />
                 </div>
               </div>
@@ -284,12 +286,13 @@ export default function EventsAndWorkshopsPage() {
               </p>
             </div>
             <div className="reveal">
-              <div className="aspect-[16/10] overflow-hidden rounded-sm">
-                <img
+              <div className="aspect-[16/10] overflow-hidden rounded-sm relative">
+                <Image
                   src={IMG.table}
                   alt="Table set for supper at Home House"
-                  loading="lazy"
-                  className="h-full w-full object-cover kenburns"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover kenburns"
                 />
               </div>
             </div>

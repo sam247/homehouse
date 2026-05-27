@@ -4,15 +4,29 @@ import { AuthorStrip } from "@/components/AuthorStrip";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
 import { getPostsPage } from "@/lib/blog";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
-export const metadata: Metadata = {
-  title: "Blog — Home House Homestead",
-  description: "Notes from the homestead: stays, retreats, seasonal living, and quiet reflections.",
-  alternates: {
-    canonical: "/blog",
-  },
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams?: Promise<{ page?: string }>;
+}): Promise<Metadata> {
+  const sp = (await searchParams) ?? {};
+  const page = Number(sp.page ?? "1");
+  const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
+  const canonical = safePage > 1 ? `/blog?page=${safePage}` : "/blog";
+
+  return {
+    title: "Blog",
+    description: "Notes from the homestead: stays, retreats, seasonal living, and quiet reflections.",
+    alternates: { canonical },
+    openGraph: {
+      title: "Blog",
+      description: "Notes from the homestead: stays, retreats, seasonal living, and quiet reflections.",
+      url: canonical,
+    },
+  };
+}
 
 export default async function BlogIndexPage({
   searchParams,

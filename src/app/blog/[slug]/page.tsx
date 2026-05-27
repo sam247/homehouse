@@ -3,9 +3,16 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { AuthorStrip } from "@/components/AuthorStrip";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
-import { getPostBySlug } from "@/lib/blog";
+import { SeoJsonLd } from "@/components/SeoJsonLd";
+import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getSiteUrl } from "@/lib/siteUrl";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const posts = await getAllPosts();
+  return posts.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -16,7 +23,7 @@ export async function generateMetadata({
   try {
     const post = await getPostBySlug(slug);
     return {
-      title: `${post.title} — Home House Homestead`,
+      title: post.title,
       description: post.excerpt,
       alternates: {
         canonical: `/blog/${slug}`,
@@ -39,6 +46,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const siteUrl = getSiteUrl();
 
   let post;
   try {
@@ -47,10 +55,40 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const postUrl = `${siteUrl}/blog/${slug}`;
+  const coverImage = post.coverImage
+    ? post.coverImage.startsWith("http")
+      ? post.coverImage
+      : `${siteUrl}${post.coverImage}`
+    : undefined;
+
+  const blogPostingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: coverImage ? [coverImage] : undefined,
+    datePublished: post.publishedAt,
+    author: { "@type": "Person", name: "Hawa Hummingbird" },
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
+    ],
+  };
+
   const isHtml = post.body.trim().startsWith("<");
 
   return (
     <PageShell>
+      <SeoJsonLd data={breadcrumbJsonLd} />
+      <SeoJsonLd data={blogPostingJsonLd} />
       <PageHero eyebrow="Blog" title={post.title} intro={post.excerpt} image={post.coverImage} />
       <Section className="max-w-3xl">
         <div className="text-foreground/80 font-light leading-relaxed space-y-6">
