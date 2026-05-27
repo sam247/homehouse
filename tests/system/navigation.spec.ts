@@ -24,11 +24,11 @@ test("mobile menu closes after navigation", async ({ page }) => {
 
 test("enquiry drawer opens", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "Enquire about a stay" }).click();
-  await expect(page.getByText("Make an enquiry")).toBeVisible();
+  await page.locator("header").getByRole("button", { name: "Book now" }).click();
+  await expect(page.getByRole("dialog", { name: "Book now" })).toBeVisible();
   await expect(page.getByText("Your name")).toBeVisible();
   await expect(
-    page.getByRole("dialog", { name: "Make an enquiry" }).locator('input[type="email"]'),
+    page.getByRole("dialog", { name: "Book now" }).locator('input[type="email"]'),
   ).toBeVisible();
 });
 
@@ -42,16 +42,16 @@ test("enquiry submits via api", async ({ page }) => {
   });
 
   await page.goto("/");
-  await page.getByRole("button", { name: "Enquire about a stay" }).click();
+  await page.locator("header").getByRole("button", { name: "Book now" }).click();
 
-  const dialog = page.getByRole("dialog", { name: "Make an enquiry" });
+  const dialog = page.getByRole("dialog", { name: "Book now" });
   const form = dialog.locator("form");
   await form.locator("input").nth(0).fill("Test User");
   await form.locator('input[type="email"]').fill("test@example.com");
 
-  await form.getByRole("button", { name: "Send enquiry" }).click();
+  await form.getByRole("button", { name: "Send request" }).click();
 
-  await expect(dialog.getByText("Enquiry sent")).toBeVisible();
+  await expect(dialog.getByText("Request sent")).toBeVisible();
   await dialog.getByRole("button", { name: "Close" }).nth(1).click();
   await expect(dialog).toBeHidden();
 });
@@ -66,7 +66,7 @@ test("blog list and post page render", async ({ page }) => {
 
 test("blocked dates are disabled", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "Enquire about a stay" }).click();
+  await page.locator("header").getByRole("button", { name: "Book now" }).click();
   await page.getByRole("button", { name: "Select dates" }).click();
   const day = page.getByRole("button", { name: /May 28/ });
   await expect(day).toBeDisabled();

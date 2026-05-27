@@ -25,3 +25,7 @@ export const NAV = [
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
+
+export const HEADER_NAV = NAV.filter(
+  (n) => n.to !== "/blog" && n.to !== "/gallery" && n.to !== "/contact",
+);

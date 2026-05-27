@@ -52,7 +52,7 @@ export function HeroVideo() {
           <EnquiryDrawer
             trigger={
               <Button className="h-12 px-8 rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground font-light tracking-[0.18em] uppercase text-xs">
-                Enquire about a stay
+                Book now
               </Button>
             }
           />

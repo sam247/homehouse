@@ -48,7 +48,7 @@ export function Footer() {
             <li><Link href="/events" className="hover:text-foreground transition-colors">Hire the homestead</Link></li>
             <li><Link href="/events" className="hover:text-foreground transition-colors">Community gatherings</Link></li>
             <li><Link href="/stays" className="hover:text-foreground transition-colors">Bespoke stays</Link></li>
-            <li><Link href="/contact" className="hover:text-foreground transition-colors">Enquire</Link></li>
+            <li><Link href="/contact" className="hover:text-foreground transition-colors">Book now</Link></li>
           </ul>
         </div>
 

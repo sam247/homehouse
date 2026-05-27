@@ -6,10 +6,10 @@ import { Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact — Home House Homestead",
-  description: "Get in touch with Home House Homestead in Norfolk. Enquire about stays, retreats and events.",
+  description: "Get in touch with Home House Homestead in Norfolk. Book a stay or ask about retreats and events.",
   openGraph: {
     title: "Contact — Home House Homestead",
-    description: "Enquire about stays, retreats and events.",
+    description: "Book a stay or ask about retreats and events.",
     url: "/contact",
   },
   alternates: {
@@ -57,10 +57,8 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="reveal border border-border p-8">
-            <h2 className="font-serif text-3xl mb-2">Send a message</h2>
-            <p className="text-foreground/70 text-sm mb-4">
-              This opens your email app with the details pre-filled.
-            </p>
+            <h2 className="font-serif text-3xl mb-2">Book now</h2>
+            <p className="text-foreground/70 text-sm mb-4">Send a short note and we’ll reply personally.</p>
             <EnquiryForm compact />
           </div>
         </div>
@@ -68,4 +66,3 @@ export default function ContactPage() {
     </PageShell>
   );
 }
-

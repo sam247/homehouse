@@ -32,7 +32,7 @@ export function EnquiryDrawer({ trigger }: { trigger: ReactNode }) {
       >
         <SheetHeader className="text-left">
           <SheetTitle className="font-serif text-3xl font-normal text-foreground">
-            Make an enquiry
+            Book now
           </SheetTitle>
           <SheetDescription className="text-foreground/70">
             Tell us a little about your visit. We reply personally, usually within a day.
@@ -175,7 +175,7 @@ export function EnquiryForm({
     return (
       <div className={`grid gap-4 ${compact ? "" : "mt-6"}`}>
         <div className="border border-border p-6">
-          <div className="text-xs uppercase tracking-[0.18em] text-foreground/70">Enquiry sent</div>
+          <div className="text-xs uppercase tracking-[0.18em] text-foreground/70">Request sent</div>
           <h3 className="mt-3 font-serif text-2xl font-normal text-foreground">Thank you.</h3>
           <p className="mt-3 text-sm text-foreground/75 font-light">
             We’ve received your enquiry and will reply personally, usually within a day.
@@ -252,7 +252,7 @@ export function EnquiryForm({
         disabled={status === "sending"}
         className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 font-light tracking-wider"
       >
-        {status === "sending" ? "Sending…" : "Send enquiry"}
+        {status === "sending" ? "Sending…" : "Send request"}
       </Button>
       <p className="text-xs text-foreground/60">We’ll reply personally, usually within a day.</p>
     </form>

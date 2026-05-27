@@ -225,7 +225,7 @@ export default async function HomePage() {
             <EnquiryDrawer
               trigger={
                 <Button className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 px-8 font-light tracking-[0.18em] uppercase text-xs">
-                  Begin an enquiry
+                  Book now
                 </Button>
               }
             />
