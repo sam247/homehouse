@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { ReactNode } from "react";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 import { getDb } from "@/lib/db";
 import { getAdminSession } from "@/lib/adminServer";
 
@@ -29,7 +30,7 @@ export async function BookingsStudioLayout({
   activeId?: string;
 }) {
   const session = await getAdminSession();
-  if (!session) redirect("/admin");
+  if (!session) redirect(ADMIN_ENTRY_PATH);
 
   const db = getDb();
   const bookings =
@@ -61,13 +62,13 @@ export async function BookingsStudioLayout({
             <div className="mt-2 font-serif text-3xl leading-tight">Bookings</div>
             <div className="mt-6 grid gap-3">
               <Link
-                href="/admin/availability"
+                href={`${ADMIN_ENTRY_PATH}/availability`}
                 className="border border-border bg-foreground text-background px-4 py-3 text-xs uppercase tracking-[0.25em] hover:bg-foreground/90 transition-colors text-center"
               >
                 Availability
               </Link>
               <Link
-                href="/admin"
+                href={ADMIN_ENTRY_PATH}
                 className="border border-border px-4 py-3 text-xs uppercase tracking-[0.25em] text-foreground/70 hover:border-accent hover:text-foreground transition-colors text-center"
               >
                 Back to studio
@@ -90,7 +91,7 @@ export async function BookingsStudioLayout({
                   return (
                     <Link
                       key={b.id}
-                      href={`/admin/bookings/${b.id}`}
+                      href={`${ADMIN_ENTRY_PATH}/bookings/${b.id}`}
                       className={[
                         "block border-b border-border px-6 py-4 transition-colors",
                         active ? "bg-foreground/5" : "hover:bg-foreground/5",
@@ -117,4 +118,3 @@ export async function BookingsStudioLayout({
     </div>
   );
 }
-

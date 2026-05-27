@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getDb } from "@/lib/db";
 import { getAdminSession } from "@/lib/adminServer";
 import { BookingRequestDetail } from "@/components/admin/BookingRequestDetail";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 
 export const dynamic = "force-dynamic";
 
@@ -11,12 +12,12 @@ export default async function BookingDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const session = await getAdminSession();
-  if (!session) redirect("/admin");
+  if (!session) redirect(ADMIN_ENTRY_PATH);
 
   const { id } = await params;
 
   const db = getDb();
-  if (!db) redirect("/admin/bookings?error=db");
+  if (!db) redirect(`${ADMIN_ENTRY_PATH}/bookings?error=db`);
 
   const rows = (await db`
     SELECT
@@ -37,7 +38,7 @@ export default async function BookingDetailPage({
   `) as any[];
 
   const request = rows[0] as any;
-  if (!request) redirect("/admin/bookings");
+  if (!request) redirect(`${ADMIN_ENTRY_PATH}/bookings`);
 
   return (
     <div className="mx-auto w-full max-w-4xl">
@@ -45,4 +46,3 @@ export default async function BookingDetailPage({
     </div>
   );
 }
-

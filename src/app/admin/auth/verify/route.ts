@@ -6,6 +6,7 @@ import {
   isEmailAllowed,
   randomSessionId,
 } from "@/lib/adminAuth";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 
 export const dynamic = "force-dynamic";
 
@@ -16,16 +17,16 @@ export async function POST(req: Request) {
   const code = String(form.get("code") ?? "").trim();
 
   if (!id || !email || !code) {
-    return NextResponse.redirect(new URL("/admin", req.url));
+    return NextResponse.redirect(new URL(ADMIN_ENTRY_PATH, req.url));
   }
   if (!isEmailAllowed(email)) {
-    return NextResponse.redirect(new URL("/admin?error=not-allowed", req.url));
+    return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}?error=not-allowed`, req.url));
   }
 
   const db = getDb();
   if (!db) {
     return NextResponse.redirect(
-      new URL(`/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=db`, req.url),
+      new URL(`${ADMIN_ENTRY_PATH}/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=db`, req.url),
     );
   }
 
@@ -48,24 +49,24 @@ export async function POST(req: Request) {
 
   if (!row) {
     return NextResponse.redirect(
-      new URL(`/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=invalid`, req.url),
+      new URL(`${ADMIN_ENTRY_PATH}/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=invalid`, req.url),
     );
   }
   if (row.used_at) {
     return NextResponse.redirect(
-      new URL(`/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=used`, req.url),
+      new URL(`${ADMIN_ENTRY_PATH}/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=used`, req.url),
     );
   }
   if (Date.now() > Date.parse(row.expires_at)) {
     return NextResponse.redirect(
-      new URL(`/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=expired`, req.url),
+      new URL(`${ADMIN_ENTRY_PATH}/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=expired`, req.url),
     );
   }
 
   const candidateHash = hashToken(code);
   if (candidateHash !== row.token_hash) {
     return NextResponse.redirect(
-      new URL(`/admin/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=invalid`, req.url),
+      new URL(`${ADMIN_ENTRY_PATH}/auth/otp?id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}&error=invalid`, req.url),
     );
   }
 
@@ -83,7 +84,7 @@ export async function POST(req: Request) {
     VALUES (${sessionId}, ${row.email}, ${expiresAt})
   `;
 
-  const res = NextResponse.redirect(new URL("/admin", req.url));
+  const res = NextResponse.redirect(new URL(ADMIN_ENTRY_PATH, req.url));
   res.cookies.set(getSessionCookieName(), sessionId, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",

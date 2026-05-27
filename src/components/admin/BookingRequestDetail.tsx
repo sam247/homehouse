@@ -1,3 +1,5 @@
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
+
 type BookingRequest = {
   id: string;
   status: "pending" | "confirmed" | "cancelled";
@@ -51,7 +53,7 @@ export function BookingRequestDetail({ request }: { request: BookingRequest }) {
 
         <div className="flex flex-wrap items-center gap-2">
           {request.status !== "confirmed" ? (
-            <form method="post" action={`/admin/bookings/${request.id}/update`}>
+            <form method="post" action={`${ADMIN_ENTRY_PATH}/bookings/${request.id}/update`}>
               <input type="hidden" name="status" value="confirmed" />
               <button
                 type="submit"
@@ -62,7 +64,7 @@ export function BookingRequestDetail({ request }: { request: BookingRequest }) {
             </form>
           ) : null}
           {request.status !== "cancelled" ? (
-            <form method="post" action={`/admin/bookings/${request.id}/update`}>
+            <form method="post" action={`${ADMIN_ENTRY_PATH}/bookings/${request.id}/update`}>
               <input type="hidden" name="status" value="cancelled" />
               <button
                 type="submit"
@@ -73,7 +75,7 @@ export function BookingRequestDetail({ request }: { request: BookingRequest }) {
             </form>
           ) : null}
           {request.status === "cancelled" ? (
-            <form method="post" action={`/admin/bookings/${request.id}/update`}>
+            <form method="post" action={`${ADMIN_ENTRY_PATH}/bookings/${request.id}/update`}>
               <input type="hidden" name="status" value="pending" />
               <button
                 type="submit"
@@ -95,7 +97,7 @@ export function BookingRequestDetail({ request }: { request: BookingRequest }) {
 
       <div className="mt-10 border-t border-border pt-10">
         <div className="text-xs uppercase tracking-[0.25em] text-foreground/60">Internal notes</div>
-        <form method="post" action={`/admin/bookings/${request.id}/update`} className="mt-4 grid gap-3">
+        <form method="post" action={`${ADMIN_ENTRY_PATH}/bookings/${request.id}/update`} className="mt-4 grid gap-3">
           <textarea
             name="internalNotes"
             defaultValue={request.internal_notes ?? ""}
@@ -114,4 +116,3 @@ export function BookingRequestDetail({ request }: { request: BookingRequest }) {
     </div>
   );
 }
-

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { getAdminSession } from "@/lib/adminServer";
 import { redirect } from "next/navigation";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 
 export const dynamic = "force-dynamic";
 
 export default async function BookingsIndexPage() {
   const session = await getAdminSession();
-  if (!session) redirect("/admin");
+  if (!session) redirect(ADMIN_ENTRY_PATH);
 
   return (
     <div className="border border-border p-10">
@@ -17,7 +18,7 @@ export default async function BookingsIndexPage() {
       </p>
       <div className="mt-10">
         <Link
-          href="/admin/availability"
+          href={`${ADMIN_ENTRY_PATH}/availability`}
           className="text-xs uppercase tracking-[0.25em] text-foreground/70 hover:text-foreground transition-colors"
         >
           Go to availability
@@ -26,4 +27,3 @@ export default async function BookingsIndexPage() {
     </div>
   );
 }
-

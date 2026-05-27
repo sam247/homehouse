@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { requireAdmin } from "@/lib/requireAdmin";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 import { sanitizePostHtml } from "@/lib/sanitize";
 import { slugify } from "@/lib/slug";
 
@@ -18,12 +19,12 @@ async function ensureUniqueSlug(db: any, desired: string, id: string) {
 
 export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {
   const session = await requireAdmin(req);
-  if (!session) return NextResponse.redirect(new URL("/admin", req.url));
+  if (!session) return NextResponse.redirect(new URL(ADMIN_ENTRY_PATH, req.url));
 
   const { id } = await ctx.params;
 
   const db = getDb();
-  if (!db) return NextResponse.redirect(new URL("/admin/posts?error=db", req.url));
+  if (!db) return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts?error=db`, req.url));
 
   const existing = (await db`
     SELECT id, published, published_at
@@ -31,7 +32,7 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
     WHERE id = ${id}
     LIMIT 1
   `) as any[];
-  if (!existing[0]) return NextResponse.redirect(new URL("/admin/posts", req.url));
+  if (!existing[0]) return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts`, req.url));
 
   const form = await req.formData();
   const title = String(form.get("title") ?? "").trim();
@@ -41,7 +42,7 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
   const bodyHtmlRaw = String(form.get("bodyHtml") ?? "");
   const published = form.get("published") === "on";
 
-  if (!title) return NextResponse.redirect(new URL(`/admin/posts/${id}?error=title`, req.url));
+  if (!title) return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts/${id}?error=title`, req.url));
 
   const baseSlug = slugify(slugInput || title);
   const slug = await ensureUniqueSlug(db, baseSlug, id);
@@ -63,5 +64,5 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
     WHERE id = ${id}
   `;
 
-  return NextResponse.redirect(new URL(`/admin/posts/${id}`, req.url));
+  return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts/${id}`, req.url));
 }

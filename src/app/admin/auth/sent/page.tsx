@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 
 export const dynamic = "force-dynamic";
 
@@ -40,11 +41,11 @@ export default async function SentPage({
         )}
 
         <div className="mt-10 flex items-center justify-between text-xs uppercase tracking-[0.25em]">
-          <Link href="/admin" className="text-foreground/70 hover:text-foreground transition-colors">
+          <Link href={ADMIN_ENTRY_PATH} className="text-foreground/70 hover:text-foreground transition-colors">
             Back
           </Link>
           <Link
-            href="/admin"
+            href={ADMIN_ENTRY_PATH}
             className="text-foreground/70 hover:text-foreground transition-colors"
           >
             Request again

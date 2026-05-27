@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
+import { Star } from "lucide-react";
+import { GOOGLE_REVIEWS_URL, REVIEWS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
   title: "Reviews — Home House Homestead",
@@ -14,37 +16,6 @@ export const metadata: Metadata = {
   },
 };
 
-const reviews = [
-  {
-    quote:
-      "A truly nourishing stay. The food, the quiet, the warmth of the welcome — I left feeling like a different person.",
-    name: "Anna, London",
-  },
-  {
-    quote:
-      "We hired the whole homestead for a small retreat and Hawa held the space beautifully. Our group is still talking about it.",
-    name: "Marcus, retreat facilitator",
-  },
-  {
-    quote:
-      "I came to write for a week and barely wanted to leave. The mornings, the garden, the slow pace — everything I needed.",
-    name: "Sophie, Edinburgh",
-  },
-  {
-    quote:
-      "Felt like coming home to a part of myself I'd forgotten. Thank you for the care in every detail.",
-    name: "Jamie & Rae",
-  },
-  {
-    quote: "Beautiful, peaceful, and so generous. The food alone was worth the trip.",
-    name: "Priya, Norwich",
-  },
-  {
-    quote: "A rare place. Held with intention, simplicity and real warmth.",
-    name: "Tom, returning guest",
-  },
-];
-
 export default function ReviewsPage() {
   return (
     <PageShell>
@@ -54,15 +25,38 @@ export default function ReviewsPage() {
         intro="A few of the kind notes left by people who have stayed."
       />
       <Section>
+        <div className="flex justify-center mb-10">
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-accent hover:underline font-light"
+          >
+            View all reviews on Google
+          </a>
+        </div>
         <div className="grid md:grid-cols-2 gap-8">
-          {reviews.map((r, i) => (
+          {REVIEWS.map((r, i) => (
             <figure key={i} className="reveal border border-border p-8 md:p-10">
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug text-foreground/95">
-                &ldquo;{r.quote}&rdquo;
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <figcaption className="font-serif text-2xl leading-snug text-foreground/95">
+                    {r.name}
+                  </figcaption>
+                  <p className="mt-2 text-xs uppercase tracking-[0.25em] text-accent">{r.meta}</p>
+                </div>
+                <div
+                  className="mt-1 flex gap-1 text-[var(--clay)] shrink-0"
+                  aria-label={`${r.rating} out of 5 stars`}
+                >
+                  {Array.from({ length: r.rating }).map((_, starIndex) => (
+                    <Star key={starIndex} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+              </div>
+              <blockquote className="mt-6 font-light leading-relaxed text-foreground/80">
+                &ldquo;{r.text}&rdquo;
               </blockquote>
-              <figcaption className="mt-6 text-xs uppercase tracking-[0.25em] text-accent">
-                — {r.name}
-              </figcaption>
             </figure>
           ))}
         </div>
@@ -70,4 +64,3 @@ export default function ReviewsPage() {
     </PageShell>
   );
 }
-

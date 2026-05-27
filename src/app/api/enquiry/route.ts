@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { getDb } from "@/lib/db";
 import { SITE } from "@/lib/site";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 
 export const dynamic = "force-dynamic";
 
@@ -119,7 +120,7 @@ export async function POST(req: Request) {
           `Message:`,
           message || "(not provided)",
           ``,
-          `Admin: ${process.env.SITE_URL || ""}/admin/bookings`,
+          `Admin: ${process.env.SITE_URL || ""}${ADMIN_ENTRY_PATH}/bookings`,
           `ID: ${id}`,
           sourceUrl ? `Source: ${sourceUrl}` : "",
         ]

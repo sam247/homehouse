@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test("home loads", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "Home House Homestead" })).toBeVisible();
+  await expect(page.locator("header").getByRole("link", { name: "Home House Homestead" }).first()).toBeVisible();
   await expect(page.getByRole("heading", { name: /Home is in/i })).toBeVisible();
 });
 
@@ -73,8 +73,9 @@ test("blocked dates are disabled", async ({ page }) => {
 });
 
 test("admin page responds", async ({ page }) => {
-  const res = await page.goto("/admin");
+  const res = await page.goto("/amanda");
   expect(res?.ok()).toBeTruthy();
+  expect(res?.headers()?.["x-robots-tag"] || "").toContain("noindex");
   await expect(page.locator("body")).toBeVisible();
 });
 
@@ -85,5 +86,5 @@ test("admin media upload is protected", async ({ request }) => {
 
 test("admin booking update is protected", async ({ request }) => {
   const res = await request.post("/admin/bookings/00000000-0000-0000-0000-000000000000/update");
-  expect(res.url()).toMatch(/\/admin$/);
+  expect(res.url()).toMatch(/\/amanda$/);
 });

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { NAV, SITE } from "@/lib/site";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Instagram, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -80,11 +81,30 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-foreground/60">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <p>Crafted with care in Norfolk.</p>
-            <Link href="/admin" className="hover:text-foreground transition-colors">
-              Login
-            </Link>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.google.com/search?sca_esv=cdb5a6f2b39051e1&biw=1920&bih=972&sxsrf=ANbL-n5KBnLLDqWRJ3RvCkzFzWHdpYroNg%3A1779876268563&kgmid=%2Fg%2F11ywlljc6j&q=Home%20House%20Homestead&shem=rimspwouoe&shndl=30&source=sh%2Fx%2Floc%2Funi%2Fm1%2F1&kgs=022d1e81e8befe69"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Home House Homestead on Google"
+                title="Home House Homestead on Google"
+                className="text-foreground/60 hover:text-foreground transition-colors"
+              >
+                <MapPin size={16} />
+              </a>
+              <a
+                href="https://www.instagram.com/homehouse888"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Home House Homestead on Instagram"
+                title="Home House Homestead on Instagram"
+                className="text-foreground/60 hover:text-foreground transition-colors"
+              >
+                <Instagram size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 
 export const dynamic = "force-dynamic";
 
@@ -25,7 +26,7 @@ export default async function OtpPage({
             Request a new code.
           </p>
           <div className="mt-10">
-            <Link href="/admin" className="text-xs uppercase tracking-[0.25em] text-foreground/70 hover:text-foreground transition-colors">
+            <Link href={ADMIN_ENTRY_PATH} className="text-xs uppercase tracking-[0.25em] text-foreground/70 hover:text-foreground transition-colors">
               Back
             </Link>
           </div>
@@ -46,7 +47,7 @@ export default async function OtpPage({
             {messageForError(error)}
           </div>
         )}
-        <form method="post" action="/admin/auth/verify" className="mt-10 space-y-4">
+        <form method="post" action={`${ADMIN_ENTRY_PATH}/auth/verify`} className="mt-10 space-y-4">
           <input type="hidden" name="id" value={id} />
           <input type="hidden" name="email" value={email} />
           <label className="text-xs uppercase tracking-[0.25em] text-foreground/70">
@@ -69,10 +70,10 @@ export default async function OtpPage({
           </button>
         </form>
         <div className="mt-10 flex items-center justify-between text-xs uppercase tracking-[0.25em]">
-          <Link href="/admin" className="text-foreground/70 hover:text-foreground transition-colors">
+          <Link href={ADMIN_ENTRY_PATH} className="text-foreground/70 hover:text-foreground transition-colors">
             Back
           </Link>
-          <Link href="/admin" className="text-foreground/70 hover:text-foreground transition-colors">
+          <Link href={ADMIN_ENTRY_PATH} className="text-foreground/70 hover:text-foreground transition-colors">
             Request again
           </Link>
         </div>

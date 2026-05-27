@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { requireAdmin } from "@/lib/requireAdmin";
+import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 import { sanitizePostHtml } from "@/lib/sanitize";
 import { slugify } from "@/lib/slug";
 
@@ -18,10 +19,10 @@ async function ensureUniqueSlug(db: any, base: string) {
 
 export async function POST(req: Request) {
   const session = await requireAdmin(req);
-  if (!session) return NextResponse.redirect(new URL("/admin", req.url));
+  if (!session) return NextResponse.redirect(new URL(ADMIN_ENTRY_PATH, req.url));
 
   const db = getDb();
-  if (!db) return NextResponse.redirect(new URL("/admin/posts?error=db", req.url));
+  if (!db) return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts?error=db`, req.url));
 
   const form = await req.formData();
   const title = String(form.get("title") ?? "").trim();
@@ -31,7 +32,7 @@ export async function POST(req: Request) {
   const bodyHtmlRaw = String(form.get("bodyHtml") ?? "");
   const published = form.get("published") === "on";
 
-  if (!title) return NextResponse.redirect(new URL("/admin/posts/new?error=title", req.url));
+  if (!title) return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts/new?error=title`, req.url));
 
   const baseSlug = slugify(slugInput || title);
   const slug = await ensureUniqueSlug(db, baseSlug);
@@ -47,7 +48,7 @@ export async function POST(req: Request) {
   `) as any[];
 
   const id = rows[0]?.id as string | undefined;
-  if (!id) return NextResponse.redirect(new URL("/admin/posts?error=save", req.url));
+  if (!id) return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts?error=save`, req.url));
 
-  return NextResponse.redirect(new URL(`/admin/posts/${id}`, req.url));
+  return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts/${id}`, req.url));
 }
