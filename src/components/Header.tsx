@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { HEADER_NAV, SITE } from "@/lib/site";
+import { gaEvent } from "@/lib/analytics/ga4";
 import { EnquiryDrawer } from "./EnquiryDrawer";
 import { Button } from "@/components/ui/button";
 
@@ -34,7 +35,10 @@ export function Header() {
         <Link
           href="/"
           className="font-serif text-xl tracking-wide text-foreground hover:text-accent transition-colors"
-          onClick={() => setOpen(false)}
+          onClick={() => {
+            gaEvent("nav_click", { to: "/", label: "logo" });
+            setOpen(false);
+          }}
         >
           {SITE.name}
         </Link>
@@ -47,7 +51,10 @@ export function Header() {
               className={`text-sm font-light tracking-wide text-foreground/80 hover:text-foreground transition-colors ${
                 isActive(item.to) ? "text-accent" : ""
               }`}
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                gaEvent("nav_click", { to: item.to, label: item.label, menu: "desktop" });
+                setOpen(false);
+              }}
             >
               {item.label}
             </Link>
@@ -60,9 +67,17 @@ export function Header() {
             variant="ghost"
             className="hidden sm:inline-flex text-foreground/70 hover:text-foreground rounded-none px-4"
           >
-            <a href="tel:07760885562">Call now</a>
+            <a
+              href="tel:07760885562"
+              onClick={() =>
+                gaEvent("phone_click", { placement: "header", phone: "07760885562" })
+              }
+            >
+              Call now
+            </a>
           </Button>
           <EnquiryDrawer
+            source="header"
             trigger={
               <Button
                 variant="outline"
@@ -74,7 +89,13 @@ export function Header() {
           />
           <button
             aria-label="Menu"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => {
+              setOpen((v) => {
+                const next = !v;
+                gaEvent("menu_toggle", { state: next ? "open" : "closed" });
+                return next;
+              });
+            }}
             className="lg:hidden text-foreground p-2"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
@@ -92,7 +113,10 @@ export function Header() {
                 className={`font-serif text-2xl text-foreground/90 ${
                   isActive(item.to) ? "text-accent" : ""
                 }`}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  gaEvent("nav_click", { to: item.to, label: item.label, menu: "mobile" });
+                  setOpen(false);
+                }}
               >
                 {item.label}
               </Link>

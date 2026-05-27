@@ -18,11 +18,18 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { SITE } from "@/lib/site";
+import { gaEvent } from "@/lib/analytics/ga4";
 
 type AvailabilityBlock = { start: string; end: string; label?: string };
 
-export function EnquiryDrawer({ trigger }: { trigger: ReactNode }) {
+export function EnquiryDrawer({ trigger, source }: { trigger: ReactNode; source?: string }) {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    gaEvent("enquiry_open", { source: source ?? "unknown" });
+  }, [open, source]);
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>{trigger}</SheetTrigger>
@@ -38,7 +45,7 @@ export function EnquiryDrawer({ trigger }: { trigger: ReactNode }) {
             Tell us a little about your visit. We reply personally, usually within a day.
           </SheetDescription>
         </SheetHeader>
-        <EnquiryForm onSent={() => setOpen(false)} />
+        <EnquiryForm source={source} onSent={() => setOpen(false)} />
       </SheetContent>
     </Sheet>
   );
@@ -47,9 +54,11 @@ export function EnquiryDrawer({ trigger }: { trigger: ReactNode }) {
 export function EnquiryForm({
   onSent,
   compact = false,
+  source,
 }: {
   onSent?: () => void;
   compact?: boolean;
+  source?: string;
 }) {
   const [form, setForm] = useState({
     name: "",
@@ -72,12 +81,15 @@ export function EnquiryForm({
       try {
         const res = await fetch("/api/availability", { cache: "no-store" });
         const json = (await res.json()) as { blocks?: AvailabilityBlock[] };
-        setBlocks(Array.isArray(json.blocks) ? json.blocks : []);
+        const nextBlocks = Array.isArray(json.blocks) ? json.blocks : [];
+        setBlocks(nextBlocks);
+        gaEvent("availability_loaded", { source: source ?? "unknown", count: nextBlocks.length });
       } catch {
         setBlocks([]);
+        gaEvent("availability_error", { source: source ?? "unknown" });
       }
     })();
-  }, []);
+  }, [source]);
 
   const disabled = useMemo(() => {
     return blocks
@@ -125,6 +137,13 @@ export function EnquiryForm({
       range?.from ? format(range.to ?? range.from, "yyyy-MM-dd") : "";
 
     try {
+      gaEvent("enquiry_submit", {
+        source: source ?? "unknown",
+        has_dates: Boolean(startDate),
+        has_guests: Boolean(form.guests),
+        has_message: Boolean(form.message),
+      });
+
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -141,12 +160,14 @@ export function EnquiryForm({
       });
 
       if (res.ok) {
+        gaEvent("enquiry_success", { source: source ?? "unknown" });
         setStatus("sent");
         reset();
         return;
       }
 
       if (res.status === 409) {
+        gaEvent("enquiry_unavailable", { source: source ?? "unknown" });
         setStatus("error");
         setError("Those dates are unavailable. Please choose different dates or leave them blank.");
         return;
@@ -157,15 +178,20 @@ export function EnquiryForm({
         const body = encodeURIComponent(
           `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nDates: ${form.dates}\nGuests: ${form.guests}\n\n${form.message}`,
         );
-        window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
+        gaEvent("enquiry_fallback_mailto", { source: source ?? "unknown" });
+        setTimeout(() => {
+          window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
+        }, 75);
         setStatus("sent");
         reset();
         return;
       }
 
+      gaEvent("enquiry_error", { source: source ?? "unknown", status: res.status });
       setStatus("error");
       setError("Something went wrong. Please try again.");
     } catch {
+      gaEvent("enquiry_error", { source: source ?? "unknown", status: "network" });
       setStatus("error");
       setError("Something went wrong. Please try again.");
     }

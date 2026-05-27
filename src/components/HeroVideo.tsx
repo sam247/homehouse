@@ -50,6 +50,7 @@ export function HeroVideo() {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 reveal">
           <EnquiryDrawer
+            source="hero"
             trigger={
               <Button className="h-12 px-8 rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground font-light tracking-[0.18em] uppercase text-xs">
                 Book now

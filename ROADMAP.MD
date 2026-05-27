@@ -5,12 +5,15 @@
 - [x] Scaffold Next.js App Router project at repo root
 - [x] Port theme + Tailwind v4 styling and public assets
 - [x] Port components/hooks/lib and replace TanStack Router with Next routing primitives
-- [x] Recreate routes: `/`, `/about`, `/stays`, `/events`, `/reviews`, `/gallery`, `/contact`
+- [x] Recreate routes: `/`, `/about`, `/stays`, `/events-and-workshops`, `/reviews`, `/gallery`, `/contact`
 - [x] Add Playwright system tests for navigation and enquiry drawer
 - [x] Add footer social links (Google + Instagram)
 - [x] Header CTAs (Call now + Book now) and simplified header nav
 - [x] Add GA4 (gtag) to head
+- [x] Add GA4 pageview + interaction events (SPA route changes, nav, contact, enquiry)
 - [x] Remove hero video poster flash (no placeholder image before playback)
+- [x] Rename `/events` to `/events-and-workshops` and add pricing blocks for events + bespoke retreats
+- [x] Expand `/about` content and split into banded background sections (use local `about.webp` hero)
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval
 
@@ -41,6 +44,7 @@
 - [x] Add admin reservation desk (view enquiries, confirm/cancel, internal notes)
 - [x] Use left-sidebar studio layout for bookings (continuity with blog)
 - [x] Use left-sidebar studio layout for availability blocks (blocks sidebar + large calendar)
+- [x] Availability studio: single-month full-width calendar view
 - [x] Extend Playwright system tests for enquiry submit + booking admin protection
 - [ ] Migrate existing markdown posts/blocks into Neon
 - [x] Remove TinaCMS + TinaCloud build tooling

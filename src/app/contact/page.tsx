@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell, PageHero, Section } from "@/components/PageShell";
 import { EnquiryForm } from "@/components/EnquiryDrawer";
+import { TrackedAnchor } from "@/components/TrackedAnchor";
 import { SITE } from "@/lib/site";
 import { Mail, MapPin } from "lucide-react";
 
@@ -30,13 +31,15 @@ export default function ContactPage() {
           <div className="reveal space-y-8">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-accent mb-3">Email</p>
-              <a
+              <TrackedAnchor
                 href={`mailto:${SITE.email}`}
+                event="email_click"
+                params={{ placement: "contact" }}
                 className="font-serif text-2xl flex items-center gap-3 hover:text-accent transition-colors"
               >
                 <Mail size={20} />
                 {SITE.email}
-              </a>
+              </TrackedAnchor>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-accent mb-3">Where to find us</p>
@@ -59,7 +62,7 @@ export default function ContactPage() {
           <div className="reveal border border-border p-8">
             <h2 className="font-serif text-3xl mb-2">Book now</h2>
             <p className="text-foreground/70 text-sm mb-4">Send a short note and we’ll reply personally.</p>
-            <EnquiryForm compact />
+            <EnquiryForm compact source="contact_form" />
           </div>
         </div>
       </Section>

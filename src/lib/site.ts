@@ -19,7 +19,7 @@ export const PHOTOS = {
 export const NAV = [
   { to: "/about", label: "About" },
   { to: "/stays", label: "Stays" },
-  { to: "/events", label: "Retreats & Events" },
+  { to: "/events-and-workshops", label: "Events & Workshops" },
   { to: "/reviews", label: "Reviews" },
   { to: "/gallery", label: "Gallery" },
   { to: "/blog", label: "Blog" },

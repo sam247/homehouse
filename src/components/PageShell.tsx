@@ -1,6 +1,8 @@
 "use client";
 
+import { Suspense } from "react";
 import { useReveal } from "@/hooks/use-reveal";
+import { AnalyticsListener } from "@/components/AnalyticsListener";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
@@ -8,6 +10,9 @@ export function PageShell({ children }: { children: React.ReactNode }) {
   useReveal();
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Suspense fallback={null}>
+        <AnalyticsListener />
+      </Suspense>
       <Header />
       <main>{children}</main>
       <Footer />
@@ -93,7 +98,7 @@ export function Zigzag({
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">{eyebrow}</p>
         )}
         <h2 className="font-serif text-4xl md:text-5xl leading-tight mb-6">{title}</h2>
-        <div className="text-foreground/80 font-light leading-relaxed space-y-4">{body}</div>
+        <div className="font-light leading-relaxed space-y-4 opacity-80">{body}</div>
       </div>
     </div>
   );

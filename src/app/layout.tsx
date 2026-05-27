@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import { GA4_MEASUREMENT_ID } from "@/lib/analytics/ga4";
 
 export const metadata: Metadata = {
   title: "Home House Homestead — Peaceful Norfolk Guest House & Retreats",
@@ -23,12 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-9X8N3NVR1B" />
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`} />
         <Script id="ga4">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-9X8N3NVR1B');`}
+gtag('config', '${GA4_MEASUREMENT_ID}', { send_page_view: false });`}
         </Script>
       </head>
       <body>{children}</body>

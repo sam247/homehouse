@@ -20,6 +20,7 @@ function Calendar({
   buttonVariant?: React.ComponentProps<typeof Button>["variant"];
 }) {
   const defaultClassNames = getDefaultClassNames();
+  const { root: rootClassName, months: monthsClassName, month: monthClassName, ...restClassNames } = classNames ?? {};
 
   return (
     <DayPicker
@@ -36,9 +37,9 @@ function Calendar({
         ...formatters,
       }}
       classNames={{
-        root: cn("w-fit", defaultClassNames.root),
-        months: cn("relative flex flex-col gap-4 md:flex-row", defaultClassNames.months),
-        month: cn("flex w-full flex-col gap-4", defaultClassNames.month),
+        root: cn("w-fit", defaultClassNames.root, rootClassName),
+        months: cn("relative flex flex-col gap-4 md:flex-row", defaultClassNames.months, monthsClassName),
+        month: cn("flex w-full flex-col gap-4", defaultClassNames.month, monthClassName),
         nav: cn(
           "absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1",
           defaultClassNames.nav,
@@ -102,7 +103,7 @@ function Calendar({
         ),
         disabled: cn("text-muted-foreground opacity-50", defaultClassNames.disabled),
         hidden: cn("invisible", defaultClassNames.hidden),
-        ...classNames,
+        ...restClassNames,
       }}
       components={{
         Root: ({ className, rootRef, ...props }) => {

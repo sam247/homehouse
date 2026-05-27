@@ -3,6 +3,8 @@ import { NAV, SITE } from "@/lib/site";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Instagram, MapPin } from "lucide-react";
+import { gaEvent } from "@/lib/analytics/ga4";
+import { TrackedAnchor } from "@/components/TrackedAnchor";
 
 export function Footer() {
   return (
@@ -17,12 +19,14 @@ export function Footer() {
             own time.
           </p>
           <p className="mt-6 text-sm">{SITE.location}</p>
-          <a
+          <TrackedAnchor
             href={`mailto:${SITE.email}`}
+            event="email_click"
+            params={{ placement: "footer" }}
             className="text-sm text-accent hover:underline"
           >
             {SITE.email}
-          </a>
+          </TrackedAnchor>
         </div>
 
         <div>
@@ -32,7 +36,11 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             {NAV.map((n) => (
               <li key={n.to}>
-                <Link href={n.to} className="hover:text-foreground transition-colors">
+                <Link
+                  href={n.to}
+                  className="hover:text-foreground transition-colors"
+                  onClick={() => gaEvent("nav_click", { to: n.to, label: n.label, menu: "footer" })}
+                >
                   {n.label}
                 </Link>
               </li>
@@ -44,11 +52,31 @@ export function Footer() {
             Retreats
           </p>
           <ul className="space-y-2 text-sm font-light">
-            <li><Link href="/events" className="hover:text-foreground transition-colors">Retreats & workshops</Link></li>
-            <li><Link href="/events" className="hover:text-foreground transition-colors">Hire the homestead</Link></li>
-            <li><Link href="/events" className="hover:text-foreground transition-colors">Community gatherings</Link></li>
-            <li><Link href="/stays" className="hover:text-foreground transition-colors">Bespoke stays</Link></li>
-            <li><Link href="/contact" className="hover:text-foreground transition-colors">Book now</Link></li>
+            <li>
+              <Link href="/events-and-workshops" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/events-and-workshops", label: "Retreats & workshops", menu: "footer" })}>
+                Retreats & workshops
+              </Link>
+            </li>
+            <li>
+              <Link href="/events-and-workshops" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/events-and-workshops", label: "Hire the homestead", menu: "footer" })}>
+                Hire the homestead
+              </Link>
+            </li>
+            <li>
+              <Link href="/events-and-workshops" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/events-and-workshops", label: "Community gatherings", menu: "footer" })}>
+                Community gatherings
+              </Link>
+            </li>
+            <li>
+              <Link href="/stays" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/stays", label: "Bespoke stays", menu: "footer" })}>
+                Bespoke stays
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/contact", label: "Book now", menu: "footer" })}>
+                Book now
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -62,7 +90,10 @@ export function Footer() {
           </p>
           <form
             className="flex gap-2"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault();
+              gaEvent("newsletter_submit", { placement: "footer" });
+            }}
           >
             <Input
               type="email"
@@ -91,6 +122,7 @@ export function Footer() {
                 aria-label="Home House Homestead on Google"
                 title="Home House Homestead on Google"
                 className="text-foreground/60 hover:text-foreground transition-colors"
+                onClick={() => gaEvent("outbound_click", { destination: "google_profile" })}
               >
                 <MapPin size={16} />
               </a>
@@ -101,6 +133,7 @@ export function Footer() {
                 aria-label="Home House Homestead on Instagram"
                 title="Home House Homestead on Instagram"
                 className="text-foreground/60 hover:text-foreground transition-colors"
+                onClick={() => gaEvent("outbound_click", { destination: "instagram" })}
               >
                 <Instagram size={16} />
               </a>

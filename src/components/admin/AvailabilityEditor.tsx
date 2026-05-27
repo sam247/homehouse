@@ -25,7 +25,14 @@ export function AvailabilityEditor() {
       </div>
 
       <div className="mt-10">
-        <Calendar mode="range" selected={range} onSelect={setRange} fromDate={new Date()} numberOfMonths={2} />
+        <Calendar
+          mode="range"
+          selected={range}
+          onSelect={setRange}
+          fromDate={new Date()}
+          numberOfMonths={1}
+          classNames={{ root: "w-full" }}
+        />
       </div>
 
       <form method="post" action={`${ADMIN_ENTRY_PATH}/availability/add`} className="mt-10 grid gap-4">

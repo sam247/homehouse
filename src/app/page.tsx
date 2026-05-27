@@ -4,6 +4,7 @@ import { PageShell, Section, Zigzag } from "@/components/PageShell";
 import { HeroVideo } from "@/components/HeroVideo";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Testimonials } from "@/components/Testimonials";
+import { TrackedLink } from "@/components/TrackedLink";
 import { Button } from "@/components/ui/button";
 import { getPostsPage } from "@/lib/blog";
 
@@ -208,7 +209,13 @@ export default async function HomePage() {
               asChild
               className="rounded-none bg-[var(--deep)] text-[var(--cream)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
             >
-              <Link href="/events">Explore retreats & events</Link>
+            <TrackedLink
+              href="/events-and-workshops"
+              event="cta_click"
+              params={{ placement: "home_journal", to: "/events-and-workshops" }}
+            >
+              Explore events & workshops
+            </TrackedLink>
             </Button>
           </div>
         </Section>
@@ -223,6 +230,7 @@ export default async function HomePage() {
           </p>
           <div className="mt-10 reveal">
             <EnquiryDrawer
+              source="home_bespoke_cta"
               trigger={
                 <Button className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 px-8 font-light tracking-[0.18em] uppercase text-xs">
                   Book now

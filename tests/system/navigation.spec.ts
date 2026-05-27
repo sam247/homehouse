@@ -6,11 +6,17 @@ test("home loads", async ({ page }) => {
   await expect(page.getByRole("heading", { name: /Home is in/i })).toBeVisible();
 });
 
+test("/events redirects to /events-and-workshops", async ({ page }) => {
+  await page.goto("/events");
+  await expect(page).toHaveURL(/\/events-and-workshops$/);
+  await expect(page.getByRole("heading", { name: "Garden of Sound" })).toBeVisible();
+});
+
 test("desktop navigation works", async ({ page }) => {
   await page.goto("/");
   await page.locator("header").getByRole("link", { name: "About" }).first().click();
   await expect(page).toHaveURL(/\/about$/);
-  await expect(page.getByRole("heading", { name: "A homestead rooted in care." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "A journey home." })).toBeVisible();
 });
 
 test("mobile menu closes after navigation", async ({ page }) => {
