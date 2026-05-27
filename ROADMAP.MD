@@ -10,6 +10,7 @@
 - [x] Add footer social links (Google + Instagram)
 - [x] Header CTAs (Call now + Book now) and simplified header nav
 - [x] Add GA4 (gtag) to head
+- [x] Remove hero video poster flash (no placeholder image before playback)
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval
 

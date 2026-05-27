@@ -19,14 +19,14 @@ export function HeroVideo() {
     return () => v.removeEventListener("ended", onEnded);
   }, []);
   return (
-    <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+    <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-[var(--deep)]">
       <video
         ref={ref}
         autoPlay
         muted
         loop
         playsInline
-        poster={SITE.heroPoster}
+        preload="auto"
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src={SITE.heroVideo} type="video/mp4" />
