@@ -24,13 +24,14 @@ export function AvailabilityEditor() {
         </p>
       </div>
 
-      <div className="mt-10 flex w-full justify-center overflow-x-auto">
+      <div className="mt-10 w-full">
         <Calendar
           mode="range"
           selected={range}
           onSelect={setRange}
           fromDate={new Date()}
           numberOfMonths={1}
+          fluid
           className="[--cell-size:2.25rem] sm:[--cell-size:2.5rem] lg:[--cell-size:3rem]"
         />
       </div>

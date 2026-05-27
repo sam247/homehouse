@@ -3,7 +3,7 @@ import { PageShell, PageHero, Zigzag, Section } from "@/components/PageShell";
 
 const IMG = {
   hero: "/about.webp",
-  hawa: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&q=80",
+  hawa: "/about.webp",
   land: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600&q=80",
 };
 

@@ -5,11 +5,14 @@
 - [x] Scaffold Next.js App Router project at repo root
 - [x] Port theme + Tailwind v4 styling and public assets
 - [x] Port components/hooks/lib and replace TanStack Router with Next routing primitives
-- [x] Recreate routes: `/`, `/about`, `/stays`, `/events`, `/reviews`, `/gallery`, `/contact`
+- [x] Recreate routes: `/`, `/about`, `/stays`, `/events-and-workshops`, `/reviews`, `/gallery`, `/contact`
 - [x] Add Playwright system tests for navigation and enquiry drawer
 - [x] Add footer social links (Google + Instagram)
 - [x] Header CTAs (Call now + Book now) and simplified header nav
 - [x] Add GA4 (gtag) to head
+- [x] Add GA4 pageview + interaction events (SPA route changes, nav, contact, enquiry)
+- [x] Rename `/events` to `/events-and-workshops` and add pricing blocks for events + bespoke retreats
+- [x] Expand `/about` content and split into banded background sections (use local `about.webp` imagery)
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval
 
