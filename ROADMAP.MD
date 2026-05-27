@@ -44,7 +44,7 @@
 - [x] Add admin reservation desk (view enquiries, confirm/cancel, internal notes)
 - [x] Use left-sidebar studio layout for bookings (continuity with blog)
 - [x] Use left-sidebar studio layout for availability blocks (blocks sidebar + large calendar)
-- [x] Availability studio: single-month full-width calendar view
+- [x] Availability studio: single-month responsive calendar view
 - [x] Extend Playwright system tests for enquiry submit + booking admin protection
 - [ ] Migrate existing markdown posts/blocks into Neon
 - [x] Remove TinaCMS + TinaCloud build tooling
