@@ -28,7 +28,7 @@ export default async function EditPostPage({
   if (!post) redirect(`${ADMIN_ENTRY_PATH}/posts`);
 
   return (
-    <div className="mx-auto w-full max-w-4xl">
+    <div className="w-full">
       <div className="text-xs uppercase tracking-[0.25em] text-foreground/60">Editing</div>
       <h1 className="mt-3 font-serif text-4xl leading-tight">{post.title}</h1>
 

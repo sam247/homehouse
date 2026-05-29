@@ -36,6 +36,7 @@
 - [x] Blog archive author strip positioned below the post grid
 - [x] Home page “Notes from the homestead” section (shows latest 3 blog posts)
 - [x] Home page retreat/workshop CTA strip between Journal and Hire sections
+- [x] Admin blog editor: floating prayer widget (random on refresh, tooltip meaning/focus, dismiss) + full-width responsive editor area
 - [x] Replace homepage + /reviews testimonials with real Google reviews (link to Google)
 - [x] Add booking_requests table (pending/confirmed/cancelled) for enquiries
 - [x] Add `/api/enquiry` to store enquiries and send Resend notifications/receipts
