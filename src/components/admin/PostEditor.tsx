@@ -95,11 +95,11 @@ function PrayerWidget() {
           <TooltipTrigger asChild>
             <button
               type="button"
-              className="text-left max-w-[240px] border border-border bg-background/70 backdrop-blur px-4 py-3 shadow-sm hover:bg-background/80 transition-colors"
+              className="text-left w-[min(18rem,calc(100vw-3rem))] border border-border bg-background/70 backdrop-blur px-5 py-4 shadow-sm hover:bg-background/80 transition-colors"
             >
-              <div className="text-sm font-serif leading-tight">{prayer.dhikr}</div>
+              <div className="text-base font-serif leading-tight">{prayer.dhikr}</div>
               {prayer.title ? (
-                <div className="mt-1 text-[11px] uppercase tracking-[0.22em] text-foreground/70">
+                <div className="mt-2 text-[11px] uppercase tracking-[0.22em] text-foreground/70">
                   {prayer.title}
                 </div>
               ) : null}
@@ -109,13 +109,13 @@ function PrayerWidget() {
             side="top"
             align="start"
             sideOffset={10}
-            className="max-w-[320px] whitespace-normal bg-background text-foreground border border-border px-4 py-3 shadow-md"
+            className="w-[min(20rem,calc(100vw-3rem))] whitespace-normal bg-background text-foreground border border-border px-5 py-4 shadow-md"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <div className="font-serif text-sm leading-tight">{prayer.dhikr}</div>
+                <div className="font-serif text-base leading-tight">{prayer.dhikr}</div>
                 {prayer.title ? (
-                  <div className="mt-1 text-[11px] uppercase tracking-[0.22em] text-foreground/70">
+                  <div className="mt-2 text-[11px] uppercase tracking-[0.22em] text-foreground/70">
                     {prayer.title}
                   </div>
                 ) : null}

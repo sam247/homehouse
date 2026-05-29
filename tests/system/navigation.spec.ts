@@ -3,7 +3,11 @@ import { test, expect } from "@playwright/test";
 test("home loads", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("header").getByRole("link", { name: "Home House Homestead" }).first()).toBeVisible();
-  await expect(page.getByRole("heading", { name: /Home is in/i })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /Wellness Retreat/i })).toBeVisible();
+  const jsonLd = await page.locator('script[type="application/ld+json"]').evaluateAll((els) =>
+    els.map((e) => e.textContent ?? ""),
+  );
+  expect(jsonLd.join(" ")).toContain("FAQPage");
 });
 
 test("/events redirects to /events-and-workshops", async ({ page }) => {

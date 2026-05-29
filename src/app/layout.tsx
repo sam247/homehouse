@@ -22,13 +22,20 @@ const cormorant = Cormorant_Garamond({
 });
 
 const SITE_URL = getSiteUrl();
-const LODGING_BUSINESS_JSON_LD = {
+const BUSINESS_ID = `${SITE_URL}/#homehouse-homestead`;
+const BUSINESS_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
+  "@type": ["LocalBusiness", "LodgingBusiness"],
+  "@id": BUSINESS_ID,
   name: SITE.name,
   url: SITE_URL,
   image: `${SITE_URL}${SITE.heroPoster}`,
   email: SITE.email,
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Norfolk",
+    addressCountry: "GB",
+  },
   sameAs: [
     "https://www.instagram.com/homehouse888",
     "https://www.google.com/search?kgmid=%2Fg%2F11ywlljc6j&q=Home%20House%20Homestead",
@@ -63,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
-        <SeoJsonLd data={LODGING_BUSINESS_JSON_LD} />
+        <SeoJsonLd data={BUSINESS_JSON_LD} />
         <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`} />
         <Script id="ga4">
           {`window.dataLayer = window.dataLayer || [];

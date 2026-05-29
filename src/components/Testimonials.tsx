@@ -38,9 +38,10 @@ function ReviewCard({ r }: { r: Review }) {
   );
 }
 
-export function Testimonials() {
+export function Testimonials({ headingTag = "h2" }: { headingTag?: "h2" | "h3" }) {
   // Duplicate the list so the marquee loops seamlessly
   const loop = [...REVIEWS, ...REVIEWS];
+  const Heading = headingTag;
 
   return (
     <section className="bg-background text-foreground py-24 md:py-32 overflow-hidden">
@@ -48,9 +49,9 @@ export function Testimonials() {
         <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6 reveal">
           Kind words
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl leading-tight reveal text-foreground">
+        <Heading className="font-serif text-4xl md:text-5xl leading-tight reveal text-foreground">
           From guests who&rsquo;ve stayed with us.
-        </h2>
+        </Heading>
         <a
           href={GOOGLE_REVIEWS_URL}
           target="_blank"

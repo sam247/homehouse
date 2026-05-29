@@ -39,14 +39,15 @@ export function HeroVideo() {
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
         <p className="text-xs uppercase tracking-[0.4em] text-foreground/80 mb-6 reveal">
-          Norfolk · Guest House & Homestead
+          Norfolk · Wellness retreat & countryside stay
         </p>
         <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl leading-[1.05] text-foreground max-w-4xl reveal">
-          Home is in <em className="text-accent not-italic font-normal">your heart.</em>
+          Wellness Retreat & Countryside Stay in Norfolk
         </h1>
         <p className="mt-8 max-w-xl text-base sm:text-lg font-light text-foreground/85 leading-relaxed reveal">
-          A peaceful countryside guest house nestled in the heart of the Norfolk
-          landscape. A space to come home to yourself — slowly, gently, in your own time.
+          Slow down, reconnect with nature, and enjoy a peaceful countryside retreat in rural
+          Norfolk. Home House Homestead offers bespoke stays and restorative escapes designed to
+          help you rest, recharge, and return home refreshed.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 reveal">
           <EnquiryDrawer

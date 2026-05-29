@@ -4,24 +4,29 @@ import { PageShell, Section, Zigzag } from "@/components/PageShell";
 import { HeroVideo } from "@/components/HeroVideo";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Testimonials } from "@/components/Testimonials";
-import { TrackedLink } from "@/components/TrackedLink";
+import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getPostsPage } from "@/lib/blog";
+import { REVIEWS } from "@/lib/reviews";
+import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
   house: "https://images.squarespace-cdn.com/content/v1/65b8fafefbcaa00609260091/06fd4543-bca8-49c6-a18c-477e7be6d903/BFF79E36-7628-446B-93E5-C9F4337EE353.jpg",
   interior1: "/photos/shed-bench.webp",
   garden: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80",
-  table: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80",
 };
 
 export const metadata: Metadata = {
-  title: "Home House Homestead — A peaceful Norfolk guest house",
+  title: {
+    absolute: "Wellness Retreat & Countryside Stay in Norfolk | Home House Homestead",
+  },
   description:
-    "A peaceful countryside guest house in the heart of Norfolk. Stays, retreats and workshops to help you slow down, rest and reconnect.",
+    "Escape to a peaceful wellness retreat in Norfolk. Enjoy bespoke countryside stays, nature, quiet reflection and restorative experiences at Home House Homestead.",
   openGraph: {
-    title: "Home House Homestead",
-    description: "Home is in your heart. A peaceful Norfolk homestead for rest and reconnection.",
+    title: "Wellness Retreat & Countryside Stay in Norfolk | Home House Homestead",
+    description:
+      "Escape to a peaceful wellness retreat in Norfolk. Enjoy bespoke countryside stays, nature, quiet reflection and restorative experiences at Home House Homestead.",
     images: [IMG.house],
     url: "/",
   },
@@ -31,39 +36,97 @@ export const metadata: Metadata = {
 };
 
 const offers = [
-  "A warm, character-filled flint farmhouse dating from the 1800s",
-  "Peaceful gardens, open fields, and wild spaces to explore",
-  "An experience of simple living, returning to what is essential",
-  "Optional home-cooked meals with organic, seasonal produce",
-  "Optional 1-to-1 sessions: Sufi healing, bodywork, breathwork, sound",
-  "A welcoming space for solo guests, couples, families and small groups",
+  "A character-filled flint farmhouse rooted in slower living",
+  "Quiet gardens, open fields, and wild edges to wander",
+  "Simple comforts, calm rooms, and space to read, rest, and breathe",
+  "Optional home-cooked meals with seasonal produce",
+  "Optional 1-to-1 sessions on request (breathwork, bodywork, sound)",
+  "A personal welcome for solo guests, couples, families and small groups",
 ];
+
+const FAQ = [
+  {
+    q: "What is Home House Homestead?",
+    a: "Home House Homestead is a peaceful countryside guest house and homestead in rural Norfolk. It’s a calm place for bespoke stays and quiet retreats, with personal hosting and space to slow down in nature.",
+  },
+  {
+    q: "Is Home House Homestead suitable for solo retreats?",
+    a: "Yes. Many guests come for solo retreats and quiet reflection. Stays are unhurried and flexible, with plenty of time for walking, reading, resting, and being outdoors.",
+  },
+  {
+    q: "How far is the homestead from Norwich?",
+    a: "We’re based in rural Norfolk, with Norwich as the nearest major city and rail hub. Travel time varies by route, and we’ll share clear directions and arrival details once you enquire.",
+  },
+  {
+    q: "What can I expect during my stay?",
+    a: "A warm farmhouse atmosphere, quiet rooms, and time in the gardens and surrounding countryside. Your stay is bespoke: you can keep it simple and restful, or request optional meals and 1-to-1 sessions.",
+  },
+  {
+    q: "Can I book a peaceful countryside retreat in Norfolk?",
+    a: "Yes. You can book a bespoke countryside stay at the homestead, and you can also explore scheduled retreats and gatherings when available. The best next step is to send a stay enquiry with your dates.",
+  },
+  {
+    q: "Is Home House Homestead open year-round?",
+    a: "Stays are available across much of the year, subject to availability and seasonal scheduling. If you’re planning a particular season, please enquire and we’ll confirm what’s possible for your dates.",
+  },
+] as const;
 
 export default async function HomePage() {
   const { posts } = await getPostsPage({ page: 1, pageSize: 3 });
+  const SITE_URL = getSiteUrl();
+  const BUSINESS_ID = `${SITE_URL}/#homehouse-homestead`;
+
+  const homeJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/#breadcrumb`,
+        itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` }],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/#faq`,
+        mainEntity: FAQ.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+      ...REVIEWS.slice(0, 5).map((r, idx) => ({
+        "@type": "Review",
+        "@id": `${SITE_URL}/#review-${idx + 1}`,
+        itemReviewed: { "@id": BUSINESS_ID },
+        author: { "@type": "Person", name: r.name },
+        reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+        reviewBody: r.text,
+      })),
+    ],
+  };
 
   return (
     <PageShell>
+      <SeoJsonLd data={homeJsonLd} />
       <HeroVideo />
       <div className="bg-[var(--cream)] text-[var(--deep)]">
         <Section className="text-center max-w-3xl">
           <p className="text-xs uppercase tracking-[0.4em] text-[var(--clay)] mb-6 reveal">
             Welcome
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl leading-tight reveal">
-            A space to breathe, slow down, and return to yourself.
-          </h2>
+          <p className="font-serif text-4xl md:text-5xl leading-tight reveal">
+            A peaceful homestead stay in the Norfolk countryside.
+          </p>
           <p className="mt-8 text-lg font-light text-[var(--deep)]/80 leading-relaxed reveal">
-            Rooted in simplicity and a symbiotic relationship with the earth and the natural
-            world, we gently move towards self-sufficiency and sustainability. A quiet sense
-            of connection, stillness, rest, and time to simply be.
+            Home House Homestead is a calm place to slow down, spend time outdoors, and enjoy a
+            quieter rhythm. Come for a restorative countryside stay, a solo retreat, or gentle
+            time with the people you love.
           </p>
         </Section>
       </div>
       <div className="bg-background text-foreground">
         <Zigzag
           eyebrow="What we offer"
-          title="A homestead, not a hotel."
+          title="A Homestead, Not a Hotel"
           image={IMG.house}
           body={
             <ul className="space-y-3">
@@ -80,58 +143,121 @@ export default async function HomePage() {
       <div className="bg-[var(--cream)] text-[var(--deep)]">
         <Zigzag
           reverse
-          eyebrow="The experience"
-          title="Wake to birdsong. Walk under the open sky."
+          eyebrow="Stays and retreats"
+          title="Wellness Retreats & Countryside Stays"
           image={IMG.garden}
           body={
             <>
               <p>
-                Wake to birdsong. Walk barefoot on the earth. Warm yourself in the first
-                sunbeams under the open sky. Or simply curl up with a cup of tea and rest.
+                For guests looking for a wellness retreat in Norfolk, we offer calm, bespoke stays
+                in a rural setting — time for walking, reading, quiet reflection, and being close
+                to nature.
               </p>
-              <p>Here, you are free to follow your own rhythm.</p>
+              <p>
+                You can enquire about a peaceful countryside retreat for yourself, or explore our{" "}
+                <Link href="/events-and-workshops" className="text-accent hover:underline">
+                  retreats and workshops in Norfolk
+                </Link>{" "}
+                when scheduled.
+              </p>
+              <p>
+                For accommodation details, see{" "}
+                <Link href="/stays" className="text-accent hover:underline">
+                  bespoke countryside stays at the homestead
+                </Link>{" "}
+                or{" "}
+                <Link href="#stay-enquiry" className="text-accent hover:underline">
+                  send a stay enquiry
+                </Link>{" "}
+                and we’ll reply personally.
+              </p>
             </>
           }
         />
       </div>
-      <Testimonials />
       <div className="bg-background text-foreground">
         <Section>
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="reveal">
-              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Perfect for</p>
-              <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-                Quiet, intentional time.
-              </h2>
-            </div>
+          <div className="max-w-3xl mx-auto text-center reveal">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Why guests choose us</p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+              Why Guests Choose Home House Homestead
+            </h2>
+            <p className="mt-6 text-foreground/75 font-light leading-relaxed">
+              It’s the quiet details: a personal welcome, a slower pace, and the Norfolk countryside
+              right outside the door. Guests often come for rest and return for the feeling of space.
+            </p>
+          </div>
+          <div className="mt-14 grid md:grid-cols-2 gap-12 items-start">
             <ul className="reveal grid gap-3 text-foreground/85 font-light">
               {[
-                "Rest and renewal",
-                "Slowing down and stepping out of the city",
-                "Nature lovers and countryside escapes",
-                "Those needing quiet, ease and calm",
-                "Solo retreats and quiet reflection",
-                "Sufi-spirit gatherings",
-                "Time alone or shared with loved ones",
-                "Creative or writing retreats",
-                "Gentle reconnection with nature and self",
+                "Peaceful rooms and unhurried mornings",
+                "Gardens, open fields, and simple time outdoors",
+                "Optional home-cooked meals prepared with care",
+                "A welcoming setting for solo retreats and quiet getaways",
+                "Support for repeat guests planning their next stay",
               ].map((p) => (
                 <li key={p} className="border-b border-border pb-3">
                   {p}
                 </li>
               ))}
             </ul>
+            <div className="reveal space-y-4 text-foreground/75 font-light leading-relaxed">
+              <p>
+                Read more in our{" "}
+                <Link href="/reviews" className="text-accent hover:underline">
+                  guest reviews
+                </Link>{" "}
+                or get in touch via our{" "}
+                <Link href="/contact" className="text-accent hover:underline">
+                  contact page
+                </Link>{" "}
+                if you’d like help choosing dates.
+              </p>
+              <p>
+                If you’ve stayed before, mention it in your enquiry — we’ll do our best to help you
+                find the right window for a return visit.
+              </p>
+            </div>
           </div>
         </Section>
+      </div>
+      <Testimonials headingTag="h3" />
+      <div className="bg-[var(--cream)] text-[var(--deep)]">
+        <Zigzag
+          eyebrow="Local area"
+          title="Explore the Norfolk Countryside"
+          image={IMG.interior1}
+          body={
+            <>
+              <p>
+                Home House Homestead is set in rural Norfolk — ideal for quiet walks, big skies, and
+                time close to wildlife. Many guests explore the{" "}
+                <strong className="font-normal">Norfolk Broads</strong>, coastal walks, and local
+                villages during their stay.
+              </p>
+              <p>
+                For inspiration, browse our{" "}
+                <Link href="/blog" className="text-accent hover:underline">
+                  journal notes from the homestead
+                </Link>{" "}
+                or take a look at the{" "}
+                <Link href="/gallery" className="text-accent hover:underline">
+                  photo gallery
+                </Link>{" "}
+                before you arrive.
+              </p>
+            </>
+          }
+        />
       </div>
       <div className="bg-[var(--cream)] text-[var(--deep)] border-y border-border">
         <Section>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="reveal">
               <p className="text-xs uppercase tracking-[0.3em] text-[var(--clay)] mb-4">Journal</p>
-              <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+              <h3 className="font-serif text-4xl md:text-5xl leading-tight">
                 Notes from the homestead.
-              </h2>
+              </h3>
               <p className="mt-5 text-[var(--deep)]/80 font-light max-w-xl">
                 Occasional reflections, seasonal notes, and quiet updates.
               </p>
@@ -189,72 +315,32 @@ export default async function HomePage() {
           </div>
         </Section>
       </div>
-      <div className="bg-[var(--deep)] text-[var(--cream)]">
-        <Section className="py-14 md:py-16">
-          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="reveal">
-              <p className="text-xs uppercase tracking-[0.3em] text-[var(--cream)]/80 mb-4">
-                Retreats & workshops
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl leading-tight max-w-2xl">
-                Planning a retreat or workshop?
-              </h2>
-              <p className="mt-5 text-[var(--cream)]/80 font-light max-w-2xl leading-relaxed">
-                Book the homestead for your next gathering and we’ll help you shape something quiet,
-                intentional, and nourishing.
-              </p>
+      <div className="bg-background text-foreground border-y border-border">
+        <Section className="py-20 md:py-24">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight reveal text-center">
+              Frequently Asked Questions
+            </h2>
+            <div className="mt-10 reveal">
+              <Accordion type="single" collapsible className="w-full">
+                {FAQ.map((f) => (
+                  <AccordionItem key={f.q} value={f.q}>
+                    <AccordionTrigger>{f.q}</AccordionTrigger>
+                    <AccordionContent className="text-foreground/75 font-light leading-relaxed">
+                      {f.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
-            <Button
-              asChild
-              className="rounded-none bg-[var(--cream)] text-[var(--deep)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
-            >
-              <TrackedLink
-                href="https://homehouse.org.uk/events-and-workshops"
-                event="cta_click"
-                params={{ placement: "home_retreat_strip", to: "/events-and-workshops" }}
-              >
-                Book a retreat
-              </TrackedLink>
-            </Button>
           </div>
         </Section>
       </div>
-      <div className="bg-[var(--cream)] text-[var(--deep)]">
-        <Section className="text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--clay)] mb-6 reveal">
-            Hire the space
-          </p>
-          <h2 className="font-serif text-4xl md:text-5xl leading-tight max-w-3xl mx-auto reveal">
-            Hire the homestead for workshops, retreats, community and events.
-          </h2>
-          <div className="mt-12 grid sm:grid-cols-3 gap-6 reveal">
-            {[IMG.interior1, IMG.garden, IMG.table].map((src, i) => (
-              <div key={i} className="aspect-[4/5] overflow-hidden rounded-sm">
-                <img src={src} alt="" loading="lazy" className="h-full w-full object-cover kenburns" />
-              </div>
-            ))}
-          </div>
-          <div className="mt-12">
-            <Button
-              asChild
-              className="rounded-none bg-[var(--deep)] text-[var(--cream)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
-            >
-            <TrackedLink
-              href="/events-and-workshops"
-              event="cta_click"
-              params={{ placement: "home_journal", to: "/events-and-workshops" }}
-            >
-              Explore events & workshops
-            </TrackedLink>
-            </Button>
-          </div>
-        </Section>
-      </div>
-      <section className="bg-background border-y border-border">
+      <section id="stay-enquiry" className="bg-background">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="font-serif text-4xl md:text-5xl reveal text-foreground">
+          <p className="font-serif text-4xl md:text-5xl reveal text-foreground">
             Come and have a bespoke stay tailored for you.
-          </h2>
+          </p>
           <p className="mt-6 text-foreground/75 font-light reveal">
             For individuals, small groups and families. We reply personally.
           </p>
@@ -263,7 +349,7 @@ export default async function HomePage() {
               source="home_bespoke_cta"
               trigger={
                 <Button className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 px-8 font-light tracking-[0.18em] uppercase text-xs">
-                  Book now
+                  Send a stay enquiry
                 </Button>
               }
             />
