@@ -35,6 +35,7 @@
 - [x] Author strip (Hawa) on archive and post pages
 - [x] Blog archive author strip positioned below the post grid
 - [x] Home page “Notes from the homestead” section (shows latest 3 blog posts)
+- [x] Home page retreat/workshop CTA strip between Journal and Hire sections
 - [x] Replace homepage + /reviews testimonials with real Google reviews (link to Google)
 - [x] Add booking_requests table (pending/confirmed/cancelled) for enquiries
 - [x] Add `/api/enquiry` to store enquiries and send Resend notifications/receipts

@@ -189,6 +189,36 @@ export default async function HomePage() {
           </div>
         </Section>
       </div>
+      <div className="bg-[var(--deep)] text-[var(--cream)]">
+        <Section className="py-14 md:py-16">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--cream)]/80 mb-4">
+                Retreats & workshops
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl leading-tight max-w-2xl">
+                Planning a retreat or workshop?
+              </h2>
+              <p className="mt-5 text-[var(--cream)]/80 font-light max-w-2xl leading-relaxed">
+                Book the homestead for your next gathering and we’ll help you shape something quiet,
+                intentional, and nourishing.
+              </p>
+            </div>
+            <Button
+              asChild
+              className="rounded-none bg-[var(--cream)] text-[var(--deep)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
+            >
+              <TrackedLink
+                href="https://homehouse.org.uk/events-and-workshops"
+                event="cta_click"
+                params={{ placement: "home_retreat_strip", to: "/events-and-workshops" }}
+              >
+                Book a retreat
+              </TrackedLink>
+            </Button>
+          </div>
+        </Section>
+      </div>
       <div className="bg-[var(--cream)] text-[var(--deep)]">
         <Section className="text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--clay)] mb-6 reveal">
