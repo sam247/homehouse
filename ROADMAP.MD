@@ -59,3 +59,4 @@
 - [x] Convert key local hero images to `next/image`
 - [x] Extend Playwright system tests for robots/sitemap/canonical regression coverage
 - [x] Refine homepage SEO (Norfolk retreat positioning, H2 hierarchy, internal links, FAQ + reviews schema)
+- [x] Add homepage retreat CTA strip between Local Area and Journal
