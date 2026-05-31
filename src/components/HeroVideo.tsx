@@ -41,10 +41,10 @@ export function HeroVideo() {
         <p className="text-xs uppercase tracking-[0.4em] text-foreground/80 mb-6 reveal">
           Norfolk · Wellness retreat & countryside stay
         </p>
-        <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl leading-[1.05] text-foreground max-w-5xl reveal">
+        <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl leading-[1.05] text-foreground max-w-6xl reveal">
           Wellness Retreat & Countryside Stay in Norfolk
         </h1>
-        <p className="mt-8 max-w-2xl text-base sm:text-lg font-light text-foreground/85 leading-relaxed reveal">
+        <p className="mt-8 max-w-3xl text-base sm:text-lg font-light text-foreground/85 leading-relaxed reveal">
           Slow down, reconnect with nature, and enjoy a peaceful countryside retreat in rural
           Norfolk. Home House Homestead offers bespoke stays and restorative escapes designed to
           help you rest, recharge, and return home refreshed.
