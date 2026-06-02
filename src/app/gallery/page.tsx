@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageShell, PageHero, Section } from "@/components/PageShell";
+import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 
 const photos = [
   { src: "/photos/garden-magnolia.webp", h: "tall" },
@@ -36,21 +36,22 @@ export default function GalleryPage() {
         title="A glimpse of the homestead."
         intro="The house, the land, the table, and quiet corners in between."
       />
-      <Section>
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-          {photos.map((p, i) => (
-            <div
-              key={i}
-              className={`mb-4 break-inside-avoid overflow-hidden rounded-sm reveal ${
-                p.h === "tall" ? "aspect-[3/4]" : "aspect-[4/3]"
-              }`}
-            >
-              <img src={p.src} alt="" loading="lazy" className="h-full w-full object-cover" />
-            </div>
-          ))}
-        </div>
-      </Section>
+      <Band variant="cream">
+        <Section>
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+            {photos.map((p, i) => (
+              <div
+                key={i}
+                className={`mb-4 break-inside-avoid overflow-hidden rounded-sm reveal ${
+                  p.h === "tall" ? "aspect-[3/4]" : "aspect-[4/3]"
+                }`}
+              >
+                <img src={p.src} alt="" loading="lazy" className="h-full w-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </Section>
+      </Band>
     </PageShell>
   );
 }
-

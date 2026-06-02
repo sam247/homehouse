@@ -59,6 +59,23 @@ export function PageHero({
   );
 }
 
+export function Band({
+  variant = "default",
+  children,
+  className = "",
+}: {
+  variant?: "default" | "cream";
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const theme =
+    variant === "cream"
+      ? "bg-background text-foreground [--background:var(--cream)] [--foreground:var(--deep)] [--card:var(--cream)] [--card-foreground:var(--deep)] [--popover:var(--cream)] [--popover-foreground:var(--deep)] [--secondary:var(--cream)] [--secondary-foreground:var(--deep)] [--muted:var(--cream)] [--muted-foreground:oklch(0.32_0.025_180_/_0.7)] [--border:oklch(0.32_0.025_180_/_0.18)] [--input:oklch(0.32_0.025_180_/_0.22)]"
+      : "bg-background text-foreground";
+
+  return <div className={`${theme} ${className}`}>{children}</div>;
+}
+
 export function Section({
   children,
   className = "",

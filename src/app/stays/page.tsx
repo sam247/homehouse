@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageShell, PageHero, Section } from "@/components/PageShell";
+import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Button } from "@/components/ui/button";
 
@@ -61,49 +61,50 @@ export default function StaysPage() {
         intro="Rooms are simple, warm and quiet. Stays are flexible — for a few nights of rest, a week of writing, or longer."
         image={IMG.hero}
       />
-      <Section>
-        <div className="grid md:grid-cols-3 gap-8">
-          {rooms.map((r) => (
-            <article key={r.name} className="reveal">
-              <div className="aspect-[4/5] overflow-hidden rounded-sm mb-5">
-                <img src={r.img} alt={r.name} loading="lazy" className="h-full w-full object-cover kenburns" />
-              </div>
-              <h3 className="font-serif text-2xl mb-2">{r.name}</h3>
-              <p className="text-foreground/75 font-light">{r.desc}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-      <Section className="border-t border-border">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="reveal">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">What’s included</p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-              Everything you need. Nothing in the way.
-            </h2>
-          </div>
-          <ul className="reveal grid gap-3">
-            {includes.map((i) => (
-              <li key={i} className="border-b border-border pb-3 text-foreground/85 font-light">
-                {i}
-              </li>
+      <Band variant="cream">
+        <Section>
+          <div className="grid md:grid-cols-3 gap-8">
+            {rooms.map((r) => (
+              <article key={r.name} className="reveal">
+                <div className="aspect-[4/5] overflow-hidden rounded-sm mb-5">
+                  <img src={r.img} alt={r.name} loading="lazy" className="h-full w-full object-cover kenburns" />
+                </div>
+                <h3 className="font-serif text-2xl mb-2">{r.name}</h3>
+                <p className="text-foreground/75 font-light">{r.desc}</p>
+              </article>
             ))}
-          </ul>
-        </div>
-        <div className="mt-16 text-center reveal">
-          <EnquiryDrawer
-            source="stays"
-            trigger={
-              <Button className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 px-8 font-light tracking-[0.18em] uppercase text-xs">
-                Book now
-              </Button>
-            }
-          />
-          <p className="mt-4 text-sm text-foreground/60">
-            We tailor pricing to your visit — please get in touch.
-          </p>
-        </div>
-      </Section>
+          </div>
+        </Section>
+      </Band>
+
+      <Band className="border-t border-border">
+        <Section>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">What’s included</p>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight">Everything you need. Nothing in the way.</h2>
+            </div>
+            <ul className="reveal grid gap-3">
+              {includes.map((i) => (
+                <li key={i} className="border-b border-border pb-3 text-foreground/85 font-light">
+                  {i}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mt-16 text-center reveal">
+            <EnquiryDrawer
+              source="stays"
+              trigger={
+                <Button className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 px-8 font-light tracking-[0.18em] uppercase text-xs">
+                  Book now
+                </Button>
+              }
+            />
+            <p className="mt-4 text-sm text-foreground/60">We tailor pricing to your visit — please get in touch.</p>
+          </div>
+        </Section>
+      </Band>
     </PageShell>
   );
 }
