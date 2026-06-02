@@ -250,23 +250,23 @@ export default async function HomePage() {
           }
         />
       </div>
-      <div className="bg-[var(--deep)] text-[var(--cream)]">
+      <div className="bg-[var(--cream)] text-[var(--deep)]">
         <Section className="py-14 md:py-16">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div className="reveal">
-              <p className="text-xs uppercase tracking-[0.3em] text-[var(--cream)]/80 mb-4">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--clay)] mb-4">
                 Retreats
               </p>
               <p className="font-serif text-3xl md:text-4xl leading-tight max-w-2xl">
                 Planning a retreat in Norfolk?
               </p>
-              <p className="mt-5 text-[var(--cream)]/80 font-light max-w-2xl leading-relaxed">
+              <p className="mt-5 text-[var(--deep)]/80 font-light max-w-2xl leading-relaxed">
                 Explore upcoming retreats and restorative gatherings at Home House Homestead.
               </p>
             </div>
             <Button
               asChild
-              className="rounded-none bg-[var(--cream)] text-[var(--deep)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
+              className="rounded-none bg-[var(--deep)] text-[var(--cream)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
             >
               <Link href="/events-and-workshops">Book a retreat</Link>
             </Button>

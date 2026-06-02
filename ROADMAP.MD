@@ -15,6 +15,7 @@
 - [x] Add JUST BE retreat listing (July/Aug/Sep 2026) to `/events-and-workshops`
 - [x] Expand `/about` content and split into banded background sections (use local `about.webp` imagery)
 - [x] Apply alternating background bands across public pages for readability
+- [x] Set homepage retreat CTA band to the light background
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval
 
