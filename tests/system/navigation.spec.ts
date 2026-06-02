@@ -97,10 +97,21 @@ test("canonical link is absolute", async ({ page }) => {
 });
 
 test("blocked dates are disabled", async ({ page }) => {
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  await page.route("**/api/availability**", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ blocks: [{ start: today, end: today }] }),
+    });
+  });
+
   await page.goto("/");
   await page.locator("header").getByRole("button", { name: "Book now" }).click();
   await page.getByRole("button", { name: "Select dates" }).click();
-  const day = page.getByRole("button", { name: /May 28/ });
+  const dayKey = await page.evaluate(() => new Date().toLocaleDateString());
+  const day = page.locator(`button[data-day="${dayKey}"]`);
   await expect(day).toBeDisabled();
 });
 
@@ -109,6 +120,16 @@ test("admin page responds", async ({ page }) => {
   expect(res?.ok()).toBeTruthy();
   expect(res?.headers()?.["x-robots-tag"] || "").toContain("noindex");
   await expect(page.locator("body")).toBeVisible();
+});
+
+test("admin auth rejects non-allowlisted email", async ({ request }) => {
+  const res = await request.post("/amanda/auth/request", {
+    form: { email: "hacker@example.com" },
+    maxRedirects: 0,
+  });
+  expect(res.status()).toBeGreaterThanOrEqual(300);
+  expect(res.status()).toBeLessThan(400);
+  expect(res.headers()["location"] || "").toMatch(/\/amanda\?error=not-allowed$/);
 });
 
 test("admin media upload is protected", async ({ request }) => {

@@ -1,10 +1,10 @@
 import crypto from "node:crypto";
 
 const SESSION_COOKIE = "homehouse_admin";
+const ALLOWLISTED_ADMIN_EMAIL = "amandahummingbird@gmail.com";
 
 export function getAllowlistedEmail() {
-  const raw = process.env.ADMIN_ALLOWLIST_EMAIL;
-  return raw ? raw.trim().toLowerCase() : null;
+  return ALLOWLISTED_ADMIN_EMAIL;
 }
 
 export function isEmailAllowed(email: string) {

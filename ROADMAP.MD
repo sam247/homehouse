@@ -46,6 +46,7 @@
 - [x] Use left-sidebar studio layout for bookings (continuity with blog)
 - [x] Use left-sidebar studio layout for availability blocks (blocks sidebar + large calendar)
 - [x] Extend Playwright system tests for enquiry submit + booking admin protection
+- [x] Restrict /amanda admin access to amandahummingbird@gmail.com only
 - [ ] Migrate existing markdown posts/blocks into Neon
 - [x] Remove TinaCMS + TinaCloud build tooling
 
