@@ -12,6 +12,7 @@
 - [x] Add GA4 (gtag) to head
 - [x] Add GA4 pageview + interaction events (SPA route changes, nav, contact, enquiry)
 - [x] Rename `/events` to `/events-and-workshops` and add pricing blocks for events + bespoke retreats
+- [x] Add JUST BE retreat listing (July/Aug/Sep 2026) to `/events-and-workshops`
 - [x] Expand `/about` content and split into banded background sections (use local `about.webp` imagery)
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval

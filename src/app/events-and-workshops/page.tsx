@@ -8,6 +8,7 @@ const IMG = {
   hero: "/photos/fields.webp",
   garden: "/photos/garden-magnolia.webp",
   table: "/photos/table-orchard.webp",
+  pond: "/photos/pond.webp",
 };
 
 export const metadata: Metadata = {
@@ -82,6 +83,32 @@ const retreatOptions = [
   },
 ];
 
+const justBeSpaceTo = [
+  "Rest and sleep deeply",
+  "Walk in nature",
+  "Read beneath the apple trees",
+  "Journal, pray, or meditate",
+  "Share stories around the fire",
+  "Enjoy wholesome homemade food",
+  "Sing, move, create",
+  "Or simply do nothing at all but sleep and eat",
+];
+
+const justBeFor = [
+  "The woman who is tired, worn out, and needs a rest",
+  "The woman longing to exhale",
+  "The woman craving simplicity, slowness, nature, warmth, and meaningful connection",
+  "The woman who works long days and never stops",
+  "The woman who spends all her time looking after her family and loved ones",
+  "The woman who wants to be with other women in an organic, natural environment with no agenda other than to just be together",
+  "The woman who longs to slow down enough to listen to her heart and deep inner wisdom",
+];
+
+const justBeOtherDates = [
+  "Wednesday 13th – Sunday 16th August 2026",
+  "Wednesday 17th – Sunday 20th September 2026",
+];
+
 const addOns = [
   "Additional 1–1 session — £90",
   "Sufi healing",
@@ -100,6 +127,161 @@ export default function EventsAndWorkshopsPage() {
         intro="Seasonal events, workshops, and bespoke retreats for women, held in the quiet rhythm of the Norfolk countryside."
         image={IMG.hero}
       />
+
+      <Section>
+        <div className="grid md:grid-cols-3 gap-10 md:gap-16 items-start">
+          <div className="md:col-span-2 reveal space-y-10">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Upcoming retreat</p>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight">JUST BE</h2>
+              <p className="mt-4 text-foreground/75 font-light text-lg">A women’s rest retreat</p>
+            </div>
+
+            <div className="space-y-4 text-foreground/80 font-light leading-relaxed">
+              <p>
+                Sometimes we need a few days away from daily life. A few gentle days to step away from the noise and
+                demands of everyday life and come HOME to yourself. Come HOME to your heart.
+              </p>
+              <p>
+                A space to rest. To breathe. To sleep deeply. To be nourished and cared for. To reconnect with
+                ourselves, nature, and softer rhythms.
+              </p>
+              <p>
+                JUST BE is a gentle women’s rest retreat here at Home House Homestead in the Norfolk countryside — a
+                retreat for women longing for space to simply be, without pressure, agenda, a schedule, or expectation.
+              </p>
+            </div>
+
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Space to</p>
+              <ul className="grid gap-3">
+                {justBeSpaceTo.map((i) => (
+                  <li key={i} className="border-b border-border pb-3 text-foreground/85 font-light">
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-4 text-foreground/80 font-light leading-relaxed">
+              <p>
+                Optional practices may organically arise throughout our days together: movement, breathwork, prayer,
+                dhikr, music, creativity, storytelling, and quiet reflection. And maybe none of it may arise depending
+                on the needs of the group. Everything is invitational. Everything soft.
+              </p>
+              <p>
+                This is not a retreat about fixing yourself. It is a space to soften, exhale, and come HOME to
+                yourself.
+              </p>
+              <p>
+                There is also an invitation for less online use and more presence, connection, nature, and real rest
+                during our days together — an opportunity to put your phone in a box for your stay if that feels like
+                something you’d like to do as an intention. You can of course have it at any point for women concerned
+                about children, families, and people they care for.
+              </p>
+            </div>
+
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">This retreat is for</p>
+              <ul className="grid gap-3">
+                {justBeFor.map((i) => (
+                  <li key={i} className="border-b border-border pb-3 text-foreground/85 font-light">
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <aside className="reveal border border-border p-8">
+            <div className="aspect-[16/10] overflow-hidden rounded-sm relative">
+              <Image
+                src={IMG.pond}
+                alt="Pond at Home House"
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover kenburns"
+              />
+            </div>
+            <h3 className="mt-8 font-serif text-2xl mb-6">Details</h3>
+            <div className="space-y-5 text-foreground/80 font-light">
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Dates</p>
+                <p>Wednesday 2nd July – Sunday 5th July 2026</p>
+                <p className="mt-1 text-sm text-foreground/70">Arrive from 4pm · Departure 4pm</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Group</p>
+                <p>A small intimate group each time</p>
+                <p className="mt-1 text-sm text-foreground/70">6 spaces available</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Accommodation</p>
+                <p>Shared twin rooms with single beds and shared bathroom</p>
+                <p className="mt-1 text-sm text-foreground/70">
+                  Extra 2 spaces in a bell tent (available once rooms are all booked — £395 per person)
+                </p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Meals</p>
+                <p>All meals included</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3">Pricing</p>
+                <div className="grid gap-3">
+                  <div className="border border-border p-5">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <p className="font-serif text-xl">Early Bird (before 1st June)</p>
+                      <p className="text-accent">£495</p>
+                    </div>
+                    <p className="mt-2 text-sm text-foreground/70">Per person</p>
+                  </div>
+                  <div className="border border-border p-5">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <p className="font-serif text-xl">Standard (after 1st June)</p>
+                      <p className="text-accent">£595</p>
+                    </div>
+                    <p className="mt-2 text-sm text-foreground/70">Per person</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Deposit</p>
+                <p>Your place is reserved upon receipt of a £150 non-refundable deposit (or full payment if preferred).</p>
+                <p className="mt-1 text-sm text-foreground/70">Remaining balance due by 25th June.</p>
+              </div>
+              <div className="border border-border p-5">
+                <p className="text-xs uppercase tracking-[0.25em] text-foreground/60 mb-2">Bank details</p>
+                <p className="text-sm text-foreground/80">Amanda Grady</p>
+                <p className="text-sm text-foreground/80">Sort Code 403509</p>
+                <p className="text-sm text-foreground/80">A/C 14285417</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Other dates</p>
+                <ul className="grid gap-2">
+                  {justBeOtherDates.map((d) => (
+                    <li key={d} className="text-sm text-foreground/75 font-light border-b border-border pb-2">
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <EnquiryDrawer
+                source="just_be_retreat"
+                trigger={
+                  <Button className="w-full rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground h-12 px-8 font-light tracking-[0.18em] uppercase text-xs">
+                    Enquire about JUST BE
+                  </Button>
+                }
+              />
+              <p className="text-sm text-foreground/60">
+                Please email or message Hawa once you have paid your deposit, or for any other questions.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </Section>
 
       <Section>
         <div className="grid md:grid-cols-3 gap-10 md:gap-16 items-start">
