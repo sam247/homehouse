@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { PageShell, PageHero, Zigzag, Section } from "@/components/PageShell";
 
 const IMG = {
-  hero: "/about.webp",
-  hawa: "/about.webp",
+  hero: "/author.webp",
+  hawa: "/author.webp",
   land: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600&q=80",
 };
 
@@ -79,10 +79,13 @@ export default function AboutPage() {
               In my search to fill it, I moved through years of seeking, at times in ways that were destructive. Addiction, disconnection, hedonism and a sense of inner emptiness became part of my experience, even whilst I continued to return, again and again, to my yoga practice.
             </p>
             <p>
+              From the outside, my life appeared full and blessed. Yet beneath the busyness, the friendships, and the experiences, my soul was quietly longing for something deeper—something that could not be found in the world alone.
+            </p>
+            <p>
               Everything began to change after a period of grief in my life when my step father died. What had been held beneath the surface for all my life til then began to rise, and I could no longer continue as I had been. This marked the beginning of a deeper journey into healing, awareness, and truth.
             </p>
             <p>
-              Over the years that followed, I immersed myself in many forms of healing and practice. Yoga, bodywork, ceremony, sound, meditation and transformational work all became part of my path, not as a career, but as a sincere attempt to heal my own heart and life.
+              Over the years that followed, I immersed myself in many forms of healing and practice. Yoga, breath work, bodywork, ceremony, sound, meditation and transformational work all became part of my path, not as a career, but as a sincere attempt to heal my own heart and life.
             </p>
           </div>
         </Section>
@@ -162,11 +165,13 @@ export default function AboutPage() {
             An invitation
           </p>
           <div className="space-y-5 font-light leading-relaxed reveal text-[var(--deep)]/80">
-            <p>From this place Divine Radiance begins to shine.</p>
-            <p>This is an ongoing journey. One of surrender, of unlearning, and of remembering.</p>
+            <p>From this place, Divine Radiance begins to shine.</p>
+            <p>This is an ongoing journey. one of surrender, unlearning, and remembering.</p>
             <p className="font-serif text-3xl text-[var(--deep)]">
               Be the empty cup.
             </p>
+            <p>A journey of returning home to the heart, where the Divine has always been waiting.</p>
+            <p>Remembering that true home lives within the heart.</p>
             <p>And it is an honour to walk alongside those who feel called.</p>
           </div>
         </Section>

@@ -4,15 +4,10 @@ import ReactMarkdown from "react-markdown";
 import { AuthorStrip } from "@/components/AuthorStrip";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getPostBySlug } from "@/lib/blog";
 import { getSiteUrl } from "@/lib/siteUrl";
 
-export const revalidate = 3600;
-
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = await getAllPosts();
-  return posts.map((p) => ({ slug: p.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,

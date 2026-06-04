@@ -11,6 +11,8 @@ import { getPostsPage } from "@/lib/blog";
 import { REVIEWS } from "@/lib/reviews";
 import { getSiteUrl } from "@/lib/siteUrl";
 
+export const dynamic = "force-dynamic";
+
 const IMG = {
   house: "https://images.squarespace-cdn.com/content/v1/65b8fafefbcaa00609260091/06fd4543-bca8-49c6-a18c-477e7be6d903/BFF79E36-7628-446B-93E5-C9F4337EE353.jpg",
   interior1: "/photos/shed-bench.webp",
@@ -39,8 +41,7 @@ const offers = [
   "A character-filled flint farmhouse rooted in slower living",
   "Quiet gardens, open fields, and wild edges to wander",
   "Simple comforts, calm rooms, and space to read, rest, and breathe",
-  "Optional home-cooked meals with seasonal produce",
-  "Optional 1-to-1 sessions on request (breathwork, bodywork, sound)",
+  "Optional 1-to-1 sessions on request (Sufi Healing and mentorship, breathwork, bodywork, sound bathing)",
   "A personal welcome for solo guests, couples, families and small groups",
 ];
 
@@ -114,12 +115,17 @@ export default async function HomePage() {
             Welcome
           </p>
           <p className="font-serif text-4xl md:text-5xl leading-tight reveal">
-            A peaceful homestead stay in the Norfolk countryside.
+            Slow down, reconnect with nature, and enjoy a peaceful countryside retreat in rural Norfolk.
           </p>
           <p className="mt-8 text-lg font-light text-[var(--deep)]/80 leading-relaxed reveal">
-            Home House Homestead is a calm place to slow down, spend time outdoors, and enjoy a
-            quieter rhythm. Come for a restorative countryside stay, a solo retreat, or gentle
-            time with the people you love.
+            Home House Homestead offers bespoke stays and restorative retreats designed to help you
+            rest, recharge, and return home refreshed.
+          </p>
+          <p className="mt-6 text-lg font-light text-[var(--deep)]/80 leading-relaxed reveal">
+            A home away from home.
+          </p>
+          <p className="mt-2 text-lg font-light text-[var(--deep)]/80 leading-relaxed reveal">
+            A place to remember the home that lives within your heart.
           </p>
         </Section>
       </div>
@@ -129,14 +135,20 @@ export default async function HomePage() {
           title="A Homestead, Not a Hotel"
           image={IMG.house}
           body={
-            <ul className="space-y-3">
-              {offers.map((o) => (
-                <li key={o} className="flex gap-3">
-                  <span className="text-accent mt-2 w-4 h-px shrink-0" />
-                  <span>{o}</span>
-                </li>
-              ))}
-            </ul>
+            <>
+              <p>
+                A home away from home where you can be cared for and deeply nourished as you remember that
+                true home lives within the heart.
+              </p>
+              <ul className="space-y-3 mt-6">
+                {offers.map((o) => (
+                  <li key={o} className="flex gap-3">
+                    <span className="text-accent mt-2 w-4 h-px shrink-0" />
+                    <span>{o}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
           }
         />
       </div>
@@ -149,9 +161,14 @@ export default async function HomePage() {
           body={
             <>
               <p>
-                For guests looking for a wellness retreat in Norfolk, we offer calm, bespoke stays
-                in a rural setting — time for walking, reading, quiet reflection, and being close
-                to nature.
+                A gentle invitation to step away from the busyness of everyday life for a peaceful bespoke
+                countryside stay or small wellness retreat designed to help you slow down, rest deeply,
+                reconnect with nature, and remember the feeling of home within yourself.
+              </p>
+              <p>
+                Whether you&apos;re seeking solitude, creative space, quiet reflection, or simply a few days
+                of being cared for, you&apos;ll find a warm welcome waiting for you here in the Norfolk
+                countryside.
               </p>
               <p>
                 You can enquire about a peaceful countryside retreat for yourself, or explore our{" "}
@@ -183,18 +200,22 @@ export default async function HomePage() {
               Why Guests Choose Home House Homestead
             </h2>
             <p className="mt-6 text-foreground/75 font-light leading-relaxed">
-              It’s the quiet details: a personal welcome, a slower pace, and the Norfolk countryside
-              right outside the door. Guests often come for rest and return for the feeling of space.
+              More than a place to stay, Home House offers a personal welcome, a slower pace, space to rest,
+              reconnect, and remember the feeling of home within yourself.
+            </p>
+            <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+              Guests often arrive seeking rest and leave feeling nourished, grounded, and renewed.
             </p>
           </div>
           <div className="mt-14 grid md:grid-cols-2 gap-12 items-start">
             <ul className="reveal grid gap-3 text-foreground/85 font-light">
               {[
                 "Peaceful rooms and unhurried mornings",
-                "Gardens, open fields, and simple time outdoors",
-                "Optional home-cooked meals prepared with care",
-                "A welcoming setting for solo retreats and quiet getaways",
-                "Support for repeat guests planning their next stay",
+                "Gardens, open fields, and space to reconnect with nature",
+                "Home-cooked meals prepared with love and care",
+                "A welcoming setting for solo retreats, creative retreats and quiet getaways",
+                "Space to slow down, exhale fully, reflect, and simply be",
+                "Many guests return for the sense of home, connection, and ease they find here",
               ].map((p) => (
                 <li key={p} className="border-b border-border pb-3">
                   {p}

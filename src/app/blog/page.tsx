@@ -4,7 +4,7 @@ import { AuthorStrip } from "@/components/AuthorStrip";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { getPostsPage } from "@/lib/blog";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   searchParams,

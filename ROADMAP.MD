@@ -16,6 +16,8 @@
 - [x] Expand `/about` content and split into banded background sections (use local `about.webp` imagery)
 - [x] Apply alternating background bands across public pages for readability
 - [x] Set homepage retreat CTA band to the light background
+- [x] Add Hearth Project page + nav link (`/hearth-project`)
+- [x] Refresh Home/About/Stays copy to latest client voice (June 2026)
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval
 
@@ -58,7 +60,7 @@
 - [x] Add `metadataBase` and global Open Graph/Twitter defaults
 - [x] Add `robots.txt` and `sitemap.xml` metadata routes
 - [x] Add JSON-LD (LodgingBusiness + BlogPosting + Breadcrumbs)
-- [x] Switch blog routes to ISR (remove `force-dynamic`, add `revalidate` + `generateStaticParams`)
+- [x] Switch blog routes to `force-dynamic` for admin-driven, always-live updates
 - [x] Migrate fonts to `next/font` and remove Google Fonts stylesheet injection
 - [x] Convert key local hero images to `next/image`
 - [x] Extend Playwright system tests for robots/sitemap/canonical regression coverage

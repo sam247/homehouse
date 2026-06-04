@@ -44,12 +44,13 @@ const rooms = [
 ];
 
 const includes = [
-  "Breakfast prepared with care, often from the garden",
-  "Optional home-cooked dinners with seasonal organic produce",
-  "Access to gardens, fields and wild spaces",
-  "Optional 1-to-1 sessions on request",
-  "Quiet rooms for rest, reading and reflection",
+  "Breakfast prepared with care, often using produce from the garden",
+  "Home-cooked meals with seasonal organic produce",
+  "Access to gardens, fields, surrounding countryside and Norfolk beaches",
+  "Optional 1-to-1 sessions and treatments by arrangement",
+  "Quiet spaces for rest, reading, writing, reflection, meditation and prayer",
   "Tea, herbal infusions and homemade sourdough",
+  "A slower pace of life and a warm personal welcome",
 ];
 
 export default function StaysPage() {
@@ -58,11 +59,14 @@ export default function StaysPage() {
       <PageHero
         eyebrow="Stays"
         title="A bespoke stay, tailored to you."
-        intro="Rooms are simple, warm and quiet. Stays are flexible — for a few nights of rest, a week of writing, or longer."
+        intro="Rooms are simple, comfortable, and peaceful. Stays are flexible - for a few nights of rest, a week of creative work or reflection, or longer."
         image={IMG.hero}
       />
       <Band variant="cream">
         <Section>
+          <p className="reveal text-foreground/75 font-light leading-relaxed max-w-2xl mb-10">
+            Enjoy the slower rhythm of life at Home House Homestead.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {rooms.map((r) => (
               <article key={r.name} className="reveal">
