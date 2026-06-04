@@ -13,7 +13,7 @@ test("home loads", async ({ page }) => {
 test("/events redirects to /events-and-workshops", async ({ page }) => {
   await page.goto("/events");
   await expect(page).toHaveURL(/\/events-and-workshops$/);
-  await expect(page.getByRole("heading", { name: "Garden of Sound" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "JUST BE" })).toBeVisible();
 });
 
 test("desktop navigation works", async ({ page }) => {
@@ -21,6 +21,13 @@ test("desktop navigation works", async ({ page }) => {
   await page.locator("header").getByRole("link", { name: "About" }).first().click();
   await expect(page).toHaveURL(/\/about$/);
   await expect(page.getByRole("heading", { name: "A journey home." })).toBeVisible();
+});
+
+test("hearth project page loads from header nav", async ({ page }) => {
+  await page.goto("/");
+  await page.locator("header").getByRole("link", { name: "Hearth Project" }).first().click();
+  await expect(page).toHaveURL(/\/hearth-project$/);
+  await expect(page.getByRole("heading", { name: "A space to slow down, reconnect, and remember you belong." })).toBeVisible();
 });
 
 test("mobile menu closes after navigation", async ({ page }) => {
@@ -88,6 +95,7 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog/hello-world</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/hearth-project</loc>");
 });
 
 test("canonical link is absolute", async ({ page }) => {

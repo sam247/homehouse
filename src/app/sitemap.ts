@@ -7,6 +7,7 @@ const STATIC_ROUTES = [
   "/about",
   "/stays",
   "/events-and-workshops",
+  "/hearth-project",
   "/gallery",
   "/reviews",
   "/contact",
@@ -28,4 +29,3 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticEntries, ...postEntries];
 }
-
