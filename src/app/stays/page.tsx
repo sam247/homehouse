@@ -4,10 +4,10 @@ import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Button } from "@/components/ui/button";
 
 const IMG = {
-  hero: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=80",
-  room1: "https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1200&q=80",
-  room2: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=80",
-  room3: "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&q=80",
+  hero: "/photos/stays/image6.jpeg",
+  room1: "/photos/stays/image0.jpeg",
+  room2: "/photos/stays/image1.jpeg",
+  room3: "/photos/stays/image2.jpeg",
 };
 
 export const metadata: Metadata = {
@@ -24,6 +24,16 @@ export const metadata: Metadata = {
     canonical: "/stays",
   },
 };
+
+const stayGallery = [
+  "/photos/stays/image0.jpeg",
+  "/photos/stays/image1.jpeg",
+  "/photos/stays/image2.jpeg",
+  "/photos/stays/image3.jpeg",
+  "/photos/stays/image4.jpeg",
+  "/photos/stays/image5.jpeg",
+  "/photos/stays/image6.jpeg",
+];
 
 const rooms = [
   {
@@ -76,6 +86,32 @@ export default function StaysPage() {
                 <h3 className="font-serif text-2xl mb-2">{r.name}</h3>
                 <p className="text-foreground/75 font-light">{r.desc}</p>
               </article>
+            ))}
+          </div>
+        </Section>
+      </Band>
+
+      <Band className="border-t border-border">
+        <Section>
+          <div className="grid md:grid-cols-2 gap-12 items-end">
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Gallery</p>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight">A glimpse of the rooms.</h2>
+            </div>
+            <p className="reveal text-foreground/75 font-light leading-relaxed">
+              A few photographs from around the house — each stay is simple, warm, and made for rest.
+            </p>
+          </div>
+          <div className="mt-12 columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+            {stayGallery.map((src, i) => (
+              <div key={src} className="mb-4 break-inside-avoid overflow-hidden rounded-sm reveal">
+                <img
+                  src={src}
+                  alt={`Home House stay photo ${i + 1}`}
+                  loading="lazy"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             ))}
           </div>
         </Section>

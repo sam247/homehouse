@@ -15,7 +15,7 @@
 - [x] Add JUST BE retreat listing (July/Aug/Sep 2026) + updated pricing (July special rate; early bird before 27 July for Aug/Sep)
 - [x] Expand `/about` content and split into banded background sections (use local `about.webp` imagery)
 - [x] Apply alternating background bands across public pages for readability
-- [x] Set homepage retreat CTA band to the light background
+- [x] Set homepage retreat CTA band to sage green background
 - [x] Add Hearth Project page + nav link (`/hearth-project`)
 - [x] Update `/stays` with local room photo gallery (June 2026 photos)
 - [x] Refresh Home/About/Stays copy to latest client voice (June 2026)
