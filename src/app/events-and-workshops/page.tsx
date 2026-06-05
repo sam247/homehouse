@@ -221,7 +221,7 @@ export default function EventsAndWorkshopsPage() {
                   <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Accommodation</p>
                   <p>Shared twin rooms with single beds and shared bathroom</p>
                   <p className="mt-1 text-sm text-foreground/70">
-                    Extra 2 spaces in a bell tent (available once rooms are all booked)
+                    Extra 2 spaces in a bell tent (available once rooms are all booked — £395 per person)
                   </p>
                 </div>
                 <div>
@@ -264,9 +264,7 @@ export default function EventsAndWorkshopsPage() {
                     Your place is reserved upon receipt of a £150 non-refundable deposit (or full payment if
                     preferred).
                   </p>
-                  <p className="mt-1 text-sm text-foreground/70">
-                    Remaining balance due 2 weeks before arrival (25th June for the July retreat).
-                  </p>
+                  <p className="mt-1 text-sm text-foreground/70">Remaining balance due by 25th June.</p>
                 </div>
                 <div className="border border-border p-5">
                   <p className="text-xs uppercase tracking-[0.25em] text-foreground/60 mb-2">Bank details</p>
