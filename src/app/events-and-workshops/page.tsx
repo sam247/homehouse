@@ -230,6 +230,10 @@ export default function EventsAndWorkshopsPage() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3">Pricing</p>
+                  <p className="text-sm text-foreground/70 font-light leading-relaxed mb-3">
+                    I’m offering women who want to come a special rate of £355 for the retreat. August and September
+                    will be the original rate. Early bird before 27th July for both.
+                  </p>
                   <div className="grid gap-3">
                     <div className="border border-border p-5">
                       <div className="flex items-baseline justify-between gap-4">
