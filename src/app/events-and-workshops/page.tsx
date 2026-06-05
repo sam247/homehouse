@@ -221,7 +221,7 @@ export default function EventsAndWorkshopsPage() {
                   <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Accommodation</p>
                   <p>Shared twin rooms with single beds and shared bathroom</p>
                   <p className="mt-1 text-sm text-foreground/70">
-                    Extra 2 spaces in a bell tent (available once rooms are all booked — £395 per person)
+                    Extra 2 spaces in a bell tent (available once rooms are all booked)
                   </p>
                 </div>
                 <div>
@@ -233,17 +233,24 @@ export default function EventsAndWorkshopsPage() {
                   <div className="grid gap-3">
                     <div className="border border-border p-5">
                       <div className="flex items-baseline justify-between gap-4">
-                        <p className="font-serif text-xl">Early Bird (before 1st June)</p>
-                        <p className="text-accent">£495</p>
+                        <p className="font-serif text-xl">July retreat (special rate)</p>
+                        <p className="text-accent">£355</p>
                       </div>
-                      <p className="mt-2 text-sm text-foreground/70">Per person</p>
+                      <p className="mt-2 text-sm text-foreground/70">Wednesday 2nd – Sunday 5th July 2026</p>
                     </div>
                     <div className="border border-border p-5">
                       <div className="flex items-baseline justify-between gap-4">
-                        <p className="font-serif text-xl">Standard (after 1st June)</p>
-                        <p className="text-accent">£595</p>
+                        <p className="font-serif text-xl">August retreat</p>
+                        <p className="text-accent">£495 / £595</p>
                       </div>
-                      <p className="mt-2 text-sm text-foreground/70">Per person</p>
+                      <p className="mt-2 text-sm text-foreground/70">Early bird before 27th July</p>
+                    </div>
+                    <div className="border border-border p-5">
+                      <div className="flex items-baseline justify-between gap-4">
+                        <p className="font-serif text-xl">September retreat</p>
+                        <p className="text-accent">£495 / £595</p>
+                      </div>
+                      <p className="mt-2 text-sm text-foreground/70">Early bird before 27th July</p>
                     </div>
                   </div>
                 </div>
@@ -253,7 +260,9 @@ export default function EventsAndWorkshopsPage() {
                     Your place is reserved upon receipt of a £150 non-refundable deposit (or full payment if
                     preferred).
                   </p>
-                  <p className="mt-1 text-sm text-foreground/70">Remaining balance due by 25th June.</p>
+                  <p className="mt-1 text-sm text-foreground/70">
+                    Remaining balance due 2 weeks before arrival (25th June for the July retreat).
+                  </p>
                 </div>
                 <div className="border border-border p-5">
                   <p className="text-xs uppercase tracking-[0.25em] text-foreground/60 mb-2">Bank details</p>
