@@ -271,7 +271,7 @@ export default async function HomePage() {
           }
         />
       </div>
-      <div className="bg-[var(--cream)] text-[var(--deep)]">
+      <div className="bg-[var(--sage)] text-[var(--deep)]">
         <Section className="py-14 md:py-16">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div className="reveal">
