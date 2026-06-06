@@ -61,12 +61,13 @@ const weekendMayInclude = [
 ];
 
 const forYoungAdultsWho = [
-  "Feel overwhelmed or disconnected",
-  "Struggle with unhealthy habits or addictive patterns",
-  "Spend too much time online or on screens",
-  "Feel anxious, isolated or lost in modern life",
-  "Are searching for meaning, direction or belonging",
-  "Long for a slower and more grounded way of living",
+  "You Feel overwhelmed or disconnected",
+  "You struggle with unhealthy habits or addictive patterns",
+  "You spend too much time online or on screens",
+  "You feel anxious, isolated or lost in everyday life",
+  "You are searching for deeper connections, meaning, purpose, direction or belonging",
+  "You Long for a slower and more grounded way of living",
+  "You do not need to “have it all together” to come.",
 ];
 
 export default function HearthProjectPage() {
@@ -207,7 +208,7 @@ export default function HearthProjectPage() {
             <div className="reveal space-y-6">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Who is this for?</p>
-                <h2 className="font-serif text-4xl md:text-5xl leading-tight">You don’t need to have it all together.</h2>
+                <h2 className="font-serif text-4xl md:text-5xl leading-tight">This is for you if:</h2>
               </div>
               <ul className="grid gap-3">
                 {forYoungAdultsWho.map((i) => (
@@ -217,7 +218,7 @@ export default function HearthProjectPage() {
                 ))}
               </ul>
               <p className="text-foreground/80 font-light leading-relaxed">
-                You do not need to “have it all together” to come.
+                You are welcomed just as you are.
               </p>
             </div>
 
@@ -290,4 +291,3 @@ export default function HearthProjectPage() {
     </PageShell>
   );
 }
-
