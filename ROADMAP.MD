@@ -19,7 +19,9 @@
 - [x] Add Hearth Project page + nav link (`/hearth-project`)
 - [x] Update `/stays` with local room photo gallery (June 2026 photos)
 - [x] Refresh Home/About/Stays copy to latest client voice (June 2026)
+- [x] Update `/about` with Vision, Mission and Values copy (June 2026)
 - [x] Update Hearth Project “Who is this for?” copy (June 2026)
+- [x] Add Community page + nav link (`/community`)
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval
 

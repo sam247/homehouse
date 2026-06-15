@@ -20,6 +20,7 @@ export const NAV = [
   { to: "/about", label: "About" },
   { to: "/stays", label: "Stays" },
   { to: "/events-and-workshops", label: "Events & Workshops" },
+  { to: "/community", label: "Community" },
   { to: "/hearth-project", label: "Hearth Project" },
   { to: "/reviews", label: "Reviews" },
   { to: "/gallery", label: "Gallery" },

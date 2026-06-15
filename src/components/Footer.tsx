@@ -63,7 +63,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/events-and-workshops" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/events-and-workshops", label: "Community gatherings", menu: "footer" })}>
+              <Link href="/community" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/community", label: "Community gatherings", menu: "footer" })}>
                 Community gatherings
               </Link>
             </li>

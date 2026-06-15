@@ -30,6 +30,13 @@ test("hearth project page loads from header nav", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "A space to slow down, reconnect, and remember you belong." })).toBeVisible();
 });
 
+test("community page loads from header nav", async ({ page }) => {
+  await page.goto("/");
+  await page.locator("header").getByRole("link", { name: "Community" }).first().click();
+  await expect(page).toHaveURL(/\/community$/);
+  await expect(page.getByRole("heading", { level: 1, name: "The Home House Community Gatherings" })).toBeVisible();
+});
+
 test("mobile menu closes after navigation", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
@@ -96,6 +103,7 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog/hello-world</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/hearth-project</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/community</loc>");
 });
 
 test("canonical link is absolute", async ({ page }) => {
