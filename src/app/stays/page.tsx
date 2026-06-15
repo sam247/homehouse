@@ -4,10 +4,10 @@ import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Button } from "@/components/ui/button";
 
 const IMG = {
-  hero: "/photos/stays/image6.jpeg",
-  room1: "/photos/stays/image0.jpeg",
-  room2: "/photos/stays/image1.jpeg",
-  room3: "/photos/stays/image2.jpeg",
+  hero: "/photos/stays/front_of_house/IMG_9931.jpeg",
+  room1: "/photos/stays/single_bedroom_bathroom/IMG_8880.jpeg",
+  room2: "/photos/stays/single_bedroom_bathroom/IMG_8884.jpeg",
+  room3: "/photos/stays/single_bedroom_bathroom/IMG_8888.jpeg",
 };
 
 export const metadata: Metadata = {
@@ -26,10 +26,18 @@ export const metadata: Metadata = {
 };
 
 const stayGallery = [
-  "/photos/stays/image0.jpeg",
-  "/photos/stays/image1.jpeg",
-  "/photos/stays/image2.jpeg",
-  "/photos/stays/image3.jpeg",
+  "/photos/stays/front_of_house/IMG_9931.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8879.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8880.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8881.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8882.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8883.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8884.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8885.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8886.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8887.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8888.jpeg",
+  "/photos/stays/single_bedroom_bathroom/IMG_8889.jpeg",
   "/photos/stays/image4.jpeg",
   "/photos/stays/image5.jpeg",
   "/photos/stays/image6.jpeg",
@@ -38,18 +46,18 @@ const stayGallery = [
 const rooms = [
   {
     img: IMG.room1,
-    name: "Garden room",
-    desc: "A bright, simple room overlooking the herb garden. Best for solo guests or couples seeking quiet.",
+    name: "Peaceful bedroom",
+    desc: "A simple, restful room with soft light and space to properly slow down.",
   },
   {
     img: IMG.room2,
-    name: "Field room",
-    desc: "A warm double room with views across open Norfolk fields and morning light.",
+    name: "Home comforts",
+    desc: "Thoughtful details, calm interiors, and a warm atmosphere that helps you settle in gently.",
   },
   {
     img: IMG.room3,
-    name: "Family loft",
-    desc: "A flexible space suitable for small families or a pair travelling together.",
+    name: "Private bathroom",
+    desc: "Clean, comfortable facilities that keep your stay easy, practical, and relaxed.",
   },
 ];
 
@@ -99,7 +107,8 @@ export default function StaysPage() {
               <h2 className="font-serif text-4xl md:text-5xl leading-tight">A glimpse of the rooms.</h2>
             </div>
             <p className="reveal text-foreground/75 font-light leading-relaxed">
-              A few photographs from around the house — each stay is simple, warm, and made for rest.
+              A few photographs from around the house, bedroom, and bathroom spaces - each stay is simple, warm, and
+              made for rest.
             </p>
           </div>
           <div className="mt-12 columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">

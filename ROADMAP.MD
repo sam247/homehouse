@@ -18,6 +18,7 @@
 - [x] Set homepage retreat CTA band to sage green background
 - [x] Add Hearth Project page + nav link (`/hearth-project`)
 - [x] Update `/stays` with local room photo gallery (June 2026 photos)
+- [x] Add new June 2026 stay photo folders into relevant `/stays` sections
 - [x] Refresh Home/About/Stays copy to latest client voice (June 2026)
 - [x] Update `/about` with Vision, Mission and Values copy (June 2026)
 - [x] Update Hearth Project “Who is this for?” copy (June 2026)
