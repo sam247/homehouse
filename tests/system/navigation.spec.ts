@@ -124,6 +124,17 @@ test("retreat spoke pages load", async ({ page }) => {
   ).toBeVisible();
 });
 
+test("norfolk holidays page loads", async ({ page }) => {
+  await page.goto("/norfolk-holidays");
+  await expect(
+    page.getByRole("heading", { name: "Norfolk holidays for guests who want a slower, quieter stay." }),
+  ).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+    "href",
+    /http:\/\/localhost:3000\/norfolk-holidays$/,
+  );
+});
+
 test("robots.txt and sitemap.xml render", async ({ request }) => {
   const robots = await request.get("/robots.txt");
   expect(robots.ok()).toBeTruthy();
@@ -141,6 +152,7 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/hearth-project</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/community</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/norfolk-holidays</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/womens-retreats-norfolk</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/solo-retreats-norfolk</loc>");
 });

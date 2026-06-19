@@ -53,7 +53,11 @@ export default async function BlogIndexPage({
             <Link href="/retreats" className="text-accent hover:underline">
               retreats in Norfolk
             </Link>{" "}
-            page or browse the guides below for solo retreats, women&apos;s retreats, and countryside stay planning.
+            page, compare{" "}
+            <Link href="/norfolk-holidays" className="text-accent hover:underline">
+              quieter Norfolk holidays
+            </Link>
+            , or browse the guides below for solo retreats, women&apos;s retreats, and countryside stay planning.
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((p) => (

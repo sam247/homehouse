@@ -6,6 +6,7 @@ const STATIC_ROUTES = [
   "/",
   "/about",
   "/stays",
+  "/norfolk-holidays",
   "/retreats",
   "/retreats/womens-retreats-norfolk",
   "/retreats/solo-retreats-norfolk",

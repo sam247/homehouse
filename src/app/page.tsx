@@ -182,7 +182,11 @@ export default async function HomePage() {
                 <Link href="/stays" className="text-accent hover:underline">
                   bespoke countryside stays at the homestead
                 </Link>{" "}
-                or{" "}
+                , explore{" "}
+                <Link href="/norfolk-holidays" className="text-accent hover:underline">
+                  quieter Norfolk holidays
+                </Link>
+                , or{" "}
                 <Link href="#stay-enquiry" className="text-accent hover:underline">
                   send a stay enquiry
                 </Link>{" "}

@@ -110,6 +110,10 @@ export default function RetreatsPage() {
                 <Link href="/events-and-workshops" className="text-accent hover:underline">
                   upcoming events and workshops
                 </Link>
+                . If you are also comparing quieter travel options, visit{" "}
+                <Link href="/norfolk-holidays" className="text-accent hover:underline">
+                  Norfolk holidays
+                </Link>
                 . If you want help deciding, send an enquiry and we&apos;ll guide you.
               </p>
             </div>

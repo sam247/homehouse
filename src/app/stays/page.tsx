@@ -76,7 +76,11 @@ export default function StaysPage() {
               <Link href="/retreats" className="text-accent hover:underline">
                 Retreats
               </Link>
-              .
+              . If you are exploring broader travel ideas, our{" "}
+              <Link href="/norfolk-holidays" className="text-accent hover:underline">
+                Norfolk holidays guide
+              </Link>{" "}
+              compares quiet countryside breaks with retreat-style stays.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -105,6 +109,10 @@ export default function StaysPage() {
               guided or themed experience, explore{" "}
               <Link href="/events-and-workshops" className="text-accent hover:underline">
                 upcoming retreats and workshops
+              </Link>
+              . If you are comparing broader slow-travel options, see{" "}
+              <Link href="/norfolk-holidays" className="text-accent hover:underline">
+                Norfolk holidays
               </Link>
               .
             </p>

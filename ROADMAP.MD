@@ -83,3 +83,6 @@
 - [x] Add Phase 2 retreat spoke pages for women’s, solo, private, and rest retreat intent
 - [x] Add first search-led content cluster for retreat planning and Norfolk stay intent
 - [x] Expand sitemap and regression coverage for Phase 2 retreat pages
+- [x] Add `/norfolk-holidays` landing page for broader quiet-travel and accommodation intent
+- [x] Add Phase 3 content cluster around quiet weekend breaks, digital detox, homestead retreat, and peaceful Norfolk holidays
+- [x] Strengthen internal linking between home, stays, retreats, blog, and the new Norfolk holidays page
