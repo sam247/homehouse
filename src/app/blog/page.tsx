@@ -44,10 +44,17 @@ export default async function BlogIndexPage({
       <PageHero
         eyebrow="Blog"
         title="Notes from the homestead."
-        intro="Occasional reflections, seasonal notes, and updates."
+        intro="Search-led guides, seasonal notes, and practical articles on retreats, stays, and slower countryside living."
       />
       <Band variant="cream">
         <Section>
+          <div className="mb-12 reveal max-w-3xl text-foreground/75 font-light leading-relaxed">
+            Looking for a place to start? Explore our main{" "}
+            <Link href="/retreats" className="text-accent hover:underline">
+              retreats in Norfolk
+            </Link>{" "}
+            page or browse the guides below for solo retreats, women&apos;s retreats, and countryside stay planning.
+          </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((p) => (
               <article key={p.slug} className="reveal border border-border overflow-hidden">

@@ -112,6 +112,18 @@ test("retreats page loads", async ({ page }) => {
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /http:\/\/localhost:3000\/retreats$/);
 });
 
+test("retreat spoke pages load", async ({ page }) => {
+  await page.goto("/retreats/womens-retreats-norfolk");
+  await expect(
+    page.getByRole("heading", { name: "Women's retreats in Norfolk for rest, softness, and reconnection." }),
+  ).toBeVisible();
+
+  await page.goto("/retreats/solo-retreats-norfolk");
+  await expect(
+    page.getByRole("heading", { name: "Solo retreats in Norfolk for quiet time, rest, and reflection." }),
+  ).toBeVisible();
+});
+
 test("robots.txt and sitemap.xml render", async ({ request }) => {
   const robots = await request.get("/robots.txt");
   expect(robots.ok()).toBeTruthy();
@@ -129,6 +141,8 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/hearth-project</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/community</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/womens-retreats-norfolk</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/solo-retreats-norfolk</loc>");
 });
 
 test("canonical link is absolute", async ({ page }) => {

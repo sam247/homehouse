@@ -4,6 +4,7 @@ import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Button } from "@/components/ui/button";
+import { RETREAT_PAGES } from "@/lib/retreatPages";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
@@ -11,29 +12,6 @@ const IMG = {
   table: "/photos/table-orchard.webp",
   pond: "/photos/pond.webp",
 };
-
-const retreatTypes = [
-  {
-    title: "Women's retreats in Norfolk",
-    body:
-      "Small-group and intimate retreat experiences for women seeking deep rest, softness, time in nature, and meaningful connection.",
-  },
-  {
-    title: "Solo retreats",
-    body:
-      "Quiet stays for women or solo guests who want space to read, walk, pray, journal, breathe, and step back from everyday demands.",
-  },
-  {
-    title: "Private retreats and small groups",
-    body:
-      "Bespoke retreat stays for friends, sisters, or small private groups who want a slower, more personal countryside setting.",
-  },
-  {
-    title: "Restorative countryside stays",
-    body:
-      "A gentle alternative to a hotel break, with nourishing meals, calm rooms, and time to settle into the rhythm of the homestead.",
-  },
-] as const;
 
 const faq = [
   {
@@ -176,12 +154,24 @@ export default function RetreatsPage() {
             </p>
           </div>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {retreatTypes.map((item) => (
-              <article key={item.title} className="reveal border border-border p-8">
-                <h3 className="font-serif text-2xl leading-tight">{item.title}</h3>
-                <p className="mt-4 text-foreground/75 font-light leading-relaxed">{item.body}</p>
+            {RETREAT_PAGES.map((item) => (
+              <article key={item.slug} className="reveal border border-border p-8">
+                <h3 className="font-serif text-2xl leading-tight">{item.navLabel}</h3>
+                <p className="mt-4 text-foreground/75 font-light leading-relaxed">{item.metadataDescription}</p>
+                <div className="mt-6">
+                  <Link href={`/retreats/${item.slug}`} className="text-sm text-accent hover:underline">
+                    Explore this retreat page
+                  </Link>
+                </div>
               </article>
             ))}
+          </div>
+          <div className="mt-10 reveal text-sm font-light text-foreground/70">
+            Want practical planning advice as well? Visit the{" "}
+            <Link href="/blog" className="text-accent hover:underline">
+              blog and retreat guides
+            </Link>
+            .
           </div>
         </Section>
       </Band>

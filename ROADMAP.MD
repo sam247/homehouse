@@ -80,3 +80,6 @@
 - [x] Launch `/retreats` hub page for Norfolk retreat intent
 - [x] Reposition `/stays` for guest house and retreat accommodation search intent
 - [x] Strengthen retreat internal linking across home, events, footer, sitemap, and system tests
+- [x] Add Phase 2 retreat spoke pages for women’s, solo, private, and rest retreat intent
+- [x] Add first search-led content cluster for retreat planning and Norfolk stay intent
+- [x] Expand sitemap and regression coverage for Phase 2 retreat pages
