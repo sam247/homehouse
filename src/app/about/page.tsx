@@ -160,6 +160,144 @@ export default function AboutPage() {
       </div>
 
       <div className="bg-[var(--cream)] text-[var(--deep)] border-t border-border">
+        <Section className="max-w-4xl">
+          <p className="text-xs uppercase tracking-[0.4em] text-[var(--clay)] mb-6 reveal">
+            Home House Homestead vision and mission
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl leading-tight reveal">
+            What Home House is here to hold.
+          </h2>
+          <div className="mt-12 grid gap-12 md:grid-cols-2">
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--clay)] mb-4">Vision</p>
+              <div className="space-y-5 font-light leading-relaxed text-[var(--deep)]/80">
+                <p>
+                  My vision is to cultivate Home House Homestead as a living sanctuary where people can slow down,
+                  reconnect with themselves, one another, nature, and the Divine, and remember who they truly are
+                  beneath the noise and demands of modern life.
+                </p>
+                <p>
+                  I envision a place where healing, belonging, community, stewardship, learning, and devotion naturally
+                  arise through meaningful relationships with the land, with each other, and with God. A place where
+                  people gather around fires, share food and stories, work with the rhythms of nature, and experience
+                  the sacred woven through everyday life.
+                </p>
+                <p>
+                  Through retreats, healing experiences, community gatherings, and The Hearth Project, I seek to support
+                  people of all ages in discovering deeper connection, purpose, wellbeing, and authentic expression. I
+                  envision Home House becoming a thriving centre for healing, education, regeneration, sustainable
+                  living and community, supported by a dedicated team and rooted in love, service, and stewardship.
+                </p>
+                <p>
+                  My vision is to create a legacy that continues long after I am gone. A place where future generations
+                  can come to learn, heal, grow, belong, and remember their connection to the Creator, to the natural
+                  world, and to one another.
+                </p>
+                <p>
+                  Above all, I envision Home House as a place of remembrance: a sanctuary where people come home to
+                  themselves, and in doing so, come home to God.
+                </p>
+              </div>
+            </div>
+
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--clay)] mb-4">Mission</p>
+              <div className="space-y-5 font-light leading-relaxed text-[var(--deep)]/80">
+                <p>
+                  My mission is to create spaces where people can slow down, reconnect with themselves, nature,
+                  community, and the Divine, and remember who they truly are beneath the noise, expectations, and
+                  busyness of modern life.
+                </p>
+                <p>
+                  Through healing, retreats, workshops, programs, mentoring, community gatherings, and connection to the
+                  land, I support people in returning to their hearts, trusting their inner guidance, and living in
+                  greater alignment with their authentic nature and purpose.
+                </p>
+                <p>
+                  I believe healing happens naturally when people feel safe, seen, connected, and supported. Rather than
+                  fixing people, I create environments where remembrance, belonging, and transformation can emerge
+                  organically through relationship with self, others, nature, and God.
+                </p>
+                <p>
+                  I stand for community, stewardship, devotion, and sacred living. My intention is to leave a legacy of
+                  places, experiences, and communities where future generations can reconnect with what truly matters
+                  and remember their place within the greater web of life.
+                </p>
+                <p>
+                  My mission is to create spaces of healing, belonging, and remembrance where people can reconnect with
+                  themselves, nature, community, and the Divine, and return to the truth of who they are.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      <div className="bg-background text-foreground border-t border-border">
+        <Section>
+          <div className="max-w-3xl reveal">
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">My top three values</p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">Devotion, belonging, and stewardship.</h2>
+          </div>
+
+          <div className="mt-12 grid gap-10 md:grid-cols-3 items-start">
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.35em] text-foreground/60">01</p>
+              <h3 className="mt-3 font-serif text-2xl leading-tight">Devotion</h3>
+              <div className="mt-6 space-y-4 font-light leading-relaxed text-foreground/80">
+                <p>
+                  I value living in a conscious relationship with Allah and the sacredness of life. I desire for every
+                  aspect of my life and work to be an expression of prayer, presence, gratitude, and service.
+                </p>
+                <p className="text-xs uppercase tracking-[0.3em] text-foreground/60">How my vision aligns</p>
+                <p>
+                  Home House Homestead is rooted in creating spaces where people can reconnect with themselves, nature,
+                  and the Divine. Through retreats, healing, community, and time on the land, I aim to support people
+                  in remembering the sacredness of life and their connection to something greater than themselves.
+                </p>
+              </div>
+            </div>
+
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.35em] text-foreground/60">02</p>
+              <h3 className="mt-3 font-serif text-2xl leading-tight">Belonging</h3>
+              <div className="mt-6 space-y-4 font-light leading-relaxed text-foreground/80">
+                <p>
+                  I value authentic connection, community, love, and the experience of being truly seen, heard, and
+                  accepted. I believe healing can naturally occur when people feel safe enough to be themselves and
+                  connected enough to know they belong.
+                </p>
+                <p className="text-xs uppercase tracking-[0.3em] text-foreground/60">How my vision aligns</p>
+                <p>
+                  Home House exists to bring people together around shared meals, stories, community gatherings,
+                  retreats, and meaningful experiences. My vision is to create a place where people feel welcomed,
+                  supported, connected, and part of something larger than themselves.
+                </p>
+              </div>
+            </div>
+
+            <div className="reveal">
+              <p className="text-xs uppercase tracking-[0.35em] text-foreground/60">03</p>
+              <h3 className="mt-3 font-serif text-2xl leading-tight">Stewardship</h3>
+              <div className="mt-6 space-y-4 font-light leading-relaxed text-foreground/80">
+                <p>
+                  I value caring for people, land, resources, and life with responsibility, respect, and love. I
+                  believe we are all guardians of what has been entrusted to us by God and that our role is to nurture
+                  and protect what supports future generations.
+                </p>
+                <p className="text-xs uppercase tracking-[0.3em] text-foreground/60">How my vision aligns</p>
+                <p>
+                  Home House Homestead is not simply a business but a living sanctuary. Through caring for the land,
+                  supporting healing, developing the Hearth Project, and building a sustainable legacy, I hope to create
+                  something that serves people long after I am gone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      <div className="bg-[var(--cream)] text-[var(--deep)] border-t border-border">
         <Section className="text-center max-w-3xl">
           <p className="text-xs uppercase tracking-[0.4em] text-[var(--clay)] mb-6 reveal">
             An invitation

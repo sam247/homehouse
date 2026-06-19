@@ -291,8 +291,17 @@ export default function EventsAndWorkshopsPage() {
                     </Button>
                   }
                 />
+                <Button
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  className="w-full rounded-none bg-[#635bff] text-white hover:bg-[#635bff] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs disabled:opacity-100 disabled:cursor-not-allowed"
+                >
+                  Pay with Stripe
+                </Button>
                 <p className="text-sm text-foreground/60">
-                  Please email or message Hawa once you have paid your deposit, or for any other questions.
+                  Online Stripe payments for retreats are coming soon. For now, please email or message Hawa once you
+                  have paid your deposit, or for any other questions.
                 </p>
               </div>
             </aside>
@@ -544,8 +553,17 @@ export default function EventsAndWorkshopsPage() {
                     Book tickets
                   </Button>
                 </a>
+                <Button
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  className="w-full rounded-none bg-[#635bff] text-white hover:bg-[#635bff] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs disabled:opacity-100 disabled:cursor-not-allowed"
+                >
+                  Pay with Stripe
+                </Button>
                 <p className="text-sm text-foreground/60">
-                  Questions before booking? Use the enquiry button below and we’ll come back to you.
+                  Online Stripe payments for events are coming soon. Questions before booking? Use the enquiry button
+                  below and we’ll come back to you.
                 </p>
               </div>
             </aside>
