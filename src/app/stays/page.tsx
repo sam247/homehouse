@@ -25,24 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-const stayGallery = [
-  "/photos/stays/front_of_house/IMG_9931.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8879.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8880.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8881.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8882.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8883.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8884.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8885.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8886.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8887.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8888.jpeg",
-  "/photos/stays/single_bedroom_bathroom/IMG_8889.jpeg",
-  "/photos/stays/image4.jpeg",
-  "/photos/stays/image5.jpeg",
-  "/photos/stays/image6.jpeg",
-];
-
 const rooms = [
   {
     img: IMG.room1,
@@ -105,35 +87,6 @@ export default function StaysPage() {
               <p className="border-b border-border pb-3 text-foreground/85 font-light">Children under 5: free</p>
               <p className="border-b border-border pb-3 text-foreground/85 font-light">Children 5 - 12: £35</p>
               <p className="border-b border-border pb-3 text-foreground/85 font-light">Teens 13 - 17: £60</p>
-            </div>
-          </div>
-        </Section>
-      </Band>
-
-      <Band className="border-t border-border">
-        <Section>
-          <div className="grid md:grid-cols-2 gap-12 items-end">
-            <div className="reveal">
-              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Gallery</p>
-              <h2 className="font-serif text-4xl md:text-5xl leading-tight">A glimpse of the rooms.</h2>
-            </div>
-            <p className="reveal text-foreground/75 font-light leading-relaxed">
-              A few photographs from around the house, bedroom, and bathroom spaces - each stay is simple, warm, and
-              made for rest.
-            </p>
-          </div>
-          <div className="mt-12 overflow-x-auto pb-4">
-            <div className="flex snap-x snap-mandatory gap-4">
-            {stayGallery.map((src, i) => (
-                <div key={src} className="min-w-full snap-center overflow-hidden rounded-sm reveal">
-                <img
-                  src={src}
-                  alt={`Home House stay photo ${i + 1}`}
-                  loading="lazy"
-                    className="aspect-[4/3] h-auto w-full object-cover"
-                />
-              </div>
-            ))}
             </div>
           </div>
         </Section>

@@ -24,6 +24,7 @@
 - [x] Update Hearth Project “Who is this for?” copy (June 2026)
 - [x] Add Community page + nav link (`/community`)
 - [x] Refresh `/stays` room names, pricing copy and gallery scroller (June 2026)
+- [x] Remove `/stays` room gallery section for now (June 2026)
 - [x] Add placeholder Stripe payment CTAs to `/events-and-workshops` right-hand panels (June 2026)
 - [ ] Visual parity check against `LOVABLE_BUILD/`
 - [ ] Delete `LOVABLE_BUILD/` after parity approval
