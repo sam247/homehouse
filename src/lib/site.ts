@@ -30,5 +30,5 @@ export const NAV = [
 ] as const;
 
 export const HEADER_NAV = NAV.filter(
-  (n) => n.to !== "/blog" && n.to !== "/gallery" && n.to !== "/contact",
+  (n) => n.to !== "/about" && n.to !== "/blog" && n.to !== "/gallery" && n.to !== "/contact",
 );
