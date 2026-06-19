@@ -75,3 +75,8 @@
 - [x] Refine homepage SEO (Norfolk retreat positioning, H2 hierarchy, internal links, FAQ + reviews schema)
 - [x] Add homepage retreat CTA strip between Local Area and Journal
 - [x] Increase homepage hero copy width for readability
+- [x] Add Phase 1 legacy redirects for old Squarespace paths (`/home`, `/contact-1`, `/testimonials`, `/hhh-mentorships`)
+- [x] Add canonical production host enforcement via `src/proxy.ts`
+- [x] Launch `/retreats` hub page for Norfolk retreat intent
+- [x] Reposition `/stays` for guest house and retreat accommodation search intent
+- [x] Strengthen retreat internal linking across home, events, footer, sitemap, and system tests

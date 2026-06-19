@@ -19,6 +19,7 @@ export const PHOTOS = {
 export const NAV = [
   { to: "/about", label: "About" },
   { to: "/stays", label: "Stays" },
+  { to: "/retreats", label: "Retreats" },
   { to: "/events-and-workshops", label: "Events & Workshops" },
   { to: "/community", label: "Community" },
   { to: "/hearth-project", label: "Hearth Project" },

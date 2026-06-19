@@ -172,10 +172,10 @@ export default async function HomePage() {
               </p>
               <p>
                 You can enquire about a peaceful countryside retreat for yourself, or explore our{" "}
-                <Link href="/events-and-workshops" className="text-accent hover:underline">
-                  retreats and workshops in Norfolk
+                <Link href="/retreats" className="text-accent hover:underline">
+                  Norfolk retreats page
                 </Link>{" "}
-                when scheduled.
+                to compare private retreats, solo stays, and scheduled experiences.
               </p>
               <p>
                 For accommodation details, see{" "}
@@ -282,14 +282,15 @@ export default async function HomePage() {
                 Planning a retreat in Norfolk?
               </p>
               <p className="mt-5 text-[var(--deep)]/80 font-light max-w-2xl leading-relaxed">
-                Explore upcoming retreats and restorative gatherings at Home House Homestead.
+                Explore the retreat options at Home House Homestead, from scheduled gatherings to quieter private
+                retreat stays.
               </p>
             </div>
             <Button
               asChild
               className="rounded-none bg-[var(--deep)] text-[var(--cream)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
             >
-              <Link href="/events-and-workshops">Book a retreat</Link>
+              <Link href="/retreats">Explore retreats</Link>
             </Button>
           </div>
         </Section>

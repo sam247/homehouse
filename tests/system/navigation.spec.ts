@@ -16,6 +16,22 @@ test("/events redirects to /events-and-workshops", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "JUST BE" })).toBeVisible();
 });
 
+test("legacy marketing URLs redirect to current destinations", async ({ page }) => {
+  await page.goto("/contact-1");
+  await expect(page).toHaveURL(/\/contact$/);
+  await expect(page.getByRole("heading", { name: "Get in touch." })).toBeVisible();
+
+  await page.goto("/testimonials");
+  await expect(page).toHaveURL(/\/reviews$/);
+  await expect(page.getByRole("heading", { name: "Words from our guests." })).toBeVisible();
+
+  await page.goto("/hhh-mentorships");
+  await expect(page).toHaveURL(/\/retreats$/);
+  await expect(
+    page.getByRole("heading", { name: "Retreats in Norfolk for rest, reconnection, and slower living." }),
+  ).toBeVisible();
+});
+
 test("desktop navigation works", async ({ page }) => {
   await page.goto("/");
   await page.locator("header").getByRole("link", { name: "About" }).first().click();
@@ -88,6 +104,14 @@ test("blog list and post page render", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Hello world" })).toBeVisible();
 });
 
+test("retreats page loads", async ({ page }) => {
+  await page.goto("/retreats");
+  await expect(
+    page.getByRole("heading", { name: "Retreats in Norfolk for rest, reconnection, and slower living." }),
+  ).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /http:\/\/localhost:3000\/retreats$/);
+});
+
 test("robots.txt and sitemap.xml render", async ({ request }) => {
   const robots = await request.get("/robots.txt");
   expect(robots.ok()).toBeTruthy();
@@ -104,6 +128,7 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog/hello-world</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/hearth-project</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/community</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/retreats</loc>");
 });
 
 test("canonical link is absolute", async ({ page }) => {

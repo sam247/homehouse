@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Button } from "@/components/ui/button";
@@ -151,6 +152,17 @@ export default function EventsAndWorkshopsPage() {
                   JUST BE is a gentle women’s rest retreat here at Home House Homestead in the Norfolk countryside — a
                   retreat for women longing for space to simply be, without pressure, agenda, a schedule, or
                   expectation.
+                </p>
+                <p>
+                  Looking for a private or accommodation-led retreat rather than a scheduled date? Visit{" "}
+                  <Link href="/retreats" className="text-accent hover:underline">
+                    Retreats
+                  </Link>{" "}
+                  or browse{" "}
+                  <Link href="/stays" className="text-accent hover:underline">
+                    Stays
+                  </Link>
+                  .
                 </p>
               </div>
 

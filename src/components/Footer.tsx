@@ -53,13 +53,13 @@ export function Footer() {
           </p>
           <ul className="space-y-2 text-sm font-light">
             <li>
-              <Link href="/events-and-workshops" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/events-and-workshops", label: "Retreats & workshops", menu: "footer" })}>
-                Retreats & workshops
+              <Link href="/retreats" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/retreats", label: "Retreats in Norfolk", menu: "footer" })}>
+                Retreats in Norfolk
               </Link>
             </li>
             <li>
-              <Link href="/events-and-workshops" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/events-and-workshops", label: "Hire the homestead", menu: "footer" })}>
-                Hire the homestead
+              <Link href="/events-and-workshops" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/events-and-workshops", label: "Events & workshops", menu: "footer" })}>
+                Events & workshops
               </Link>
             </li>
             <li>

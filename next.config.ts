@@ -2,7 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return [{ source: "/events", destination: "/events-and-workshops", permanent: true }];
+    return [
+      { source: "/events", destination: "/events-and-workshops", permanent: true },
+      { source: "/home", destination: "/", permanent: true },
+      { source: "/contact-1", destination: "/contact", permanent: true },
+      { source: "/testimonials", destination: "/reviews", permanent: true },
+      { source: "/hhh-mentorships", destination: "/retreats", permanent: true },
+      { source: "/new-page", destination: "/retreats", permanent: true },
+      { source: "/new-page-1", destination: "/community", permanent: true },
+    ];
   },
   async rewrites() {
     return [

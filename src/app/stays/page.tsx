@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { Button } from "@/components/ui/button";
@@ -11,12 +12,12 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Stays — Home House Homestead",
+  title: "Norfolk Guest House Stays & Retreat Accommodation",
   description:
-    "Bespoke stays in a peaceful Norfolk farmhouse. Solo guests, couples, families and small groups welcome.",
+    "Peaceful guest house stays in rural Norfolk for solo guests, couples, families, and small retreat groups at Home House Homestead.",
   openGraph: {
-    title: "Stays — Home House Homestead",
-    description: "Bespoke stays in a peaceful Norfolk farmhouse.",
+    title: "Norfolk Guest House Stays & Retreat Accommodation",
+    description: "Peaceful guest house stays in rural Norfolk at Home House Homestead.",
     images: [IMG.hero],
     url: "/stays",
   },
@@ -58,15 +59,26 @@ export default function StaysPage() {
     <PageShell>
       <PageHero
         eyebrow="Stays"
-        title="A bespoke stay, tailored to you."
-        intro="Rooms are simple, comfortable, and peaceful. Stays are flexible - for a few nights of rest, a week of creative work or reflection, or longer."
+        title="Peaceful guest house stays in rural Norfolk."
+        intro="Stay at Home House Homestead for a quiet countryside break, retreat accommodation, or a slower few days of rest, reflection, and fresh air."
         image={IMG.hero}
       />
       <Band variant="cream">
         <Section>
-          <p className="reveal text-foreground/75 font-light leading-relaxed max-w-2xl mb-10">
-            Enjoy the slower rhythm of life at Home House Homestead.
-          </p>
+          <div className="reveal max-w-3xl space-y-5 text-foreground/75 font-light leading-relaxed mb-10">
+            <p>
+              Home House Homestead offers guest house stays in the Norfolk countryside for solo guests, couples,
+              families, and small groups looking for a more personal alternative to a hotel.
+            </p>
+            <p>
+              Some guests book a simple countryside break. Others stay as part of a private retreat, scheduled event,
+              or restorative few days away from everyday life. If you are mainly looking for retreat options, visit{" "}
+              <Link href="/retreats" className="text-accent hover:underline">
+                Retreats
+              </Link>
+              .
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {rooms.map((r) => (
               <article key={r.name} className="reveal">
@@ -79,7 +91,7 @@ export default function StaysPage() {
             ))}
           </div>
           <div className="reveal mt-12 border-t border-border pt-10">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Prices for stays</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Guest house rates</p>
             <div className="grid gap-4 md:grid-cols-2">
               <p className="border-b border-border pb-3 text-foreground/85 font-light">
                 Adults 18+ per person: £75, all meals included
@@ -88,6 +100,14 @@ export default function StaysPage() {
               <p className="border-b border-border pb-3 text-foreground/85 font-light">Children 5 - 12: £35</p>
               <p className="border-b border-border pb-3 text-foreground/85 font-light">Teens 13 - 17: £60</p>
             </div>
+            <p className="mt-6 max-w-2xl text-sm text-foreground/70 font-light leading-relaxed">
+              These stays work well for quiet weekends, family breaks, and retreat accommodation. If you want a more
+              guided or themed experience, explore{" "}
+              <Link href="/events-and-workshops" className="text-accent hover:underline">
+                upcoming retreats and workshops
+              </Link>
+              .
+            </p>
           </div>
         </Section>
       </Band>
@@ -97,7 +117,9 @@ export default function StaysPage() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="reveal">
               <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">What’s included</p>
-              <h2 className="font-serif text-4xl md:text-5xl leading-tight">Everything you need. Nothing in the way.</h2>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+                Everything you need for a slower Norfolk stay.
+              </h2>
             </div>
             <ul className="reveal grid gap-3">
               {includes.map((i) => (
@@ -117,6 +139,13 @@ export default function StaysPage() {
               }
             />
             <p className="mt-4 text-sm text-foreground/60">Please get in touch to arrange your stay.</p>
+            <p className="mt-2 text-sm text-foreground/60">
+              Want a retreat-led stay instead? Visit{" "}
+              <Link href="/retreats" className="text-accent hover:underline">
+                our Norfolk retreats page
+              </Link>
+              .
+            </p>
           </div>
         </Section>
       </Band>
