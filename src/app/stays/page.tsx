@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 
 const IMG = {
   hero: "/photos/stays/front_of_house/IMG_9931.jpeg",
-  room1: "/photos/stays/single_bedroom_bathroom/IMG_8880.jpeg",
-  room2: "/photos/stays/single_bedroom_bathroom/IMG_8884.jpeg",
-  room3: "/photos/stays/single_bedroom_bathroom/IMG_8888.jpeg",
+  room1: "/photos/stays/image5.jpeg",
+  room2: "/photos/stays/single_bedroom_bathroom/IMG_8881.jpeg",
+  room3: "/photos/stays/single_bedroom_bathroom/IMG_8881.jpeg",
 };
 
 export const metadata: Metadata = {
@@ -46,18 +46,18 @@ const stayGallery = [
 const rooms = [
   {
     img: IMG.room1,
-    name: "Peaceful bedroom",
-    desc: "A simple, restful room with soft light and space to properly slow down.",
+    name: "The Rose Room",
+    desc: "A space to soften, open, and receive. The Rose Room can be set as a double, twin or triple bed.",
   },
   {
     img: IMG.room2,
-    name: "Home comforts",
-    desc: "Thoughtful details, calm interiors, and a warm atmosphere that helps you settle in gently.",
+    name: "The Lavender Room",
+    desc: "A space for rest, restoration and peaceful sleep. The Lavender Room can be set as a double, twin or triple bed.",
   },
   {
     img: IMG.room3,
-    name: "Private bathroom",
-    desc: "Clean, comfortable facilities that keep your stay easy, practical, and relaxed.",
+    name: "The Elderflower Room",
+    desc: "A space for wisdom, resilience, and connection to the land. The Elderflower Room can be set as a double or twin.",
   },
 ];
 
@@ -96,6 +96,17 @@ export default function StaysPage() {
               </article>
             ))}
           </div>
+          <div className="reveal mt-12 border-t border-border pt-10">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Prices for stays</p>
+            <div className="grid gap-4 md:grid-cols-2">
+              <p className="border-b border-border pb-3 text-foreground/85 font-light">
+                Adults 18+ per person: £75, all meals included
+              </p>
+              <p className="border-b border-border pb-3 text-foreground/85 font-light">Children under 5: free</p>
+              <p className="border-b border-border pb-3 text-foreground/85 font-light">Children 5 - 12: £35</p>
+              <p className="border-b border-border pb-3 text-foreground/85 font-light">Teens 13 - 17: £60</p>
+            </div>
+          </div>
         </Section>
       </Band>
 
@@ -111,17 +122,19 @@ export default function StaysPage() {
               made for rest.
             </p>
           </div>
-          <div className="mt-12 columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+          <div className="mt-12 overflow-x-auto pb-4">
+            <div className="flex snap-x snap-mandatory gap-4">
             {stayGallery.map((src, i) => (
-              <div key={src} className="mb-4 break-inside-avoid overflow-hidden rounded-sm reveal">
+                <div key={src} className="min-w-full snap-center overflow-hidden rounded-sm reveal">
                 <img
                   src={src}
                   alt={`Home House stay photo ${i + 1}`}
                   loading="lazy"
-                  className="h-auto w-full object-cover"
+                    className="aspect-[4/3] h-auto w-full object-cover"
                 />
               </div>
             ))}
+            </div>
           </div>
         </Section>
       </Band>
@@ -150,7 +163,7 @@ export default function StaysPage() {
                 </Button>
               }
             />
-            <p className="mt-4 text-sm text-foreground/60">We tailor pricing to your visit — please get in touch.</p>
+            <p className="mt-4 text-sm text-foreground/60">Please get in touch to arrange your stay.</p>
           </div>
         </Section>
       </Band>
