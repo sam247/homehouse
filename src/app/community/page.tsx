@@ -45,18 +45,6 @@ export default function CommunityPage() {
             </div>
 
             <div className="reveal border border-border p-8 space-y-4">
-              <h2 className="font-serif text-3xl text-foreground">Summer Solstice Gathering</h2>
-              <p className="text-sm text-foreground/70">Sunday 21st June · 3pm onwards</p>
-              <p>Families and children are welcome.</p>
-              <p>Bring a dish to share and gather together at Home House Homestead on this day of light.</p>
-              <p>Share food, stories, hearts and souls.</p>
-              <p>
-                Walk on the land and experience the beauty of this place. Connect with nature, yourself and one
-                another.
-              </p>
-            </div>
-
-            <div className="reveal border border-border p-8 space-y-4">
               <h2 className="font-serif text-3xl text-foreground">Fire Listening Circles</h2>
               <p className="text-sm text-foreground/70">Fourth Saturday of each month</p>
               <p className="text-sm text-foreground/70">Saturday 27th June · 6pm until late</p>

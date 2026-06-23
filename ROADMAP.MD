@@ -13,6 +13,8 @@
 - [x] Add GA4 pageview + interaction events (SPA route changes, nav, contact, enquiry)
 - [x] Rename `/events` to `/events-and-workshops` and add pricing blocks for events + bespoke retreats
 - [x] Add JUST BE retreat listing (July/Aug/Sep 2026) + updated pricing (July special rate; early bird before 27 July for Aug/Sep)
+- [x] Refresh JUST BE retreat dates/pricing copy and add Better Ranking footer credit link (June 2026)
+- [x] Remove Summer Solstice Gathering and change Hearth pilot weekend copy from July to August (June 2026)
 - [x] Expand `/about` content and split into banded background sections (use local `about.webp` imagery)
 - [x] Apply alternating background bands across public pages for readability
 - [x] Set homepage retreat CTA band to sage green background

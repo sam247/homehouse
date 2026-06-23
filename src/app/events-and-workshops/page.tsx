@@ -106,8 +106,8 @@ const justBeFor = [
 ];
 
 const justBeOtherDates = [
-  "Wednesday 13th – Sunday 16th August 2026",
-  "Wednesday 17th – Sunday 20th September 2026",
+  "14th to 16th August 2026",
+  "18th to 20th September 2026",
 ];
 
 const addOns = [
@@ -221,7 +221,7 @@ export default function EventsAndWorkshopsPage() {
               <div className="space-y-5 text-foreground/80 font-light">
                 <div>
                   <p className="text-xs uppercase tracking-[0.25em] text-accent mb-1">Dates</p>
-                  <p>Wednesday 2nd July – Sunday 5th July 2026</p>
+                  <p>3rd to 5th July 2026</p>
                   <p className="mt-1 text-sm text-foreground/70">Arrive from 4pm · Departure 4pm</p>
                 </div>
                 <div>
@@ -243,8 +243,8 @@ export default function EventsAndWorkshopsPage() {
                 <div>
                   <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3">Pricing</p>
                   <p className="text-sm text-foreground/70 font-light leading-relaxed mb-3">
-                    I’m offering women who want to come a special rate of £355 for the retreat. August and September
-                    will be the original rate. Early bird before 27th July for both.
+                    I’m offering women who want to come a special rate of £355 for the July retreat. August and
+                    September return to the original rate, with separate early bird dates for each retreat.
                   </p>
                   <div className="grid gap-3">
                     <div className="border border-border p-5">
@@ -252,21 +252,23 @@ export default function EventsAndWorkshopsPage() {
                         <p className="font-serif text-xl">July retreat (special rate)</p>
                         <p className="text-accent">£355</p>
                       </div>
-                      <p className="mt-2 text-sm text-foreground/70">Wednesday 2nd – Sunday 5th July 2026</p>
+                      <p className="mt-2 text-sm text-foreground/70">3rd to 5th July 2026</p>
                     </div>
                     <div className="border border-border p-5">
                       <div className="flex items-baseline justify-between gap-4">
                         <p className="font-serif text-xl">August retreat</p>
                         <p className="text-accent">£495 / £595</p>
                       </div>
-                      <p className="mt-2 text-sm text-foreground/70">Early bird before 27th July</p>
+                      <p className="mt-2 text-sm text-foreground/70">14th to 16th August 2026</p>
+                      <p className="mt-1 text-sm text-foreground/70">Early bird price until 15th July</p>
                     </div>
                     <div className="border border-border p-5">
                       <div className="flex items-baseline justify-between gap-4">
                         <p className="font-serif text-xl">September retreat</p>
                         <p className="text-accent">£495 / £595</p>
                       </div>
-                      <p className="mt-2 text-sm text-foreground/70">Early bird before 27th July</p>
+                      <p className="mt-2 text-sm text-foreground/70">18th to 20th September 2026</p>
+                      <p className="mt-1 text-sm text-foreground/70">Early bird price until 15th August</p>
                     </div>
                   </div>
                 </div>

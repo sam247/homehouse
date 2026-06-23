@@ -224,9 +224,9 @@ export default function HearthProjectPage() {
 
             <div className="reveal space-y-8">
               <div className="border border-border p-8">
-                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3">July pilot weekend</p>
+                <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3">August pilot weekend</p>
                 <div className="space-y-4 text-foreground/80 font-light leading-relaxed">
-                  <p>We are currently preparing for our first pilot weekend in July 2026.</p>
+                  <p>We are currently preparing for our first pilot weekend in August 2026.</p>
                   <p>
                     This first weekend is being offered as a supported pilot programme while we begin developing the
                     project and exploring how these spaces can support young adults in meaningful and grounded ways.

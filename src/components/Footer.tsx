@@ -111,7 +111,17 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-foreground/60">
-          <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+            <p>© 2026 {SITE.name}. All rights reserved.</p>
+            <TrackedAnchor
+              href="https://betterranking.co.uk/?utm_source=footer&utm_medium=customer&utm_campaign=homehouse&utm_id=links"
+              event="outbound_click"
+              params={{ destination: "better_ranking", placement: "footer" }}
+              className="hover:text-foreground transition-colors"
+            >
+              Website Built By Better Ranking
+            </TrackedAnchor>
+          </div>
           <div className="flex items-center gap-4">
             <p>Crafted with care in Norfolk.</p>
             <div className="flex items-center gap-3">
