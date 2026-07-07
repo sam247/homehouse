@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("home loads", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("header").getByRole("link", { name: "Home House Homestead" }).first()).toBeVisible();
-  await expect(page.getByRole("heading", { level: 1, name: /Wellness Retreat/i })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /Peaceful Norfolk Retreats/i })).toBeVisible();
   const jsonLd = await page.locator('script[type="application/ld+json"]').evaluateAll((els) =>
     els.map((e) => e.textContent ?? ""),
   );
@@ -112,6 +112,24 @@ test("retreats page loads", async ({ page }) => {
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /http:\/\/localhost:3000\/retreats$/);
 });
 
+test("homepage hero routes into the retreat cluster", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("link", { name: "Explore retreats" }).first().click();
+  await expect(page).toHaveURL(/\/retreats$/);
+  await expect(
+    page.getByRole("heading", { name: "Retreats in Norfolk for rest, reconnection, and slower living." }),
+  ).toBeVisible();
+});
+
+test("retreats hub links to spoke pages", async ({ page }) => {
+  await page.goto("/retreats");
+  await page.getByRole("link", { name: "Explore this retreat page" }).first().click();
+  await expect(page).toHaveURL(/\/retreats\/womens-retreats-norfolk$/);
+  await expect(
+    page.getByRole("heading", { name: "Women's retreats in Norfolk for rest, softness, and reconnection." }),
+  ).toBeVisible();
+});
+
 test("retreat spoke pages load", async ({ page }) => {
   await page.goto("/retreats/womens-retreats-norfolk");
   await expect(
@@ -133,6 +151,13 @@ test("norfolk holidays page loads", async ({ page }) => {
     "href",
     /http:\/\/localhost:3000\/norfolk-holidays$/,
   );
+});
+
+test("stays page links users to retreats and norfolk holidays", async ({ page }) => {
+  await page.goto("/stays");
+  await expect(page.getByRole("link", { name: "Retreats" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Norfolk holidays guide" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "our Norfolk retreats page" }).last()).toBeVisible();
 });
 
 test("robots.txt and sitemap.xml render", async ({ request }) => {

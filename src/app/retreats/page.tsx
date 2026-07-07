@@ -30,16 +30,20 @@ const faq = [
     q: "How do I choose between retreats, events, and stays?",
     a: "Choose a scheduled event if you want set dates and a shared theme. Choose a bespoke retreat if you want a more personal restorative stay. Choose stays if you mainly want accommodation and quiet time in the countryside.",
   },
+  {
+    q: "Which retreat page should I start with?",
+    a: "Start with the retreat type that best matches how you want to stay. Choose women's retreats, solo retreats, private retreats, or rest retreats, then enquire if you want help deciding between them.",
+  },
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Retreats in Norfolk | Women's, Solo & Private Retreats",
+  title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats",
   description:
-    "Explore women's retreats, solo retreats, private retreats, and restorative countryside stays at Home House Homestead in rural Norfolk.",
+    "Explore Norfolk retreats at Home House Homestead, including women's retreats, solo retreats, private retreats, and slower rest-led countryside stays.",
   openGraph: {
-    title: "Retreats in Norfolk | Women's, Solo & Private Retreats",
+    title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats",
     description:
-      "Explore women's retreats, solo retreats, private retreats, and restorative countryside stays at Home House Homestead in rural Norfolk.",
+      "Explore Norfolk retreats at Home House Homestead, including women's retreats, solo retreats, private retreats, and slower rest-led countryside stays.",
     images: [IMG.hero],
     url: "/retreats",
   },
@@ -84,7 +88,7 @@ export default function RetreatsPage() {
       <PageHero
         eyebrow="Retreats"
         title="Retreats in Norfolk for rest, reconnection, and slower living."
-        intro="Explore women's retreats, solo retreats, private retreats, and restorative countryside stays at Home House Homestead."
+        intro="Explore Norfolk retreats at Home House Homestead, including women's retreats, solo retreats, private retreats, and slower rest-led countryside stays."
         image={IMG.hero}
       />
 
@@ -98,8 +102,27 @@ export default function RetreatsPage() {
                 where rest, nature, and meaningful care sit at the centre of the experience.
               </p>
               <p>
-                Some guests come for a scheduled women&apos;s retreat or event. Others come for a bespoke private retreat
-                or a slower countryside stay with time to reflect, walk, read, and recover their own rhythm.
+                Some guests come for a scheduled women&apos;s retreat or event. Others come for a bespoke private retreat,
+                a solo retreat, or a slower countryside stay with time to reflect, walk, read, and recover their own rhythm.
+              </p>
+              <p>
+                Most guests start by comparing the four main retreat routes:{" "}
+                <Link href="/retreats/womens-retreats-norfolk" className="text-accent hover:underline">
+                  women&apos;s retreats
+                </Link>
+                ,{" "}
+                <Link href="/retreats/solo-retreats-norfolk" className="text-accent hover:underline">
+                  solo retreats
+                </Link>
+                ,{" "}
+                <Link href="/retreats/private-retreats-norfolk" className="text-accent hover:underline">
+                  private retreats
+                </Link>
+                , and{" "}
+                <Link href="/retreats/rest-retreats-norfolk" className="text-accent hover:underline">
+                  rest retreats
+                </Link>
+                .
               </p>
               <p>
                 If you already know the kind of stay you want, explore our{" "}
@@ -124,11 +147,11 @@ export default function RetreatsPage() {
                 <li className="border-b border-border pb-3">Women seeking deep rest and reconnection</li>
                 <li className="border-b border-border pb-3">Solo guests looking for a quiet retreat in Norfolk</li>
                 <li className="border-b border-border pb-3">Small private groups wanting a bespoke countryside retreat</li>
-                <li className="border-b border-border pb-3">Guests who prefer a personal homestead setting over a hotel</li>
+                <li className="border-b border-border pb-3">Guests choosing a slower homestead retreat over a hotel break</li>
               </ul>
               <div className="mt-8 grid gap-3">
                 <Button asChild className="rounded-none">
-                  <Link href="/events-and-workshops">View scheduled retreats</Link>
+                  <Link href="/retreats/womens-retreats-norfolk">Start with women&apos;s retreats</Link>
                 </Button>
                 <EnquiryDrawer
                   source="retreats_page"
@@ -141,6 +164,9 @@ export default function RetreatsPage() {
                     </Button>
                   }
                 />
+                <Button asChild variant="outline" className="rounded-none border-foreground/30 bg-transparent">
+                  <Link href="/events-and-workshops">View scheduled retreats</Link>
+                </Button>
               </div>
             </aside>
           </div>
@@ -162,6 +188,12 @@ export default function RetreatsPage() {
               <article key={item.slug} className="reveal border border-border p-8">
                 <h3 className="font-serif text-2xl leading-tight">{item.navLabel}</h3>
                 <p className="mt-4 text-foreground/75 font-light leading-relaxed">{item.metadataDescription}</p>
+                <p className="mt-4 text-sm font-light text-foreground/65">
+                  {item.slug === "womens-retreats-norfolk" && "Best for guests seeking shared rest and reconnection."}
+                  {item.slug === "solo-retreats-norfolk" && "Best for quieter solo time, reflection, and recovery."}
+                  {item.slug === "private-retreats-norfolk" && "Best for small groups wanting a more bespoke stay."}
+                  {item.slug === "rest-retreats-norfolk" && "Best for guests who mainly need quiet, care, and deep rest."}
+                </p>
                 <div className="mt-6">
                   <Link href={`/retreats/${item.slug}`} className="text-sm text-accent hover:underline">
                     Explore this retreat page

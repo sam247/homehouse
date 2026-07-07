@@ -21,14 +21,14 @@ const IMG = {
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Wellness Retreat & Countryside Stay in Norfolk | Home House Homestead",
+    absolute: "Peaceful Norfolk Retreats & Countryside Stays | Home House Homestead",
   },
   description:
-    "Escape to a peaceful wellness retreat in Norfolk. Enjoy bespoke countryside stays, nature, quiet reflection and restorative experiences at Home House Homestead.",
+    "Plan a peaceful Norfolk retreat, countryside stay, or restorative break at Home House Homestead. A personal guest house and homestead for quiet rest, nature, and slower living.",
   openGraph: {
-    title: "Wellness Retreat & Countryside Stay in Norfolk | Home House Homestead",
+    title: "Peaceful Norfolk Retreats & Countryside Stays | Home House Homestead",
     description:
-      "Escape to a peaceful wellness retreat in Norfolk. Enjoy bespoke countryside stays, nature, quiet reflection and restorative experiences at Home House Homestead.",
+      "Plan a peaceful Norfolk retreat, countryside stay, or restorative break at Home House Homestead. A personal guest house and homestead for quiet rest, nature, and slower living.",
     images: [IMG.house],
     url: "/",
   },
@@ -64,11 +64,15 @@ const FAQ = [
   },
   {
     q: "Can I book a peaceful countryside retreat in Norfolk?",
-    a: "Yes. You can book a bespoke countryside stay at the homestead, and you can also explore scheduled retreats and gatherings when available. The best next step is to send a stay enquiry with your dates.",
+    a: "Yes. You can plan a bespoke countryside retreat or a quieter guest house stay at the homestead, and you can also explore scheduled retreats and gatherings when available. The best next step is to send a stay enquiry with your dates.",
   },
   {
     q: "Is Home House Homestead open year-round?",
     a: "Stays are available across much of the year, subject to availability and seasonal scheduling. If you’re planning a particular season, please enquire and we’ll confirm what’s possible for your dates.",
+  },
+  {
+    q: "Is Home House Homestead a hotel or a guest house?",
+    a: "Home House Homestead is a personal countryside guest house and homestead rather than a standard hotel. Guests usually choose it for a quieter, more restorative stay with a stronger sense of care and place.",
   },
 ] as const;
 
@@ -115,11 +119,11 @@ export default async function HomePage() {
             Welcome
           </p>
           <p className="font-serif text-4xl md:text-5xl leading-tight reveal">
-            Slow down, reconnect with nature, and enjoy a peaceful countryside retreat in rural Norfolk.
+            Slow down, reconnect with nature, and plan a peaceful retreat or countryside stay in rural Norfolk.
           </p>
           <p className="mt-8 text-lg font-light text-[var(--deep)]/80 leading-relaxed reveal">
-            Home House Homestead offers bespoke stays and restorative retreats designed to help you
-            rest, recharge, and return home refreshed.
+            Home House Homestead offers personal guest house stays, private retreats, and restorative countryside
+            breaks designed to help you rest, recharge, and feel more like yourself again.
           </p>
           <p className="mt-6 text-lg font-light text-[var(--deep)]/80 leading-relaxed reveal">
             A home away from home.
@@ -162,8 +166,8 @@ export default async function HomePage() {
             <>
               <p>
                 A gentle invitation to step away from the busyness of everyday life for a peaceful bespoke
-                countryside stay or small wellness retreat designed to help you slow down, rest deeply,
-                reconnect with nature, and remember the feeling of home within yourself.
+                countryside stay, private retreat, or slower restorative break designed to help you slow down,
+                rest deeply, reconnect with nature, and remember the feeling of home within yourself.
               </p>
               <p>
                 Whether you&apos;re seeking solitude, creative space, quiet reflection, or simply a few days
@@ -171,21 +175,25 @@ export default async function HomePage() {
                 countryside.
               </p>
               <p>
-                You can enquire about a peaceful countryside retreat for yourself, or explore our{" "}
+                If you are planning a retreat, start with our{" "}
                 <Link href="/retreats" className="text-accent hover:underline">
                   Norfolk retreats page
+                </Link>
+                . If you are comparing accommodation, explore{" "}
+                <Link href="/stays" className="text-accent hover:underline">
+                  guest house stays
                 </Link>{" "}
-                to compare private retreats, solo stays, and scheduled experiences.
+                to see how a quieter countryside break differs from a retreat-led stay.
               </p>
               <p>
-                For accommodation details, see{" "}
+                For broader slow-travel ideas, see{" "}
+                <Link href="/norfolk-holidays" className="text-accent hover:underline">
+                  Norfolk holidays
+                </Link>
+                . For accommodation details, see{" "}
                 <Link href="/stays" className="text-accent hover:underline">
                   bespoke countryside stays at the homestead
                 </Link>{" "}
-                , explore{" "}
-                <Link href="/norfolk-holidays" className="text-accent hover:underline">
-                  quieter Norfolk holidays
-                </Link>
                 , or{" "}
                 <Link href="#stay-enquiry" className="text-accent hover:underline">
                   send a stay enquiry
@@ -217,7 +225,7 @@ export default async function HomePage() {
                 "Peaceful rooms and unhurried mornings",
                 "Gardens, open fields, and space to reconnect with nature",
                 "Home-cooked meals prepared with love and care",
-                "A welcoming setting for solo retreats, creative retreats and quiet getaways",
+                "A welcoming setting for solo retreats, private retreats, and quiet countryside breaks",
                 "Space to slow down, exhale fully, reflect, and simply be",
                 "Many guests return for the sense of home, connection, and ease they find here",
               ].map((p) => (

@@ -12,12 +12,12 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Norfolk Guest House Stays & Retreat Accommodation",
+  title: "Norfolk Guest House Stays, Quiet Breaks & Retreat Accommodation",
   description:
-    "Peaceful guest house stays in rural Norfolk for solo guests, couples, families, and small retreat groups at Home House Homestead.",
+    "Plan a peaceful guest house stay in rural Norfolk with quiet breaks, retreat accommodation, and slower countryside stays at Home House Homestead.",
   openGraph: {
-    title: "Norfolk Guest House Stays & Retreat Accommodation",
-    description: "Peaceful guest house stays in rural Norfolk at Home House Homestead.",
+    title: "Norfolk Guest House Stays, Quiet Breaks & Retreat Accommodation",
+    description: "Plan a peaceful guest house stay in rural Norfolk with quiet breaks, retreat accommodation, and slower countryside stays at Home House Homestead.",
     images: [IMG.hero],
     url: "/stays",
   },
@@ -60,7 +60,7 @@ export default function StaysPage() {
       <PageHero
         eyebrow="Stays"
         title="Peaceful guest house stays in rural Norfolk."
-        intro="Stay at Home House Homestead for a quiet countryside break, retreat accommodation, or a slower few days of rest, reflection, and fresh air."
+        intro="Stay at Home House Homestead for a quiet countryside break, retreat accommodation, or a slower few days of rest, reflection, and fresh air in rural Norfolk."
         image={IMG.hero}
       />
       <Band variant="cream">
@@ -71,8 +71,9 @@ export default function StaysPage() {
               families, and small groups looking for a more personal alternative to a hotel.
             </p>
             <p>
-              Some guests book a simple countryside break. Others stay as part of a private retreat, scheduled event,
-              or restorative few days away from everyday life. If you are mainly looking for retreat options, visit{" "}
+              Some guests book a simple countryside break or quiet weekend away. Others stay as part of a private
+              retreat, scheduled event, or restorative few days away from everyday life. If you are mainly looking for
+              retreat options, visit{" "}
               <Link href="/retreats" className="text-accent hover:underline">
                 Retreats
               </Link>
@@ -81,6 +82,14 @@ export default function StaysPage() {
                 Norfolk holidays guide
               </Link>{" "}
               compares quiet countryside breaks with retreat-style stays.
+            </p>
+            <p>
+              This page is best if you want accommodation first. If you know you want a more intentional restorative
+              stay, compare the retreat options on{" "}
+              <Link href="/retreats" className="text-accent hover:underline">
+                our Norfolk retreats page
+              </Link>
+              .
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -109,6 +118,10 @@ export default function StaysPage() {
               guided or themed experience, explore{" "}
               <Link href="/events-and-workshops" className="text-accent hover:underline">
                 upcoming retreats and workshops
+              </Link>
+              . If you are comparing a quieter countryside break with a retreat-led stay, start with{" "}
+              <Link href="/retreats" className="text-accent hover:underline">
+                retreats in Norfolk
               </Link>
               . If you are comparing broader slow-travel options, see{" "}
               <Link href="/norfolk-holidays" className="text-accent hover:underline">
@@ -151,6 +164,10 @@ export default function StaysPage() {
               Want a retreat-led stay instead? Visit{" "}
               <Link href="/retreats" className="text-accent hover:underline">
                 our Norfolk retreats page
+              </Link>
+              . Want the broader quiet-break view first? See{" "}
+              <Link href="/norfolk-holidays" className="text-accent hover:underline">
+                Norfolk holidays
               </Link>
               .
             </p>

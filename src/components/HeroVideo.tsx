@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { EnquiryDrawer } from "./EnquiryDrawer";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
@@ -39,15 +40,15 @@ export function HeroVideo() {
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
         <p className="text-xs uppercase tracking-[0.4em] text-foreground/80 mb-6 reveal">
-          Norfolk · Wellness retreat & countryside stay
+          Norfolk · Peaceful retreats and countryside stays
         </p>
         <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl leading-[1.05] text-foreground max-w-6xl reveal">
-          Wellness Retreat & Countryside Stay in Norfolk
+          Peaceful Norfolk Retreats & Countryside Stays
         </h1>
         <p className="mt-8 max-w-3xl text-base sm:text-lg font-light text-foreground/85 leading-relaxed reveal">
-          Slow down, reconnect with nature, and enjoy a peaceful countryside retreat in rural
-          Norfolk. Home House Homestead offers bespoke stays and restorative escapes designed to
-          help you rest, recharge, and return home refreshed.
+          Slow down, reconnect with nature, and plan a quieter stay in rural Norfolk. Home House
+          Homestead offers bespoke guest house stays, private retreats, and restorative countryside
+          breaks designed to help you rest, exhale, and feel cared for.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 reveal">
           <EnquiryDrawer
@@ -57,6 +58,13 @@ export function HeroVideo() {
               </Button>
             }
           />
+          <Button
+            asChild
+            variant="outline"
+            className="h-12 px-8 rounded-none border-foreground/40 bg-transparent text-foreground hover:bg-foreground hover:text-background font-light tracking-[0.18em] uppercase text-xs"
+          >
+            <Link href="/retreats">Explore retreats</Link>
+          </Button>
         </div>
       </div>
 
