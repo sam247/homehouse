@@ -46,13 +46,13 @@ const rooms = [
 ];
 
 const includes = [
-  "Breakfast prepared with care, often using produce from the garden",
-  "Home-cooked meals with seasonal organic produce",
-  "Access to gardens, fields, surrounding countryside and Norfolk beaches",
-  "Optional 1-to-1 sessions and treatments by arrangement",
-  "Quiet spaces for rest, reading, writing, reflection, meditation and prayer",
-  "Tea, herbal infusions and homemade sourdough",
-  "A slower pace of life and a warm personal welcome",
+  "Breakfast prepared with love and care, often using freshly harvested produce from the garden",
+  "Home-cooked meals made with seasonal, organic ingredients",
+  "Tea, coffee, herbal infusions, and homemade sourdough",
+  "Access to the gardens, fields, surrounding countryside, and Norfolk beaches",
+  "Quiet spaces for rest, reading, writing, reflection, meditation, and prayer",
+  "Optional 1-to-1 healing sessions and treatments by arrangement",
+  "A slower pace of life and a warm, personal welcome",
 ];
 
 export default function StaysPage() {
@@ -66,7 +66,7 @@ export default function StaysPage() {
       />
       <Band variant="cream">
         <Section>
-          <div className="reveal max-w-3xl space-y-5 text-foreground/75 font-light leading-relaxed mb-10">
+          <div className="reveal max-w-5xl space-y-5 text-foreground/75 font-light leading-relaxed mb-10">
             <p>
               Home House Homestead offers hosted guest house stays in the Norfolk countryside for solo guests, couples,
               families, and small groups looking for a more personal alternative to a hotel or standard holiday
@@ -149,7 +149,7 @@ export default function StaysPage() {
             <div className="reveal">
               <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">What’s included</p>
               <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-                Everything you need for a slower Norfolk stay.
+                Everything you need for a slower, more nourishing stay in the Norfolk countryside.
               </h2>
             </div>
             <ul className="reveal grid gap-3">
