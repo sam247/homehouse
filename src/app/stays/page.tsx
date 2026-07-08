@@ -12,12 +12,13 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Norfolk Guest House Stays, Quiet Breaks & Retreat Accommodation",
+  title: "Guest House Stays at Home House Homestead | Norfolk Countryside",
   description:
-    "Plan a peaceful guest house stay in rural Norfolk with quiet breaks, retreat accommodation, and slower countryside stays at Home House Homestead.",
+    "Hosted guest house stays in the Norfolk countryside with home-cooked meals included, for quiet breaks, reflective weekends, and small group stays at Home House Homestead.",
   openGraph: {
-    title: "Norfolk Guest House Stays, Quiet Breaks & Retreat Accommodation",
-    description: "Plan a peaceful guest house stay in rural Norfolk with quiet breaks, retreat accommodation, and slower countryside stays at Home House Homestead.",
+    title: "Guest House Stays at Home House Homestead | Norfolk Countryside",
+    description:
+      "Hosted guest house stays in the Norfolk countryside with home-cooked meals included, for quiet breaks, reflective weekends, and small group stays at Home House Homestead.",
     images: [IMG.hero],
     url: "/stays",
   },
@@ -59,38 +60,27 @@ export default function StaysPage() {
     <PageShell>
       <PageHero
         eyebrow="Stays"
-        title="Peaceful guest house stays in rural Norfolk."
-        intro="Stay at Home House Homestead for a quiet countryside break, retreat accommodation, or a slower few days of rest, reflection, and fresh air in rural Norfolk."
+        title="Guest House Stays at Home House Homestead"
+        intro="Hosted guest house stays in the Norfolk countryside for solo guests, couples, families, and small groups — with home-cooked meals included."
         image={IMG.hero}
       />
       <Band variant="cream">
         <Section>
           <div className="reveal max-w-3xl space-y-5 text-foreground/75 font-light leading-relaxed mb-10">
             <p>
-              Home House Homestead offers guest house stays in the Norfolk countryside for solo guests, couples,
-              families, and small groups looking for a more personal alternative to a hotel.
+              Home House Homestead offers hosted guest house stays in the Norfolk countryside for solo guests, couples,
+              families, and small groups looking for a more personal alternative to a hotel or standard holiday
+              accommodation.
             </p>
             <p>
-              Some guests book a simple countryside break or quiet weekend away. Others stay as part of a private
-              retreat, scheduled event, or restorative few days away from everyday life. If you are mainly looking for
-              retreat options, visit{" "}
-              <Link href="/retreats" className="text-accent hover:underline">
-                Retreats
-              </Link>
-              . If you are exploring broader travel ideas, our{" "}
-              <Link href="/norfolk-holidays" className="text-accent hover:underline">
-                Norfolk holidays guide
-              </Link>{" "}
-              compares quiet countryside breaks with retreat-style stays.
+              Some guests book a simple countryside break or quiet weekend away. Others come for a private retreat,
+              scheduled event, healing stay, or a restorative few days away from the pace of everyday life.
             </p>
             <p>
-              This page is best if you want accommodation first. If you know you want a more intentional restorative
-              stay, compare the retreat options on{" "}
-              <Link href="/retreats" className="text-accent hover:underline">
-                our Norfolk retreats page
-              </Link>
-              .
+              Whether you are seeking rest, nature, space to reflect, or time to reconnect, Home House offers a slower,
+              more nourishing kind of stay.
             </p>
+            <p>All stays at Home House are hosted and include home-cooked meals prepared with care.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {rooms.map((r) => (
@@ -104,31 +94,51 @@ export default function StaysPage() {
             ))}
           </div>
           <div className="reveal mt-12 border-t border-border pt-10">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Guest house rates</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Accommodation rates</p>
             <div className="grid gap-4 md:grid-cols-2">
-              <p className="border-b border-border pb-3 text-foreground/85 font-light">
-                Adults 18+ per person: £75, all meals included
-              </p>
-              <p className="border-b border-border pb-3 text-foreground/85 font-light">Children under 5: free</p>
-              <p className="border-b border-border pb-3 text-foreground/85 font-light">Children 5 - 12: £35</p>
-              <p className="border-b border-border pb-3 text-foreground/85 font-light">Teens 13 - 17: £60</p>
+              <div className="border-b border-border pb-3">
+                <p className="text-foreground/85 font-light">Shared twin room</p>
+                <p className="mt-1 text-sm text-foreground/70 font-light">£75 per person, per night · Includes all meals</p>
+              </div>
+              <div className="border-b border-border pb-3">
+                <p className="text-foreground/85 font-light">Single occupancy room</p>
+                <p className="mt-1 text-sm text-foreground/70 font-light">£125 per night · Includes all meals</p>
+              </div>
+              <div className="border-b border-border pb-3 md:col-span-2">
+                <p className="text-foreground/85 font-light">Teens aged 13–17</p>
+                <p className="mt-1 text-sm text-foreground/70 font-light">
+                  £60 per person, per night when sharing a room with a parent or guardian · Includes all meals
+                </p>
+              </div>
             </div>
-            <p className="mt-6 max-w-2xl text-sm text-foreground/70 font-light leading-relaxed">
-              These stays work well for quiet weekends, family breaks, and retreat accommodation. If you want a more
-              guided or themed experience, explore{" "}
-              <Link href="/events-and-workshops" className="text-accent hover:underline">
-                upcoming retreats and workshops
-              </Link>
-              . If you are comparing a quieter countryside break with a retreat-led stay, start with{" "}
-              <Link href="/retreats" className="text-accent hover:underline">
-                retreats in Norfolk
-              </Link>
-              . If you are comparing broader slow-travel options, see{" "}
-              <Link href="/norfolk-holidays" className="text-accent hover:underline">
-                Norfolk holidays
-              </Link>
-              .
-            </p>
+            <div className="mt-10">
+              <h3 className="font-serif text-2xl mb-4">A stay at Home House may be right for you if you are looking for:</h3>
+              <ul className="grid gap-3 max-w-3xl">
+                <li className="border-b border-border pb-3 text-foreground/85 font-light">
+                  a peaceful Norfolk countryside break with a more personal, hosted feel
+                </li>
+                <li className="border-b border-border pb-3 text-foreground/85 font-light">
+                  a quiet place to rest, reflect, and step away from busy daily life
+                </li>
+                <li className="border-b border-border pb-3 text-foreground/85 font-light">
+                  a simple retreat-style stay with nourishing meals and access to nature
+                </li>
+                <li className="border-b border-border pb-3 text-foreground/85 font-light">
+                  accommodation for a private retreat, healing stay, or small group gathering
+                </li>
+              </ul>
+              <p className="mt-6 max-w-3xl text-sm text-foreground/70 font-light leading-relaxed">
+                If you are mainly looking for retreat options, visit{" "}
+                <Link href="/retreats" className="text-accent hover:underline">
+                  the Retreats page
+                </Link>
+                . If you are interested in a longer stay, private retreat, or group booking, please{" "}
+                <Link href="/contact" className="text-accent hover:underline">
+                  get in touch
+                </Link>{" "}
+                to discuss what may be possible.
+              </p>
+            </div>
           </div>
         </Section>
       </Band>

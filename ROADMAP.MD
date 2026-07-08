@@ -92,6 +92,7 @@
 - [x] Implement SEO Phase 2 Pass 1 homepage refinement checklist (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
 - [x] Implement SEO Phase 2 Pass 1 retreat hub refinement checklist (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
 - [x] Implement SEO Phase 2 Pass 1 stays refinement checklist (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
+- [x] Update `/stays` with hosted guest house stays copy + updated accommodation rates (July 2026)
 - [x] Extend SEO regression coverage for Phase 2 Pass 1 implementation changes (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
 - [ ] Implement SEO Phase 2 retreat spoke-linking checklist (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
 - [ ] Implement SEO Phase 2 metadata and structured-data review (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
