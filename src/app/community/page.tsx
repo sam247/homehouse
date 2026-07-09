@@ -36,6 +36,38 @@ export default function CommunityPage() {
       <Band variant="cream">
         <Section className="max-w-4xl">
           <div className="space-y-10 font-light leading-relaxed text-foreground/80">
+            <div className="reveal border border-border p-8 space-y-5">
+              <div className="space-y-2">
+                <h2 className="font-serif text-3xl text-foreground">Monday Tea, Cake &amp; Chats</h2>
+                <p>Join Hawa Amanda every Monday afternoon at Home House for tea, homemade cake and good company.</p>
+              </div>
+
+              <div className="space-y-4">
+                <p>
+                  A simple, welcoming space to slow down at the start of the week, meet new people, share
+                  conversation and enjoy a little time in community.
+                </p>
+                <p>
+                  In the busyness of life, these small moments of connection can be deeply nourishing - a chance to
+                  pause, listen, laugh, and simply be together.
+                </p>
+                <p>Whether you come on your own or with a friend, you&apos;ll be warmly welcomed.</p>
+              </div>
+
+              <div className="space-y-1 text-foreground/80">
+                <p className="text-sm text-foreground/70">When</p>
+                <p>Every Monday</p>
+                <p>4.00pm - 5.30pm</p>
+                <p>At Home House</p>
+              </div>
+
+              <div className="space-y-4">
+                <p>Come as you are.</p>
+                <p>I&apos;ll be baking and putting the kettle on.</p>
+                <p>Please email or message to let Hawa know you are coming and to make sure she is there.</p>
+              </div>
+            </div>
+
             <div className="reveal space-y-4">
               <p>All gatherings are community-based and offered on a donation basis.</p>
               <p>
@@ -55,6 +87,7 @@ export default function CommunityPage() {
               </p>
               <p>Bring a dish to share.</p>
               <p>Discounted overnight stays are available.</p>
+              <p>Please email or message to let Hawa know you are coming and to make sure she is there.</p>
             </div>
 
             <div className="reveal border border-border p-8 space-y-5">
@@ -79,6 +112,7 @@ export default function CommunityPage() {
                   Each gathering will explore a different theme and include a guided meditation and gentle practices
                   to help us arrive, settle and open the space together.
                 </p>
+                <p>Please email or message to let Hawa know you are coming and to make sure she is there.</p>
               </div>
             </div>
 
@@ -123,6 +157,7 @@ export default function CommunityPage() {
               <div className="space-y-4">
                 <p>Please contact Hawa Amanda to book your place.</p>
                 <p>Discounted overnight stays are available.</p>
+                <p>Please email or message to let Hawa know you are coming and to make sure she is there.</p>
               </div>
             </div>
 
