@@ -9,6 +9,7 @@ export type RetreatLandingData = {
   bestFor: string[];
   includes: string[];
   whyHomeHouse: string[];
+  relatedLinks: Array<{ href: string; label: string }>;
   faq: Array<{ q: string; a: string }>;
 };
 
@@ -44,6 +45,11 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "Home House suits women looking for a retreat that feels lived-in and calming rather than heavily scheduled. Guests often choose it because it feels safe, gentle, and grounded.",
       "If you want to see current dates, the best next step is to browse Events & Workshops. If you want to talk about a more personal retreat stay, send an enquiry and we can guide you.",
     ],
+    relatedLinks: [
+      { href: "/retreats/solo-retreats-norfolk", label: "Solo retreats in Norfolk" },
+      { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },
+      { href: "/events-and-workshops", label: "Scheduled retreat dates" },
+    ],
     faq: [
       {
         q: "What are women's retreats like at Home House Homestead?",
@@ -55,7 +61,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       },
       {
         q: "Are these retreats suitable if I come alone?",
-        a: "Yes. Many women come alone and find the quieter, smaller setting especially supportive.",
+        a: "Yes. Many women come alone and find the quieter, smaller setting especially supportive. If you want a quieter alone stay rather than a shared women's gathering, see our solo retreats page.",
       },
     ],
   },
@@ -88,6 +94,11 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "Solo retreat guests often choose Home House because it offers the quiet they want without the impersonality of a hotel. It is a place where you can be left in peace while still feeling cared for.",
       "If you want a more accommodation-led break, visit Stays. If you want to see shared retreat dates, browse Events & Workshops.",
     ],
+    relatedLinks: [
+      { href: "/retreats/womens-retreats-norfolk", label: "Women's retreats in Norfolk" },
+      { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },
+      { href: "/stays", label: "Guest house stays" },
+    ],
     faq: [
       {
         q: "Is Home House Homestead suitable for a solo retreat?",
@@ -99,7 +110,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       },
       {
         q: "Can I come for a solo retreat even if I do not want a formal programme?",
-        a: "Yes. Many solo guests prefer the stay to remain quiet and lightly held rather than structured around a detailed itinerary.",
+        a: "Yes. Many solo guests prefer the stay to remain quiet and lightly held rather than structured around a detailed itinerary. If you would rather join a small women's gathering, explore our women's retreats page.",
       },
     ],
   },
@@ -131,6 +142,11 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
     whyHomeHouse: [
       "Private retreats at Home House are most valuable for groups who want the atmosphere of a home and homestead rather than a formal retreat centre. That makes the experience feel calmer, more connected, and less performative.",
       "If you are planning a simpler group break, Stays may also be relevant. For existing live retreat dates, visit Events & Workshops.",
+    ],
+    relatedLinks: [
+      { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },
+      { href: "/stays", label: "Guest house stays" },
+      { href: "/events-and-workshops", label: "Scheduled retreat dates" },
     ],
     faq: [
       {
@@ -173,8 +189,13 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "A retreat format that can stay simple and restorative",
     ],
     whyHomeHouse: [
-      "Rest retreats work especially well at Home House because the setting is naturally supportive of slowing down. Guests can rest without pressure to perform wellness or fill every hour with activity.",
+      "Rest retreats work especially well at Home House because the setting is naturally supportive of slowing down. Guests can rest without pressure to fill every hour with activity.",
       "If you want a fully scheduled retreat date, visit Events & Workshops. If you mainly want accommodation, visit Stays.",
+    ],
+    relatedLinks: [
+      { href: "/retreats/solo-retreats-norfolk", label: "Solo retreats in Norfolk" },
+      { href: "/retreats/private-retreats-norfolk", label: "Private retreats" },
+      { href: "/stays", label: "Guest house stays" },
     ],
     faq: [
       {

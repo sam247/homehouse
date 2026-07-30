@@ -100,6 +100,7 @@
 - [x] Add living room image to `/stays` “What’s included” section (July 2026)
 - [x] Add Rose Room thumbnail gallery + lightbox to `/stays` room card (July 2026)
 - [x] Extend SEO regression coverage for Phase 2 Pass 1 implementation changes (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
-- [ ] Implement SEO Phase 2 retreat spoke-linking checklist (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
-- [ ] Implement SEO Phase 2 metadata and structured-data review (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
-- [ ] Implement SEO Phase 2 content guardrails and next-batch gating (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
+- [x] Implement SEO Phase 2 retreat spoke-linking checklist (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
+- [x] Implement SEO Phase 2 metadata and structured-data review (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
+- [x] Implement SEO Phase 2 content guardrails and next-batch gating (`SEO_PHASE_2_IMPLEMENTATION_CHECKLIST.md`)
+- [x] Serve markdown SEO support posts alongside Neon blog posts so Phase 2/3 articles stop 404ing

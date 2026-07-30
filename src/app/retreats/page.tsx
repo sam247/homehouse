@@ -19,6 +19,10 @@ const faq = [
     a: "Home House Homestead offers scheduled women's retreats and events, as well as bespoke private retreats and slower restorative stays in the Norfolk countryside.",
   },
   {
+    q: "Are you looking for Norfolk retreats or retreats in Norfolk?",
+    a: "Yes. Home House Homestead is a Norfolk retreat base for guests seeking women's, solo, private, or rest-led countryside stays rather than a formal retreat centre.",
+  },
+  {
     q: "Are these retreats suitable for solo guests?",
     a: "Yes. Many guests come alone for rest, reflection, healing, and time away from everyday life. Solo retreats are one of the best fits for the homestead.",
   },
@@ -37,13 +41,13 @@ const faq = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats",
+  title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats — Home House",
   description:
-    "Explore Norfolk retreats at Home House Homestead, including women's retreats, solo retreats, private retreats, and slower rest-led countryside stays.",
+    "Plan retreats in Norfolk at Home House Homestead: women's, solo, private, and rest retreats in a peaceful countryside homestead setting.",
   openGraph: {
-    title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats",
+    title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats — Home House",
     description:
-      "Explore Norfolk retreats at Home House Homestead, including women's retreats, solo retreats, private retreats, and slower rest-led countryside stays.",
+      "Plan retreats in Norfolk at Home House Homestead: women's, solo, private, and rest retreats in a peaceful countryside homestead setting.",
     images: [IMG.hero],
     url: "/retreats",
   },

@@ -135,11 +135,28 @@ test("retreat spoke pages load", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "Women's retreats in Norfolk for rest, softness, and reconnection." }),
   ).toBeVisible();
+  await expect(page.getByRole("link", { name: "Solo retreats in Norfolk" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Compare retreat options" })).toBeVisible();
 
   await page.goto("/retreats/solo-retreats-norfolk");
   await expect(
     page.getByRole("heading", { name: "Solo retreats in Norfolk for quiet time, rest, and reflection." }),
   ).toBeVisible();
+  await expect(page.getByRole("link", { name: "Women's retreats in Norfolk" })).toBeVisible();
+});
+
+test("seo support markdown posts are available", async ({ page }) => {
+  await page.goto("/blog/what-is-a-homestead-retreat");
+  await expect(page.getByRole("heading", { name: "What Is A Homestead Retreat?" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "retreats in Norfolk" }).first()).toBeVisible();
+});
+
+test("homepage avoids generic wellness framing in stays band", async ({ page }) => {
+  await page.goto("/");
+  await expect(
+    page.getByRole("heading", { level: 2, name: "Norfolk Retreats & Countryside Stays" }).first(),
+  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Wellness Retreats/i })).toHaveCount(0);
 });
 
 test("norfolk holidays page loads", async ({ page }) => {
@@ -155,8 +172,8 @@ test("norfolk holidays page loads", async ({ page }) => {
 
 test("stays page links users to retreats and norfolk holidays", async ({ page }) => {
   await page.goto("/stays");
-  await expect(page.getByRole("link", { name: "Retreats" }).first()).toBeVisible();
-  await expect(page.getByRole("link", { name: "Norfolk holidays guide" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Retreats/i }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Norfolk holidays" })).toBeVisible();
   await expect(page.getByRole("link", { name: "our Norfolk retreats page" }).last()).toBeVisible();
 });
 
@@ -180,6 +197,8 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/norfolk-holidays</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/womens-retreats-norfolk</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/solo-retreats-norfolk</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/blog/what-is-a-homestead-retreat</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/blog/how-to-plan-a-solo-retreat-in-norfolk</loc>");
 });
 
 test("canonical link is absolute", async ({ page }) => {

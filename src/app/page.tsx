@@ -160,7 +160,7 @@ export default async function HomePage() {
         <Zigzag
           reverse
           eyebrow="Stays and retreats"
-          title="Wellness Retreats & Countryside Stays"
+          title="Norfolk Retreats & Countryside Stays"
           image={IMG.garden}
           body={
             <>

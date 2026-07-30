@@ -134,6 +134,18 @@ export function RetreatLandingPage({ page }: { page: RetreatLandingData }) {
                 Read guest reviews
               </Link>
             </div>
+            {page.relatedLinks.length > 0 ? (
+              <div className="mt-6 border-t border-border pt-6">
+                <p className="text-xs uppercase tracking-[0.3em] text-accent mb-3">Related retreat paths</p>
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-light">
+                  {page.relatedLinks.map((link) => (
+                    <Link key={link.href} href={link.href} className="text-accent hover:underline">
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </div>
         </Section>
       </Band>

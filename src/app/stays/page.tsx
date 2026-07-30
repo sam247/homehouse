@@ -18,13 +18,13 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Guest House Stays at Home House Homestead | Norfolk Countryside",
+  title: "Guest House Stays in Norfolk | Quiet Countryside Accommodation",
   description:
-    "Hosted guest house stays in the Norfolk countryside with home-cooked meals included, for quiet breaks, reflective weekends, and small group stays at Home House Homestead.",
+    "Book a guest house stay in rural Norfolk with home-cooked meals, peaceful rooms, and space for quiet breaks, reflective weekends, or retreat accommodation at Home House Homestead.",
   openGraph: {
-    title: "Guest House Stays at Home House Homestead | Norfolk Countryside",
+    title: "Guest House Stays in Norfolk | Quiet Countryside Accommodation",
     description:
-      "Hosted guest house stays in the Norfolk countryside with home-cooked meals included, for quiet breaks, reflective weekends, and small group stays at Home House Homestead.",
+      "Book a guest house stay in rural Norfolk with home-cooked meals, peaceful rooms, and space for quiet breaks, reflective weekends, or retreat accommodation at Home House Homestead.",
     images: [IMG.hero],
     url: "/stays",
   },
