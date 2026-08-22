@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { AuthorStrip } from "@/components/AuthorStrip";
+import { GuideFooter } from "@/components/GuideFooter";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
-import { getPostBySlug } from "@/lib/blog";
+import { getPostBySlug, isGuidePost } from "@/lib/blog";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 export const dynamic = "force-dynamic";
@@ -23,6 +24,7 @@ export async function generateMetadata({
       alternates: {
         canonical: `/blog/${slug}`,
       },
+      robots: post.noindex ? { index: false, follow: false } : undefined,
       openGraph: {
         title: post.title,
         description: post.excerpt,
@@ -50,6 +52,9 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  if (post.noindex) notFound();
+
+  const guide = isGuidePost(post);
   const postUrl = `${siteUrl}/blog/${slug}`;
   const coverImage = post.coverImage
     ? post.coverImage.startsWith("http")
@@ -64,7 +69,9 @@ export default async function BlogPostPage({
     description: post.excerpt,
     image: coverImage ? [coverImage] : undefined,
     datePublished: post.publishedAt,
-    author: { "@type": "Person", name: "Hawa Hummingbird" },
+    author: guide
+      ? { "@type": "Organization", name: "Home House Homestead", url: siteUrl }
+      : { "@type": "Person", name: post.author ?? "Hawa Hummingbird" },
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
   };
 
@@ -73,7 +80,7 @@ export default async function BlogPostPage({
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+      { "@type": "ListItem", position: 2, name: guide ? "Guides" : "Journal", item: `${siteUrl}/blog` },
       { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
     ],
   };
@@ -84,7 +91,12 @@ export default async function BlogPostPage({
     <PageShell>
       <SeoJsonLd data={breadcrumbJsonLd} />
       <SeoJsonLd data={blogPostingJsonLd} />
-      <PageHero eyebrow="Blog" title={post.title} intro={post.excerpt} image={post.coverImage} />
+      <PageHero
+        eyebrow={guide ? "Guide" : "Journal"}
+        title={post.title}
+        intro={post.excerpt}
+        image={post.coverImage}
+      />
       <Band variant="cream">
         <Section className="max-w-3xl">
           <div className="text-foreground/80 font-light leading-relaxed space-y-6">
@@ -105,15 +117,22 @@ export default async function BlogPostPage({
                   blockquote: (props) => (
                     <blockquote className="border-l border-border pl-4 italic text-foreground/75" {...props} />
                   ),
+                  table: (props) => (
+                    <div className="overflow-x-auto">
+                      <table className="w-full border-collapse text-sm" {...props} />
+                    </div>
+                  ),
+                  th: (props) => (
+                    <th className="border border-border bg-foreground/5 px-3 py-2 text-left font-normal" {...props} />
+                  ),
+                  td: (props) => <td className="border border-border px-3 py-2 align-top" {...props} />,
                 }}
               >
                 {post.body}
               </ReactMarkdown>
             )}
           </div>
-          <div className="mt-12">
-            <AuthorStrip full />
-          </div>
+          <div className="mt-12">{guide ? <GuideFooter /> : <AuthorStrip full />}</div>
         </Section>
       </Band>
     </PageShell>

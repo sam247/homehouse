@@ -96,12 +96,14 @@ test("enquiry submits via api", async ({ page }) => {
   await expect(dialog).toBeHidden();
 });
 
-test("blog list and post page render", async ({ page }) => {
+test("blog list and guide post page render", async ({ page }) => {
   await page.goto("/blog");
-  await expect(page.getByRole("heading", { name: "Notes from the homestead." })).toBeVisible();
-  await page.getByRole("link", { name: "Hello world" }).click();
-  await expect(page).toHaveURL(/\/blog\/hello-world$/);
-  await expect(page.getByRole("heading", { name: "Hello world" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Guides and journal notes from the homestead." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Planning guides" })).toBeVisible();
+  await page.getByRole("link", { name: "What Is A Homestead Retreat?" }).click();
+  await expect(page).toHaveURL(/\/blog\/what-is-a-homestead-retreat$/);
+  await expect(page.getByRole("heading", { name: "What Is A Homestead Retreat?" })).toBeVisible();
+  await expect(page.getByText("Planning a stay")).toBeVisible();
 });
 
 test("retreats page loads", async ({ page }) => {
@@ -190,7 +192,7 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   const sitemapText = await sitemap.text();
   expect(sitemapText).toContain("<loc>http://localhost:3000/</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog</loc>");
-  expect(sitemapText).toContain("<loc>http://localhost:3000/blog/hello-world</loc>");
+  expect(sitemapText).not.toContain("<loc>http://localhost:3000/blog/hello-world</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/hearth-project</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/community</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats</loc>");
@@ -199,6 +201,8 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/solo-retreats-norfolk</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog/what-is-a-homestead-retreat</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog/how-to-plan-a-solo-retreat-in-norfolk</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/blog/can-you-go-on-a-retreat-alone</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/blog/how-long-should-you-go-on-a-retreat-for</loc>");
 });
 
 test("canonical link is absolute", async ({ page }) => {

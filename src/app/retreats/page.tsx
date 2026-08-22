@@ -5,6 +5,7 @@ import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Button } from "@/components/ui/button";
 import { RETREAT_PAGES } from "@/lib/retreatPages";
+import { PlanningGuidesSection, RETREAT_PLANNING_GUIDES } from "@/components/PlanningGuidesSection";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
@@ -253,6 +254,12 @@ export default function RetreatsPage() {
               />
             </div>
           </div>
+        </Section>
+      </Band>
+
+      <Band className="border-t border-border">
+        <Section className="max-w-4xl">
+          <PlanningGuidesSection guides={RETREAT_PLANNING_GUIDES} />
         </Section>
       </Band>
 

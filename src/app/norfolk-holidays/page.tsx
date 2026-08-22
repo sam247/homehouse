@@ -4,6 +4,7 @@ import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Button } from "@/components/ui/button";
+import { PlanningGuidesSection, HOLIDAY_PLANNING_GUIDES } from "@/components/PlanningGuidesSection";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
@@ -202,6 +203,12 @@ export default function NorfolkHolidaysPage() {
               </Link>
             </article>
           </div>
+        </Section>
+      </Band>
+
+      <Band className="border-t border-border">
+        <Section className="max-w-4xl">
+          <PlanningGuidesSection guides={HOLIDAY_PLANNING_GUIDES} />
         </Section>
       </Band>
 

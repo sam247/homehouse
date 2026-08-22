@@ -29,10 +29,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const posts = await getAllPosts();
-  const postEntries = posts.map((post) => ({
-    url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: post.publishedAt ? new Date(post.publishedAt) : undefined,
-  }));
+  const postEntries = posts
+    .filter((post) => !post.noindex)
+    .map((post) => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: post.publishedAt ? new Date(post.publishedAt) : undefined,
+    }));
 
   return [...staticEntries, ...postEntries];
 }

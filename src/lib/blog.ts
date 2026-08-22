@@ -3,6 +3,8 @@ import path from "node:path";
 import matter from "gray-matter";
 import { getDb } from "@/lib/db";
 
+export type BlogContentType = "guide" | "journal";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -10,7 +12,44 @@ export type BlogPost = {
   coverImage?: string;
   publishedAt?: string;
   body: string;
+  contentType?: BlogContentType;
+  author?: string;
+  noindex?: boolean;
 };
+
+const GUIDE_SLUGS = new Set([
+  "how-to-plan-a-solo-retreat-in-norfolk",
+  "what-to-pack-for-a-countryside-retreat-in-norfolk",
+  "retreat-or-guest-house-stay-in-norfolk",
+  "what-to-expect-on-a-womens-retreat-in-norfolk",
+  "peaceful-norfolk-holidays-for-rest-and-reset",
+  "what-is-a-homestead-retreat",
+  "digital-detox-retreat-in-norfolk",
+  "quiet-weekend-breaks-in-norfolk",
+  "can-you-go-on-a-retreat-alone",
+  "how-long-should-you-go-on-a-retreat-for",
+]);
+
+function parsePostMeta(data: Record<string, unknown>, slug: string) {
+  const contentTypeRaw = data.contentType;
+  const contentType: BlogContentType | undefined =
+    contentTypeRaw === "guide" || contentTypeRaw === "journal" ? contentTypeRaw : undefined;
+  const author = typeof data.author === "string" ? data.author : undefined;
+  const noindex = data.noindex === true || slug === "hello-world";
+
+  return { contentType, author, noindex };
+}
+
+export function isGuidePost(post: BlogPost): boolean {
+  if (post.contentType === "guide") return true;
+  if (post.contentType === "journal") return false;
+  if (post.body.trim().startsWith("<")) return false;
+  return GUIDE_SLUGS.has(post.slug);
+}
+
+export function isJournalPost(post: BlogPost): boolean {
+  return !isGuidePost(post);
+}
 
 const BLOG_DIR = path.resolve("content", "blog");
 
@@ -44,6 +83,8 @@ async function getMarkdownPostBySlug(slug: string): Promise<BlogPost | null> {
   const parsed = matter(raw);
   const data = parsed.data as Record<string, unknown>;
 
+  const meta = parsePostMeta(data, slug);
+
   return {
     slug,
     title: typeof data.title === "string" ? data.title : slug,
@@ -51,6 +92,9 @@ async function getMarkdownPostBySlug(slug: string): Promise<BlogPost | null> {
     coverImage: typeof data.coverImage === "string" ? data.coverImage : undefined,
     publishedAt: typeof data.publishedAt === "string" ? data.publishedAt : undefined,
     body: parsed.content.trim(),
+    contentType: meta.contentType ?? (GUIDE_SLUGS.has(slug) ? "guide" : undefined),
+    author: meta.author,
+    noindex: meta.noindex,
   };
 }
 
@@ -90,6 +134,8 @@ async function getAllDbPosts(): Promise<BlogPost[]> {
     coverImage: r.cover_image_url ?? undefined,
     publishedAt: r.published_at ? new Date(r.published_at).toISOString() : undefined,
     body: r.body_html ?? "",
+    contentType: "journal" as const,
+    noindex: false,
   }));
 }
 
@@ -101,7 +147,17 @@ export async function getAllPosts(): Promise<BlogPost[]> {
   for (const post of markdownPosts) bySlug.set(post.slug, post);
   for (const post of dbPosts) bySlug.set(post.slug, post);
 
-  return sortPostsByDateDesc([...bySlug.values()]);
+  return sortPostsByDateDesc([...bySlug.values()].filter((post) => !post.noindex));
+}
+
+export async function getGuidePosts(): Promise<BlogPost[]> {
+  const all = await getAllPosts();
+  return all.filter(isGuidePost);
+}
+
+export async function getJournalPosts(): Promise<BlogPost[]> {
+  const all = await getAllPosts();
+  return all.filter(isJournalPost);
 }
 
 export async function getPostsPage({

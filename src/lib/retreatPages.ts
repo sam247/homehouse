@@ -46,6 +46,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "If you want to see current dates, the best next step is to browse Events & Workshops. If you want to talk about a more personal retreat stay, send an enquiry and we can guide you.",
     ],
     relatedLinks: [
+      { href: "/blog/what-to-expect-on-a-womens-retreat-in-norfolk", label: "What to expect on a women's retreat" },
       { href: "/retreats/solo-retreats-norfolk", label: "Solo retreats in Norfolk" },
       { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },
       { href: "/events-and-workshops", label: "Scheduled retreat dates" },
@@ -95,6 +96,8 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "If you want a more accommodation-led break, visit Stays. If you want to see shared retreat dates, browse Events & Workshops.",
     ],
     relatedLinks: [
+      { href: "/blog/how-to-plan-a-solo-retreat-in-norfolk", label: "Plan a solo retreat in Norfolk" },
+      { href: "/blog/can-you-go-on-a-retreat-alone", label: "Can you go on a retreat alone?" },
       { href: "/retreats/womens-retreats-norfolk", label: "Women's retreats in Norfolk" },
       { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },
       { href: "/stays", label: "Guest house stays" },
@@ -144,6 +147,8 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "If you are planning a simpler group break, Stays may also be relevant. For existing live retreat dates, visit Events & Workshops.",
     ],
     relatedLinks: [
+      { href: "/blog/how-long-should-you-go-on-a-retreat-for", label: "How long should a retreat be?" },
+      { href: "/blog/retreat-or-guest-house-stay-in-norfolk", label: "Retreat or guest house stay?" },
       { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },
       { href: "/stays", label: "Guest house stays" },
       { href: "/events-and-workshops", label: "Scheduled retreat dates" },
@@ -193,6 +198,8 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "If you want a fully scheduled retreat date, visit Events & Workshops. If you mainly want accommodation, visit Stays.",
     ],
     relatedLinks: [
+      { href: "/blog/how-long-should-you-go-on-a-retreat-for", label: "How long should a retreat be?" },
+      { href: "/blog/digital-detox-retreat-in-norfolk", label: "Quieter break from screens" },
       { href: "/retreats/solo-retreats-norfolk", label: "Solo retreats in Norfolk" },
       { href: "/retreats/private-retreats-norfolk", label: "Private retreats" },
       { href: "/stays", label: "Guest house stays" },

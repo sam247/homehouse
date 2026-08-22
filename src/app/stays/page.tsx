@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { RoomGalleryLightbox } from "@/components/stays/RoomGalleryLightbox";
+import { PlanningGuidesSection, STAY_PLANNING_GUIDES } from "@/components/PlanningGuidesSection";
 import { Button } from "@/components/ui/button";
 
 const IMG = {
@@ -182,6 +183,7 @@ export default function StaysPage() {
               ))}
             </ul>
           </div>
+          <PlanningGuidesSection guides={STAY_PLANNING_GUIDES} />
           <div className="mt-16 text-center reveal">
             <EnquiryDrawer
               source="stays"
