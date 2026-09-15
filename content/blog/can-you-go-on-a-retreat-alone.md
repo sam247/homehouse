@@ -1,7 +1,7 @@
 ---
-title: "Can You Go On A Retreat Alone?"
+title: "Can You Go On a Retreat Alone? Yes — Here's What to Expect"
 publishedAt: "2026-08-22T10:00:00.000Z"
-excerpt: "Yes — many people go on retreats alone. Here is an honest look at who solo retreats suit, the pros and cons, and how hosted countryside stays differ from isolated ones."
+excerpt: "Yes, you can go on a retreat alone. Pros, cons, who it suits, and how a hosted Norfolk stay differs from going completely solo."
 coverImage: "/photos/fields.webp"
 contentType: guide
 author: Home House Homestead
@@ -116,7 +116,7 @@ Guests at Home House often combine short walks, time by the pond, reading in the
 
 If reading this far has produced cautious interest rather than dread, solo is likely worth trying — especially in a hosted setting for two to four nights first. You learn more from one gentle solo retreat than from months of wondering.
 
-If you are ready to plan dates and structure, continue to [How to plan a solo retreat in Norfolk](/blog/how-to-plan-a-solo-retreat-in-norfolk). If you want to see how Home House welcomes solo guests, visit [solo retreats in Norfolk](/retreats/solo-retreats-norfolk). For rest-focused stays that work equally well alone, see [rest retreats in Norfolk](/retreats/rest-retreats-norfolk).
+If you are ready to plan dates and structure, continue to [How to plan a solo retreat in Norfolk](/blog/how-to-plan-a-solo-retreat-in-norfolk). If you want to see how Home House welcomes solo guests, visit [solo retreats in Norfolk](/retreats/solo-retreats-norfolk). For rest-focused stays that work equally well alone, see [rest retreats in Norfolk](/retreats/rest-retreats-norfolk). Prefer a small shared pause with one friend rather than full solitude? [Private retreats in Norfolk](/retreats/private-retreats-norfolk) keep the quiet without requiring you to travel completely alone.
 
 ## Frequently asked questions
 
@@ -142,6 +142,6 @@ Introverts often do exceptionally well on solo retreats because social demand is
 
 ### What if I have never travelled alone before?
 
-A solo retreat is a manageable first step — fixed dates, one location, clear purpose, and hosts who expect solo guests. Starting with two or three nights in a warm rural setting is gentler than a week-long international trip alone.
+A solo retreat is a manageable first step — fixed dates, one location, clear purpose, and hosts who expect solo guests. Starting with two or three nights in a warm rural setting is gentler than a week-long international trip alone. [How long should you go on a retreat for?](/blog/how-long-should-you-go-on-a-retreat-for) helps you choose a first length that fits that test.
 
-Going on a retreat alone is allowed, normal, and often deeply restorative when the setting matches the intention. The question is not whether you *can*, but whether you want enough quiet — with the right amount of support — for a few days in a place like Norfolk. If the answer is yes, the next step is planning, not persuading yourself further.
+Going on a retreat alone is allowed, normal, and often deeply restorative when the setting matches the intention. The question is not whether you *can*, but whether you want enough quiet — with the right amount of support — for a few days in a place like Norfolk. If the answer is yes, the next step is planning — including [what to pack for a countryside retreat in Norfolk](/blog/what-to-pack-for-a-countryside-retreat-in-norfolk) — not persuading yourself further.

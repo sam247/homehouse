@@ -1,7 +1,7 @@
 ---
-title: "How Long Should You Go On A Retreat For?"
+title: "How Long Should a Retreat Be? Weekend to Week Guide"
 publishedAt: "2026-08-22T10:00:00.000Z"
-excerpt: "Weekend, mid-week, or longer — how to choose retreat duration for a first stay or a deeper pause, with practical guidance for Norfolk countryside retreats."
+excerpt: "How long do retreats last? Compare weekend, 3–5 day, and longer stays — and pick a duration that actually lets you rest."
 coverImage: "/photos/garden-magnolia.webp"
 contentType: guide
 author: Home House Homestead
@@ -125,7 +125,7 @@ Winter retreats feel cocooning in shorter daylight; a weekend may suffice becaus
 
 Scheduled retreats on fixed dates — women's gatherings, rest weekends, workshops — have duration decided for you. Evaluate whether the official length matches your travel and recovery needs; some guests extend with extra guest nights.
 
-Self-directed [retreats in Norfolk](/retreats) let you choose length within availability. Solo and rest-focused pages describe stays that flex around your dates. Compare [solo retreats](/retreats/solo-retreats-norfolk) and [rest retreats](/retreats/rest-retreats-norfolk) if you want hosted quiet without a fixed group programme.
+Self-directed [retreats in Norfolk](/retreats) let you choose length within availability. Solo and rest-focused pages describe stays that flex around your dates. Compare [solo retreats](/retreats/solo-retreats-norfolk), [rest retreats](/retreats/rest-retreats-norfolk), and [private retreats](/retreats/private-retreats-norfolk) if you want hosted quiet without a fixed group programme — or [women's retreats in Norfolk](/retreats/womens-retreats-norfolk) when a scheduled gathering sets the dates for you.
 
 ## Signs you booked the wrong length
 
@@ -157,7 +157,7 @@ Sometimes, subject to availability. If mid-stay you realise you need more time, 
 
 ### Should my first solo retreat be longer or shorter?
 
-Slightly longer than a bare weekend if possible — three or four nights — unless you are joining a fixed two-night event. Shorter first stays work when the goal is testing the format, not deep recovery.
+Slightly longer than a bare weekend if possible — three or four nights — unless you are joining a fixed two-night event. Shorter first stays work when the goal is testing the format, not deep recovery. If you are still deciding whether solo is right at all, read [can you go on a retreat alone?](/blog/can-you-go-on-a-retreat-alone) before fixing dates.
 
 ### Do workshop retreats need extra days?
 
@@ -167,4 +167,4 @@ If travel is long or the workshop is intensive, adding a quiet guest night befor
 
 Practical limits depend on availability and your appetite for unstructured time. Weeks are normal for writing and rest projects; months are unusual unless arranged as a bespoke arrangement. Most guests sit between three and seven nights.
 
-Choosing retreat length is an act of honesty: how much time do you actually need to step off the treadmill, and how much can your life generously give? Weekends introduce the pause. Three to five days deepen it. Longer stays let projects and rest unfold without hurry. Match length to intention, travel, and whether this is your first visit or your fifth — then book accordingly through [retreats in Norfolk](/retreats), [Events & Workshops](/events-and-workshops), or a flexible [guest house stay](/stays) at Home House Homestead.
+Choosing retreat length is an act of honesty: how much time do you actually need to step off the treadmill, and how much can your life generously give? Weekends introduce the pause. Three to five days deepen it. Longer stays let projects and rest unfold without hurry. Match length to intention, travel, and whether this is your first visit or your fifth — then book accordingly through [retreats in Norfolk](/retreats), [Events & Workshops](/events-and-workshops), or a flexible [guest house stay](/stays). For a short first break, [quiet weekend breaks in Norfolk](/blog/quiet-weekend-breaks-in-norfolk) may help shape the shape of two or three nights; for packing once dates are set, see [what to pack for a countryside retreat in Norfolk](/blog/what-to-pack-for-a-countryside-retreat-in-norfolk).

@@ -113,7 +113,7 @@ Occasionally guests join us during wider [events and workshops](/events-and-work
 
 ## Length of stay: weekend versus longer
 
-A short break can interrupt habitual scrolling for a few days. A longer stay of four or more nights often allows a deeper shift in evening rhythm and sleep patterns. Neither is wrong. Choose based on travel time, budget, and how long it usually takes you to stop mentally rushing.
+A short break can interrupt habitual scrolling for a few days. A longer stay of four or more nights often allows a deeper shift in evening rhythm and sleep patterns. Neither is wrong. Choose based on travel time, budget, and how long it usually takes you to stop mentally rushing — [how long should you go on a retreat for?](/blog/how-long-should-you-go-on-a-retreat-for) compares weekend and mid-length options in more detail.
 
 Many local guests start with a long weekend and return for a midweek break once they know the setting suits them.
 
@@ -127,6 +127,6 @@ A quieter break from screens in Norfolk suits you if you want environment and ho
 
 It may suit you less if you want a formal detox retreat with facilitators, group rules, and a branded methodology. In that case, a specialist centre may match your expectations better.
 
-We would be glad to host you if our approach fits. Explore [rest retreats in Norfolk](/retreats/rest-retreats-norfolk) for restorative stays, [solo retreats in Norfolk](/retreats/solo-retreats-norfolk) if you are travelling alone, or [guest house stays](/stays) if you prefer a screen-light holiday without the retreat label.
+We would be glad to host you if our approach fits. Explore [rest retreats in Norfolk](/retreats/rest-retreats-norfolk) for restorative stays, [solo retreats in Norfolk](/retreats/solo-retreats-norfolk) if you are travelling alone, [private retreats in Norfolk](/retreats/private-retreats-norfolk) if you want to unplug with one or two trusted people, or [guest house stays](/stays) if you prefer a screen-light holiday without the retreat label. For packing that supports quieter evenings, see [what to pack for a countryside retreat in Norfolk](/blog/what-to-pack-for-a-countryside-retreat-in-norfolk).
 
 Norfolk has wide horizons and quiet evenings. Your attention can widen with them, on your terms, without a formal detox programme. That is the break many of our guests were looking for all along.

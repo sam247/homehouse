@@ -87,9 +87,9 @@ Mental preparation matters too. Arrive without a list of things you must achieve
 
 Not every women's retreat will suit every person. Before booking anywhere, including with us, it is worth asking yourself a few honest questions.
 
-Do you want a scheduled group experience with facilitators and themes, or a more personal stay where you set much of the pace yourself? Do you want quiet and space, or a more active programme with movement, craft, or learning? Do you want to come alone or with someone else? Do you need a venue that feels intimate rather than formal?
+Do you want a scheduled group experience with facilitators and themes, or a more personal stay where you set much of the pace yourself? Do you want quiet and space, or a more active programme with movement, craft, or learning? Do you want to come alone or with someone else? Do you need a venue that feels intimate rather than formal? Guests who want deep rest without a women's gathering theme may prefer [rest retreats in Norfolk](/retreats/rest-retreats-norfolk); two or three friends booking together often land on [private retreats in Norfolk](/retreats/private-retreats-norfolk).
 
-If you are unsure, reading across our main [retreats in Norfolk](/retreats) hub can help you compare retreat-style stays with guest house breaks and themed workshops. There is no single right answer, only what fits your current need.
+If you are unsure, reading across our main [retreats in Norfolk](/retreats) hub can help you compare retreat-style stays with guest house breaks and themed workshops. There is no single right answer, only what fits your current need. If coming alone still feels uncertain, [can you go on a retreat alone?](/blog/can-you-go-on-a-retreat-alone) addresses that decision directly.
 
 ## Arrival: what the first few hours feel like
 
@@ -105,4 +105,4 @@ The end of a retreat is not a test of how much you changed in a few days. It is 
 
 Maybe you sleep without your phone beside the bed. Maybe you protect one slow morning a week. Maybe you remember how it felt to eat a meal without scrolling and choose to repeat that at home. The retreat does not need to fix everything. It can simply remind you what rest feels like when you allow it.
 
-We hope this guide has given you a clearer, more honest picture of what to expect from a women's retreat in a small personal setting in Norfolk. If that sounds like what you need, we would be glad to welcome you. Start with our [women's retreats in Norfolk](/retreats/womens-retreats-norfolk) page, or browse the full range of options on our [retreats](/retreats) hub.
+We hope this guide has given you a clearer, more honest picture of what to expect from a women's retreat in a small personal setting in Norfolk. If that sounds like what you need, we would be glad to welcome you. Start with our [women's retreats in Norfolk](/retreats/womens-retreats-norfolk) page, browse the full range on our [retreats](/retreats) hub, or check [how long you should go on a retreat for](/blog/how-long-should-you-go-on-a-retreat-for) once you are choosing dates.

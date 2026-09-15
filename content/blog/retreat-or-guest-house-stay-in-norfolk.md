@@ -24,7 +24,7 @@ The word retreat carries different weight depending on who is using it. In pract
 
 Retreats work well when you want the setting to support a particular outcome. You are not just sleeping somewhere nice; you are choosing an environment that makes rest or reflection easier.
 
-If that resonates, start with our [retreats in Norfolk](/retreats) hub, which covers women's retreats, solo retreats, private retreats, and rest-led stays.
+If that resonates, start with our [retreats in Norfolk](/retreats) hub, then compare [women's retreats](/retreats/womens-retreats-norfolk), [solo retreats](/retreats/solo-retreats-norfolk), [private retreats](/retreats/private-retreats-norfolk), and [rest retreats](/retreats/rest-retreats-norfolk) to find the format that matches your intention.
 
 ## What people usually mean by "guest house stay"
 
@@ -61,8 +61,8 @@ This table is a guide, not a rulebook. Real stays often blend elements from both
 
 A retreat usually makes sense when you want:
 
-- **Specific dates** — Especially for women's retreats, seasonal gatherings, or events with a shared focus.
-- **A shared experience** — Being alongside others who have chosen the same kind of pause can feel supportive and grounding.
+- **Specific dates** — Especially for [women's retreats in Norfolk](/retreats/womens-retreats-norfolk), seasonal gatherings, or events with a shared focus.
+- **A shared experience** — Being alongside others who have chosen the same kind of pause can feel supportive and grounding. Small friend or sister groups often prefer a [private retreat in Norfolk](/retreats/private-retreats-norfolk) instead of an open scheduled event.
 - **A defined atmosphere** — Rest-led, reflective, creative, or communal. The retreat framing helps you take the time seriously.
 - **Less decision-making** — Structure, even gentle structure, removes the burden of planning every hour.
 
@@ -190,4 +190,4 @@ Popular retreat dates and school holiday periods fill earlier. For rest-led week
 
 ---
 
-Home House Homestead offers both retreats and guest house stays in rural Norfolk. If this guide has clarified what you need, explore our [retreats](/retreats), browse [stays](/stays), or read about [Norfolk holidays](/norfolk-holidays) to plan your break.
+Home House Homestead offers both retreats and guest house stays in rural Norfolk. If this guide has clarified what you need, explore our [retreats](/retreats), browse [stays](/stays), or read about [Norfolk holidays](/norfolk-holidays) to plan your break. Still unsure on length? [How long should you go on a retreat for?](/blog/how-long-should-you-go-on-a-retreat-for) helps fix the dates once the format is clear.

@@ -41,7 +41,7 @@ Norfolk suits this format particularly well. The county offers open countryside,
 
 Home House Homestead sits in that tradition: peaceful accommodation, nourishing food, and space to be quiet while still feeling cared for. Explore the full picture on our [solo retreats in Norfolk](/retreats/solo-retreats-norfolk) page, or compare broader options on [retreats in Norfolk](/retreats).
 
-If rest is your primary intention rather than solitude alone, [rest retreats in Norfolk](/retreats/rest-retreats-norfolk) may describe your stay more accurately.
+If rest is your primary intention rather than solitude alone, [rest retreats in Norfolk](/retreats/rest-retreats-norfolk) may describe your stay more accurately. If you want a quieter relationship with screens as part of that rest, [digital detox retreat in Norfolk](/blog/digital-detox-retreat-in-norfolk) explains how the same setting supports that without a formal programme.
 
 ## Shape a light daily structure
 

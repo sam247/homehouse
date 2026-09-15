@@ -73,7 +73,7 @@ Some guests begin by searching for a peaceful Norfolk holiday and then realise w
 
 A holiday tends to be flexible and recreational. A retreat-style stay often carries more purpose: you are there to rest, reflect, recover pace, or step back from roles that leave little room for yourself. The accommodation may be similar; the intention differs.
 
-If you want deeper rest with a clearer restorative focus, our [rest retreats in Norfolk](/retreats/rest-retreats-norfolk) page describes stays shaped around that intent. If a comfortable guest house break is enough, stay with our [stays](/stays) page.
+If you want deeper rest with a clearer restorative focus, our [rest retreats in Norfolk](/retreats/rest-retreats-norfolk) page describes stays shaped around that intent. If a quieter relationship with screens is part of that rest, [digital detox retreat in Norfolk](/blog/digital-detox-retreat-in-norfolk) explains how the same setting can help without a formal programme. If a comfortable guest house break is enough, stay with our [stays](/stays) page.
 
 There is no hierarchy. A peaceful holiday that gives you good sleep and a clear head is a success. A retreat is simply one step further when rest alone is not quite what you are looking for.
 
@@ -123,6 +123,6 @@ Before you leave, note one or two small habits worth keeping: a later bedtime wi
 
 Peaceful Norfolk holidays are a valid and increasingly sought-after way to travel. They prioritise how you feel over how much you saw. They treat rest as the point, not the gap between activities.
 
-If that aligns with what you need, we would be glad to be part of your plans. Explore our [Norfolk holidays](/norfolk-holidays) overview, browse [guest house stays](/stays) for accommodation-led breaks, or consider [rest retreats in Norfolk](/retreats/rest-retreats-norfolk) if your intent runs deeper than a standard holiday. For a shorter escape, our companion guide to [quiet weekend breaks in Norfolk](/blog/quiet-weekend-breaks-in-norfolk) may help you shape a two or three night break.
+If that aligns with what you need, we would be glad to be part of your plans. Explore our [Norfolk holidays](/norfolk-holidays) overview, browse [guest house stays](/stays) for accommodation-led breaks, or consider [rest retreats in Norfolk](/retreats/rest-retreats-norfolk) if your intent runs deeper than a standard holiday. Friends booking together may prefer [private retreats in Norfolk](/retreats/private-retreats-norfolk). For a shorter escape, our companion guide to [quiet weekend breaks in Norfolk](/blog/quiet-weekend-breaks-in-norfolk) may help you shape a two or three night break.
 
 Norfolk has room for slow days. Your holiday can too.

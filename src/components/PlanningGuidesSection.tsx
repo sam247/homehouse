@@ -32,6 +32,21 @@ export const RETREAT_PLANNING_GUIDES: PlanningGuideLink[] = [
     label: "What is a homestead retreat?",
     description: "How a homestead stay differs from a hotel or formal retreat centre.",
   },
+  {
+    href: "/blog/what-to-expect-on-a-womens-retreat-in-norfolk",
+    label: "What to expect on a women's retreat",
+    description: "Honest expectations for a small women's retreat in Norfolk.",
+  },
+  {
+    href: "/blog/digital-detox-retreat-in-norfolk",
+    label: "Quieter break from screens",
+    description: "Screen-light countryside stays without a formal detox programme.",
+  },
+  {
+    href: "/blog/what-to-pack-for-a-countryside-retreat-in-norfolk",
+    label: "What to pack for a countryside retreat",
+    description: "Seasonal packing for Norfolk retreat and guest house stays.",
+  },
 ];
 
 export const STAY_PLANNING_GUIDES: PlanningGuideLink[] = [

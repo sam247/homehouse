@@ -250,7 +250,7 @@ Sturdy, waterproof walking shoes or boots with good grip are ideal for fields, l
 
 ### Should I pack differently for a solo retreat?
 
-Solo retreats benefit from the same practical basics, with a little extra emphasis on items that help you feel settled — a journal, a favourite book, headphones, and familiar toiletries. Our [solo retreat planning guide](/blog/how-to-plan-a-solo-retreat-in-norfolk) covers the wider decisions; packing is simply the practical extension of those choices.
+Solo retreats benefit from the same practical basics, with a little extra emphasis on items that help you feel settled — a journal, a favourite book, headphones, and familiar toiletries. Our [solo retreat planning guide](/blog/how-to-plan-a-solo-retreat-in-norfolk) covers the wider decisions; packing is simply the practical extension of those choices. See also [solo retreats in Norfolk](/retreats/solo-retreats-norfolk) for how hosted solitude works at the homestead.
 
 ### Is Norfolk very cold compared to London or the south?
 
@@ -266,4 +266,4 @@ Retreat packing leans towards comfort, reflection, and repetition — fewer outf
 
 ---
 
-Home House Homestead offers peaceful retreats and guest house stays in rural Norfolk. If this guide has helped you prepare, explore our [retreats](/retreats) and [stays](/stays), or send an enquiry when you are ready to book.
+Home House Homestead offers peaceful retreats and guest house stays in rural Norfolk. If this guide has helped you prepare, explore our [retreats](/retreats) and [stays](/stays), compare [women's](/retreats/womens-retreats-norfolk) or [private](/retreats/private-retreats-norfolk) formats if you are packing for a small shared stay, or send an enquiry when you are ready to book.

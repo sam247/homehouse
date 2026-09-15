@@ -69,7 +69,7 @@ This is not a mandate. It is a template that protects rest while still giving th
 
 ## Travelling solo, as a couple, or with a friend
 
-Quiet weekends work for solo travellers who want privacy and a change of scene without group noise. They work for couples who want time together without entertainment pressure. They work for two friends who share a preference for calm over nightlife.
+Quiet weekends work for solo travellers who want privacy and a change of scene without group noise — see [solo retreats in Norfolk](/retreats/solo-retreats-norfolk) if solitude is the main point. They work for couples who want time together without entertainment pressure. They work for two friends who share a preference for calm over nightlife, which often maps better to a [private retreat in Norfolk](/retreats/private-retreats-norfolk) than to a large group event.
 
 Solo guests should choose places that feel safe, welcomed, and not isolated in an empty hotel sense. Couples should agree in advance that quiet is the shared goal so one person is not planning a pub crawl while the other brought three novels.
 
@@ -77,7 +77,7 @@ Solo guests should choose places that feel safe, welcomed, and not isolated in a
 
 Sometimes what people call a quiet weekend break is actually closer to a retreat in intention. You are not only escaping traffic; you are stepping back from roles, screens, and urgency to recover pace and clarity.
 
-The line is fuzzy. A retreat-style stay may look like a guest house booking but carry more purpose: sleep, reflection, less social performance, maybe journaling or long walks without posting them. If that describes you, our main [retreats in Norfolk](/retreats) hub compares options including rest-focused stays.
+The line is fuzzy. A retreat-style stay may look like a guest house booking but carry more purpose: sleep, reflection, less social performance, maybe journaling or long walks without posting them. If that describes you, our main [retreats in Norfolk](/retreats) hub compares options including [rest retreats](/retreats/rest-retreats-norfolk). For a quieter relationship with screens over a short stay, [digital detox retreat in Norfolk](/blog/digital-detox-retreat-in-norfolk) explains the same setting without a formal programme.
 
 If a comfortable weekend base is enough, stay with [guest house stays](/stays). If you want a longer rest-focused break with similar atmosphere, our guide to [peaceful Norfolk holidays for rest and reset](/blog/peaceful-norfolk-holidays-for-rest-and-reset) goes deeper on planning beyond a single weekend.
 

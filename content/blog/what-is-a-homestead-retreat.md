@@ -1,7 +1,7 @@
 ---
-title: "What Is A Homestead Retreat?"
+title: "What Is a Homestead Retreat? (vs Hotel or Retreat Centre)"
 publishedAt: "2026-08-22T10:00:00.000Z"
-excerpt: "A clear explanation of what a homestead retreat is, how it differs from a hotel or formal retreat centre, and who this slower, more personal kind of stay suits best."
+excerpt: "What a homestead retreat actually is — and how it differs from a hotel stay or a formal retreat centre — for slower, more personal countryside breaks."
 coverImage: "/photos/fields.webp"
 contentType: guide
 author: Home House Homestead
@@ -202,7 +202,7 @@ Practical steps:
 
 1. **Clarify your intention** — Rest, reflection, connection, or simply quiet. Write one sentence about what you hope to feel when you leave.
 2. **Choose dates with margin** — Arriving exhausted and leaving two days later rarely allows the body to catch up. Long weekends are a minimum; a week is often better.
-3. **Pack for comfort** — See our packing guide for Norfolk countryside retreats if you want a full list.
+3. **Pack for comfort** — See [what to pack for a countryside retreat in Norfolk](/blog/what-to-pack-for-a-countryside-retreat-in-norfolk) if you want a full seasonal list.
 4. **Communicate dietary and access needs early** — Homestead hosts can usually accommodate thoughtfully when they know in advance.
 5. **Protect the time** — Tell people you will be slow to respond. The retreat begins when you stop performing availability.
 
@@ -220,7 +220,7 @@ Layout varies by property. At Home House Homestead, guests have private rooms an
 
 ### Are homestead retreats suitable for solo travellers?
 
-Yes. Solo guests are among the best fits — you have solitude when you want it and quiet company when you do not. See our [retreats](/retreats) page for solo and private options.
+Yes. Solo guests are among the best fits — you have solitude when you want it and quiet company when you do not. Start with [solo retreats in Norfolk](/retreats/solo-retreats-norfolk), or compare [private retreats](/retreats/private-retreats-norfolk) if you prefer to come with one or two trusted people rather than joining a larger gathering.
 
 ### How is this different from Airbnb in the countryside?
 
@@ -232,7 +232,7 @@ Light email may be fine. Full video-call remote work usually undermines the purp
 
 ### What should I bring?
 
-Comfortable layers, walking shoes, a journal, a book, and an open attitude towards slowness. Full seasonal guidance is in our packing guide for Norfolk countryside retreats.
+Comfortable layers, walking shoes, a journal, a book, and an open attitude towards slowness. Full seasonal guidance is in [what to pack for a countryside retreat in Norfolk](/blog/what-to-pack-for-a-countryside-retreat-in-norfolk).
 
 ### Is a homestead retreat a type of holiday?
 
@@ -240,4 +240,4 @@ Often yes. The line between a restorative holiday and a retreat is intention rat
 
 ---
 
-Home House Homestead offers homestead-style retreats and guest house stays in rural Norfolk — personal, peaceful, and rooted in the land. Explore our [stays](/stays) and [retreats](/retreats), or get in touch when you are ready to plan your time away.
+Home House Homestead offers homestead-style retreats and guest house stays in rural Norfolk — personal, peaceful, and rooted in the land. Explore our [stays](/stays), [rest retreats](/retreats/rest-retreats-norfolk), and the wider [retreats](/retreats) hub — or read [how long you should go on a retreat for](/blog/how-long-should-you-go-on-a-retreat-for) if you are still deciding on dates.
