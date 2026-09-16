@@ -8,7 +8,7 @@ const DESCRIPTION =
 test("duration guide has CTR title, meta, FAQ schema, and enquiry-path links", async ({ page }) => {
   await page.goto(PATH);
 
-  await expect(page).toHaveTitle(new RegExp(TITLE));
+  await expect(page).toHaveTitle(TITLE + " — Home House Homestead");
   await expect(page.getByRole("heading", { level: 1, name: TITLE })).toBeVisible();
   await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", DESCRIPTION);
 
