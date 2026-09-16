@@ -6,6 +6,7 @@ import { GuideFooter } from "@/components/GuideFooter";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { getPostBySlug, isGuidePost } from "@/lib/blog";
+import { extractFaqFromMarkdown } from "@/lib/blogFaq";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 export const dynamic = "force-dynamic";
@@ -86,11 +87,29 @@ export default async function BlogPostPage({
   };
 
   const isHtml = post.body.trim().startsWith("<");
+  const faq = isHtml ? [] : extractFaqFromMarkdown(post.body);
+  const faqJsonLd =
+    faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": `${postUrl}#faq`,
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a,
+            },
+          })),
+        }
+      : null;
 
   return (
     <PageShell>
       <SeoJsonLd data={breadcrumbJsonLd} />
       <SeoJsonLd data={blogPostingJsonLd} />
+      {faqJsonLd ? <SeoJsonLd data={faqJsonLd} /> : null}
       <PageHero
         eyebrow={guide ? "Guide" : "Journal"}
         title={post.title}
