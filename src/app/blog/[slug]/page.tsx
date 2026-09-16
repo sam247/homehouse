@@ -87,7 +87,10 @@ export default async function BlogPostPage({
   };
 
   const isHtml = post.body.trim().startsWith("<");
-  const faq = isHtml ? [] : extractFaqFromMarkdown(post.body);
+  const faq =
+    !isHtml && slug === "how-long-should-you-go-on-a-retreat-for"
+      ? extractFaqFromMarkdown(post.body)
+      : [];
   const faqJsonLd =
     faq.length > 0
       ? {
