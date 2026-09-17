@@ -39,25 +39,35 @@ test("desktop navigation works", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "A journey home." })).toBeVisible();
 });
 
-test("hearth project page loads from header nav", async ({ page }) => {
+test("womens retreats page loads from header nav", async ({ page }) => {
   await page.goto("/");
-  await page.locator("header").getByRole("link", { name: "Hearth Project" }).first().click();
-  await expect(page).toHaveURL(/\/hearth-project$/);
-  await expect(page.getByRole("heading", { name: "A space to slow down, reconnect, and remember you belong." })).toBeVisible();
+  await page.locator("header").getByRole("link", { name: "Women's Retreats" }).first().click();
+  await expect(page).toHaveURL(/\/womens-retreats$/);
+  await expect(
+    page.getByRole("heading", { name: "Women's retreats in Norfolk for rest, softness, and reconnection." }),
+  ).toBeVisible();
+  await expect(page.getByText("Pricing")).toHaveCount(0);
 });
 
-test("community page loads from header nav", async ({ page }) => {
+test("community and reviews live in the footer", async ({ page }) => {
   await page.goto("/");
-  await page.locator("header").getByRole("link", { name: "Community" }).first().click();
+  await expect(page.locator("header").getByRole("link", { name: "Community" })).toHaveCount(0);
+  await expect(page.locator("header").getByRole("link", { name: "Reviews" })).toHaveCount(0);
+  await page.locator("footer").getByRole("link", { name: "Community" }).first().click();
   await expect(page).toHaveURL(/\/community$/);
   await expect(page.getByRole("heading", { level: 1, name: "The Home House Community Gatherings" })).toBeVisible();
+
+  await page.goto("/");
+  await page.locator("footer").getByRole("link", { name: "Reviews" }).first().click();
+  await expect(page).toHaveURL(/\/reviews$/);
+  await expect(page.getByRole("heading", { name: "Words from our guests." })).toBeVisible();
 });
 
 test("mobile menu closes after navigation", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await page.getByRole("button", { name: "Menu" }).click();
-  await page.locator("header").getByRole("link", { name: "Stays" }).first().click();
+  await page.locator("header").getByRole("link", { name: "Accommodation" }).first().click();
   await expect(page).toHaveURL(/\/stays$/);
   await expect(page.getByRole("button", { name: "Menu" })).toBeVisible();
 });
@@ -195,6 +205,10 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).not.toContain("<loc>http://localhost:3000/blog/hello-world</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/hearth-project</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/community</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/womens-retreats</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/retreat-venues</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/sufi-muslim-retreats</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/therapies</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/norfolk-holidays</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/womens-retreats-norfolk</loc>");

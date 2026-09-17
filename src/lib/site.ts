@@ -16,11 +16,14 @@ export const PHOTOS = {
   pond: "/photos/pond.webp",
 };
 
+/** Full explore list for the footer. */
 export const NAV = [
   { to: "/about", label: "About" },
-  { to: "/stays", label: "Stays" },
-  { to: "/retreats", label: "Retreats" },
-  { to: "/events-and-workshops", label: "Events & Workshops" },
+  { to: "/stays", label: "Accommodation" },
+  { to: "/womens-retreats", label: "Women's Retreats" },
+  { to: "/retreat-venues", label: "Retreat Venues" },
+  { to: "/sufi-muslim-retreats", label: "Sufi Muslim Retreats" },
+  { to: "/therapies", label: "Therapies" },
   { to: "/community", label: "Community" },
   { to: "/hearth-project", label: "Hearth Project" },
   { to: "/reviews", label: "Reviews" },
@@ -29,6 +32,12 @@ export const NAV = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
-export const HEADER_NAV = NAV.filter(
-  (n) => n.to !== "/about" && n.to !== "/blog" && n.to !== "/gallery" && n.to !== "/contact",
-);
+/** Primary header destinations (Book Now stays as a CTA, not a nav link). */
+export const HEADER_NAV = [
+  { to: "/about", label: "About" },
+  { to: "/stays", label: "Accommodation" },
+  { to: "/womens-retreats", label: "Women's Retreats" },
+  { to: "/retreat-venues", label: "Retreat Venues" },
+  { to: "/sufi-muslim-retreats", label: "Sufi Muslim Retreats" },
+  { to: "/therapies", label: "Therapies" },
+] as const;

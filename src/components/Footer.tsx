@@ -53,23 +53,28 @@ export function Footer() {
           </p>
           <ul className="space-y-2 text-sm font-light">
             <li>
-              <Link href="/retreats" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/retreats", label: "Retreats in Norfolk", menu: "footer" })}>
-                Retreats in Norfolk
+              <Link href="/womens-retreats" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/womens-retreats", label: "Women's Retreats", menu: "footer" })}>
+                Women&apos;s Retreats
               </Link>
             </li>
             <li>
-              <Link href="/events-and-workshops" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/events-and-workshops", label: "Events & workshops", menu: "footer" })}>
-                Events & workshops
+              <Link href="/retreat-venues" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/retreat-venues", label: "Retreat Venues", menu: "footer" })}>
+                Retreat Venues
               </Link>
             </li>
             <li>
-              <Link href="/community" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/community", label: "Community gatherings", menu: "footer" })}>
-                Community gatherings
+              <Link href="/sufi-muslim-retreats" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/sufi-muslim-retreats", label: "Sufi Muslim Retreats", menu: "footer" })}>
+                Sufi Muslim Retreats
               </Link>
             </li>
             <li>
-              <Link href="/stays" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/stays", label: "Bespoke stays", menu: "footer" })}>
-                Bespoke stays
+              <Link href="/therapies" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/therapies", label: "Therapies", menu: "footer" })}>
+                Therapies
+              </Link>
+            </li>
+            <li>
+              <Link href="/stays" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/stays", label: "Accommodation", menu: "footer" })}>
+                Accommodation
               </Link>
             </li>
             <li>

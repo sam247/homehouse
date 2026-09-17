@@ -67,7 +67,7 @@ export default function StaysPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Stays"
+        eyebrow="Accommodation"
         title="Guest House Stays at Home House Homestead"
         intro="Hosted guest house stays in the Norfolk countryside for solo guests, couples, families, and small groups — with home-cooked meals included."
         image={IMG.hero}

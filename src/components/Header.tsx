@@ -43,7 +43,7 @@ export function Header() {
           {SITE.name}
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
           {HEADER_NAV.map((item) => (
             <Link
               key={item.to}
@@ -62,20 +62,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button
-            asChild
-            variant="ghost"
-            className="hidden sm:inline-flex text-foreground/70 hover:text-foreground rounded-none px-4"
-          >
-            <a
-              href="tel:07760885562"
-              onClick={() =>
-                gaEvent("phone_click", { placement: "header", phone: "07760885562" })
-              }
-            >
-              Call now
-            </a>
-          </Button>
           <EnquiryDrawer
             source="header"
             trigger={
@@ -121,6 +107,18 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <EnquiryDrawer
+              source="header_mobile"
+              trigger={
+                <Button
+                  variant="outline"
+                  className="mt-2 w-fit border-foreground/30 bg-transparent text-foreground hover:bg-foreground hover:text-background rounded-none px-5"
+                  onClick={() => setOpen(false)}
+                >
+                  Book now
+                </Button>
+              }
+            />
           </nav>
         </div>
       )}
