@@ -2,20 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
-import { RoomGalleryLightbox } from "@/components/stays/RoomGalleryLightbox";
 import { PlanningGuidesSection, STAY_PLANNING_GUIDES } from "@/components/PlanningGuidesSection";
 import { Button } from "@/components/ui/button";
 
 const IMG = {
   hero: "/photos/stays/front_of_house/IMG_9931.jpeg",
-  room1: "/photos/stays/image5.jpeg",
-  room2: "/photos/stays/single_bedroom_bathroom/IMG_8881.jpeg",
-  room3: "/photos/stays/single_bedroom_bathroom/IMG_8881.jpeg",
   includesLivingRoom:
     "/photos/stays/living_room/D900715B-7F64-4196-8A2C-7D0DC5746FC0-56a29761-05a0-47b7-86d2-f1414f1355fe.jpeg",
-  roseRoom1: "/photos/stays/rose_room/5658BF93-B6A4-4716-B7B9-7E19750D254D-IMG_5665.jpeg",
-  roseRoom2: "/photos/stays/rose_room/D109197E-9FA5-4CC9-BEC7-5F46519F97E1-5d4cfadf-4474-4e86-9ffd-3cf6406a0897.jpeg",
-  roseRoom3: "/photos/stays/rose_room/F8B9A04D-18A8-47AE-BA4D-4EE8844E1525-IMG_5689.jpeg",
+  // Former Rose Room gallery: left → Bluebell, middle → Rose, right → Lavender
+  bluebellRoom: "/photos/stays/rose_room/5658BF93-B6A4-4716-B7B9-7E19750D254D-IMG_5665.jpeg",
+  roseRoom: "/photos/stays/rose_room/D109197E-9FA5-4CC9-BEC7-5F46519F97E1-5d4cfadf-4474-4e86-9ffd-3cf6406a0897.jpeg",
+  lavenderRoom: "/photos/stays/rose_room/F8B9A04D-18A8-47AE-BA4D-4EE8844E1525-IMG_5689.jpeg",
 };
 
 export const metadata: Metadata = {
@@ -36,20 +33,19 @@ export const metadata: Metadata = {
 
 const rooms = [
   {
-    img: IMG.room1,
+    img: IMG.roseRoom,
     name: "The Rose Room",
     desc: "A space to soften, open, and receive. The Rose Room can be set as a double, twin or triple bed.",
-    gallery: [IMG.roseRoom1, IMG.roseRoom2, IMG.roseRoom3],
   },
   {
-    img: IMG.room2,
+    img: IMG.lavenderRoom,
     name: "The Lavender Room",
     desc: "A space for rest, restoration and peaceful sleep. The Lavender Room can be set as a double, twin or triple bed.",
   },
   {
-    img: IMG.room3,
-    name: "The Elderflower Room",
-    desc: "A space for wisdom, resilience, and connection to the land. The Elderflower Room can be set as a double or twin.",
+    img: IMG.bluebellRoom,
+    name: "The Bluebell Room",
+    desc: "A space for wisdom, resilience, and connection to the land. The Bluebell Room can be set as a double or twin.",
   },
 ];
 
@@ -96,7 +92,6 @@ export default function StaysPage() {
                 <div className="aspect-[4/5] overflow-hidden rounded-sm mb-5">
                   <img src={r.img} alt={r.name} loading="lazy" className="h-full w-full object-cover kenburns" />
                 </div>
-                {r.gallery ? <RoomGalleryLightbox roomName={r.name} images={r.gallery} /> : null}
                 <h3 className="font-serif text-2xl mb-2">{r.name}</h3>
                 <p className="text-foreground/75 font-light">{r.desc}</p>
               </article>
@@ -107,23 +102,11 @@ export default function StaysPage() {
             <div className="grid gap-4 md:grid-cols-2">
               <div className="border-b border-border pb-3">
                 <p className="text-foreground/85 font-light">Shared twin room</p>
-                <p className="mt-1 text-sm text-foreground/70 font-light">£75 per person, per night · Includes all meals</p>
+                <p className="mt-1 text-sm text-foreground/70 font-light">£100 per night · Includes all meals</p>
               </div>
               <div className="border-b border-border pb-3">
                 <p className="text-foreground/85 font-light">Single occupancy room</p>
-                <p className="mt-1 text-sm text-foreground/70 font-light">£125 per night · Includes all meals</p>
-              </div>
-              <div className="border-b border-border pb-3 md:col-span-2">
-                <p className="text-foreground/85 font-light">Children aged 5-13</p>
-                <p className="mt-1 text-sm text-foreground/70 font-light">
-                  £45 per person, per night when sharing a room with a parent or guardian · Includes all meals
-                </p>
-              </div>
-              <div className="border-b border-border pb-3 md:col-span-2">
-                <p className="text-foreground/85 font-light">Teens aged 13–17</p>
-                <p className="mt-1 text-sm text-foreground/70 font-light">
-                  £60 per person, per night when sharing a room with a parent or guardian · Includes all meals
-                </p>
+                <p className="mt-1 text-sm text-foreground/70 font-light">£175 per night · Includes all meals</p>
               </div>
             </div>
             <div className="mt-10">
