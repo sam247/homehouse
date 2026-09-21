@@ -14,7 +14,8 @@ import { getSiteUrl } from "@/lib/siteUrl";
 export const dynamic = "force-dynamic";
 
 const IMG = {
-  house: "https://images.squarespace-cdn.com/content/v1/65b8fafefbcaa00609260091/06fd4543-bca8-49c6-a18c-477e7be6d903/BFF79E36-7628-446B-93E5-C9F4337EE353.jpg",
+  house: "/photos/what_we_offer.jpeg",
+  sufi: "/photos/home_sufi_section.jpeg",
   interior1: "/photos/shed-bench.webp",
   garden: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80",
 };
@@ -41,8 +42,8 @@ const offers = [
   "A character-filled flint farmhouse rooted in slower living",
   "Quiet gardens, open fields, and wild edges to wander",
   "Simple comforts, calm rooms, and space to read, rest, and breathe",
-  "Optional 1-to-1 sessions on request (Sufi Healing and mentorship, breathwork, bodywork, sound bathing)",
-  "A personal welcome for solo guests, couples, families and small groups",
+  "Optional 1-1 sessions with Hawa on request (Sufi Healing and Spiritual Counsel, Breathwork, Bodywork, Sacred Sound Healing)",
+  "A personal welcome for solo women, couples and small groups",
 ];
 
 const FAQ = [
@@ -159,8 +160,32 @@ export default async function HomePage() {
       <div className="bg-[var(--cream)] text-[var(--deep)]">
         <Zigzag
           reverse
+          title="Home House Homestead is rooted in Sufi Values"
+          image={IMG.sufi}
+          body={
+            <>
+              <p>
+                Home House is rooted in the Sufi values of love, remembrance, hospitality, service and reverence for
+                the Divine.
+              </p>
+              <p>
+                It is a home away from home where you are invited to slow down, soften, listen deeply and remember what
+                truly matters. Care is given to the way we welcome one another, be together, prepare and share food,
+                tend the land, rest, pray, create and gather in community.
+              </p>
+              <p>
+                People of all faiths and none are warmly welcomed here. At the heart of Home House is a simple
+                intention: to create a peaceful space where people can feel nourished, held, heal, rest and gently
+                brought back to themselves, to one another and to Oneness.
+              </p>
+            </>
+          }
+        />
+      </div>
+      <div className="bg-background text-foreground">
+        <Zigzag
           eyebrow="Stays and retreats"
-          title="Norfolk Retreats & Countryside Stays"
+          title="Bespoke Retreats and Countryside Stays"
           image={IMG.garden}
           body={
             <>
@@ -204,7 +229,7 @@ export default async function HomePage() {
           }
         />
       </div>
-      <div className="bg-background text-foreground">
+      <div className="bg-[var(--cream)] text-[var(--deep)]">
         <Section>
           <div className="max-w-3xl mx-auto text-center reveal">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Why guests choose us</p>
@@ -212,11 +237,19 @@ export default async function HomePage() {
               Why Guests Choose Home House Homestead
             </h2>
             <p className="mt-6 text-foreground/75 font-light leading-relaxed">
+              A sacred and safe space to be met where you are and held in the healing that you need.
+            </p>
+            <p className="mt-4 text-foreground/75 font-light leading-relaxed">
               More than a place to stay, Home House offers a personal welcome, a slower pace, space to rest,
               reconnect, and remember the feeling of home within yourself.
             </p>
             <p className="mt-4 text-foreground/75 font-light leading-relaxed">
               Guests often arrive seeking rest and leave feeling nourished, grounded, and renewed.
+            </p>
+            <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+              Many guests return for the sense of home, connection, the ease they find here, the presence and safety of
+              being held with love, the profound and deep healing that they experience, the clarity and space that they
+              discover that helps them to take the next steps needed in their lives.
             </p>
           </div>
           <div className="mt-14 grid md:grid-cols-2 gap-12 items-start">
@@ -227,7 +260,6 @@ export default async function HomePage() {
                 "Home-cooked meals prepared with love and care",
                 "A welcoming setting for solo retreats, private retreats, and quiet countryside breaks",
                 "Space to slow down, exhale fully, reflect, and simply be",
-                "Many guests return for the sense of home, connection, and ease they find here",
               ].map((p) => (
                 <li key={p} className="border-b border-border pb-3">
                   {p}

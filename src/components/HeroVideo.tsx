@@ -46,8 +46,8 @@ export function HeroVideo() {
           Peaceful Norfolk Retreats & Countryside Stays
         </h1>
         <p className="mt-8 max-w-3xl text-base sm:text-lg font-light text-foreground/85 leading-relaxed reveal">
-          Slow down, reconnect with nature, and plan a quieter stay in rural Norfolk. Home House
-          Homestead offers bespoke guest house stays, private retreats, and restorative countryside
+          Slow down, rest, reconnect with nature, and plan a quieter retreat stay in rural Norfolk. Home
+          House Homestead offers bespoke nourishing stays, private retreats, and restorative countryside
           breaks designed to help you rest, exhale, and feel cared for.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 reveal">
