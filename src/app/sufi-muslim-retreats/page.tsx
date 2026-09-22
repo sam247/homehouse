@@ -12,13 +12,15 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Sufi Muslim Retreats in Norfolk | Home House Homestead",
+  title: {
+    absolute: "Sufi Muslim Retreats in Norfolk | Home House Homestead",
+  },
   description:
-    "Sufi Muslim retreats and restorative stays in Norfolk at Home House Homestead — a quiet countryside space for prayer, remembrance, rest, and heart-centred healing.",
+    "Muslim retreat venue and Sufi stays in Norfolk at Home House Homestead — quiet space for prayer, remembrance, rest, and heart-centred healing.",
   openGraph: {
     title: "Sufi Muslim Retreats in Norfolk | Home House Homestead",
     description:
-      "Sufi Muslim retreats and restorative stays in Norfolk at Home House Homestead — a quiet countryside space for prayer, remembrance, rest, and heart-centred healing.",
+      "Muslim retreat venue and Sufi stays in Norfolk at Home House Homestead — quiet space for prayer, remembrance, rest, and heart-centred healing.",
     images: [IMG.hero],
     url: "/sufi-muslim-retreats",
   },

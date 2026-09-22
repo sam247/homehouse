@@ -13,7 +13,9 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Retreat Venues in Norfolk | Home House Homestead",
+  title: {
+    absolute: "Retreat Venues in Norfolk | Home House Homestead",
+  },
   description:
     "Book Home House Homestead as a small retreat venue in Norfolk — a peaceful flint farmhouse for intimate women's gatherings, private groups, and restorative countryside retreats.",
   openGraph: {

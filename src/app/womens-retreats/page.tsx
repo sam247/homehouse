@@ -14,7 +14,9 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Women's Retreats in Norfolk | Home House Homestead",
+  title: {
+    absolute: "Women's Retreats in Norfolk | Home House Homestead",
+  },
   description:
     "Women's retreats in Norfolk at Home House Homestead — scheduled rest retreats and bespoke stays shaped around rest, nature, nourishment, and reconnection.",
   openGraph: {
