@@ -87,10 +87,12 @@ export default async function BlogPostPage({
   };
 
   const isHtml = post.body.trim().startsWith("<");
+  const faqSchemaSlugs = new Set([
+    "how-long-should-you-go-on-a-retreat-for",
+    "can-you-go-on-a-retreat-alone",
+  ]);
   const faq =
-    !isHtml && slug === "how-long-should-you-go-on-a-retreat-for"
-      ? extractFaqFromMarkdown(post.body)
-      : [];
+    !isHtml && faqSchemaSlugs.has(slug) ? extractFaqFromMarkdown(post.body) : [];
   const faqJsonLd =
     faq.length > 0
       ? {

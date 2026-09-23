@@ -144,4 +144,8 @@ Introverts often do exceptionally well on solo retreats because social demand is
 
 A solo retreat is a manageable first step — fixed dates, one location, clear purpose, and hosts who expect solo guests. Starting with two or three nights in a warm rural setting is gentler than a week-long international trip alone. [How long should you go on a retreat for?](/blog/how-long-should-you-go-on-a-retreat-for) helps you choose a first length that fits that test.
 
-Going on a retreat alone is allowed, normal, and often deeply restorative when the setting matches the intention. The question is not whether you *can*, but whether you want enough quiet — with the right amount of support — for a few days in a place like Norfolk. If the answer is yes, the next step is planning — including [what to pack for a countryside retreat in Norfolk](/blog/what-to-pack-for-a-countryside-retreat-in-norfolk) — not persuading yourself further.
+## When you're ready
+
+Going on a retreat alone is allowed, normal, and often deeply restorative when the setting matches the intention. The question is not whether you *can*, but whether you want enough quiet — with the right amount of support — for a few days in a place like Norfolk.
+
+If the answer is yes, start with [solo retreats in Norfolk](/retreats/solo-retreats-norfolk) or browse [retreats in Norfolk](/retreats) and send an enquiry with the dates you have in mind. For day-to-day structure once you are decided, continue to [How to plan a solo retreat in Norfolk](/blog/how-to-plan-a-solo-retreat-in-norfolk); for packing, see [what to pack for a countryside retreat in Norfolk](/blog/what-to-pack-for-a-countryside-retreat-in-norfolk).
