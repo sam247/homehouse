@@ -10,8 +10,8 @@ const IMG = {
   hero: "/photos/stays/front_of_house/IMG_9931.jpeg",
   includes: "/photos/whats_included.jpeg",
   roseRoom: "/photos/rose_room.jpeg",
-  lavenderRoom: "/photos/lavendar_room.jpeg",
-  bluebellRoom: "/photos/stays/rose_room/5658BF93-B6A4-4716-B7B9-7E19750D254D-IMG_5665.jpeg",
+  lavenderRoom: "/photos/newLAVENDER.jpeg",
+  bluebellRoom: "/photos/newBLUEBELL.jpeg",
 };
 
 const houseGallery = [
@@ -74,7 +74,7 @@ export default function StaysPage() {
     <PageShell>
       <PageHero
         eyebrow="Accommodation"
-        title="Retreat and Nourishing Stays at Home House Homestead"
+        title="Bespoke Retreats and Nourishing Stays at Home House Homestead"
         intro="Hosted retreats and nourishing stays with delicious home-cooked meals in the Norfolk countryside. Home House was created for women, couples and small groups that are looking for somewhere to rest, be cared for, looked after and something more personal and intimate."
         image={IMG.hero}
       />
