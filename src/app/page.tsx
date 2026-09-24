@@ -17,6 +17,7 @@ const IMG = {
   house: "/photos/what_we_offer.jpeg",
   sufi: "/photos/home_sufi_section.jpeg",
   interior1: "/photos/shed-bench.webp",
+  bespokeRetreats: "/photos/bespokeretreatsforwomen.jpeg",
   garden: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80",
 };
 
@@ -186,7 +187,7 @@ export default async function HomePage() {
         <Zigzag
           eyebrow="Stays and retreats"
           title="Bespoke Retreats and Countryside Stays"
-          image={IMG.garden}
+          image={IMG.bespokeRetreats}
           body={
             <>
               <p>

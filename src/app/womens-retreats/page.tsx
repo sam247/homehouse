@@ -9,7 +9,7 @@ import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
   hero: "/photos/fields.webp",
-  bespokeRetreats: "/photos/bespokeretreatsforwomen.jpeg",
+  table: "/photos/table-orchard.webp",
   pond: "/photos/pond.webp",
 };
 
@@ -316,8 +316,8 @@ export default function WomensRetreatsPage() {
               <div className="reveal">
                 <div className="aspect-[16/10] overflow-hidden rounded-sm relative">
                   <Image
-                    src={IMG.bespokeRetreats}
-                    alt="Bespoke retreats for women at Home House"
+                    src={IMG.table}
+                    alt="Table set for supper at Home House"
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-cover kenburns"

@@ -4,7 +4,7 @@ export const SITE = {
   email: "info@homehouse.org.uk",
   location: "Norfolk, United Kingdom",
   // Client-supplied hero video
-  heroVideo: "/hero.mp4",
+  heroVideo: "/garden-video-2.mp4",
   heroPoster: "/photos/garden-magnolia.webp",
 };
 
