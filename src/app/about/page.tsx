@@ -8,7 +8,9 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "About — Home House Homestead",
+  title: {
+    absolute: "About — Home House Homestead",
+  },
   description:
     "The story behind Home House Homestead — and the journey that led Hawa Amanda home to the Norfolk countryside, devotion, and a life of healing.",
   openGraph: {

@@ -12,7 +12,9 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "The Hearth Project — Home House Homestead",
+  title: {
+    absolute: "The Hearth Project — Home House Homestead",
+  },
   description:
     "Nature-based ‘Just Be’ weekends at Home House Homestead for young adults aged 18–25 seeking grounding, connection, purpose and community.",
   openGraph: {

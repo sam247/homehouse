@@ -15,7 +15,9 @@ const photos = [
 ];
 
 export const metadata: Metadata = {
-  title: "Gallery — Home House Homestead",
+  title: {
+    absolute: "Gallery — Home House Homestead",
+  },
   description: "Images of the Norfolk farmhouse, gardens, fields and life at Home House Homestead.",
   openGraph: {
     title: "Gallery — Home House Homestead",

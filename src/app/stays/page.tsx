@@ -26,7 +26,9 @@ const houseGallery = [
 ];
 
 export const metadata: Metadata = {
-  title: "Retreat and Nourishing Stays in Norfolk | Home House Homestead",
+  title: {
+    absolute: "Retreat and Nourishing Stays in Norfolk | Home House Homestead",
+  },
   description:
     "Hosted retreats and nourishing stays with home-cooked meals in the Norfolk countryside. Intimate stays for women, couples and small groups at Home House Homestead.",
   openGraph: {

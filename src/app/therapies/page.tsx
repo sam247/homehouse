@@ -12,7 +12,9 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Therapies & Healing Sessions in Norfolk | Home House Homestead",
+  title: {
+    absolute: "Therapies & Healing Sessions in Norfolk | Home House Homestead",
+  },
   description:
     "1-to-1 therapies at Home House Homestead in Norfolk: Sufi healing, breath and bodywork, sacred sound, Holy Hijama therapy, and restorative massage by arrangement.",
   openGraph: {
