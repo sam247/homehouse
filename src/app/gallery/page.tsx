@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
+import { readdirSync } from "node:fs";
+import path from "node:path";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 
-const photos = [
+const localPhotos = [
   { src: "/photos/garden-magnolia.webp", h: "tall" },
   { src: "/photos/table-orchard.webp", h: "short" },
   { src: "/photos/shed-bench.webp", h: "tall" },
   { src: "/photos/fields.webp", h: "short" },
   { src: "/photos/pond.webp", h: "tall" },
-  { src: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80", h: "short" },
-  { src: "https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1200&q=80", h: "tall" },
-  { src: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=80", h: "short" },
-  { src: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80", h: "tall" },
-  { src: "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&q=80", h: "short" },
 ];
+
+const galleryDirectory = path.join(process.cwd(), "public/photos/gallery_Images");
+const galleryPhotos = readdirSync(galleryDirectory)
+  .filter((file) => /\.(jpe?g|png|webp|gif)$/i.test(file))
+  .sort()
+  .map((file, index) => ({
+    src: `/photos/gallery_Images/${encodeURIComponent(file)}`,
+    h: index % 3 === 0 ? "tall" : "short",
+  }));
+
+const photos = [...localPhotos, ...galleryPhotos];
 
 export const metadata: Metadata = {
   title: {
@@ -25,9 +33,7 @@ export const metadata: Metadata = {
     images: [photos[0].src],
     url: "/gallery",
   },
-  alternates: {
-    canonical: "/gallery",
-  },
+  alternates: { canonical: "/gallery" },
 };
 
 export default function GalleryPage() {
@@ -41,14 +47,19 @@ export default function GalleryPage() {
       <Band variant="cream">
         <Section>
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-            {photos.map((p, i) => (
+            {photos.map((photo, index) => (
               <div
-                key={i}
+                key={photo.src}
                 className={`mb-4 break-inside-avoid overflow-hidden rounded-sm reveal ${
-                  p.h === "tall" ? "aspect-[3/4]" : "aspect-[4/3]"
+                  photo.h === "tall" ? "aspect-[3/4]" : "aspect-[4/3]"
                 }`}
               >
-                <img src={p.src} alt="" loading="lazy" className="h-full w-full object-cover" />
+                <img
+                  src={photo.src}
+                  alt={`Home House Homestead gallery image ${index + 1}`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
               </div>
             ))}
           </div>

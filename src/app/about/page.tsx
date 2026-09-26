@@ -4,7 +4,7 @@ import { PageShell, PageHero, Zigzag, Section } from "@/components/PageShell";
 const IMG = {
   hero: "/author.webp",
   hawa: "/author.webp",
-  land: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600&q=80",
+  land: "/photos/fields.webp",
 };
 
 export const metadata: Metadata = {

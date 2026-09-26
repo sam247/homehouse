@@ -21,7 +21,7 @@ export const NAV = [
   { to: "/about", label: "About" },
   { to: "/stays", label: "Accommodation" },
   { to: "/womens-retreats", label: "Women's Retreats" },
-  { to: "/retreat-venues", label: "Retreat Venues" },
+  { to: "/retreat-venues", label: "Retreat Venue" },
   { to: "/sufi-muslim-retreats", label: "Sufi Muslim Retreats" },
   { to: "/therapies", label: "Therapies" },
   { to: "/community", label: "Community" },
@@ -37,7 +37,7 @@ export const HEADER_NAV = [
   { to: "/about", label: "About" },
   { to: "/stays", label: "Accommodation" },
   { to: "/womens-retreats", label: "Women's Retreats" },
-  { to: "/retreat-venues", label: "Retreat Venues" },
+  { to: "/retreat-venues", label: "Retreat Venue" },
   { to: "/sufi-muslim-retreats", label: "Sufi Muslim Retreats" },
   { to: "/therapies", label: "Therapies" },
 ] as const;

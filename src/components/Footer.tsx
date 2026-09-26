@@ -58,8 +58,8 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/retreat-venues" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/retreat-venues", label: "Retreat Venues", menu: "footer" })}>
-                Retreat Venues
+              <Link href="/retreat-venues" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/retreat-venues", label: "Retreat Venue", menu: "footer" })}>
+                Retreat Venue
               </Link>
             </li>
             <li>

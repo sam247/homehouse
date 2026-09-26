@@ -7,21 +7,21 @@ import { Button } from "@/components/ui/button";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
-  hero: "/photos/garden-magnolia.webp",
+  hero: "/photos/PHOTO1.jpeg",
+  photo1: "/photos/PHOTO1.jpeg",
+  photo2: "/photos/PHOTO2.jpeg",
   table: "/photos/table-orchard.webp",
-  fields: "/photos/fields.webp",
 };
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Retreat Venues in Norfolk | Home House Homestead",
+    absolute: "Retreat Venue in Norfolk | Home House Homestead",
   },
   description:
-    "Book Home House Homestead as a small retreat venue in Norfolk — a peaceful flint farmhouse for intimate women's gatherings, private groups, and restorative countryside retreats.",
+    "Home House Homestead is a peaceful countryhouse retreat venue in Norfolk for small women's retreats, private groups, spiritual gatherings, healing retreats, and restorative stays.",
   openGraph: {
-    title: "Retreat Venues in Norfolk | Home House Homestead",
-    description:
-      "Book Home House Homestead as a small retreat venue in Norfolk — a peaceful flint farmhouse for intimate women's gatherings, private groups, and restorative countryside retreats.",
+    title: "Retreat Venue in Norfolk | Home House Homestead",
+    description: "A small, intimate retreat venue in Norfolk for countryside gatherings, healing retreats, and spiritual stays.",
     images: [IMG.hero],
     url: "/retreat-venues",
   },
@@ -31,17 +31,21 @@ export const metadata: Metadata = {
 };
 
 const suitedTo = [
-  "Small women's retreats and rest gatherings",
-  "Private groups of friends, sisters, or colleagues seeking a calm house setting",
-  "Facilitators looking for an intimate Norfolk venue rather than a conference centre",
-  "Guests who want accommodation, meals, and land access in one place",
+  "Small women’s retreats and restorative gatherings",
+  "Private groups of friends, sisters or colleagues looking for a peaceful countryside setting",
+  "Spiritual teachers and facilitators seeking an intimate natural retreat venue",
+  "Retreats wanting seasonal, organic, garden-to-table style catering",
+  "Groups who want accommodation, meals and access to the land in one place",
+  "Sufi and Muslim retreats, workshops and gatherings",
+  "Healing, spiritual and creative retreats where a warm, homely atmosphere matters",
 ];
 
 const includes = [
-  "Character-filled flint farmhouse rooms",
-  "Shared and private spaces for gathering, rest, and conversation",
-  "Gardens, fields, and quieter outdoor edges",
-  "Home-cooked meals by arrangement",
+  "A peaceful old flint countryhouse in rural Norfolk",
+  "Accommodation, nourishing meals and access to the land in one place",
+  "Seasonal, organic, garden-to-table style catering",
+  "Shared and private spaces for gathering, rest and conversation",
+  "Gardens, fields and quieter outdoor edges",
   "Optional 1-to-1 therapies and healing sessions",
   "Personal hosting rather than anonymous venue hire",
 ];
@@ -73,7 +77,7 @@ export default function RetreatVenuesPage() {
         "@id": `${pageUrl}#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
-          { "@type": "ListItem", position: 2, name: "Retreat Venues", item: pageUrl },
+          { "@type": "ListItem", position: 2, name: "Retreat Venue", item: pageUrl },
         ],
       },
       {
@@ -92,9 +96,9 @@ export default function RetreatVenuesPage() {
     <PageShell>
       <SeoJsonLd data={jsonLd} />
       <PageHero
-        eyebrow="Retreat Venues"
-        title="A small retreat venue in Norfolk for intimate countryside gatherings."
-        intro="Home House Homestead is a peaceful flint farmhouse venue for small women's retreats, private groups, and restorative stays — warmer and more personal than a standard hire space."
+        eyebrow="Retreat Venue"
+        title="Home House Homestead as a Retreat Venue"
+        intro="A small retreat venue in Norfolk for intimate countryside gatherings."
         image={IMG.hero}
       />
 
@@ -103,13 +107,33 @@ export default function RetreatVenuesPage() {
           <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
             <div className="reveal space-y-5 text-foreground/80 font-light leading-relaxed">
               <p>
-                Many people searching for retreat venues in Norfolk want more than empty rooms and a catering menu.
-                They want a place that already holds rest — gardens, a quieter pace, and a house that feels like a home
-                rather than a centre.
+                Home House Homestead is a peaceful old flint countryhouse retreat venue in rural Norfolk for small
+                women&apos;s retreats, private groups, spiritual gatherings and teachings, healing retreats and
+                restorative stays.
               </p>
               <p>
-                Home House Homestead offers that kind of setting. Guests stay on site, share meals, walk the land, and
-                gather in a way that suits small groups who value atmosphere over scale.
+                Warmer and more personal than a standard hire venue, Home House is run as a living homestead and is
+                rooted in Sufi Islamic values — prayer, service, simplicity, hospitality and living in harmony with
+                the earth.
+              </p>
+              <p>
+                It is a home shaped by devotion, service, nourishment, nature and a slower rhythm of life.
+              </p>
+              <div className="aspect-[16/10] overflow-hidden rounded-sm">
+                <img src={IMG.photo1} alt="Home House Homestead flint countryhouse" className="h-full w-full object-cover" />
+              </div>
+              <p>
+                For those looking for more than simply bedrooms and a catering menu, Home House offers a setting that
+                already feels peaceful, cared for, loved and held. A house that feels like a home rather than a
+                retreat centre.
+              </p>
+              <p>
+                A place where guests can stay together, share nourishing meals, walk the land, gather, pray, reflect
+                and reconnect at a gentler pace.
+              </p>
+              <p>
+                Home House is particularly suited to small groups who value intimacy, atmosphere and connection over
+                scale.
               </p>
               <p>
                 If you are planning a women&apos;s gathering, see{" "}
@@ -165,7 +189,7 @@ export default function RetreatVenuesPage() {
             />
             <div
               className="aspect-[16/10] rounded-sm bg-cover bg-center"
-              style={{ backgroundImage: `url(${IMG.fields})` }}
+              style={{ backgroundImage: `url(${IMG.photo2})` }}
             />
           </div>
         </Section>
