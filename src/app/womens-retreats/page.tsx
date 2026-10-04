@@ -8,7 +8,8 @@ import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
   hero: "/photos/fields.webp",
-  justBe: "/photos/pond.webp",
+  justBe: "/photos/041026_images/5.jpeg",
+  justBeSuggested: "/photos/041026_images/6.jpeg",
   bespoke: "/photos/bespokeretreatsforwomen.jpeg",
 };
 
@@ -20,9 +21,7 @@ const retreatPhotos = [
   ["/photos/retreats_images/2ABEB1AB-AAA4-4B20-ACDB-EFCA77CDD48F-Image%2012-07-2026%20at%2006.27.jpeg", "Time close to nature"],
   ["/photos/retreats_images/13B822BA-F846-4F4F-AF9F-D25F2792D907-IMG_0285.jpeg", "A nourishing retreat gathering"],
   ["/photos/retreats_images/E2A2BCA0-1D16-4B68-ADB0-36AB5B913694-IMG_5917.jpeg", "A space to soften and rest"],
-  ["/photos/retreats_images/D6B0CDD4-164A-4D06-8680-AAFE2CBA7F34-IMG_5926.jpeg", "Retreat practice in nature"],
   ["/photos/retreats_images/48ABC645-34F9-42A9-BD22-E3A7BC229B9E-IMG_0279.jpeg", "Women sharing time together"],
-  ["/photos/retreats_images/407F631E-C969-4181-A109-1049E9DA8831-Image%2012-07-2026%20at%2006.22.jpeg", "The garden at Home House"],
   ["/photos/retreats_images/AAFBA15B-1AD2-434B-8983-5DBA130749B6-IMG_5943.jpeg", "A gentle retreat setting"],
   ["/photos/retreats_images/F47F61B1-44BD-4564-897B-37ADA0DDA66B-Image%2012-07-2026%20at%2006.33.jpeg", "Restorative time outdoors"],
   ["/photos/retreats_images/E03364E1-CC42-4012-A882-93D46244EA30-IMG_9411%204.jpeg", "Home House retreat space"],
@@ -127,6 +126,7 @@ export default function WomensRetreatsPage() {
         <Section>
           <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
             <div className="reveal space-y-5 text-foreground/80 font-light leading-relaxed">
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight">“Just Be” Retreats</h2>
               <p>
                 Sometimes we need a few gentle days away from the noise and demands of everyday life to come HOME to
                 ourselves.
@@ -232,6 +232,14 @@ export default function WomensRetreatsPage() {
               <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Suggested Just Be Retreat</p>
               <h2 className="font-serif text-4xl md:text-5xl leading-tight">3 Nights / 4 Days</h2>
               <p className="mt-6 text-[var(--deep)]/80 font-light leading-relaxed">A gentle, nourishing retreat with space to rest, receive and be cared for.</p>
+              <div className="mt-8 aspect-[16/10] overflow-hidden rounded-sm">
+                <img
+                  src={IMG.justBeSuggested}
+                  alt="A gentle, nourishing retreat at Home House"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
             <div className="reveal border border-[var(--deep)]/15 p-8 text-[var(--deep)]">
               <div className="grid gap-5 font-light">
@@ -250,7 +258,6 @@ export default function WomensRetreatsPage() {
         <Section>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="reveal space-y-6">
-              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Next section</p>
               <h2 className="font-serif text-4xl md:text-5xl leading-tight">Bespoke Healing Retreats for Women</h2>
               <div className="text-foreground/80 font-light leading-relaxed space-y-4">
                 <p>I offer bespoke, in-person healing retreats for women at Home House for those who feel called to work with me more deeply around a particular intention, transition, pattern or area of healing.</p>

@@ -19,7 +19,7 @@ const houseGallery = [
   { src: "/photos/livingroom2.jpeg", alt: "Sitting area at Home House" },
   { src: "/photos/kitchen1.jpeg", alt: "Kitchen at Home House" },
   { src: "/photos/kitchen2.jpeg", alt: "Kitchen table at Home House" },
-  { src: "/photos/conservatory1.jpeg", alt: "Conservatory at Home House" },
+  { src: "/photos/041026_images/4.jpeg", alt: "Conservatory at Home House" },
   { src: "/photos/conservatory2.jpeg", alt: "Conservatory seating at Home House" },
   { src: "/photos/bathroom1.jpeg", alt: "Bathroom at Home House" },
   { src: "/photos/bathroom2.jpeg", alt: "Bathroom details at Home House" },

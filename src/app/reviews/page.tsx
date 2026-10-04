@@ -44,7 +44,6 @@ export default function ReviewsPage() {
                     <figcaption className="font-serif text-2xl leading-snug text-foreground/95">
                       {r.name}
                     </figcaption>
-                    <p className="mt-2 text-xs uppercase tracking-[0.25em] text-accent">{r.meta}</p>
                   </div>
                   <div
                     className="mt-1 flex gap-1 text-[var(--clay)] shrink-0"

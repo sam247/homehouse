@@ -10,8 +10,8 @@ const IMG = {
   hero: "/photos/PHOTO3.jpeg",
   offeringOne: "/photos/PHOTO4.jpeg",
   offeringTwo: "/photos/PHOTO5.jpeg",
-  sound: "/photos/PHOTO6.jpeg",
-  hijama: "/photos/PHOTO5.jpeg",
+  sound: "/photos/041026_images/8.jpeg",
+  hijama: "/photos/041026_images/9.jpeg",
 };
 
 export const metadata: Metadata = {

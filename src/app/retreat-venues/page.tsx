@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
-  hero: "/photos/PHOTO1.jpeg",
-  photo1: "/photos/PHOTO1.jpeg",
+  hero: "/photos/041026_images/7.jpeg",
+  photo1: "/photos/041026_images/7.jpeg",
   photo2: "/photos/PHOTO2.jpeg",
   table: "/photos/table-orchard.webp",
 };

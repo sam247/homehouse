@@ -15,9 +15,9 @@ export const dynamic = "force-dynamic";
 
 const IMG = {
   house: "/photos/what_we_offer.jpeg",
-  sufi: "/photos/home_sufi_section.jpeg",
-  interior1: "/photos/shed-bench.webp",
-  bespokeRetreats: "/photos/bespokeretreatsforwomen.jpeg",
+  sufi: "/photos/041026_images/1.jpeg",
+  interior1: "/photos/041026_images/3.jpeg",
+  bespokeRetreats: "/photos/041026_images/2.jpeg",
   garden: "/photos/fields.webp",
 };
 
@@ -237,24 +237,24 @@ export default async function HomePage() {
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">
               Why Guests Choose Home House Homestead
             </h2>
-            <p className="mt-6 text-foreground/75 font-light leading-relaxed">
+            <p className="mt-6 text-[var(--deep)]/75 font-light leading-relaxed">
               A sacred and safe space to be met where you are and held in the healing that you need.
             </p>
-            <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+            <p className="mt-4 text-[var(--deep)]/75 font-light leading-relaxed">
               More than a place to stay, Home House offers a personal welcome, a slower pace, space to rest,
               reconnect, and remember the feeling of home within yourself.
             </p>
-            <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+            <p className="mt-4 text-[var(--deep)]/75 font-light leading-relaxed">
               Guests often arrive seeking rest and leave feeling nourished, grounded, and renewed.
             </p>
-            <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+            <p className="mt-4 text-[var(--deep)]/75 font-light leading-relaxed">
               Many guests return for the sense of home, connection, the ease they find here, the presence and safety of
               being held with love, the profound and deep healing that they experience, the clarity and space that they
               discover that helps them to take the next steps needed in their lives.
             </p>
           </div>
           <div className="mt-14 grid md:grid-cols-2 gap-12 items-start">
-            <ul className="reveal grid gap-3 text-foreground/85 font-light">
+            <ul className="reveal grid gap-3 text-[var(--deep)]/85 font-light">
               {[
                 "Peaceful rooms and unhurried mornings",
                 "Gardens, open fields, and space to reconnect with nature",
@@ -267,7 +267,7 @@ export default async function HomePage() {
                 </li>
               ))}
             </ul>
-            <div className="reveal space-y-4 text-foreground/75 font-light leading-relaxed">
+            <div className="reveal space-y-4 text-[var(--deep)]/75 font-light leading-relaxed">
               <p>
                 Read more in our{" "}
                 <Link href="/reviews" className="text-accent hover:underline">

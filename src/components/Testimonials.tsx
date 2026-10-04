@@ -20,7 +20,6 @@ function ReviewCard({ r }: { r: Review }) {
         </div>
         <div>
           <figcaption className="font-serif text-lg leading-tight">{r.name}</figcaption>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--clay)]">{r.meta}</p>
         </div>
       </div>
       <div
