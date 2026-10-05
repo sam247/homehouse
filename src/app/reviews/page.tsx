@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
-import { Star } from "lucide-react";
+import { StarSprite, Stars } from "@/components/Stars";
 import { GOOGLE_REVIEWS_URL, REVIEWS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
@@ -39,6 +39,7 @@ export default function ReviewsPage() {
               View all reviews on Google
             </a>
           </div>
+          <StarSprite />
           <div className="grid md:grid-cols-2 gap-8">
             {REVIEWS.map((r, i) => (
               <figure key={i} className="reveal border border-border p-8 md:p-10">
@@ -48,14 +49,7 @@ export default function ReviewsPage() {
                       {r.name}
                     </figcaption>
                   </div>
-                  <div
-                    className="mt-1 flex gap-1 text-[var(--clay)] shrink-0"
-                    aria-label={`${r.rating} out of 5 stars`}
-                  >
-                    {Array.from({ length: r.rating }).map((_, starIndex) => (
-                      <Star key={starIndex} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
+                  <Stars rating={r.rating} size="md" className="mt-1 text-[var(--clay)] shrink-0" />
                 </div>
                 <blockquote className="mt-6 font-light leading-relaxed text-foreground/80">
                   &ldquo;{r.text}&rdquo;

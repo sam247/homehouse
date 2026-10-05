@@ -99,12 +99,17 @@
   .font-sans {
     font-family: var(--font-sans);
   }
-  .reveal {
+  /*
+   * Reveal-on-scroll. The hidden state is scoped to html.js, which a tiny
+   * inline script in the root layout sets. Without JavaScript the content is
+   * simply visible instead of stranded at opacity:0 forever.
+   */
+  .js .reveal {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .reveal.is-visible {
+  .js .reveal.is-visible {
     opacity: 1;
     transform: none;
   }
@@ -132,5 +137,26 @@
     to {
       transform: translateX(-50%);
     }
+  }
+}
+
+/*
+ * Users who ask for less motion get no reveal, no Ken Burns drift and no
+ * marquee. This also guarantees content is never left invisible by an
+ * animation that the user has opted out of.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .kenburns,
+  .animate-marquee {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto !important;
   }
 }

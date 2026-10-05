@@ -27,6 +27,11 @@ export function HeroVideo() {
         muted
         loop
         playsInline
+        preload="auto"
+        disablePictureInPicture
+        aria-hidden="true"
+        tabIndex={-1}
+        poster={SITE.heroVideoPoster}
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src={SITE.heroVideo} type="video/mp4" />

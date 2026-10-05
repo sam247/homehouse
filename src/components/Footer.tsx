@@ -118,6 +118,9 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-foreground/60">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
             <p>© 2026 {SITE.name}. All rights reserved.</p>
+            <Link href="/privacy" className="hover:text-foreground transition-colors">
+              Privacy
+            </Link>
             <TrackedAnchor
               href="https://betterranking.co.uk/?utm_source=footer&utm_medium=customer&utm_campaign=homehouse&utm_id=links"
               event="outbound_click"

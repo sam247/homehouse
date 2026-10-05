@@ -4,31 +4,27 @@ import { AuthorStrip } from "@/components/AuthorStrip";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { getGuidePosts, getJournalPosts } from "@/lib/blog";
 
-export const dynamic = "force-dynamic";
+/**
+ * Cached and revalidated rather than rendered per request. The blog index was
+ * the only route on the site served with no-store, so every visit — human or
+ * crawler — waited on a database round trip. Reading searchParams in
+ * generateMetadata forced that dynamic rendering and has been dropped as a
+ * result; the index lists every post, so the ?page= canonical was vestigial.
+ */
+export const revalidate = 300;
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams?: Promise<{ page?: string }>;
-}): Promise<Metadata> {
-  const sp = (await searchParams) ?? {};
-  const page = Number(sp.page ?? "1");
-  const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
-  const canonical = safePage > 1 ? `/blog?page=${safePage}` : "/blog";
-
-  return {
+export const metadata: Metadata = {
+  title: "Retreat Planning Guides & Homestead Journal",
+  description:
+    "Practical guides to planning Norfolk retreats and countryside stays, Muslim group retreats and Sufi gatherings — plus journal notes from the homestead.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
     title: "Retreat Planning Guides & Homestead Journal",
     description:
       "Practical guides to planning Norfolk retreats and countryside stays, Muslim group retreats and Sufi gatherings — plus journal notes from the homestead.",
-    alternates: { canonical },
-    openGraph: {
-      title: "Retreat Planning Guides & Homestead Journal",
-      description:
-        "Practical guides to planning Norfolk retreats and countryside stays, Muslim group retreats and Sufi gatherings — plus journal notes from the homestead.",
-      url: canonical,
-    },
-  };
-}
+    url: "/blog",
+  },
+};
 
 function PostGrid({ posts }: { posts: Awaited<ReturnType<typeof getGuidePosts>> }) {
   if (posts.length === 0) {

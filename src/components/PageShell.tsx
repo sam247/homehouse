@@ -1,13 +1,21 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { AnalyticsListener } from "@/components/AnalyticsListener";
+import { CookieConsent } from "@/components/CookieConsent";
+import { loadAnalyticsIfConsented } from "@/lib/consent";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
 export function PageShell({ children }: { children: React.ReactNode }) {
   useReveal();
+
+  // Analytics is injected only for visitors who have already accepted.
+  useEffect(() => {
+    loadAnalyticsIfConsented();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Suspense fallback={null}>
@@ -16,6 +24,7 @@ export function PageShell({ children }: { children: React.ReactNode }) {
       <Header />
       <main>{children}</main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

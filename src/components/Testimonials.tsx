@@ -1,5 +1,5 @@
-import { Star } from "lucide-react";
 import { GOOGLE_REVIEWS_URL, REVIEWS, type Review } from "@/lib/reviews";
+import { StarSprite, Stars } from "@/components/Stars";
 
 function getInitials(name: string) {
   const parts = name.trim().split(/\s+/).filter(Boolean);
@@ -8,9 +8,12 @@ function getInitials(name: string) {
   return (first + last).toUpperCase();
 }
 
-function ReviewCard({ r }: { r: Review }) {
+function ReviewCard({ r, duplicate = false }: { r: Review; duplicate?: boolean }) {
   return (
-    <figure className="w-[320px] md:w-[380px] shrink-0 rounded-sm bg-[var(--cream)]/95 text-[var(--deep)] p-7 shadow-sm">
+    <figure
+      className="w-[320px] md:w-[380px] shrink-0 rounded-sm bg-[var(--cream)]/95 text-[var(--deep)] p-7 shadow-sm"
+      aria-hidden={duplicate || undefined}
+    >
       <div className="flex items-center gap-4">
         <div
           className="h-12 w-12 rounded-full bg-[var(--deep)]/10 flex items-center justify-center font-serif text-sm"
@@ -22,14 +25,7 @@ function ReviewCard({ r }: { r: Review }) {
           <figcaption className="font-serif text-lg leading-tight">{r.name}</figcaption>
         </div>
       </div>
-      <div
-        className="mt-4 flex gap-1 text-[var(--clay)]"
-        aria-label={`${r.rating} out of 5 stars`}
-      >
-        {Array.from({ length: r.rating }).map((_, i) => (
-          <Star key={i} className="h-3.5 w-3.5 fill-current" />
-        ))}
-      </div>
+      <Stars rating={r.rating} className="mt-4 text-[var(--clay)]" />
       <blockquote className="mt-4 text-sm font-light leading-relaxed text-[var(--deep)]/80">
         &ldquo;{r.text}&rdquo;
       </blockquote>
@@ -44,6 +40,7 @@ export function Testimonials({ headingTag = "h2" }: { headingTag?: "h2" | "h3" }
 
   return (
     <section className="bg-background text-foreground py-24 md:py-32 overflow-hidden">
+      <StarSprite />
       <div className="text-center max-w-3xl mx-auto px-6">
         <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6 reveal">
           Kind words
@@ -72,7 +69,7 @@ export function Testimonials({ headingTag = "h2" }: { headingTag?: "h2" | "h3" }
       >
         <div className="flex gap-6 w-max animate-marquee group-hover:[animation-play-state:paused]">
           {loop.map((r, i) => (
-            <ReviewCard key={`${r.name}-${i}`} r={r} />
+            <ReviewCard key={`${r.name}-${i}`} r={r} duplicate={i >= REVIEWS.length} />
           ))}
         </div>
       </div>

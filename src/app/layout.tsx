@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
-import { GA4_MEASUREMENT_ID } from "@/lib/analytics/ga4";
 import { SITE } from "@/lib/site";
 import { getSiteUrl } from "@/lib/siteUrl";
 
@@ -71,13 +69,18 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
         <SeoJsonLd data={BUSINESS_JSON_LD} />
-        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`} />
-        <Script id="ga4">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA4_MEASUREMENT_ID}', { send_page_view: false });`}
-        </Script>
+        {/*
+          Marks the document as scripted so the .reveal scroll animation can be
+          scoped to html.js. Without JavaScript the CSS leaves content visible
+          rather than stuck at opacity:0.
+          Google Analytics is deliberately not loaded here — it is injected by
+          the consent banner once the visitor accepts.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js');",
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>

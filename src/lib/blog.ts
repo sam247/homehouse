@@ -98,6 +98,20 @@ async function getMarkdownPostBySlug(slug: string): Promise<BlogPost | null> {
   };
 }
 
+/**
+ * Slugs available from the filesystem only. Used by generateStaticParams so
+ * guide pages can be prerendered without depending on the database being
+ * reachable at build time.
+ */
+export async function getMarkdownPostSlugs(): Promise<string[]> {
+  try {
+    const files = await fs.readdir(BLOG_DIR);
+    return files.filter(isMarkdownFile).map((file) => file.replace(/\.(md|mdx)$/, ""));
+  } catch {
+    return [];
+  }
+}
+
 async function getAllMarkdownPosts(): Promise<BlogPost[]> {
   let files: string[] = [];
   try {
@@ -120,12 +134,20 @@ async function getAllDbPosts(): Promise<BlogPost[]> {
   const db = getDb();
   if (!db) return [];
 
-  const rows = await db`
-    SELECT slug, title, excerpt, cover_image_url, body_html, published_at
-    FROM posts
-    WHERE published = true
-    ORDER BY published_at DESC NULLS LAST, updated_at DESC
-  `;
+  let rows: unknown[];
+  try {
+    rows = (await db`
+      SELECT slug, title, excerpt, cover_image_url, body_html, published_at
+      FROM posts
+      WHERE published = true
+      ORDER BY published_at DESC NULLS LAST, updated_at DESC
+    `) as unknown[];
+  } catch (error) {
+    // A database hiccup should degrade to the markdown guides, not take the
+    // blog (or a build) down with it.
+    console.error("blog: database read failed, serving markdown posts only", error);
+    return [];
+  }
 
   return (rows as any[]).map((r) => ({
     slug: r.slug,
@@ -179,22 +201,26 @@ export async function getPostsPage({
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
   const db = getDb();
   if (db) {
-    const rows = await db`
-      SELECT slug, title, excerpt, cover_image_url, body_html, published_at
-      FROM posts
-      WHERE slug = ${slug} AND published = true
-      LIMIT 1
-    `;
-    const r = (rows as any[])[0];
-    if (r) {
-      return {
-        slug: r.slug,
-        title: r.title,
-        excerpt: r.excerpt ?? undefined,
-        coverImage: r.cover_image_url ?? undefined,
-        publishedAt: r.published_at ? new Date(r.published_at).toISOString() : undefined,
-        body: r.body_html ?? "",
-      };
+    try {
+      const rows = await db`
+        SELECT slug, title, excerpt, cover_image_url, body_html, published_at
+        FROM posts
+        WHERE slug = ${slug} AND published = true
+        LIMIT 1
+      `;
+      const r = (rows as any[])[0];
+      if (r) {
+        return {
+          slug: r.slug,
+          title: r.title,
+          excerpt: r.excerpt ?? undefined,
+          coverImage: r.cover_image_url ?? undefined,
+          publishedAt: r.published_at ? new Date(r.published_at).toISOString() : undefined,
+          body: r.body_html ?? "",
+        };
+      }
+    } catch (error) {
+      console.error(`blog: database read failed for "${slug}", falling back to markdown`, error);
     }
   }
 

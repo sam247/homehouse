@@ -5,6 +5,9 @@ export const SITE = {
   location: "Norfolk, United Kingdom",
   // Client-supplied hero video
   heroVideo: "/garden-video-2.mp4",
+  // First-frame still for the hero video, so something paints before the video
+  // decodes. Deliberately separate from heroPoster, which is the social card image.
+  heroVideoPoster: "/photos/hero-poster.webp",
   heroPoster: "/photos/garden-magnolia.webp",
 };
 

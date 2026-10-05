@@ -5,11 +5,21 @@ import { AuthorStrip } from "@/components/AuthorStrip";
 import { GuideFooter } from "@/components/GuideFooter";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
-import { getPostBySlug, isGuidePost } from "@/lib/blog";
+import { getMarkdownPostSlugs, getPostBySlug, isGuidePost } from "@/lib/blog";
 import { extractFaqFromMarkdown } from "@/lib/blogFaq";
 import { getSiteUrl } from "@/lib/siteUrl";
 
-export const dynamic = "force-dynamic";
+/** Cached and revalidated rather than rendered per request (see /blog). */
+export const revalidate = 300;
+
+/**
+ * Prerender the filesystem guides at build time. Admin-authored posts live in
+ * the database and are still generated on demand, then cached.
+ */
+export async function generateStaticParams() {
+  const slugs = await getMarkdownPostSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
 
 export async function generateMetadata({
   params,

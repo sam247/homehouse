@@ -11,7 +11,13 @@ import { getPostsPage } from "@/lib/blog";
 import { REVIEWS } from "@/lib/reviews";
 import { getSiteUrl } from "@/lib/siteUrl";
 
-export const dynamic = "force-dynamic";
+/**
+ * Cached and revalidated rather than re-rendered per request. The homepage was
+ * force-dynamic, so the busiest page on the site was rebuilt — including its
+ * recent-posts query — on every single visit, human or crawler. Content changes
+ * now surface within five minutes.
+ */
+export const revalidate = 300;
 
 const IMG = {
   house: "/photos/what_we_offer.jpeg",
