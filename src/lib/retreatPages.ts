@@ -49,7 +49,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       { href: "/blog/what-to-expect-on-a-womens-retreat-in-norfolk", label: "What to expect on a women's retreat" },
       { href: "/retreats/solo-retreats-norfolk", label: "Solo retreats in Norfolk" },
       { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },
-      { href: "/retreat-venues", label: "Private Muslim women's gatherings" },
+      { href: "/muslim-retreat-venues", label: "Private Muslim women's gatherings" },
       { href: "/events-and-workshops", label: "Scheduled retreat dates" },
     ],
     faq: [
@@ -151,7 +151,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       { href: "/blog/how-long-should-you-go-on-a-retreat-for", label: "How long should a retreat be?" },
       { href: "/blog/retreat-or-guest-house-stay-in-norfolk", label: "Retreat or guest house stay?" },
       { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },
-      { href: "/retreat-venues", label: "Booking the homestead for a group" },
+      { href: "/muslim-retreat-venues", label: "Booking the homestead for a group" },
       { href: "/sufi-muslim-retreats", label: "Sufi retreats and remembrance" },
       { href: "/stays", label: "Guest house stays" },
       { href: "/events-and-workshops", label: "Scheduled retreat dates" },

@@ -56,7 +56,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/retreat-venues" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/retreat-venues", label: "Muslim Retreat Venue", menu: "footer" })}>
+              <Link href="/muslim-retreat-venues" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/muslim-retreat-venues", label: "Muslim Retreat Venue", menu: "footer" })}>
                 Muslim Retreat Venue
               </Link>
             </li>

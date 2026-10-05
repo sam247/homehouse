@@ -164,7 +164,7 @@ export default function AboutPage() {
                 Sufi retreats
               </Link>{" "}
               for remembrance, teachings and dhikr, the house as a{" "}
-              <Link href="/retreat-venues" className="text-accent hover:underline">
+              <Link href="/muslim-retreat-venues" className="text-accent hover:underline">
                 Muslim retreat venue
               </Link>{" "}
               for halal, alcohol-free group stays, and the{" "}

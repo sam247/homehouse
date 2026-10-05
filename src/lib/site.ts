@@ -37,7 +37,7 @@ export const HEADER_NAV = [
   { to: "/about", label: "About" },
   { to: "/stays", label: "Accommodation" },
   { to: "/womens-retreats", label: "Women's Retreats" },
-  { to: "/retreat-venues", label: "Muslim Retreat Venue" },
+  { to: "/muslim-retreat-venues", label: "Muslim Retreat Venue" },
   { to: "/sufi-muslim-retreats", label: "Sufi Retreats" },
   { to: "/therapies", label: "Therapies" },
 ] as const;

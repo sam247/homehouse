@@ -206,7 +206,7 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/hearth-project</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/community</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/womens-retreats</loc>");
-  expect(sitemapText).toContain("<loc>http://localhost:3000/retreat-venues</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/muslim-retreat-venues</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/sufi-muslim-retreats</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/therapies</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats</loc>");

@@ -165,7 +165,7 @@ export default function EventsAndWorkshopsPage() {
                     Stays
                   </Link>
                   . If you are arranging a gathering for a Muslim or Sufi group, the house can be booked privately as a{" "}
-                  <Link href="/retreat-venues" className="text-accent hover:underline">
+                  <Link href="/muslim-retreat-venues" className="text-accent hover:underline">
                     Muslim retreat venue
                   </Link>{" "}
                   — see also our{" "}

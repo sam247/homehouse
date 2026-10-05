@@ -144,7 +144,7 @@ A homestead — a lived-in country house with land, a real kitchen and a host wh
 
 It is not the right answer for every group. If you need hundreds of beds, a lecture theatre, a spa or walking-distance access to a city centre, a homestead will frustrate you. If you want accommodation, halal food, prayer space and quiet land in one place — with your own teacher and your own rhythm — it is often the better fit.
 
-Home House Homestead is exactly that kind of place: a peaceful old flint country house in rural Norfolk, run as a living [Muslim homestead and retreat venue](/retreat-venues), with halal meals, space for salah, Qur'an and study, and an alcohol- and drug-free environment for small groups. If your group is gathering for Sufi remembrance and teachings specifically, see our [Sufi retreats in Norfolk](/sufi-muslim-retreats). For women's gatherings, start with [women's retreats](/womens-retreats); for accommodation-led stays, see [stays](/stays).
+Home House Homestead is exactly that kind of place: a peaceful old flint country house in rural Norfolk, run as a living [Muslim homestead and retreat venue](/muslim-retreat-venues), with halal meals, space for salah, Qur'an and study, and an alcohol- and drug-free environment for small groups. If your group is gathering for Sufi remembrance and teachings specifically, see our [Sufi retreats in Norfolk](/sufi-muslim-retreats). For women's gatherings, start with [women's retreats](/womens-retreats); for accommodation-led stays, see [stays](/stays).
 
 ## Frequently asked questions
 
@@ -170,7 +170,7 @@ Ask whether meals are cooked from scratch on site, whether ingredients can be ch
 
 ### Do you need to be a large group to book a Muslim retreat venue?
 
-No. Small groups are often the best fit, and some venues — including [Home House Homestead](/retreat-venues) — are specifically set up for intimate gatherings rather than conference-scale events. If you are organising for ten people rather than fifty, say so; the venue may be a better match than you expect.
+No. Small groups are often the best fit, and some venues — including [Home House Homestead](/muslim-retreat-venues) — are specifically set up for intimate gatherings rather than conference-scale events. If you are organising for ten people rather than fifty, say so; the venue may be a better match than you expect.
 
 ---
 

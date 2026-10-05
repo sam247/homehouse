@@ -133,7 +133,7 @@ export default function RetreatsPage() {
               </p>
               <p>
                 We also hold space for faith-led gatherings. The homestead serves as a{" "}
-                <Link href="/retreat-venues" className="text-accent hover:underline">
+                <Link href="/muslim-retreat-venues" className="text-accent hover:underline">
                   Muslim retreat venue in Norfolk
                 </Link>{" "}
                 for halal, alcohol-free group stays, teaching weekends and women&apos;s gatherings, while our{" "}

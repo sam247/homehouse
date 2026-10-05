@@ -84,7 +84,7 @@ export default async function BlogIndexPage() {
               quieter Norfolk holidays
             </Link>
             , or browse the guides below for solo retreats, women&apos;s retreats, and countryside stay planning. We also write for groups: see our{" "}
-            <Link href="/retreat-venues" className="text-accent hover:underline">
+            <Link href="/muslim-retreat-venues" className="text-accent hover:underline">
               Muslim retreat venue in Norfolk
             </Link>{" "}
             and{" "}

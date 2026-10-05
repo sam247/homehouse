@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     description:
       "A peaceful old flint country house in rural Norfolk available for small Muslim retreats, teaching weekends and private group stays.",
     images: [IMG.hero],
-    url: "/retreat-venues",
+    url: "/muslim-retreat-venues",
   },
   alternates: {
-    canonical: "/retreat-venues",
+    canonical: "/muslim-retreat-venues",
   },
 };
 
@@ -75,7 +75,7 @@ const faq = [
 
 export default function RetreatVenuesPage() {
   const siteUrl = getSiteUrl();
-  const pageUrl = `${siteUrl}/retreat-venues`;
+  const pageUrl = `${siteUrl}/muslim-retreat-venues`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -104,7 +104,7 @@ export default function RetreatVenuesPage() {
     <PageShell>
       <SeoJsonLd data={jsonLd} />
       <PageHero
-        eyebrow="Muslim Retreat Venue"
+        eyebrow="Halal Retreat Venue in Norfolk"
         title="Muslim Retreat Venue"
         intro="An intimate halal retreat venue in the Norfolk countryside for Muslim groups, teachers and communities."
         image={IMG.hero}

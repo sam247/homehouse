@@ -234,7 +234,7 @@ export default async function HomePage() {
               </p>
               <p>
                 Home House is also held as a living Muslim homestead. Groups can book it as a{" "}
-                <Link href="/retreat-venues" className="text-accent hover:underline">
+                <Link href="/muslim-retreat-venues" className="text-accent hover:underline">
                   Muslim retreat venue in Norfolk
                 </Link>{" "}
                 for halal, alcohol-free stays, and our{" "}
