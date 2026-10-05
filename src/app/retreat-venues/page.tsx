@@ -4,6 +4,7 @@ import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Button } from "@/components/ui/button";
+import { PlanningGuidesSection, MUSLIM_RETREAT_PLANNING_GUIDES } from "@/components/PlanningGuidesSection";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
@@ -15,13 +16,14 @@ const IMG = {
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Retreat Venue in Norfolk | Home House Homestead",
+    absolute: "Muslim Retreat Venue in Norfolk | Home House Homestead",
   },
   description:
-    "Home House Homestead is a peaceful countryhouse retreat venue in Norfolk for small women's retreats, private groups, spiritual gatherings, healing retreats, and restorative stays.",
+    "An intimate halal retreat venue in the Norfolk countryside for Muslim groups, teachers and communities — accommodation, halal meals, salah and study space at Home House Homestead.",
   openGraph: {
-    title: "Retreat Venue in Norfolk | Home House Homestead",
-    description: "A small, intimate retreat venue in Norfolk for countryside gatherings, healing retreats, and spiritual stays.",
+    title: "Muslim Retreat Venue in Norfolk | Home House Homestead",
+    description:
+      "A peaceful old flint country house in rural Norfolk available for small Muslim retreats, teaching weekends and private group stays.",
     images: [IMG.hero],
     url: "/retreat-venues",
   },
@@ -31,23 +33,29 @@ export const metadata: Metadata = {
 };
 
 const suitedTo = [
-  "Small women’s retreats and restorative gatherings",
-  "Private groups of friends, sisters or colleagues looking for a peaceful countryside setting",
-  "Spiritual teachers and facilitators seeking an intimate natural retreat venue",
-  "Retreats wanting seasonal, organic, garden-to-table style catering",
-  "Groups who want accommodation, meals and access to the land in one place",
-  "Sufi and Muslim retreats, workshops and gatherings",
-  "Healing, spiritual and creative retreats where a warm, homely atmosphere matters",
+  "Muslim women’s retreats",
+  "Islamic teaching and study weekends",
+  "Muslim community and friendship groups",
+  "Small retreats led by teachers, scholars or facilitators",
+  "Qur’an, reflection and wellbeing retreats",
+  "Private halal countryside stays for groups",
+  "Groups wanting accommodation, meals and gathering space in one place",
+  "Retreats looking for a warm, homely alternative to a commercial venue",
+  "Muslim groups seeking an alcohol- and drug-free environment",
+  "Small gatherings that value privacy, simplicity and personal hospitality",
 ];
 
 const includes = [
-  "A peaceful old flint countryhouse in rural Norfolk",
-  "Accommodation, nourishing meals and access to the land in one place",
-  "Seasonal, organic, garden-to-table style catering",
-  "Shared and private spaces for gathering, rest and conversation",
-  "Gardens, fields and quieter outdoor edges",
-  "Optional 1-to-1 therapies and healing sessions",
-  "Personal hosting rather than anonymous venue hire",
+  "A peaceful old flint country house in rural Norfolk",
+  "Private accommodation for small groups",
+  "Halal catering and shared meals",
+  "Space for salah, Qur’an, teaching and group discussion",
+  "Shared and private spaces for gathering and rest",
+  "Gardens, fields and outdoor space",
+  "Seasonal, nourishing, garden-to-table style food",
+  "Personal hosting from Hawa and a relaxed, homely atmosphere",
+  "An alcohol- and drug-free environment",
+  "Optional 1-to-1 therapies by arrangement",
 ];
 
 const faq = [
@@ -56,8 +64,8 @@ const faq = [
     a: "No. Home House is an intimate homestead and guest house. It suits small groups who want a lived-in, personal setting rather than a purpose-built venue with multiple meeting halls.",
   },
   {
-    q: "Can I hire the house as a retreat venue in Norfolk?",
-    a: "Yes, for the right fit. We welcome small private retreats and gatherings by arrangement. Tell us your group size, dates, and what kind of stay you need.",
+    q: "Can I hire the house as a Muslim retreat venue in Norfolk?",
+    a: "Yes, for the right fit. We welcome small Muslim retreats and gatherings by arrangement. Tell us your group size, dates, and what kind of stay you need.",
   },
   {
     q: "How many guests can you accommodate?",
@@ -77,7 +85,7 @@ export default function RetreatVenuesPage() {
         "@id": `${pageUrl}#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
-          { "@type": "ListItem", position: 2, name: "Retreat Venue", item: pageUrl },
+          { "@type": "ListItem", position: 2, name: "Muslim Retreat Venue", item: pageUrl },
         ],
       },
       {
@@ -96,9 +104,9 @@ export default function RetreatVenuesPage() {
     <PageShell>
       <SeoJsonLd data={jsonLd} />
       <PageHero
-        eyebrow="Retreat Venue"
-        title="Home House Homestead as a Retreat Venue"
-        intro="A small retreat venue in Norfolk for intimate countryside gatherings."
+        eyebrow="Muslim Retreat Venue"
+        title="Muslim Retreat Venue"
+        intro="An intimate halal retreat venue in the Norfolk countryside for Muslim groups, teachers and communities."
         image={IMG.hero}
       />
 
@@ -107,42 +115,38 @@ export default function RetreatVenuesPage() {
           <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
             <div className="reveal space-y-5 text-foreground/80 font-light leading-relaxed">
               <p>
-                Home House Homestead is a peaceful old flint countryhouse retreat venue in rural Norfolk for small
-                women&apos;s retreats, private groups, spiritual gatherings and teachings, healing retreats and
-                restorative stays.
+                Home House Homestead is a peaceful old flint country house in rural Norfolk available for small Muslim
+                retreats, women’s gatherings, Islamic teaching weekends, community stays and private group retreats.
               </p>
               <p>
-                Warmer and more personal than a standard hire venue, Home House is run as a living homestead and is
-                rooted in Sufi Islamic values — prayer, service, simplicity, hospitality and living in harmony with
-                the earth.
-              </p>
-              <p>
-                It is a home shaped by devotion, service, nourishment, nature and a slower rhythm of life.
+                More personal than a hotel or commercial retreat centre, Home House offers accommodation, halal meals,
+                gathering spaces and access to the surrounding land in one peaceful setting.
               </p>
               <div className="aspect-[16/10] overflow-hidden rounded-sm">
-                <img src={IMG.photo1} alt="Home House Homestead flint countryhouse" className="h-full w-full object-cover" />
+                <img src={IMG.photo1} alt="Home House Homestead flint country house" className="h-full w-full object-cover" />
               </div>
               <p>
-                For those looking for more than simply bedrooms and a catering menu, Home House offers a setting that
-                already feels peaceful, cared for, loved and held. A house that feels like a home rather than a
-                retreat centre.
+                The house is run as a living Muslim homestead and provides a warm, respectful environment for Muslim
+                guests, with space for salah, Qur’an, study, conversation, rest and community.
               </p>
               <p>
-                A place where guests can stay together, share nourishing meals, walk the land, gather, pray, reflect
-                and reconnect at a gentler pace.
+                Home House is particularly suited to groups who want to bring their own teacher, scholar, facilitator
+                or programme and create a retreat that feels private, relaxed and personal.
               </p>
               <p>
-                Home House is particularly suited to small groups who value intimacy, atmosphere and connection over
-                scale.
+                Rather than offering a fixed retreat format, the venue can support a wide range of Muslim gatherings
+                from women’s wellbeing weekends and family or community retreats to Islamic study, teaching,
+                reflection and restorative time away.
               </p>
               <p>
-                If you are planning a women&apos;s gathering, see{" "}
-                <Link href="/womens-retreats" className="text-accent hover:underline">
-                  Women&apos;s Retreats
-                </Link>
-                . For accommodation-led stays, visit{" "}
-                <Link href="/stays" className="text-accent hover:underline">
-                  Accommodation
+                The environment is alcohol- and drug-free, halal food can be provided, and the slower rhythm of the
+                countryside offers space to step away from everyday demands and spend meaningful time together.
+              </p>
+              <p>
+                If you are specifically looking for Sufi gatherings, dhikr retreats or spiritually focused Sufi
+                teachings, visit{" "}
+                <Link href="/sufi-muslim-retreats" className="text-accent hover:underline">
+                  Sufi Retreats
                 </Link>
                 .
               </p>
@@ -172,7 +176,9 @@ export default function RetreatVenuesPage() {
           <div className="grid gap-12 md:grid-cols-2 md:items-start">
             <div className="reveal">
               <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">What the venue offers</p>
-              <h2 className="font-serif text-4xl md:text-5xl leading-tight">A homestead, not a conference hall.</h2>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+                A Muslim-friendly homestead, not a conference hall.
+              </h2>
             </div>
             <ul className="reveal grid gap-3">
               {includes.map((item) => (
@@ -195,11 +201,21 @@ export default function RetreatVenuesPage() {
         </Section>
       </Band>
 
+      <Band className="border-t border-border">
+        <Section className="max-w-4xl">
+          <PlanningGuidesSection
+            title="Planning a Muslim group retreat"
+            intro="If you are organising a stay for a group, these guides cover the practical questions — venue facilities, room for prayer, halal catering and how long to book for."
+            guides={MUSLIM_RETREAT_PLANNING_GUIDES}
+          />
+        </Section>
+      </Band>
+
       <Band variant="cream" className="border-t border-border">
         <Section className="max-w-4xl">
           <div className="reveal">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Frequently asked questions</p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">Retreat venue questions.</h2>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">Muslim retreat venue questions.</h2>
           </div>
           <div className="mt-12 grid gap-6">
             {faq.map((item) => (

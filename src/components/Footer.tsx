@@ -58,13 +58,13 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/retreat-venues" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/retreat-venues", label: "Retreat Venue", menu: "footer" })}>
-                Retreat Venue
+              <Link href="/retreat-venues" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/retreat-venues", label: "Muslim Retreat Venue", menu: "footer" })}>
+                Muslim Retreat Venue
               </Link>
             </li>
             <li>
-              <Link href="/sufi-muslim-retreats" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/sufi-muslim-retreats", label: "Sufi Muslim Retreats", menu: "footer" })}>
-                Sufi Muslim Retreats
+              <Link href="/sufi-muslim-retreats" className="hover:text-foreground transition-colors" onClick={() => gaEvent("nav_click", { to: "/sufi-muslim-retreats", label: "Sufi Retreats", menu: "footer" })}>
+                Sufi Retreats
               </Link>
             </li>
             <li>

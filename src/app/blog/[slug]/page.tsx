@@ -90,6 +90,8 @@ export default async function BlogPostPage({
   const faqSchemaSlugs = new Set([
     "how-long-should-you-go-on-a-retreat-for",
     "can-you-go-on-a-retreat-alone",
+    "muslim-retreat-venues-in-the-uk-what-to-look-for",
+    "sufi-retreats-in-norfolk-dhikr-sohbet-and-remembrance",
   ]);
   const faq =
     !isHtml && faqSchemaSlugs.has(slug) ? extractFaqFromMarkdown(post.body) : [];

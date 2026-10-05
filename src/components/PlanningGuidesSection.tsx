@@ -49,6 +49,42 @@ export const RETREAT_PLANNING_GUIDES: PlanningGuideLink[] = [
   },
 ];
 
+export const MUSLIM_RETREAT_PLANNING_GUIDES: PlanningGuideLink[] = [
+  {
+    href: "/blog/muslim-retreat-venues-in-the-uk-what-to-look-for",
+    label: "Muslim retreat venues in the UK: what to look for",
+    description: "Prayer space, halal catering, privacy and the questions to ask before you book.",
+  },
+  {
+    href: "/blog/what-is-a-homestead-retreat",
+    label: "What is a homestead retreat?",
+    description: "How a homestead venue differs from a hotel or formal retreat centre.",
+  },
+  {
+    href: "/blog/how-long-should-you-go-on-a-retreat-for",
+    label: "How long should a retreat be?",
+    description: "Weekend, mid-length and longer stays explained.",
+  },
+];
+
+export const SUFI_RETREAT_PLANNING_GUIDES: PlanningGuideLink[] = [
+  {
+    href: "/blog/sufi-retreats-in-norfolk-dhikr-sohbet-and-remembrance",
+    label: "Sufi retreats: dhikr, sohbet and remembrance",
+    description: "How to hold a Sufi retreat well, and what a small circle needs from a venue.",
+  },
+  {
+    href: "/blog/muslim-retreat-venues-in-the-uk-what-to-look-for",
+    label: "Choosing a Muslim retreat venue",
+    description: "A practical checklist for groups organising a halal, alcohol-free gathering.",
+  },
+  {
+    href: "/blog/what-to-pack-for-a-countryside-retreat-in-norfolk",
+    label: "What to pack for a countryside retreat",
+    description: "Seasonal packing for a retreat or guest house stay in Norfolk.",
+  },
+];
+
 export const STAY_PLANNING_GUIDES: PlanningGuideLink[] = [
   {
     href: "/blog/what-is-a-homestead-retreat",
