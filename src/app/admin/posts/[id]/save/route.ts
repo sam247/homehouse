@@ -3,6 +3,7 @@ import { getDb } from "@/lib/db";
 import { requireAdmin } from "@/lib/requireAdmin";
 import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 import { sanitizePostHtml } from "@/lib/sanitize";
+import { revalidateBlogRoutes } from "@/lib/blog";
 import { slugify } from "@/lib/slug";
 
 export const dynamic = "force-dynamic";
@@ -63,6 +64,8 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
         updated_at = now()
     WHERE id = ${id}
   `;
+
+  await revalidateBlogRoutes(slug);
 
   return NextResponse.redirect(new URL(`${ADMIN_ENTRY_PATH}/posts/${id}`, req.url));
 }

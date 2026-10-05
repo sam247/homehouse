@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
+import { revalidatePath } from "next/cache";
 import { getDb } from "@/lib/db";
 
 export type BlogContentType = "guide" | "journal";
@@ -196,6 +197,25 @@ export async function getPostsPage({
   const all = await getAllPosts();
   const posts = all.slice(offset, offset + safePageSize);
   return { posts, hasMore: offset + posts.length < all.length };
+}
+
+/**
+ * Revalidate every cached route that depends on blog content. Called after a
+ * post is created or updated so fresh content is served immediately rather
+ * than after the next 5-minute ISR window. Auth is already enforced by the
+ * caller (admin route handlers), so no extra secret is required. Failures are
+ * swallowed: a cache hiccup must never block publishing — the routes will
+ * simply revalidate on their normal ISR schedule.
+ */
+export async function revalidateBlogRoutes(slug: string): Promise<void> {
+  try {
+    revalidatePath("/");
+    revalidatePath("/blog");
+    revalidatePath(`/blog/${slug}`);
+    revalidatePath("/sitemap.xml");
+  } catch (error) {
+    console.error("blog: on-demand revalidation failed", error);
+  }
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
