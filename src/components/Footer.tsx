@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { NAV, SITE } from "@/lib/site";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Instagram, MapPin } from "lucide-react";
 import { gaEvent } from "@/lib/analytics/ga4";
 import { TrackedAnchor } from "@/components/TrackedAnchor";
@@ -9,7 +7,7 @@ import { TrackedAnchor } from "@/components/TrackedAnchor";
 export function Footer() {
   return (
     <footer className="bg-[var(--deep)] text-foreground/80 border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-20 grid gap-12 md:grid-cols-5">
+      <div className="mx-auto max-w-7xl px-6 py-20 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <h3 className="font-serif text-3xl text-foreground mb-3">
             {SITE.name}
@@ -83,35 +81,6 @@ export function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
-
-
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 mb-4">
-            Stay connected
-          </p>
-          <p className="text-sm font-light mb-4">
-            Occasional notes from the homestead.
-          </p>
-          <form
-            className="flex gap-2"
-            onSubmit={(e) => {
-              e.preventDefault();
-              gaEvent("newsletter_submit", { placement: "footer" });
-            }}
-          >
-            <Input
-              type="email"
-              placeholder="Email"
-              className="bg-transparent border-foreground/30 rounded-none placeholder:text-foreground/50"
-            />
-            <Button
-              type="submit"
-              className="rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground"
-            >
-              Sign up
-            </Button>
-          </form>
         </div>
       </div>
       <div className="border-t border-border">
