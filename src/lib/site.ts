@@ -19,20 +19,17 @@ export const PHOTOS = {
   pond: "/photos/pond.webp",
 };
 
-/** Full explore list for the footer. */
+/** Footer "Explore" column links. Duplicate destinations that appear in the
+ *  adjacent "Retreats" column (Accommodation, Women's Retreats, Muslim Retreat
+ *  Venue, Sufi Retreats, Therapies, Contact) are omitted so the two columns
+ *  stay at the same height — six links apiece. */
 export const NAV = [
   { to: "/about", label: "About" },
-  { to: "/stays", label: "Accommodation" },
-  { to: "/womens-retreats", label: "Women's Retreats" },
-  { to: "/retreat-venues", label: "Muslim Retreat Venue" },
-  { to: "/sufi-muslim-retreats", label: "Sufi Retreats" },
-  { to: "/therapies", label: "Therapies" },
   { to: "/community", label: "Community" },
   { to: "/hearth-project", label: "Hearth Project" },
   { to: "/reviews", label: "Reviews" },
   { to: "/gallery", label: "Gallery" },
   { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
 ] as const;
 
 /** Primary header destinations (Book Now stays as a CTA, not a nav link). */

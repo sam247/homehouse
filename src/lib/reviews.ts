@@ -7,6 +7,16 @@ export type Review = {
 
 export const GOOGLE_REVIEWS_URL = "https://share.google/RZRt5KdQev9yH3FF5";
 
+/** Baseline character limit so every review card renders at a consistent
+ *  height. Reviews longer than this are truncated with an ellipsis; shorter
+ *  ones are left untouched. */
+export const REVIEW_TEXT_LIMIT = 250;
+
+export function truncateText(text: string, maxLength: number = REVIEW_TEXT_LIMIT): string {
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength).trimEnd() + "…";
+}
+
 export const REVIEWS: Review[] = [
   {
     name: "Les Green",

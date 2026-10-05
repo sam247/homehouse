@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { StarSprite, Stars } from "@/components/Stars";
-import { GOOGLE_REVIEWS_URL, REVIEWS } from "@/lib/reviews";
+import { GOOGLE_REVIEWS_URL, REVIEWS, truncateText } from "@/lib/reviews";
 
 export const metadata: Metadata = {
   title: {
@@ -52,7 +52,7 @@ export default function ReviewsPage() {
                   <Stars rating={r.rating} size="md" className="mt-1 text-[var(--clay)] shrink-0" />
                 </div>
                 <blockquote className="mt-6 font-light leading-relaxed text-foreground/80">
-                  &ldquo;{r.text}&rdquo;
+                  &ldquo;{truncateText(r.text)}&rdquo;
                 </blockquote>
               </figure>
             ))}

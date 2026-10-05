@@ -45,7 +45,7 @@ export function CookieConsent() {
         </Link>
         .
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex items-center gap-2">
         <button
           type="button"
           onClick={() => decide("granted")}

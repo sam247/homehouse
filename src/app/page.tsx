@@ -333,7 +333,7 @@ export default async function HomePage() {
           }
         />
       </div>
-      <div className="bg-[var(--sage)] text-[var(--deep)]">
+      <div className="bg-[var(--deep)] text-[var(--cream)]">
         <Section className="py-14 md:py-16">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div className="reveal">
@@ -343,14 +343,14 @@ export default async function HomePage() {
               <p className="font-serif text-3xl md:text-4xl leading-tight max-w-2xl">
                 Planning a retreat in Norfolk?
               </p>
-              <p className="mt-5 text-[var(--deep)]/80 font-light max-w-2xl leading-relaxed">
+              <p className="mt-5 text-[var(--cream)]/80 font-light max-w-2xl leading-relaxed">
                 Explore the retreat options at Home House Homestead, from scheduled gatherings to quieter private
                 retreat stays.
               </p>
             </div>
             <Button
               asChild
-              className="rounded-none bg-[var(--deep)] text-[var(--cream)] hover:bg-[var(--clay)] hover:text-[var(--cream)] h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
+              className="rounded-none bg-[var(--clay)] text-[var(--cream)] hover:bg-[var(--clay)]/85 h-12 px-8 font-light tracking-[0.18em] uppercase text-xs"
             >
               <Link href="/retreats">Explore retreats</Link>
             </Button>

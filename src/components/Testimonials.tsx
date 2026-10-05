@@ -1,4 +1,4 @@
-import { GOOGLE_REVIEWS_URL, REVIEWS, type Review } from "@/lib/reviews";
+import { GOOGLE_REVIEWS_URL, REVIEWS, type Review, truncateText } from "@/lib/reviews";
 import { StarSprite, Stars } from "@/components/Stars";
 
 function getInitials(name: string) {
@@ -27,7 +27,7 @@ function ReviewCard({ r, duplicate = false }: { r: Review; duplicate?: boolean }
       </div>
       <Stars rating={r.rating} className="mt-4 text-[var(--clay)]" />
       <blockquote className="mt-4 text-sm font-light leading-relaxed text-[var(--deep)]/80">
-        &ldquo;{r.text}&rdquo;
+        &ldquo;{truncateText(r.text)}&rdquo;
       </blockquote>
     </figure>
   );
