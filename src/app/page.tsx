@@ -226,6 +226,17 @@ export default async function HomePage() {
                 </Link>{" "}
                 and we’ll reply personally.
               </p>
+              <p>
+                Home House is also held as a living Muslim homestead. Groups can book it as a{" "}
+                <Link href="/retreat-venues" className="text-accent hover:underline">
+                  Muslim retreat venue in Norfolk
+                </Link>{" "}
+                for halal, alcohol-free stays, and our{" "}
+                <Link href="/sufi-muslim-retreats" className="text-accent hover:underline">
+                  Sufi retreats
+                </Link>{" "}
+                welcome teachers, tariqas and dhikr circles gathering in remembrance.
+              </p>
             </>
           }
         />

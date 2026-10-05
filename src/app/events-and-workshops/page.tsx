@@ -13,11 +13,13 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Events & Workshops — Home House Homestead",
+  title: {
+    absolute: "Retreats, Events & Workshops in Norfolk | Home House",
+  },
   description:
-    "Sound healing events, workshops, and bespoke retreats for women at Home House in the Norfolk countryside.",
+    "Scheduled retreats, sound healing events and workshops for women in the Norfolk countryside — plus private group and bespoke retreat dates at Home House Homestead.",
   openGraph: {
-    title: "Events & Workshops — Home House Homestead",
+    title: "Retreats, Events & Workshops in Norfolk | Home House",
     description: "Events, workshops, and bespoke retreats for women at Home House.",
     images: [IMG.hero],
     url: "/events-and-workshops",
@@ -162,7 +164,15 @@ export default function EventsAndWorkshopsPage() {
                   <Link href="/stays" className="text-accent hover:underline">
                     Stays
                   </Link>
-                  .
+                  . If you are arranging a gathering for a Muslim or Sufi group, the house can be booked privately as a{" "}
+                  <Link href="/retreat-venues" className="text-accent hover:underline">
+                    Muslim retreat venue
+                  </Link>{" "}
+                  — see also our{" "}
+                  <Link href="/sufi-muslim-retreats" className="text-accent hover:underline">
+                    Sufi retreats
+                  </Link>{" "}
+                  page.
                 </p>
               </div>
 

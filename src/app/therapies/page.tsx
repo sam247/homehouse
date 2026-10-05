@@ -314,6 +314,7 @@ export default function TherapiesPage() {
           <div className="mt-10 flex flex-wrap gap-4 text-sm font-light">
             <Link href="/stays" className="text-accent hover:underline">Explore accommodation</Link>
             <Link href="/womens-retreats" className="text-accent hover:underline">Women&apos;s retreats</Link>
+            <Link href="/sufi-muslim-retreats" className="text-accent hover:underline">Sufi retreats and gatherings</Link>
             <Link href="/contact" className="text-accent hover:underline">Contact Home House</Link>
           </div>
         </Section>

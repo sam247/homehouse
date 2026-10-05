@@ -42,13 +42,15 @@ const faq = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats — Home House",
+  title: {
+    absolute: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats",
+  },
   description:
-    "Plan retreats in Norfolk at Home House Homestead: women's, solo, private, and rest retreats in a peaceful countryside homestead setting.",
+    "Plan retreats in Norfolk at Home House Homestead: women's, solo, private and rest retreats, plus Muslim group and Sufi gatherings in a peaceful countryside setting.",
   openGraph: {
-    title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats — Home House",
+    title: "Norfolk Retreats | Women's, Solo, Private & Rest Retreats",
     description:
-      "Plan retreats in Norfolk at Home House Homestead: women's, solo, private, and rest retreats in a peaceful countryside homestead setting.",
+      "Plan retreats in Norfolk at Home House Homestead: women's, solo, private and rest retreats, plus Muslim group and Sufi gatherings in a peaceful countryside setting.",
     images: [IMG.hero],
     url: "/retreats",
   },
@@ -128,6 +130,17 @@ export default function RetreatsPage() {
                   rest retreats
                 </Link>
                 .
+              </p>
+              <p>
+                We also hold space for faith-led gatherings. The homestead serves as a{" "}
+                <Link href="/retreat-venues" className="text-accent hover:underline">
+                  Muslim retreat venue in Norfolk
+                </Link>{" "}
+                for halal, alcohol-free group stays, teaching weekends and women&apos;s gatherings, while our{" "}
+                <Link href="/sufi-muslim-retreats" className="text-accent hover:underline">
+                  Sufi retreats
+                </Link>{" "}
+                are held for tariqas, dhikr circles, students and anyone gathering in remembrance.
               </p>
               <p>
                 If you already know the kind of stay you want, explore our{" "}

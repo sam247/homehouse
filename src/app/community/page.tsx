@@ -8,11 +8,13 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "Community — Home House Homestead",
+  title: {
+    absolute: "Community Gatherings in Norfolk | Home House Homestead",
+  },
   description:
-    "Community-based gatherings offered on a donation basis — to reconnect with nature, community and the heart.",
+    "Donation-based community gatherings in rural Norfolk — shared meals, fire listening circles, women's gatherings and volunteering days at Home House Homestead.",
   openGraph: {
-    title: "Community — Home House Homestead",
+    title: "Community Gatherings in Norfolk | Home House Homestead",
     description:
       "Simple gatherings to reconnect with nature, community and the heart. Sharing food, stories, hearts and souls.",
     images: [IMG.hero],

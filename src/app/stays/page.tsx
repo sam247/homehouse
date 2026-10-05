@@ -98,7 +98,11 @@ export default function StaysPage() {
             </p>
             <p>
               Home House can also be privately booked as an intimate venue for facilitators wishing to host their own
-              retreats, circles or gatherings.
+              retreats, circles or gatherings — see the{" "}
+              <Link href="/retreat-venues" className="text-accent hover:underline">
+                Muslim retreat venue
+              </Link>{" "}
+              page for halal, alcohol-free group stays.
             </p>
             <p>
               Whether you are seeking deep rest, connection with nature, spiritual nourishment, space to reflect and

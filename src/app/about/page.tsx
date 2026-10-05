@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageShell, PageHero, Zigzag, Section } from "@/components/PageShell";
 
 const IMG = {
@@ -9,12 +10,12 @@ const IMG = {
 
 export const metadata: Metadata = {
   title: {
-    absolute: "About — Home House Homestead",
+    absolute: "About Hawa | Home House Homestead in Norfolk",
   },
   description:
-    "The story behind Home House Homestead — and the journey that led Hawa Amanda home to the Norfolk countryside, devotion, and a life of healing.",
+    "Hawa's journey through different traditions to Islam and the Sufi path — and the story of the Norfolk homestead she now holds for retreats, healing and hospitality.",
   openGraph: {
-    title: "About — Home House Homestead",
+    title: "About Hawa | Home House Homestead in Norfolk",
     description: "The journey behind Home House Homestead.",
     images: [IMG.hero],
     url: "/about",
@@ -156,6 +157,21 @@ export default function AboutPage() {
             </p>
             <p>
               Through Sufi healing, breath and bodywork, sacred sound, Holy Hijama Therapy and the spaces I hold at Home House Homestead, I offer what has been given to me…a space for others to heal, to soften, to release, and to return to themselves and to the Divine.
+            </p>
+            <p>
+              This path shapes what the homestead holds today:{" "}
+              <Link href="/sufi-muslim-retreats" className="text-accent hover:underline">
+                Sufi retreats
+              </Link>{" "}
+              for remembrance, teachings and dhikr, the house as a{" "}
+              <Link href="/retreat-venues" className="text-accent hover:underline">
+                Muslim retreat venue
+              </Link>{" "}
+              for halal, alcohol-free group stays, and the{" "}
+              <Link href="/therapies" className="text-accent hover:underline">
+                1-to-1 therapies
+              </Link>{" "}
+              I offer for guests who want individual care.
             </p>
           </div>
         </Section>

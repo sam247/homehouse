@@ -6,11 +6,15 @@ import { SITE } from "@/lib/site";
 import { Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact — Home House Homestead",
-  description: "Get in touch with Home House Homestead in Norfolk. Book a stay or ask about retreats and events.",
+  title: {
+    absolute: "Contact Home House Homestead | Retreat & Stay Enquiries",
+  },
+  description:
+    "Enquire about a Norfolk retreat, countryside stay, Muslim group booking or Sufi gathering at Home House Homestead — dates, availability and honest guidance on fit.",
   openGraph: {
-    title: "Contact — Home House Homestead",
-    description: "Book a stay or ask about retreats and events.",
+    title: "Contact Home House Homestead | Retreat & Stay Enquiries",
+    description:
+      "Enquire about a retreat, countryside stay, Muslim group booking or Sufi gathering at Home House Homestead in Norfolk.",
     url: "/contact",
   },
   alternates: {

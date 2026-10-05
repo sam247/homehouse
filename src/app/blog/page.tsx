@@ -17,12 +17,14 @@ export async function generateMetadata({
   const canonical = safePage > 1 ? `/blog?page=${safePage}` : "/blog";
 
   return {
-    title: "Blog",
-    description: "Planning guides for Norfolk retreats and countryside stays, plus journal notes from the homestead.",
+    title: "Retreat Planning Guides & Homestead Journal",
+    description:
+      "Practical guides to planning Norfolk retreats and countryside stays, Muslim group retreats and Sufi gatherings — plus journal notes from the homestead.",
     alternates: { canonical },
     openGraph: {
-      title: "Blog",
-      description: "Planning guides for Norfolk retreats and countryside stays, plus journal notes from the homestead.",
+      title: "Retreat Planning Guides & Homestead Journal",
+      description:
+        "Practical guides to planning Norfolk retreats and countryside stays, Muslim group retreats and Sufi gatherings — plus journal notes from the homestead.",
       url: canonical,
     },
   };
@@ -85,7 +87,15 @@ export default async function BlogIndexPage() {
             <Link href="/norfolk-holidays" className="text-accent hover:underline">
               quieter Norfolk holidays
             </Link>
-            , or browse the guides below for solo retreats, women&apos;s retreats, and countryside stay planning.
+            , or browse the guides below for solo retreats, women&apos;s retreats, and countryside stay planning. We also write for groups: see our{" "}
+            <Link href="/retreat-venues" className="text-accent hover:underline">
+              Muslim retreat venue in Norfolk
+            </Link>{" "}
+            and{" "}
+            <Link href="/sufi-muslim-retreats" className="text-accent hover:underline">
+              Sufi retreats
+            </Link>{" "}
+            pages, with supporting guides in the list below.
           </div>
 
           <div className="space-y-16">

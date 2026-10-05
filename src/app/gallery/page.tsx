@@ -24,11 +24,12 @@ const photos = [...localPhotos, ...galleryPhotos];
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Gallery — Home House Homestead",
+    absolute: "Gallery | Norfolk Homestead, Gardens & Rooms",
   },
-  description: "Images of the Norfolk farmhouse, gardens, fields and life at Home House Homestead.",
+  description:
+    "Photographs of the flint farmhouse, gardens, fields, rooms and gathering spaces at Home House Homestead in Norfolk — see the place before you book.",
   openGraph: {
-    title: "Gallery — Home House Homestead",
+    title: "Gallery | Norfolk Homestead, Gardens & Rooms",
     description: "A glimpse of life at the homestead.",
     images: [photos[0].src],
     url: "/gallery",

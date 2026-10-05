@@ -4,10 +4,13 @@ import { Star } from "lucide-react";
 import { GOOGLE_REVIEWS_URL, REVIEWS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
-  title: "Reviews — Home House Homestead",
-  description: "What guests say about their stay at Home House Homestead in Norfolk.",
+  title: {
+    absolute: "Guest Reviews | Home House Homestead in Norfolk",
+  },
+  description:
+    "Guest reviews of retreats and countryside stays at Home House Homestead in Norfolk — honest accounts of rest, hosting, food and the homestead itself.",
   openGraph: {
-    title: "Reviews — Home House Homestead",
+    title: "Guest Reviews | Home House Homestead in Norfolk",
     description: "What guests say about their stay.",
     url: "/reviews",
   },
