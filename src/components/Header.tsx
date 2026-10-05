@@ -67,7 +67,7 @@ export function Header() {
             trigger={
               <Button
                 variant="outline"
-                className="hidden sm:inline-flex border-foreground/30 bg-transparent text-foreground hover:bg-foreground hover:text-background rounded-none px-5"
+                className="hidden sm:inline-flex border-accent bg-accent text-accent-foreground hover:bg-accent/90 rounded-none px-5"
               >
                 Book now
               </Button>
@@ -112,7 +112,7 @@ export function Header() {
               trigger={
                 <Button
                   variant="outline"
-                  className="mt-2 w-fit border-foreground/30 bg-transparent text-foreground hover:bg-foreground hover:text-background rounded-none px-5"
+                  className="mt-2 w-fit border-accent bg-accent text-accent-foreground hover:bg-accent/90 rounded-none px-5"
                   onClick={() => setOpen(false)}
                 >
                   Book now

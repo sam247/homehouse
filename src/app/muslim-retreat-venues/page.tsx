@@ -162,7 +162,7 @@ export default function RetreatVenuesPage() {
               </ul>
               <div className="mt-8">
                 <EnquiryDrawer
-                  source="retreat_venues"
+                  source="muslim_retreat_venues"
                   trigger={<Button className="rounded-none w-full">Enquire about venue dates</Button>}
                 />
               </div>
