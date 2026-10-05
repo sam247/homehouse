@@ -249,7 +249,7 @@ export default async function HomePage() {
       </div>
       <div className="bg-[var(--cream)] text-[var(--deep)]">
         <Section>
-          <div className="max-w-3xl mx-auto text-center reveal">
+          <div className="max-w-3xl mx-auto text-left reveal">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Why guests choose us</p>
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">
               Why Guests Choose Home House Homestead
@@ -262,45 +262,50 @@ export default async function HomePage() {
               reconnect, and remember the feeling of home within yourself.
             </p>
             <p className="mt-4 text-[var(--deep)]/75 font-light leading-relaxed">
-              Guests often arrive seeking rest and leave feeling nourished, grounded, and renewed.
-            </p>
-            <p className="mt-4 text-[var(--deep)]/75 font-light leading-relaxed">
-              Many guests return for the sense of home, connection, the ease they find here, the presence and safety of
-              being held with love, the profound and deep healing that they experience, the clarity and space that they
-              discover that helps them to take the next steps needed in their lives.
+              Guests often arrive seeking rest and leave feeling nourished, grounded, and renewed. Many return
+              for the sense of home, the ease they find here, and the deep healing that helps them take the
+              next steps in their lives.
             </p>
           </div>
-          <div className="mt-14 grid md:grid-cols-2 gap-12 items-start">
-            <ul className="reveal grid gap-3 text-[var(--deep)]/85 font-light">
-              {[
-                "Peaceful rooms and unhurried mornings",
-                "Gardens, open fields, and space to reconnect with nature",
-                "Home-cooked meals prepared with love and care",
-                "A welcoming setting for solo retreats, private retreats, and quiet countryside breaks",
-                "Space to slow down, exhale fully, reflect, and simply be",
-              ].map((p) => (
-                <li key={p} className="border-b border-border pb-3">
-                  {p}
-                </li>
-              ))}
-            </ul>
-            <div className="reveal space-y-4 text-[var(--deep)]/75 font-light leading-relaxed">
-              <p>
-                Read more in our{" "}
-                <Link href="/reviews" className="text-accent hover:underline">
-                  guest reviews
-                </Link>{" "}
-                or get in touch via our{" "}
-                <Link href="/contact" className="text-accent hover:underline">
-                  contact page
-                </Link>{" "}
-                if you’d like help choosing dates.
-              </p>
-              <p>
-                If you’ve stayed before, mention it in your enquiry — we’ll do our best to help you
-                find the right window for a return visit.
-              </p>
-            </div>
+          <div className="mt-16 reveal grid md:grid-cols-3 gap-8 md:gap-12">
+            {[{
+              title: "Peaceful rooms and unhurried mornings",
+              desc: "Restored flint farmhouse rooms with comfortable beds, quiet garden views, and mornings without rush.",
+            }, {
+              title: "Gardens, open fields, and space to reconnect with nature",
+              desc: "Twelve acres of garden, meadow and woodland to wander — or simply sit and watch the seasons change.",
+            }, {
+              title: "Home-cooked meals prepared with love and care",
+              desc: "Seasonal, mostly homegrown meals served at a communal table, tailored to dietary needs.",
+            }, {
+              title: "A welcoming setting for solo retreats, private retreats, and quiet countryside breaks",
+              desc: "Whether you're alone or with a small group, the homestead adapts to your need for space and care.",
+            }, {
+              title: "Space to slow down, exhale fully, reflect, and simply be",
+              desc: "An unhurried rhythm, optional activities, and a calendar guided by daylight rather than deadlines.",
+            }].map((f) => (
+              <div key={f.title} className="text-center md:text-left">
+                <h3 className="font-serif text-lg mb-2 text-[var(--deep)]">{f.title}</h3>
+                <p className="text-sm text-[var(--deep)]/70 font-light leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-16 reveal text-center md:text-left">
+            <p className="text-[var(--deep)]/75 font-light leading-relaxed">
+              Read more in our{" "}
+              <Link href="/reviews" className="text-accent hover:underline">
+                guest reviews
+              </Link>{" "}
+              or get in touch via our{" "}
+              <Link href="/contact" className="text-accent hover:underline">
+                contact page
+              </Link>{" "}
+              if you’d like help choosing dates.
+            </p>
+            <p className="mt-3 text-[var(--deep)]/75 font-light leading-relaxed">
+              If you’ve stayed before, mention it in your enquiry — we’ll do our best to help you find the
+              right window for a return visit.
+            </p>
           </div>
         </Section>
       </div>
@@ -313,10 +318,14 @@ export default async function HomePage() {
           body={
             <>
               <p>
-                Home House Homestead is set in rural Norfolk — ideal for quiet walks, big skies, and
-                time close to wildlife. Many guests explore the{" "}
-                <strong className="font-normal">Norfolk Broads</strong>, coastal walks, and local
-                villages during their stay.
+                Home House Homestead sits in rural Norfolk, within easy reach of Norwich (a 20-minute drive),
+                King&apos;s Lynn, and the North Norfolk coast. Step from your room onto hedgerow lanes and open
+                fields, or take a short drive to the Norfolk Broads for quiet boat trips and wildlife spotting
+                across the dykes.
+              </p>
+              <p>
+                Coastal walks, village churches, local markets, and country pubs are all part of the area — and
+                our blog has routes, maps, and tips to help you shape your own slow days.
               </p>
               <p>
                 For inspiration, browse our{" "}
