@@ -19,7 +19,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
   {
     slug: "womens-retreats-norfolk",
     navLabel: "Women's retreats",
-    metadataTitle: "Women's Retreats in Norfolk | Home House Homestead",
+    metadataTitle: "Women's Retreats in Norfolk | Small-Group Rest & Reconnection",
     metadataDescription:
       "Small-group women's retreats in Norfolk for rest, reconnection, nourishing food, nature, and slower living at Home House Homestead.",
     heroTitle: "Women's retreats in Norfolk for rest, softness, and reconnection.",
