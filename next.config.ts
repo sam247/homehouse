@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       { source: "/hhh-mentorships", destination: "/retreats", permanent: true },
       { source: "/new-page", destination: "/retreats", permanent: true },
       { source: "/new-page-1", destination: "/community", permanent: true },
+      { source: "/retreat-venues", destination: "/muslim-retreat-venues", statusCode: 301 },
     ];
   },
   async rewrites() {
