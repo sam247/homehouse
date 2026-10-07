@@ -102,6 +102,7 @@ export default async function BlogPostPage({
     "can-you-go-on-a-retreat-alone",
     "muslim-retreat-venues-in-the-uk-what-to-look-for",
     "sufi-retreats-in-norfolk-dhikr-sohbet-and-remembrance",
+    "what-is-a-homestead-retreat",
   ]);
   const faq =
     !isHtml && faqSchemaSlugs.has(slug) ? extractFaqFromMarkdown(post.body) : [];
