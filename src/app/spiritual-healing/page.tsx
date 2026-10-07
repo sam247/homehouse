@@ -193,7 +193,7 @@ export default function SpiritualHealingPage() {
 
       <Band className="border-t border-border">
         <Section>
-          <div className="max-w-3xl reveal">
+          <div className="reveal">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Explore the practices</p>
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">Six ways to find the support that feels right.</h2>
             <p className="mt-5 text-foreground/75 font-light leading-relaxed">Choose a service to learn more about the practice, how it is offered at Home House in Norfolk and how to enquire. Online sessions are only available where suitable.</p>
