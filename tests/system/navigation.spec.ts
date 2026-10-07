@@ -10,6 +10,16 @@ test("home loads", async ({ page }) => {
   expect(jsonLd.join(" ")).toContain("FAQPage");
 });
 
+test("/therapies permanently redirects to the spiritual healing hub", async ({ page }) => {
+  const redirect = await page.request.get("/therapies", { maxRedirects: 0 });
+  expect(redirect.status()).toBe(308);
+  expect(redirect.headers().location).toMatch(/\/spiritual-healing$/);
+
+  await page.goto("/therapies");
+  await expect(page).toHaveURL(/\/spiritual-healing$/);
+  await expect(page.getByRole("heading", { level: 1, name: /Spiritual Healing in Norfolk/i })).toBeVisible();
+});
+
 test("/events redirects to /events-and-workshops", async ({ page }) => {
   await page.goto("/events");
   await expect(page).toHaveURL(/\/events-and-workshops$/);
@@ -44,9 +54,10 @@ test("womens retreats page loads from header nav", async ({ page }) => {
   await page.locator("header").getByRole("link", { name: "Women's Retreats" }).first().click();
   await expect(page).toHaveURL(/\/womens-retreats$/);
   await expect(
-    page.getByRole("heading", { name: "Women's retreats in Norfolk for rest, softness, and reconnection." }),
+    page.getByRole("heading", { name: /Women.?s retreats in Norfolk for healing, rest, reconnection and remembering/i }),
   ).toBeVisible();
-  await expect(page.getByText("Pricing")).toHaveCount(0);
+  await expect(page.getByText(/private room/i).first()).toBeVisible();
+  await expect(page.getByText(/per night/i).first()).toBeVisible();
 });
 
 test("community and reviews live in the footer", async ({ page }) => {
@@ -166,7 +177,7 @@ test("seo support markdown posts are available", async ({ page }) => {
 test("homepage avoids generic wellness framing in stays band", async ({ page }) => {
   await page.goto("/");
   await expect(
-    page.getByRole("heading", { level: 2, name: "Norfolk Retreats & Countryside Stays" }).first(),
+    page.getByRole("heading", { name: /Peaceful Norfolk Retreats & Countryside Stays/i }).first(),
   ).toBeVisible();
   await expect(page.getByRole("heading", { name: /Wellness Retreats/i })).toHaveCount(0);
 });
@@ -208,7 +219,11 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/womens-retreats</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/muslim-retreat-venues</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/sufi-muslim-retreats</loc>");
-  expect(sitemapText).toContain("<loc>http://localhost:3000/therapies</loc>");
+  expect(sitemapText).toContain("<loc>http://localhost:3000/spiritual-healing</loc>");
+  expect(sitemapText).not.toContain("<loc>http://localhost:3000/therapies</loc>");
+  for (const slug of ["sound-healing", "hijama", "sufi-healing", "wet-cupping", "holistic-healing", "somatic-bodywork"]) {
+    expect(sitemapText).toContain(`<loc>http://localhost:3000/spiritual-healing/${slug}</loc>`);
+  }
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/norfolk-holidays</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats/womens-retreats-norfolk</loc>");
@@ -217,6 +232,43 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog/how-to-plan-a-solo-retreat-in-norfolk</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog/can-you-go-on-a-retreat-alone</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/blog/how-long-should-you-go-on-a-retreat-for</loc>");
+});
+
+test("spiritual healing hub links all six service pages and tabs can be selected", async ({ page }) => {
+  await page.goto("/spiritual-healing");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /http:\/\/localhost:3000\/spiritual-healing$/);
+  const services = [
+    ["Sound Healing", "sound-healing"],
+    ["Hijama", "hijama"],
+    ["Sufi Healing", "sufi-healing"],
+    ["Wet Cupping", "wet-cupping"],
+    ["Holistic Healing", "holistic-healing"],
+    ["Somatic Bodywork", "somatic-bodywork"],
+  ];
+  for (const [name, slug] of services) {
+    await expect(page.getByRole("link", { name, exact: true }).first()).toHaveAttribute("href", `/spiritual-healing/${slug}`);
+  }
+  await page.getByRole("tab", { name: "Hijama" }).click();
+  await expect(page.getByRole("tabpanel")).toContainText("traditional cupping practice");
+  await expect(page.getByRole("tabpanel").getByRole("link", { name: "Explore Hijama" })).toHaveAttribute("href", "/spiritual-healing/hijama");
+});
+
+test("each spiritual healing service has unique SEO metadata and links back to its hub", async ({ page }) => {
+  const services = ["sound-healing", "hijama", "sufi-healing", "wet-cupping", "holistic-healing", "somatic-bodywork"];
+  const titles = new Set<string>();
+  for (const slug of services) {
+    await page.goto(`/spiritual-healing/${slug}`);
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    const title = await page.title();
+    expect(title).toContain("Home House");
+    expect(titles.has(title)).toBe(false);
+    titles.add(title);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /Norfolk/i);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", new RegExp(`/spiritual-healing/${slug}$`));
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", new RegExp(`/spiritual-healing/${slug}$`));
+    await expect(page.getByRole("link", { name: "Back to spiritual healing in Norfolk" })).toHaveAttribute("href", "/spiritual-healing");
+    await expect(page.getByRole("button", { name: new RegExp(`Enquire about`) })).toBeVisible();
+  }
 });
 
 test("canonical link is absolute", async ({ page }) => {

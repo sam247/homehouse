@@ -164,8 +164,8 @@ export default function SufiMuslimRetreatsPage() {
                   About
                 </Link>{" "}
                 page, or explore{" "}
-                <Link href="/therapies" className="text-accent hover:underline">
-                  Therapies
+                <Link href="/spiritual-healing" className="text-accent hover:underline">
+                  Spiritual healing
                 </Link>{" "}
                 and{" "}
                 <Link href="/womens-retreats" className="text-accent hover:underline">

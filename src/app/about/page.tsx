@@ -168,8 +168,8 @@ export default function AboutPage() {
                 Muslim retreat venue
               </Link>{" "}
               for halal, alcohol-free group stays, and the{" "}
-              <Link href="/therapies" className="text-accent hover:underline">
-                1-to-1 therapies
+              <Link href="/spiritual-healing" className="text-accent hover:underline">
+                spiritual healing sessions
               </Link>{" "}
               I offer for guests who want individual care.
             </p>

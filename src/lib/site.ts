@@ -21,7 +21,7 @@ export const PHOTOS = {
 
 /** Footer "Explore" column links. Duplicate destinations that appear in the
  *  adjacent "Retreats" column (Accommodation, Women's Retreats, Muslim Retreat
- *  Venue, Sufi Retreats, Therapies, Contact) are omitted so the two columns
+ *  Venue, Sufi Retreats, Spiritual Healing, Contact) are omitted so the two columns
  *  stay at the same height — six links apiece. */
 export const NAV = [
   { to: "/about", label: "About" },
@@ -39,5 +39,5 @@ export const HEADER_NAV = [
   { to: "/womens-retreats", label: "Women's Retreats" },
   { to: "/muslim-retreat-venues", label: "Muslim Retreat Venue" },
   { to: "/sufi-muslim-retreats", label: "Sufi Retreats" },
-  { to: "/therapies", label: "Therapies" },
+  { to: "/spiritual-healing", label: "Spiritual Healing" },
 ] as const;

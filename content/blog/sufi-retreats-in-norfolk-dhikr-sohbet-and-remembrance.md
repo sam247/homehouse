@@ -118,7 +118,7 @@ The return is part of the retreat. A few days of remembrance does not usually pr
 
 Take one or two small things back with you — a wird you keep, a habit of praying at Fajr without rushing, a decision about how much of the day belongs to your phone. Enough to keep the door open.
 
-Home House Homestead holds space for exactly this: a peaceful, alcohol-free homestead in rural Norfolk, [open to Sufi teachers, tariqas, circles and communities](/sufi-muslim-retreats) who want to bring their own guide and gather in remembrance. If your group is a Muslim gathering of another shape — a study weekend, a women's stay or a community retreat — start with our [Muslim retreat venue in Norfolk](/muslim-retreat-venues). Explore [1-to-1 therapies with Hawa](/therapies), read more about [her path on the About page](/about), or look at [women's retreats](/womens-retreats) and [stays](/stays) for other ways to visit.
+Home House Homestead holds space for exactly this: a peaceful, alcohol-free homestead in rural Norfolk, [open to Sufi teachers, tariqas, circles and communities](/sufi-muslim-retreats) who want to bring their own guide and gather in remembrance. If your group is a Muslim gathering of another shape — a study weekend, a women's stay or a community retreat — start with our [Muslim retreat venue in Norfolk](/muslim-retreat-venues). Explore [1-to-1 spiritual healing with Hawa](/spiritual-healing), read more about [her path on the About page](/about), or look at [women's retreats](/womens-retreats) and [stays](/stays) for other ways to visit.
 
 ## Frequently asked questions
 

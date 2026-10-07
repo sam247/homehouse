@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { getSiteUrl } from "@/lib/siteUrl";
+import { SPIRITUAL_HEALING_SERVICES, spiritualHealingPath } from "@/lib/spiritualHealing";
 
 const STATIC_ROUTES = [
   "/",
@@ -9,7 +10,8 @@ const STATIC_ROUTES = [
   "/womens-retreats",
   "/muslim-retreat-venues",
   "/sufi-muslim-retreats",
-  "/therapies",
+  "/spiritual-healing",
+  ...SPIRITUAL_HEALING_SERVICES.map((service) => spiritualHealingPath(service.slug)),
   "/norfolk-holidays",
   "/retreats",
   "/retreats/womens-retreats-norfolk",
