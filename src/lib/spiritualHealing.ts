@@ -31,7 +31,7 @@ export const SPIRITUAL_HEALING_SERVICES = [
     ],
     includes: ["A conversation before arranging a session", "A clear explanation of the traditional practice", "Prayerful, in-person care and respect for boundaries"],
     format: "In person at Home House in Norfolk for women; enquire in advance about suitability and availability.",
-    related: ["wet-cupping", "sufi-healing", "holistic-healing"]
+    related: ["sufi-healing", "holistic-healing"]
   },
   {
     slug: "sufi-healing",
@@ -50,23 +50,7 @@ export const SPIRITUAL_HEALING_SERVICES = [
     format: "In person in Norfolk; online sessions may be arranged when suitable.",
     related: ["holistic-healing", "sound-healing", "somatic-bodywork"]
   },
-  {
-    slug: "wet-cupping",
-    name: "Wet Cupping",
-    title: "Wet Cupping in Norfolk | Home House Homestead",
-    description:
-      "Ask about in-person wet cupping at Home House Homestead in Norfolk. Learn how a session is arranged, what to discuss first and how it relates to Hijama.",
-    image: "/photos/041026_images/9.jpeg",
-    intro: "Understand the practical wet-cupping session and discuss your questions before arranging an appointment.",
-    paragraphs: [
-      "Wet cupping is a hands-on cupping practice involving the skin. At Home House, the traditional practice is offered in the setting of Hawa's Sufi healing lineage and is also known as Hijama. This page focuses on the practical method and what to discuss before you enquire.",
-      "The practice is not suitable for everyone. Before making an appointment, contact Hawa to ask how the session works, discuss your circumstances and determine whether it may be appropriate. The service is provided in person only and does not replace care from a qualified health professional.",
-      "For more on the spiritual and traditional context, explore the dedicated Hijama page. Sessions are arranged at Home House Homestead in Norfolk."
-    ],
-    includes: ["An advance conversation about the process", "Clear information before you decide", "An in-person session only if arranged as appropriate"],
-    format: "In person in Norfolk only; enquire before booking to discuss the practice and suitability.",
-    related: ["hijama", "sufi-healing", "holistic-healing"]
-  },
+
   {
     slug: "holistic-healing",
     name: "Holistic Healing",

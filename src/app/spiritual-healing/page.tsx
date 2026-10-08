@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     absolute: "Spiritual Healing in Norfolk | Home House Homestead",
   },
   description:
-    "Explore spiritual healing in Norfolk with Hawa: Sufi healing, sound healing, Hijama, wet cupping, holistic healing and somatic bodywork at Home House.",
+    "Explore spiritual healing in Norfolk with Hawa: Sufi healing, sound healing, Hijama, holistic healing and somatic bodywork at Home House.",
   openGraph: {
     title: "Spiritual Healing in Norfolk | Home House Homestead",
     description:
-      "Explore spiritual healing in Norfolk with Hawa: Sufi healing, sound healing, Hijama, wet cupping, holistic healing and somatic bodywork at Home House.",
+      "Explore spiritual healing in Norfolk with Hawa: Sufi healing, sound healing, Hijama, holistic healing and somatic bodywork at Home House.",
     images: [IMG.hero],
     url: "/spiritual-healing",
   },
@@ -47,7 +47,7 @@ const therapySections = [
     ],
   },
   {
-    title: "Breath & Bodywork",
+    title: "Somatic Breath & Bodywork",
     paragraphs: [
       "Held through intuitive, compassionate touch and the profound simplicity of learning to breathe more fully and efficiently.",
       "As the breath deepens and the nervous system begins to settle, a greater awareness of and connection with the body can begin to unfold. Patterns of tension, held emotion and protective holding may gradually soften and release at a pace led by you, creating more space, ease and flow within the body.",
@@ -59,7 +59,7 @@ const therapySections = [
     ],
   },
   {
-    title: "Sacred Sound Bathing",
+    title: "Sacred Sound Healing",
     paragraphs: [
       "Held within the sacred space of Sufi prayer and remembrance of the Divine qualities, voice, Tibetan singing bowls, harmonium, drum and other instruments are woven together to create an immersive journey through sound.",
       "The vibrations invite the body to soften, the mind to quieten and the heart to open, creating space for deep rest, reflection, prayer and connection with the Divine.",

@@ -221,7 +221,7 @@ test("robots.txt and sitemap.xml render", async ({ request }) => {
   expect(sitemapText).toContain("<loc>http://localhost:3000/sufi-muslim-retreats</loc>");
   expect(sitemapText).toContain("<loc>http://localhost:3000/spiritual-healing</loc>");
   expect(sitemapText).not.toContain("<loc>http://localhost:3000/therapies</loc>");
-  for (const slug of ["sound-healing", "hijama", "sufi-healing", "wet-cupping", "holistic-healing", "somatic-bodywork"]) {
+  for (const slug of ["sound-healing", "hijama", "sufi-healing", "holistic-healing", "somatic-bodywork"]) {
     expect(sitemapText).toContain(`<loc>http://localhost:3000/spiritual-healing/${slug}</loc>`);
   }
   expect(sitemapText).toContain("<loc>http://localhost:3000/retreats</loc>");
@@ -241,7 +241,6 @@ test("spiritual healing hub links all six service pages and tabs can be selected
     ["Sound Healing", "sound-healing"],
     ["Hijama", "hijama"],
     ["Sufi Healing", "sufi-healing"],
-    ["Wet Cupping", "wet-cupping"],
     ["Holistic Healing", "holistic-healing"],
     ["Somatic Bodywork", "somatic-bodywork"],
   ];
@@ -254,7 +253,7 @@ test("spiritual healing hub links all six service pages and tabs can be selected
 });
 
 test("each spiritual healing service has unique SEO metadata and links back to its hub", async ({ page }) => {
-  const services = ["sound-healing", "hijama", "sufi-healing", "wet-cupping", "holistic-healing", "somatic-bodywork"];
+  const services = ["sound-healing", "hijama", "sufi-healing", "holistic-healing", "somatic-bodywork"];
   const titles = new Set<string>();
   for (const slug of services) {
     await page.goto(`/spiritual-healing/${slug}`);
