@@ -70,9 +70,9 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
   {
     slug: "solo-retreats-norfolk",
     navLabel: "Solo retreats",
-    metadataTitle: "Solo Retreats in Norfolk | Quiet Countryside Stays",
+    metadataTitle: "Solo Retreats in Norfolk | Quiet Stay Alone",
     metadataDescription:
-      "Plan a solo retreat in Norfolk with a peaceful countryside stay at Home House Homestead. Ideal for rest, reflection, reading, walking, and quiet time.",
+      "Book a solo retreat in Norfolk at Home House Homestead — a quiet countryside stay for rest, reflection, reading, walking, and time alone.",
     heroTitle: "Solo retreats in Norfolk for quiet time, rest, and reflection.",
     heroIntro:
       "Home House Homestead offers a calm setting for solo retreats in Norfolk, with peaceful rooms, open countryside, nourishing meals, and space to breathe.",
