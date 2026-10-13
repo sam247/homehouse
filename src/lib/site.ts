@@ -1,6 +1,7 @@
 export const SITE = {
   name: "Home House Homestead",
-  tagline: "A peaceful, warm and welcoming guest house and homestead.",
+  tagline:
+    "A peaceful, warm and welcoming homestead and retreat sanctuary. A space to come home to yourself. A space to come home to your heart.",
   email: "info@homehouse.org.uk",
   location: "Norfolk, United Kingdom",
   // Client-supplied hero video

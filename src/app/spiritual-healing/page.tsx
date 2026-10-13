@@ -193,6 +193,104 @@ export default function SpiritualHealingPage() {
 
       <Band className="border-t border-border">
         <Section>
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="reveal overflow-hidden rounded-sm">
+              <img
+                src="/sufi_healing_circle.png"
+                alt="Sufi Healing Circle"
+                className="h-auto w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="reveal space-y-5 text-foreground/80 font-light leading-relaxed">
+              <p className="text-xs uppercase tracking-[0.3em] text-accent">Online gatherings</p>
+              <h2 className="font-serif text-4xl leading-tight md:text-5xl">Weekly Online Sufi Healing Circles</h2>
+              <p className="text-sm uppercase tracking-[0.15em] text-foreground/60">
+                Prayer <span aria-hidden="true">•</span> Remembrance <span aria-hidden="true">•</span> Healing{" "}
+                <span aria-hidden="true">•</span> Guidance
+              </p>
+              <p>
+                Join me online for a one-hour Sufi Healing Circle — a sacred space to bring whatever is present in your
+                heart into prayer, remembrance and healing.
+              </p>
+              <p>
+                You may come with a prayer, question, difficulty, transition or situation for which you are seeking
+                healing or guidance, or simply come to sit within the holy transmissions to taste, drink, receive and
+                be held.
+              </p>
+              <p>
+                I open the space through guided meditation, sacred prayer and remembrance, and offer Sufi Healing into
+                the group heart through sacred voice and song, Divine Names, Qur’anic prayer, duʿā, dhikr, silence,
+                deep listening and whatever I am guided to bring.
+              </p>
+              <p>
+                There is no need to be Muslim or to have any previous experience of Sufism or Sufi Healing. You are
+                welcome whether you call the Divine Allah, God, the Beloved, or by another name that is meaningful
+                within your own life.
+              </p>
+
+              <h3 className="pt-4 font-serif text-3xl leading-tight text-foreground">What can I bring?</h3>
+              <p>
+                You may come with anything that is asking to be held in prayer: grief or loss, change or transition,
+                relationships, uncertainty, emotional heaviness, questions of the heart, healing for yourself or
+                someone you love, a decision you are facing, or simply a longing for greater intimacy with Allah, God,
+                the Divine — or whatever name you use in your own life.
+              </p>
+              <p>
+                There is never any requirement to speak or share personally. You are equally welcome to simply listen
+                and receive.
+              </p>
+
+              <h3 className="pt-4 font-serif text-3xl leading-tight text-foreground">A travelling circle</h3>
+              <p>
+                Over the coming months these circles will travel with me as I move through different parts of the
+                world.
+              </p>
+              <p>
+                They will usually be held on Wednesdays, wherever possible, although the time may change according to
+                where in the world I am holding the circle from. Each upcoming date and time will be shown clearly when
+                you register.
+              </p>
+
+              <h3 className="pt-4 font-serif text-3xl leading-tight text-foreground">Pay From the Heart</h3>
+              <p>I want these circles to remain accessible regardless of financial circumstances.</p>
+              <p>You are invited to choose the contribution that feels right for you:</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>£0 — Come as my guest</li>
+                <li>£5 — Pay From the Heart</li>
+                <li>£10 — Support the Circle</li>
+                <li>Or choose your own contribution</li>
+              </ul>
+
+              <h3 className="pt-4 font-serif text-3xl leading-tight text-foreground">Come as you are</h3>
+              <p>
+                Bring your heart.
+                <br />
+                Bring your prayers.
+                <br />
+                Bring your difficulties.
+                <br />
+                Or simply come and receive.
+              </p>
+              <p>The first one begins on Wednesday 28th October, 7–8pm UK.</p>
+              <p className="pt-2">
+                View upcoming circles, register and book your place:
+              </p>
+              <a
+                href="https://buytickets.at/hawaamandahummingbird/2469070"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center border border-accent px-6 py-3 text-sm uppercase tracking-[0.15em] text-accent transition-colors hover:bg-accent hover:text-background"
+              >
+                Register and book your place
+              </a>
+            </div>
+          </div>
+        </Section>
+      </Band>
+
+      <Band className="border-t border-border">
+        <Section>
           <div className="reveal">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Explore the practices</p>
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">Six ways to find the support that feels right.</h2>

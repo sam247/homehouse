@@ -13,8 +13,7 @@ export function Footer() {
             {SITE.name}
           </h3>
           <p className="max-w-sm text-sm leading-relaxed font-light">
-            {SITE.tagline} A space to come home to yourself, gently and in your
-            own time.
+            {SITE.tagline}
           </p>
           <p className="mt-6 text-sm">{SITE.location}</p>
           <TrackedAnchor
