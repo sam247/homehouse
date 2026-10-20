@@ -44,7 +44,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Home House Homestead — Peaceful Norfolk Guest House & Retreats",
-    template: `%s — ${SITE.name}`,
+    // Identity template. A suffix here is applied to every child string title,
+    // so a page that already says "Home House" renders the brand twice.
+    // documentTitle() adds the brand exactly once and opts out via absolute.
+    template: "%s",
   },
   description:
     "A peaceful countryside guest house and homestead in the heart of Norfolk. Stays, retreats, workshops and events for those seeking rest and reconnection.",
