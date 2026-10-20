@@ -4,12 +4,13 @@ import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Button } from "@/components/ui/button";
+import { documentTitle } from "@/lib/documentTitle";
 import type { RetreatLandingData } from "@/lib/retreatPages";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 export function buildRetreatMetadata(page: RetreatLandingData): Metadata {
   return {
-    title: page.metadataTitle,
+    title: documentTitle(page.metadataTitle),
     description: page.metadataDescription,
     openGraph: {
       title: page.metadataTitle,

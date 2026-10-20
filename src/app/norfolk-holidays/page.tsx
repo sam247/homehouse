@@ -5,6 +5,7 @@ import { EnquiryDrawer } from "@/components/EnquiryDrawer";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Button } from "@/components/ui/button";
 import { PlanningGuidesSection, HOLIDAY_PLANNING_GUIDES } from "@/components/PlanningGuidesSection";
+import { documentTitle } from "@/lib/documentTitle";
 import { getSiteUrl } from "@/lib/siteUrl";
 
 const IMG = {
@@ -29,7 +30,7 @@ const faq = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Norfolk Holidays | Quiet Countryside Stays & Retreat Breaks",
+  title: documentTitle("Norfolk Holidays | Quiet Countryside Stays & Retreat Breaks"),
   description:
     "Plan a quieter Norfolk holiday at Home House Homestead with countryside accommodation, peaceful rooms, nourishing meals, and retreat-style stays.",
   openGraph: {
