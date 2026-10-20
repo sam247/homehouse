@@ -156,7 +156,12 @@ export default function SufiMuslimRetreatsPage() {
               <p>
                 It is especially suited to smaller groups wishing to bring their own shaykh, shaykha, teacher or
                 spiritual guide and create a personal retreat around prayer, dhikr, Qur’an, spiritual teaching,
-                healing, reflection, sacred sound and companionship.
+                healing, reflection, sacred sound and companionship. If you are organising a group and want the
+                practical details of accommodation, halal meals, and space for salah and study, see our{" "}
+                <Link href="/muslim-retreat-venues" className="text-accent hover:underline">
+                  Muslim retreat venue in Norfolk
+                </Link>{" "}
+                page.
               </p>
               <p>
                 Learn more about Hawa’s path on the{" "}
