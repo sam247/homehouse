@@ -1,7 +1,7 @@
 ---
-title: "Can You Go On a Retreat Alone? Yes — Here's What to Expect"
+title: "Going on a Retreat Alone: What a Solo Stay Is Really Like"
 publishedAt: "2026-08-22T10:00:00.000Z"
-excerpt: "Yes, you can go on a retreat alone. Pros, cons, who it suits, and how a hosted Norfolk stay differs from going completely solo."
+excerpt: "Thinking of going on a retreat alone? Who it suits, what a quiet solo stay feels like, and how a hosted Norfolk retreat differs from going completely solo."
 coverImage: "/photos/fields.webp"
 contentType: guide
 author: Home House Homestead
