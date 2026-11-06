@@ -69,7 +69,7 @@ const faq = [
   },
   {
     q: "How many guests can you accommodate?",
-    a: "Capacity depends on room setup and whether shared or private rooms are preferred. Enquire with your dates and we will confirm what is possible.",
+    a: "We host small groups of up to 10 guests. Exact numbers depend on room setup and whether shared or private rooms are preferred, so enquire with your dates and we will confirm what is possible. We are not able to host larger groups.",
   },
 ] as const;
 

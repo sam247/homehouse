@@ -88,6 +88,7 @@ export function RetreatLandingPage({ page }: { page: RetreatLandingData }) {
                   Shared twin £100 per person · single occupancy (super king) £175.{" "}
                   <Link href="/stays" className="underline underline-offset-4">See stays</Link>
                 </p>
+                <p className="mt-1 text-sm font-light text-foreground/70">Small groups of up to 10 guests.</p>
               </div>
               <div className="mt-6 grid gap-3">
                 <EnquiryDrawer

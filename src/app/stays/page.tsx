@@ -144,7 +144,7 @@ export default function StaysPage() {
               <Link href="/womens-retreats" className="text-accent hover:underline">
                 Women&apos;s Retreats
               </Link>
-              . If you are interested in a longer stay, private retreat, or group booking, please{" "}
+              . If you are interested in a longer stay, private retreat, or group booking (up to 10 guests), please{" "}
               <Link href="/contact" className="text-accent hover:underline">
                 get in touch
               </Link>{" "}
