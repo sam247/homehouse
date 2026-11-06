@@ -81,7 +81,15 @@ export function RetreatLandingPage({ page }: { page: RetreatLandingData }) {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 grid gap-3">
+              <div className="mt-8 border-t border-border pt-6">
+                <p className="text-xs uppercase tracking-[0.3em] text-accent mb-2">Rates</p>
+                <p className="font-light text-foreground/85">From £100 per night · all meals included</p>
+                <p className="mt-1 text-sm font-light text-foreground/70">
+                  Shared twin £100 · single occupancy £175.{" "}
+                  <Link href="/stays" className="underline underline-offset-4">See stays</Link>
+                </p>
+              </div>
+              <div className="mt-6 grid gap-3">
                 <EnquiryDrawer
                   source={page.slug}
                   trigger={<Button className="rounded-none">Enquire about this retreat</Button>}

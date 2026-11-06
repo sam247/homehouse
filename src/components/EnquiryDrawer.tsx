@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import type { DateRange } from "react-day-picker";
-import { format, parseISO } from "date-fns";
+import { differenceInCalendarDays, format, parseISO } from "date-fns";
 import {
   Sheet,
   SheetContent,
@@ -109,9 +109,10 @@ export function EnquiryForm({
 
   const datesLabel = useMemo(() => {
     if (!range?.from) return "";
-    const from = format(range.from, "d MMM yyyy");
-    if (!range.to) return from;
-    return `${from} – ${format(range.to, "d MMM yyyy")}`;
+    const from = format(range.from, "d MMM");
+    const n = nightsIn(range);
+    if (n === 0) return `${from} · day visit`;
+    return `${from} – ${format(range.to!, "d MMM")} · ${n} night${n === 1 ? "" : "s"}`;
   }, [range]);
 
   useEffect(() => {
@@ -203,6 +204,7 @@ export function EnquiryForm({
           start_date: startDate || undefined,
           end_date: endDate || undefined,
           dates: form.dates || undefined,
+          nights: range?.from ? nightsIn(range) : undefined,
           form_name: "enquiry",
           form_source: source ?? "unknown",
           landing_page: landingPage,
@@ -305,11 +307,25 @@ export function EnquiryForm({
                 fromDate={new Date()}
                 numberOfMonths={1}
               />
+              <p className="max-w-[18rem] px-3 pb-3 text-xs text-foreground/70">
+                {range?.from && nightsIn(range) === 0
+                  ? "Now choose your check-out date — or leave as a single day for a day visit."
+                  : "Choose your check-in date, then your check-out date."}
+              </p>
             </PopoverContent>
           </Popover>
         </Field>
         <Field label="Guests">
-          <Input value={form.guests} onChange={update("guests")} placeholder="e.g. 2" className="bg-transparent border-foreground/30 rounded-none" />
+          <Input
+            type="number"
+            inputMode="numeric"
+            min={1}
+            max={60}
+            step={1}
+            value={form.guests}
+            onChange={update("guests")}
+            placeholder="e.g. 2"
+            className="bg-transparent border-foreground/30 rounded-none" />
         </Field>
       </div>
       <Field label="Message">
@@ -317,7 +333,7 @@ export function EnquiryForm({
           rows={5}
           value={form.message}
           onChange={update("message")}
-          placeholder="Tell us a little about what you're hoping for…"
+          placeholder="Tell us a little about what you're hoping for — and if any guests are children…"
           className="bg-transparent border-foreground/30 rounded-none resize-none"
         />
       </Field>
@@ -331,6 +347,11 @@ export function EnquiryForm({
       <p className="text-xs text-foreground/60">We’ll reply personally, usually within a day.</p>
     </form>
   );
+}
+
+function nightsIn(range: DateRange): number {
+  if (!range.from || !range.to) return 0;
+  return Math.max(0, differenceInCalendarDays(range.to, range.from));
 }
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
