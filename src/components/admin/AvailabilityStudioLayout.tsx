@@ -54,12 +54,6 @@ export async function AvailabilityStudioLayout({ children }: { children: ReactNo
             <div className="mt-2 font-serif text-3xl leading-tight">Calendar</div>
             <div className="mt-6 grid gap-3">
               <Link
-                href={`${ADMIN_ENTRY_PATH}/bookings`}
-                className="border border-border px-4 py-3 text-xs uppercase tracking-[0.25em] text-foreground/70 hover:border-accent hover:text-foreground transition-colors text-center"
-              >
-                Bookings
-              </Link>
-              <Link
                 href={ADMIN_ENTRY_PATH}
                 className="border border-border px-4 py-3 text-xs uppercase tracking-[0.25em] text-foreground/70 hover:border-accent hover:text-foreground transition-colors text-center"
               >
