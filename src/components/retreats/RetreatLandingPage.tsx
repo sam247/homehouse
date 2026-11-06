@@ -83,9 +83,9 @@ export function RetreatLandingPage({ page }: { page: RetreatLandingData }) {
               </ul>
               <div className="mt-8 border-t border-border pt-6">
                 <p className="text-xs uppercase tracking-[0.3em] text-accent mb-2">Rates</p>
-                <p className="font-light text-foreground/85">From £100 per night · all meals included</p>
+                <p className="font-light text-foreground/85">From £100 per person per night · all meals included</p>
                 <p className="mt-1 text-sm font-light text-foreground/70">
-                  Shared twin £100 · single occupancy £175.{" "}
+                  Shared twin £100 per person · single occupancy (super king) £175.{" "}
                   <Link href="/stays" className="underline underline-offset-4">See stays</Link>
                 </p>
               </div>

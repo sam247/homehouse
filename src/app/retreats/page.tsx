@@ -169,7 +169,7 @@ export default function RetreatsPage() {
               </ul>
               <div className="mt-8 grid gap-3">
                 <Button asChild className="rounded-none">
-                  <Link href="/retreats/womens-retreats-norfolk">Start with women&apos;s retreats</Link>
+                  <Link href="/womens-retreats">Start with women&apos;s retreats</Link>
                 </Button>
                 <EnquiryDrawer
                   source="retreats_page"

@@ -19,7 +19,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
   {
     slug: "womens-retreats-norfolk",
     navLabel: "Women's retreats",
-    metadataTitle: "Women's Retreats in Norfolk | Small-Group Rest & Reconnection",
+    metadataTitle: "Small-Group Women's Retreat Stays in Norfolk | Dates & Private Stays",
     metadataDescription:
       "Small-group women's retreats in Norfolk for rest, reconnection, nourishing food, nature, and slower living at Home House Homestead.",
     heroTitle: "Women's retreats in Norfolk for rest, softness, and reconnection.",
@@ -27,7 +27,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "Explore small-group women's retreats at Home House Homestead in rural Norfolk, shaped around deep rest, meaningful connection, and time close to the land.",
     summary: [
       "Women's retreats at Home House Homestead are designed for people who need space to step out of everyday demands and return to a gentler rhythm. They are intimate rather than corporate, personal rather than polished, and rooted in warmth, care, food, conversation, and time in nature.",
-      "Some retreats are scheduled events with shared dates and a clear theme. Others begin as a conversation and become a more bespoke stay shaped around what you need most from your time away.",
+      "Some retreats are scheduled events with shared dates and a clear theme. Others begin as a conversation and become a more bespoke stay shaped around what you need most from your time away. For the wider picture of our women's retreats — healing, circles, and what makes them different — see our main women's retreats page.",
     ],
     bestFor: [
       "Women who feel overstretched and need a genuine pause",
@@ -46,6 +46,7 @@ export const RETREAT_PAGES: RetreatLandingData[] = [
       "If you want to see current dates, the best next step is to browse Events & Workshops. If you want to talk about a more personal retreat stay, send an enquiry and we can guide you.",
     ],
     relatedLinks: [
+      { href: "/womens-retreats", label: "Women's retreats at Home House: the full guide" },
       { href: "/blog/what-to-expect-on-a-womens-retreat-in-norfolk", label: "What to expect on a women's retreat" },
       { href: "/retreats/solo-retreats-norfolk", label: "Solo retreats in Norfolk" },
       { href: "/retreats/rest-retreats-norfolk", label: "Rest retreats" },

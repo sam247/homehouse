@@ -6,6 +6,7 @@ const IMG = {
   hero: "/author.webp",
   hawa: "/author.webp",
   land: "/photos/fields.webp",
+  surrender: "/photos/amanda-surrender.webp",
 };
 
 export const metadata: Metadata = {
@@ -99,7 +100,7 @@ export default function AboutPage() {
           reverse
           eyebrow="Surrender"
           title="Brought to my knees, guided back to my voice."
-          image={IMG.land}
+          image={IMG.surrender}
           body={
             <>
               <p>

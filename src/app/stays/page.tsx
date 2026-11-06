@@ -132,10 +132,10 @@ export default function StaysPage() {
             <div className="grid gap-4 md:grid-cols-2">
               <div className="border-b border-border pb-3">
                 <p className="text-foreground/85 font-light">Shared twin room</p>
-                <p className="mt-1 text-sm text-foreground/70 font-light">£100 per night · Includes all meals</p>
+                <p className="mt-1 text-sm text-foreground/70 font-light">£100 per night per person · Includes all meals</p>
               </div>
               <div className="border-b border-border pb-3">
-                <p className="text-foreground/85 font-light">Single occupancy room</p>
+                <p className="text-foreground/85 font-light">Single occupancy room with super king double bed</p>
                 <p className="mt-1 text-sm text-foreground/70 font-light">£175 per night · Includes all meals</p>
               </div>
             </div>

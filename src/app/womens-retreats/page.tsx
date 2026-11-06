@@ -306,6 +306,7 @@ export default function WomensRetreatsPage() {
           <div className="mt-10 flex flex-wrap gap-4 text-sm font-light">
             <Link href="/spiritual-healing" className="text-accent hover:underline">Explore spiritual healing and 1-to-1 sessions</Link>
             <Link href="/stays" className="text-accent hover:underline">Explore accommodation</Link>
+            <Link href="/retreats/womens-retreats-norfolk" className="text-accent hover:underline">Book a small-group or private women&apos;s retreat stay</Link>
             <Link href="/muslim-retreat-venues" className="text-accent hover:underline">Book the homestead for a private Muslim women&apos;s gathering</Link>
             <Link href="/reviews" className="text-accent hover:underline">Read guest reviews</Link>
           </div>
