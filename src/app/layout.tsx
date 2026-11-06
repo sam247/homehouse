@@ -66,7 +66,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${cormorant.variable}`}
+      // The inline script below adds the "js" class before hydration, by design.
+      suppressHydrationWarning
+    >
       <head>
         <SeoJsonLd data={BUSINESS_JSON_LD} />
         {/*
