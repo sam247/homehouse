@@ -20,6 +20,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { SITE } from "@/lib/site";
 import { gaEvent } from "@/lib/analytics/ga4";
 
+const BR_ENDPOINT =
+  "https://admin.betterranking.co.uk/sender/api/f/bs_9h8atbsf45v4x23tkpaloce8";
+
 type AvailabilityBlock = { start: string; end: string; label?: string };
 
 export function EnquiryDrawer({ trigger, source }: { trigger: ReactNode; source?: string }) {
@@ -72,6 +75,7 @@ export function EnquiryForm({
   const [blocks, setBlocks] = useState<AvailabilityBlock[]>([]);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string>("");
+  const [honeypot, setHoneypot] = useState("");
 
   const update = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -144,7 +148,11 @@ export function EnquiryForm({
         has_message: Boolean(form.message),
       });
 
-      const res = await fetch("/api/enquiry", {
+      const landingPage = window.location.href;
+
+      // Local record: powers the admin bookings view and the date-availability check.
+      // A 503 (no DB configured) is non-fatal — Better Ranking is the delivery path.
+      const local = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
@@ -155,33 +163,60 @@ export function EnquiryForm({
           message: form.message,
           startDate,
           endDate,
-          sourceUrl: window.location.href,
+          sourceUrl: landingPage,
+          website: honeypot,
         }),
-      });
+      }).catch(() => null);
 
-      if (res.ok) {
-        gaEvent("enquiry_success", { source: source ?? "unknown" });
-        setStatus("sent");
-        reset();
-        return;
-      }
-
-      if (res.status === 409) {
+      if (local?.status === 409) {
         gaEvent("enquiry_unavailable", { source: source ?? "unknown" });
         setStatus("error");
         setError("Those dates are unavailable. Please choose different dates or leave them blank.");
         return;
       }
 
-      if (res.status === 503) {
-        const subject = encodeURIComponent(`Enquiry from ${form.name || "the website"}`);
-        const body = encodeURIComponent(
-          `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nDates: ${form.dates}\nGuests: ${form.guests}\n\n${form.message}`,
-        );
-        gaEvent("enquiry_fallback_mailto", { source: source ?? "unknown" });
-        setTimeout(() => {
-          window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
-        }, 75);
+      const params = new URLSearchParams(window.location.search);
+      const attribution: Record<string, string> = {};
+      for (const key of [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "gclid",
+        "fbclid",
+        "msclkid",
+      ]) {
+        const v = params.get(key);
+        if (v) attribution[key] = v;
+      }
+
+      const res = await fetch(BR_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone || undefined,
+          message: form.message,
+          guests: form.guests || undefined,
+          start_date: startDate || undefined,
+          end_date: endDate || undefined,
+          dates: form.dates || undefined,
+          form_name: "enquiry",
+          form_source: source ?? "unknown",
+          landing_page: landingPage,
+          referrer: document.referrer || undefined,
+          hostname: window.location.hostname,
+          ...attribution,
+          website: honeypot,
+        }),
+      });
+
+      const data = (await res.json().catch(() => null)) as { ok?: boolean } | null;
+
+      if (res.ok && data?.ok !== false) {
+        gaEvent("enquiry_success", { source: source ?? "unknown" });
         setStatus("sent");
         reset();
         return;
@@ -189,11 +224,11 @@ export function EnquiryForm({
 
       gaEvent("enquiry_error", { source: source ?? "unknown", status: res.status });
       setStatus("error");
-      setError("Something went wrong. Please try again.");
+      setError(`Something went wrong. Please try again, or email us at ${SITE.email}.`);
     } catch {
       gaEvent("enquiry_error", { source: source ?? "unknown", status: "network" });
       setStatus("error");
-      setError("Something went wrong. Please try again.");
+      setError(`Something went wrong. Please try again, or email us at ${SITE.email}.`);
     }
   };
 
@@ -219,12 +254,25 @@ export function EnquiryForm({
   }
 
   return (
-    <form onSubmit={submit} className={`grid gap-4 ${compact ? "" : "mt-6"}`}>
+    <form onSubmit={submit} className={`relative grid gap-4 ${compact ? "" : "mt-6"}`}>
       {status === "error" ? (
         <div className="border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
           {error}
         </div>
       ) : null}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+        <label>
+          Website
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+          />
+        </label>
+      </div>
       <Field label="Your name">
         <Input required value={form.name} onChange={update("name")} className="bg-transparent border-foreground/30 rounded-none" />
       </Field>

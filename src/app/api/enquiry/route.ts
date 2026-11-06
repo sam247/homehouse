@@ -1,8 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 import { getDb } from "@/lib/db";
-import { SITE } from "@/lib/site";
-import { ADMIN_ENTRY_PATH } from "@/lib/adminEntry";
 
 export const dynamic = "force-dynamic";
 
@@ -33,6 +30,9 @@ export async function POST(req: Request) {
   const startDate = String(payload?.startDate ?? "").trim();
   const endDate = String(payload?.endDate ?? "").trim();
   const sourceUrl = String(payload?.sourceUrl ?? "").trim();
+
+  // Honeypot: bots fill it; skip storing silently.
+  if (String(payload?.website ?? "").trim()) return NextResponse.json({ ok: true });
 
   if (!name) return NextResponse.json({ error: "name" }, { status: 400 });
   if (!email || !isEmail(email)) return NextResponse.json({ error: "email" }, { status: 400 });
@@ -95,59 +95,6 @@ export async function POST(req: Request) {
   const id = rows?.[0]?.id as string | undefined;
   if (!id) return NextResponse.json({ error: "db_write" }, { status: 500 });
 
-  const resendKey = process.env.RESEND_API_KEY;
-  if (resendKey) {
-    const resend = new Resend(resendKey);
-    const from = process.env.RESEND_FROM || "Home House <onboarding@resend.dev>";
-    const notifyTo = process.env.ENQUIRY_NOTIFY_TO || SITE.email;
-
-    const datesLine = hasDates ? `${startDate} – ${endDate}` : "(not provided)";
-
-    try {
-      await resend.emails.send({
-        from,
-        to: notifyTo,
-        subject: `New enquiry: ${name}`,
-        text: [
-          `New enquiry received`,
-          ``,
-          `Name: ${name}`,
-          `Email: ${email}`,
-          `Phone: ${phone || "(not provided)"}`,
-          `Dates: ${datesLine}`,
-          `Guests: ${guests || "(not provided)"}`,
-          ``,
-          `Message:`,
-          message || "(not provided)",
-          ``,
-          `Admin: ${process.env.SITE_URL || ""}${ADMIN_ENTRY_PATH}/bookings`,
-          `ID: ${id}`,
-          sourceUrl ? `Source: ${sourceUrl}` : "",
-        ]
-          .filter(Boolean)
-          .join("\n"),
-      });
-
-      await resend.emails.send({
-        from,
-        to: email,
-        subject: "We’ve received your enquiry",
-        text: [
-          `Thank you ${name},`,
-          ``,
-          `We’ve received your enquiry and we’ll reply personally, usually within a day.`,
-          ``,
-          `Dates: ${datesLine}`,
-          `Guests: ${guests || "(not provided)"}`,
-          ``,
-          `Your message:`,
-          message || "(not provided)",
-          ``,
-          `Home House Homestead`,
-        ].join("\n"),
-      });
-    } catch {}
-  }
-
+  // Notifications are delivered by Better Ranking Communications (posted from the client).
   return NextResponse.json({ ok: true, id });
 }
