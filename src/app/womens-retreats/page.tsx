@@ -80,7 +80,7 @@ const practices = [
 const bespokeOptions = [
   {
     title: "Option 1 — 2 Night / 3 Day Retreat",
-    price: "From £555 for one woman in a private room · From £375 per person sharing",
+    price: "Please enquire for prices",
     days: [
       "Day 1 — Arrival and settling in; opening ceremony and intention setting; evening guided meditation, prayer or dhikr",
       "Day 2 — Morning breathwork, somatic embodiment and gentle movement; afternoon one-to-one or group healing session; time for rest, reflection and integration",
@@ -89,7 +89,7 @@ const bespokeOptions = [
   },
   {
     title: "Option 2 — 3 Night / 4 Day Retreat",
-    price: "From £750 for one woman in a private room · From £525 per person sharing",
+    price: "Please enquire for prices",
     days: [
       "Day 1 — Arrival and time to settle in; opening ceremony and intention setting; evening guided meditation, prayer or dhikr",
       "Day 2 — Morning breathwork, somatic embodiment and gentle movement; afternoon one-to-one or group healing session; time for rest, reflection and integration",
@@ -243,7 +243,7 @@ export default function WomensRetreatsPage() {
             </div>
             <div className="reveal border border-[var(--deep)]/15 p-8 text-[var(--deep)]">
               <div className="grid gap-5 font-light">
-                <div className="border-b border-[var(--deep)]/15 pb-4"><p className="font-serif text-xl">Private room</p><p>£200 per night · £600 total</p><p className="text-sm">All meals included</p></div>
+                <div className="border-b border-[var(--deep)]/15 pb-4"><p className="font-serif text-xl">Private room</p><p>£250 per night · £750 total</p><p className="text-sm">All meals included</p></div>
                 <div className="border-b border-[var(--deep)]/15 pb-4"><p className="font-serif text-xl">Shared room</p><p>£125 per person, per night · £375 per person total</p><p className="text-sm">All meals included</p></div>
                 <div><p className="font-serif text-xl">Optional healing sessions with Hawa</p><p className="mt-2">One-to-one session — £111 per person</p><p className="mt-2">Group sessions: 2 people — £100 per person · 3 people — £80 per person · 4 people — £75 per person · 5 people or more — £65 per person</p></div>
               </div>
