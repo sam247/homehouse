@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AuthorStrip } from "@/components/AuthorStrip";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { getGuidePosts, getJournalPosts } from "@/lib/blog";
+import { documentTitle } from "@/lib/documentTitle";
 
 /**
  * Cached and revalidated rather than rendered per request. The blog index was
@@ -14,7 +15,7 @@ import { getGuidePosts, getJournalPosts } from "@/lib/blog";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Retreat Planning Guides & Homestead Journal",
+  title: documentTitle("Retreat Planning Guides & Homestead Journal"),
   description:
     "Practical guides to planning Norfolk retreats and countryside stays, Muslim group retreats and Sufi gatherings — plus journal notes from the homestead.",
   alternates: { canonical: "/blog" },

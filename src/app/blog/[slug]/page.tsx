@@ -6,6 +6,7 @@ import { GuideFooter } from "@/components/GuideFooter";
 import { PageShell, PageHero, Band, Section } from "@/components/PageShell";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { getMarkdownPostSlugs, getPostBySlug, isGuidePost } from "@/lib/blog";
+import { documentTitle } from "@/lib/documentTitle";
 import { extractFaqFromMarkdown } from "@/lib/blogFaq";
 import { getSiteUrl } from "@/lib/siteUrl";
 
@@ -30,7 +31,7 @@ export async function generateMetadata({
   try {
     const post = await getPostBySlug(slug);
     return {
-      title: post.title,
+      title: documentTitle(post.title),
       description: post.excerpt,
       alternates: {
         canonical: `/blog/${slug}`,
