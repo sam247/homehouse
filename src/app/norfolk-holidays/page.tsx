@@ -170,6 +170,69 @@ export default function NorfolkHolidaysPage() {
 
       <Band variant="cream" className="border-t border-border">
         <Section>
+          <div className="max-w-3xl reveal">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Nearby in Norfolk</p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+              Well-known places for a quiet day out.
+            </h2>
+            <p className="mt-5 text-foreground/75 font-light leading-relaxed">
+              The gardens, fields, and lanes around the homestead are enough for many guests. If you want one
+              unhurried outing, these are familiar Norfolk places — a coast walk, a harbour village, the Broads, or
+              a few hours in the city. Pick one, then come back to a quiet house.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            <article className="reveal border border-border p-8 bg-background">
+              <h3 className="font-serif text-2xl leading-tight">Holkham and Wells-next-the-Sea</h3>
+              <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+                Holkham Beach sits in Holkham National Nature Reserve: a long sandy shore backed by pines on the
+                North Norfolk coast. Wells-next-the-Sea, the neighbouring harbour town, is an easy companion stop.
+                The Norfolk Coast Path, part of the Peddars Way and Norfolk Coast Path National Trail, runs through
+                this stretch, and the walk between the beach and the quay at Wells is a classic gentle outing.
+              </p>
+            </article>
+            <article className="reveal border border-border p-8 bg-background">
+              <h3 className="font-serif text-2xl leading-tight">Blakeney and the saltmarsh</h3>
+              <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+                Blakeney is a harbour village on the same coast. The quay looks over saltmarsh creeks, and a short
+                walk there is enough for a calm hour. Beyond the village, Blakeney Point is a National Trust nature
+                reserve known for birds and seals.
+              </p>
+            </article>
+            <article className="reveal border border-border p-8 bg-background">
+              <h3 className="font-serif text-2xl leading-tight">The Norfolk Broads</h3>
+              <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+                The Broads National Park is a network of rivers, shallow lakes, and grazing marsh. Wroxham, on the
+                River Bure, is a familiar village for seeing the water from the bank. Hickling Broad, looked after
+                by the Norfolk Wildlife Trust, has boardwalks through reedbeds. Either suits a slow afternoon
+                outdoors.
+              </p>
+            </article>
+            <article className="reveal border border-border p-8 bg-background">
+              <h3 className="font-serif text-2xl leading-tight">Norwich</h3>
+              <p className="mt-4 text-foreground/75 font-light leading-relaxed">
+                Norwich is the county city, with streets, a cathedral, and a castle when you want a change of scene.
+                Norwich Cathedral, Norwich Castle, and the lanes around the market are the landmarks
+                most people come for. It works as a single contrast day before you return to the countryside.
+              </p>
+            </article>
+          </div>
+          <p className="reveal mt-10 max-w-3xl text-foreground/75 font-light leading-relaxed">
+            When you would like the stay itself, see{" "}
+            <Link href="/stays" className="text-accent hover:underline">
+              guest house stays
+            </Link>{" "}
+            or send a{" "}
+            <Link href="/contact" className="text-accent hover:underline">
+              booking enquiry
+            </Link>
+            .
+          </p>
+        </Section>
+      </Band>
+
+      <Band className="border-t border-border">
+        <Section>
           <div className="max-w-4xl reveal">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Related options</p>
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">Choose the right kind of Norfolk break.</h2>
